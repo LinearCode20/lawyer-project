@@ -7,9 +7,9 @@ import { faq } from "./data";
 
 
 export default function Page() {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] =  useState <number | null>(null);
 
-  const toggleItem = (index) => {
+  const toggleItem = (index: number | null) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 

@@ -4,9 +4,9 @@ import { areaOfLaw } from "./data";
 import { Minus, Plus } from "lucide-react";
 
 export default function AreasOfLaw() {
-    const [openIndex, setOpenIndex] = useState(null);
+    const [openIndex, setOpenIndex] = useState <number | null>(null);
     
-    const toggleItem = (index) => {
+    const toggleItem = (index : number | null) => {
     setOpenIndex(openIndex === index ? null : index);
     };
 
