@@ -2,7 +2,6 @@
 "use client";
 export default function Page() {
   return (
-
     <div className="">
       <section className="py-20">
         <div className="container mx-auto">
