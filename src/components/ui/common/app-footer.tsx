@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function AppFooter() {
@@ -13,6 +14,21 @@ export default function AppFooter() {
           constitute legal advice.
         </p>
       </div>
+      
+      <div className="container mx-auto flex items-center justify-center gap-6">
+        <Link href="/privacy-policy" className="font-bold hover:underline">
+          Privacy Policy
+        </Link>
+
+        <Link href="/cookie-policy" className="font-bold hover:underline">
+          Cookie Policy
+        </Link>
+
+        <Link href="/privacy-policy" className="font-bold hover:underline">
+          Terms of Service
+        </Link>
+      </div>
+      
     </footer>
   );
 }

@@ -1,21 +1,21 @@
+import AreasOfLaw from "@/components/Areas-of-law/areas-of-law";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { faq, pricingPlans } from "@/data/home";
-import { Plus } from "lucide-react";
-import Image from "next/image";
+import { Card } from "@/components/ui/card";
+import { pricingPlans } from "@/data/home";
+//import { Plus } from "lucide-react";
 import Link from "next/link";
 
-const areaOfLaw = [
-  "Commercial & Corporate",
-  "Litigation & Dispute Resolution",
-  "Employment Law",
-  "Property Law (Residential & Commercial)",
-  "Family",
-  "Immigration",
-  "Regulatory & Compliance",
-  "Private Client",
-  "Crime",
-];
+// const areaOfLaw = [
+//   "Commercial & Corporate",
+//   "Litigation & Dispute Resolution",
+//   "Employment Law",
+//   "Property Law (Residential & Commercial)",
+//   "Family",
+//   "Immigration",
+//   "Regulatory & Compliance",
+//   "Private Client",
+//   "Crime",
+// ];
 
 export default function Home() {
   return (
@@ -60,7 +60,8 @@ export default function Home() {
       <section className=" py-20 ">
         <div className="container mx-auto ">
           <h1 className="text-3xl font-semibold mb-4">Areas of Law</h1>
-          <ul>
+          <AreasOfLaw />
+          {/* <ul>
             {areaOfLaw.map((area) => (
               <li key={area} className="p-2 border-b border-gray-300">
                 <div className="flex justify-between items-center">
@@ -71,7 +72,7 @@ export default function Home() {
                 </div>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
       </section>
 
@@ -116,9 +117,9 @@ export default function Home() {
                     </h2>
 
                     {/* CTA Button */}
-                    <Button className="w-full text-white font-semibold py-2 px-4 rounded-md transition-colors">
+                    {/* <Button className="w-full text-white font-semibold py-2 px-4 rounded-md transition-colors">
                       {plan.buttonText}
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </Card>
@@ -127,7 +128,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className=" py-20 bg-accent ">
+      {/* <section className=" py-20 bg-accent ">
         <div className="container mx-auto ">
           <h1 className="text-3xl font-semibold mb-4">Areas of Law</h1>
           <ul>
@@ -143,7 +144,7 @@ export default function Home() {
             ))}
           </ul>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
