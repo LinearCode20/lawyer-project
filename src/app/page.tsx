@@ -61,22 +61,10 @@ export default function Home() {
         <div className="container mx-auto ">
           <h1 className="text-3xl font-semibold mb-4">Areas of Law</h1>
           <AreasOfLaw />
-          {/* <ul>
-            {areaOfLaw.map((area) => (
-              <li key={area} className="p-2 border-b border-gray-300">
-                <div className="flex justify-between items-center">
-                  <span>{area}</span>
-                  <span>
-                    <Plus size={16} />
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul> */}
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-20" id="pricing">
         <div className="container mx-auto">
           <h1 className="text-3xl font-semibold mb-4">Pricing Plans</h1>
           <div className="flex gap-4">

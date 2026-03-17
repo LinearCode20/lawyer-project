@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import AppHeader from "@/components/ui/common/app-header";
 import AppFooter from "@/components/ui/common/app-footer";
+import Script from "next/dist/client/script";
+
+const TAWK_URL = process.env.NEXT_PUBLIC_TAWK_URL;
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,6 +22,26 @@ export default function RootLayout({
         <AppHeader />
         {children}
         <AppFooter />
+
+         {/* Tawk Chat Script */}
+        <Script
+          id="tawk-to"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+              (function(){
+                var s1=document.createElement("script"),
+                s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='${TAWK_URL}';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+              })();
+            `,
+          }}
+        />
       </body>
     </html>
   );

@@ -8,8 +8,8 @@ export default function AppHeader() {
 
   const navItems = [
     { id: "home", label: "Home", href: "/" },
-    { id: "about", label: "About Us", href: "#about" },
-    { id: "pricing", label: "Pricing", href: "#pricing" },
+    { id: "about", label: "About Us", href: "/about" },
+    { id: "pricing", label: "Pricing", href: "/#pricing" },
     { id: "faq", label: "FAQ", href: "/faq" },
     { id: "contact", label: "Contact us", href: "#contact" }    
   ];
