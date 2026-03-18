@@ -3,6 +3,7 @@ import "./globals.css";
 import Script from "next/dist/client/script";
 import AppHeader from "@/components/common/app-header";
 import AppFooter from "@/components/common/app-footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const TAWK_URL = process.env.NEXT_PUBLIC_TAWK_URL;
 
@@ -22,8 +23,9 @@ export default function RootLayout({
         <AppHeader />
         {children}
         <AppFooter />
+        <Toaster />
 
-         {/* Tawk Chat Script */}
+        {/* Tawk Chat Script */}
         <Script
           id="tawk-to"
           strategy="afterInteractive"

@@ -35,10 +35,10 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-            <Link href={"#"} rel="noopener noreferrer">
+            <Link href={"/#area-of-law"} rel="noopener noreferrer">
               <Button>Browse Area of Law</Button>
             </Link>
-            <Link href={"#"} rel="noopener noreferrer">
+            <Link href={"/#pricing"} rel="noopener noreferrer">
               <Button variant={"outline"}>See Pricing</Button>
             </Link>
           </div>
@@ -58,7 +58,7 @@ export default function Home() {
       </section>
 
       <section className=" py-20 ">
-        <div className="container mx-auto ">
+        <div className="container mx-auto " id="area-of-law">
           <h1 className="text-3xl font-semibold mb-4">Areas of Law</h1>
           <AreasOfLaw />
         </div>

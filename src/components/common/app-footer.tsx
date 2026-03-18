@@ -11,6 +11,7 @@ import { areaOfLaw } from "../Areas-of-law/data";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   email: z.email({ message: "Please enter a valid email" }).min(1, {
@@ -26,12 +27,14 @@ export default function AppFooter() {
     // Demo: Just log the email
     try {
       console.log("Email submitted:", email);
-      const response = await axios.post("", data);
+      const response = await axios.post("/api/capture-email", data);
       setIsSubmitted(true);
       setEmail("");
       setTimeout(() => setIsSubmitted(false), 3000);
+      toast.success("Thanks for subscribing!");
     } catch (e) {
       console.log(e);
+      toast.error("Something went wrong");
     }
 
     // Reset success message after 3 seconds
