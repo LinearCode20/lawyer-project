@@ -10,12 +10,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Field, FieldError, FieldLabel } from "@/components/ui/field";
-import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select";
+import {
+  NativeSelect,
+  NativeSelectOption,
+} from "@/components/ui/native-select";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.email({ message: "Please enter a valid email" }),
-  subject: z.string().min(1, { message: "Please select a subject" }),
   message: z
     .string()
     .min(10, { message: "Message must be at least 10 characters" })
@@ -40,7 +42,6 @@ export default function Page() {
     defaultValues: {
       name: "",
       email: "",
-      subject: "",
       message: "",
     },
   });
@@ -60,11 +61,11 @@ export default function Page() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12 grow">
       <section className="mx-auto max-w-2xl">
-        <h1 className="mb-8 text-center text-3xl font-semibold">Contact Us</h1>
-
-        <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
+        <h1 className="text-3xl font-semibold">Contact Us</h1>
+        <p className="mb-4">Have any Question? Send a Quick Messageand we'll reply shortly</p>
+        <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-2">
           {/* Name Field */}
           <Controller
             name="name"
@@ -100,35 +101,6 @@ export default function Page() {
                   aria-invalid={fieldState.invalid}
                   placeholder="your.email@example.com"
                 />
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
-                )}
-              </Field>
-            )}
-          />
-
-          {/* Subject Field */}
-          <Controller
-            name="subject"
-            control={form.control}
-            render={({ field, fieldState }) => (
-              <Field data-invalid={fieldState.invalid}>
-                <FieldLabel htmlFor={field.name}>Subject</FieldLabel>
-                <NativeSelect
-                  {...field}
-                  id={field.name}
-                  aria-invalid={fieldState.invalid}
-                >
-                  <NativeSelectOption value="">Select a subject</NativeSelectOption>
-                  {SUBJECT_OPTIONS.map((option) => (
-                    <NativeSelectOption
-                      key={option.value}
-                      value={option.value}
-                    >
-                      {option.label}
-                    </NativeSelectOption>
-                  ))}
-                </NativeSelect>
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
                 )}

@@ -23,11 +23,6 @@
     "radix-ui": "^1.4.3",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-<<<<<<< HEAD
-    "react-hook-form": "^7.71.2",
-=======
-    "react-hot-toast": "^2.6.0",
->>>>>>> 060f4f89501fa50388febeaea069dec1d6a3c997
     "shadcn": "^4.0.6",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.5.0",

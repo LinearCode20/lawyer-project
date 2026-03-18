@@ -1,5 +1,4 @@
 import AreasOfLaw from "@/components/Areas-of-law/areas-of-law";
-import CaptureEmail from "@/components/Capture-email/CaptureEmail";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { pricingPlans } from "@/data/home";
@@ -117,24 +116,6 @@ export default function Home() {
         </div>
       </section>
 
-      <CaptureEmail />
-      {/* <section className=" py-20 bg-accent ">
-        <div className="container mx-auto ">
-          <h1 className="text-3xl font-semibold mb-4">Areas of Law</h1>
-          <ul>
-            {faq.map((area) => (
-              <li key={area.Qus} className="p-2 border-b border-gray-300">
-                <div className="flex justify-between items-center">
-                  <span>{area.Qus}</span>
-                  <span>
-                    <Plus size={16} />
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section> */}
     </div>
   );
 }

@@ -14,7 +14,7 @@ export default function Page() {
   };
 
   return (
-    <div className="">
+    <div className="grow">
       <section className="py-20">
         <div className="container mx-auto">
            

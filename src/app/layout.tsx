@@ -19,9 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased bg-background text-foreground`}>
+      <body className={`antialiased min-h-screen flex flex-col bg-background text-foreground `}>
         <AppHeader />
-        {children}
+        {/* <main className="flex-1 flex flex-col h-full"> */}
+          {children}
+          {/* </main> */}
         <AppFooter />
         <Toaster />
 
