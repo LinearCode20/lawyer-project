@@ -27,7 +27,7 @@ export default function RootLayout({
         {children}
         {/* </main> */}
         <AppFooter />
-        <Toaster position="top-right" />
+        <Toaster position="top-right" closeButton richColors theme="light" />
 
         {/* Tawk Chat Script */}
         <Script

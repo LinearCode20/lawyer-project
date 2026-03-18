@@ -17,24 +17,27 @@ const formSchema = z.object({
   email: z.email({ message: "Please enter a valid email" }).min(1, {
     message: "Please enter an email",
   }),
-  area: z.string().min(1, { message: "Please select an area" }),
+  areasOfLaw: z.string().min(1, { message: "Please select an area of law" }),
 });
 export default function AppFooter() {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (data: { email: string; area: string }) => {
+  const handleSubmit = async (data: { email: string; areasOfLaw: string }) => {
     // Demo: Just log the email
     try {
       console.log("Email submitted:", email);
-      const response = await axios.post("/api/capture-email", data);
+      const response = await axios.post("/api/capture-email", {
+        ...data,
+        emailType: "CaptureEmail",
+      });
       setIsSubmitted(true);
       setEmail("");
       setTimeout(() => setIsSubmitted(false), 3000);
       toast.success("Thanks for subscribing!");
-    } catch (e) {
+    } catch (e: any) {
       console.log(e);
-      toast.error("Something went wrong");
+      toast.error(e?.response?.data?.message || "Something went wrong");
     }
 
     // Reset success message after 3 seconds
@@ -44,7 +47,7 @@ export default function AppFooter() {
 
     defaultValues: {
       email: "",
-      area: "",
+      areasOfLaw: "",
     },
   });
   return (
@@ -101,7 +104,7 @@ export default function AppFooter() {
               className="grid gap-4 "
             >
               <Controller
-                name="area"
+                name="areasOfLaw"
                 control={form.control}
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
@@ -144,15 +147,15 @@ export default function AppFooter() {
                 )}
               />
 
-              <Button type="submit" variant="default" className="">
-                Subscribe
+              <Button
+                type="submit"
+                variant="default"
+                className=""
+                disabled={form.formState.isSubmitting}
+              >
+                {form.formState.isSubmitting ? "Submitting..." : "Subscribe"}
               </Button>
             </form>
-            {isSubmitted && (
-              <p className="mt-3 text-sm text-green-600 dark:text-green-400">
-                Thanks for subscribing!
-              </p>
-            )}
           </div>
         </div>
 
