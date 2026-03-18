@@ -19,13 +19,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased min-h-screen flex flex-col bg-background text-foreground `}>
+      <body
+        className={`antialiased min-h-screen flex flex-col bg-background text-foreground `}
+      >
         <AppHeader />
         {/* <main className="flex-1 flex flex-col h-full"> */}
-          {children}
-          {/* </main> */}
+        {children}
+        {/* </main> */}
         <AppFooter />
-        <Toaster />
+        <Toaster position="top-right" />
 
         {/* Tawk Chat Script */}
         <Script
@@ -46,7 +48,6 @@ export default function RootLayout({
             `,
           }}
         />
-        <Toaster position="top-right" />
       </body>
     </html>
   );
