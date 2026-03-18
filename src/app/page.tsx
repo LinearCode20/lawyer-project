@@ -1,4 +1,5 @@
 import AreasOfLaw from "@/components/Areas-of-law/areas-of-law";
+import CaptureEmail from "@/components/Capture-email/CaptureEmail";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { pricingPlans } from "@/data/home";
@@ -116,6 +117,7 @@ export default function Home() {
         </div>
       </section>
 
+      <CaptureEmail />
       {/* <section className=" py-20 bg-accent ">
         <div className="container mx-auto ">
           <h1 className="text-3xl font-semibold mb-4">Areas of Law</h1>

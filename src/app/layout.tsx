@@ -3,6 +3,7 @@ import "./globals.css";
 import AppHeader from "@/components/ui/common/app-header";
 import AppFooter from "@/components/ui/common/app-footer";
 import Script from "next/dist/client/script";
+import { Toaster } from "react-hot-toast";
 
 const TAWK_URL = process.env.NEXT_PUBLIC_TAWK_URL;
 
@@ -42,6 +43,7 @@ export default function RootLayout({
             `,
           }}
         />
+        <Toaster position="top-right" />
       </body>
     </html>
   );
