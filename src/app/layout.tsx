@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import AppHeader from "@/components/ui/common/app-header";
-import AppFooter from "@/components/ui/common/app-footer";
 import Script from "next/dist/client/script";
+import AppHeader from "@/components/common/app-header";
+import AppFooter from "@/components/common/app-footer";
 
 const TAWK_URL = process.env.NEXT_PUBLIC_TAWK_URL;
 
