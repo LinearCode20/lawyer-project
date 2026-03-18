@@ -27,12 +27,7 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-    if (error instanceof z.ZodError) {
-      return NextResponse.json(
-        { message: "Invalid request data", errors: error.errors },
-        { status: 400 }
-      );
-    }
+
 
     console.error("Contact form error:", error);
     return NextResponse.json(
