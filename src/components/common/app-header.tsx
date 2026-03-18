@@ -11,7 +11,7 @@ export default function AppHeader() {
     { id: "about", label: "About Us", href: "/about" },
     { id: "pricing", label: "Pricing", href: "/#pricing" },
     { id: "faq", label: "FAQ", href: "/faq" },
-    { id: "contact", label: "Contact us", href: "#contact" }    
+    { id: "contact", label: "Contact us", href: "/contact-us" }    
   ];
 
   return (

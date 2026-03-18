@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import AppHeader from "@/components/ui/common/app-header";
-import AppFooter from "@/components/ui/common/app-footer";
 import Script from "next/dist/client/script";
+import AppHeader from "@/components/common/app-header";
+import AppFooter from "@/components/common/app-footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const TAWK_URL = process.env.NEXT_PUBLIC_TAWK_URL;
 
@@ -18,12 +19,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased bg-background text-foreground`}>
+      <body
+        className={`antialiased min-h-screen flex flex-col bg-background text-foreground `}
+      >
         <AppHeader />
+        {/* <main className="flex-1 flex flex-col h-full"> */}
         {children}
+        {/* </main> */}
         <AppFooter />
+        <Toaster position="top-right" closeButton richColors theme="light" />
 
-         {/* Tawk Chat Script */}
+        {/* Tawk Chat Script */}
         <Script
           id="tawk-to"
           strategy="afterInteractive"
