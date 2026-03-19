@@ -1,10 +1,9 @@
 
 import { NextRequest, NextResponse } from "next/server";
-//import { sendEmail } from "@/lib/resend";
 import { sendEmail } from "@/lib/mailer";
-import { z } from "zod";
 import fs from "fs";
 import path from "path";
+import { z } from "zod";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),

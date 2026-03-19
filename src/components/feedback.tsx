@@ -11,8 +11,7 @@ const testimonials = [
   {
     quote:
       "Perfect for Monday mornings. Fifteen minutes to get on top of changes, an hour logged by the end of the week.",
-    author_title: "Partner",
-    author_department: "Litigation",
+    author_title: "Partner, Litigation",
   },
   {
     quote:
@@ -27,26 +26,22 @@ const testimonials = [
   {
     quote:
       "Consistent, reliable updates that help us brief fee earners quickly without chasing multiple sources.",
-    author_title: "Director",
-    author_department: "Corporate Team",
+    author_title: "Director, Corporate Team",
   },
   {
     quote:
       "Exactly the right level of detail, concise but meaningful, and always well supported.",
-    author_title: "Senior Associate",
-    author_department: "Immigration",
+    author_title: "Senior Associate, Immigration",
   },
   {
     quote:
       "Client meetings are easier now. The summaries help me prepare in minutes instead of hours.",
-    author_title: "Solicitor",
-    author_department: "Family Law",
+    author_title: "Solicitor, Family Law",
   },
   {
     quote:
       "Excellent coverage across all key areas. Ideal for small firms wanting consistent CPD.",
-    author_title: "Principal Solicitor",
-    author_department: "High Street Firm",
+    author_title: "Principal Solicitor, High Street Firm",
   },
   {
     quote:
@@ -62,23 +57,18 @@ const testimonials = [
 
 export default function Feedback() {
   return (
-    <section className="p-4 py-20" id="pricing">
+    <section className="p-4 py-20 bg-accent" id="pricing">
       <div className="container mx-auto">
-        <h1 className="text-3xl font-semibold mb-4">Pricing Plans</h1>
+        <h1 className="text-3xl font-semibold mb-4">What Practitioners say</h1>
         <div className="flex flex-wrap gap-6 w-full justify-center">
           {testimonials.map((plan, index) => (
             <Card
               key={index}
-              className="flex-1 min-w-70 max-w-sm flex flex-col"
+              className="flex-1 min-w-70 max-w-sm flex flex-col "
             >
               <CardContent className="flex-1">
-                <div className="text-3xl font-bold">
-                  {plan.currency}
-                  {plan.price}
-                  <span className="text-base font-normal text-gray-600">
-                    /{plan.period}
-                  </span>
-                </div>
+                <p className="">"{plan.quote}"</p>
+                <p className="mt-4 font-bold">{plan.author_title}</p>
               </CardContent>
             </Card>
           ))}

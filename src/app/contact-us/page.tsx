@@ -14,6 +14,8 @@ import {
   NativeSelect,
   NativeSelectOption,
 } from "@/components/ui/native-select";
+import { Card, CardContent } from "@/components/ui/card";
+import { Mail } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
@@ -52,9 +54,12 @@ export default function Page() {
       const response = await axios.post("/api/contact", data);
       toast.success("Message sent successfully!");
       form.reset();
-    } catch (error) {
+    } catch (error: any) {
       console.error("Contact form submission error:", error);
-      toast.error("Failed to send message. Please try again.");
+      toast.error(
+        error.response?.data?.errors ||
+          "Failed to send message. Please try again.",
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -64,81 +69,91 @@ export default function Page() {
     <div className="container mx-auto px-4 py-12 grow">
       <section className="mx-auto max-w-2xl">
         <h1 className="text-3xl font-semibold">Contact Us</h1>
-        <p className="mb-4">Have any Question? Send a Quick Message and we'll reply shortly</p>
-        <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-2">
-          {/* Name Field */}
-          <Controller
-            name="name"
-            control={form.control}
-            render={({ field, fieldState }) => (
-              <Field data-invalid={fieldState.invalid}>
-                <FieldLabel htmlFor={field.name}>Name</FieldLabel>
-                <Input
-                  {...field}
-                  id={field.name}
-                  type="text"
-                  aria-invalid={fieldState.invalid}
-                  placeholder="Your full name"
-                />
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
+        <p className="mb-4">
+          Have any Question? Send a Quick Message and we'll reply shortly
+        </p>
+        <Card className="rounded-2xl shadow-2xl p-6">
+          <CardContent>
+            <form
+              onSubmit={form.handleSubmit(handleSubmit)}
+              className="space-y-2"
+            >
+              {/* Name Field */}
+              <Controller
+                name="name"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor={field.name}>Name</FieldLabel>
+                    <Input
+                      {...field}
+                      id={field.name}
+                      type="text"
+                      aria-invalid={fieldState.invalid}
+                      placeholder="Your full name"
+                    />
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
                 )}
-              </Field>
-            )}
-          />
+              />
 
-          {/* Email Field */}
-          <Controller
-            name="email"
-            control={form.control}
-            render={({ field, fieldState }) => (
-              <Field data-invalid={fieldState.invalid}>
-                <FieldLabel htmlFor={field.name}>Email</FieldLabel>
-                <Input
-                  {...field}
-                  id={field.name}
-                  type="email"
-                  aria-invalid={fieldState.invalid}
-                  placeholder="your.email@example.com"
-                />
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
+              {/* Email Field */}
+              <Controller
+                name="email"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor={field.name}>Email</FieldLabel>
+                    <Input
+                      {...field}
+                      id={field.name}
+                      type="email"
+                      aria-invalid={fieldState.invalid}
+                      placeholder="your.email@example.com"
+                    />
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
                 )}
-              </Field>
-            )}
-          />
+              />
 
-          {/* Message Field */}
-          <Controller
-            name="message"
-            control={form.control}
-            render={({ field, fieldState }) => (
-              <Field data-invalid={fieldState.invalid}>
-                <FieldLabel htmlFor={field.name}>Message</FieldLabel>
-                <Textarea
-                  {...field}
-                  id={field.name}
-                  aria-invalid={fieldState.invalid}
-                  placeholder="How can we help you?"
-                  rows={6}
-                />
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
+              {/* Message Field */}
+              <Controller
+                name="message"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor={field.name}>Message</FieldLabel>
+                    <Textarea
+                      {...field}
+                      id={field.name}
+                      aria-invalid={fieldState.invalid}
+                      placeholder="How can we help you?"
+                      rows={6}
+                    />
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
                 )}
-              </Field>
-            )}
-          />
+              />
 
-          {/* Submit Button */}
-          <Button
-            type="submit"
-            variant="default"
-            disabled={isSubmitting}
-            className="w-full"
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </Button>
-        </form>
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                variant="default"
+                disabled={isSubmitting}
+                className="w-full p-5"
+              >
+                <Mail />
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
       </section>
     </div>
   );

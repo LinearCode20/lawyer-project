@@ -1,4 +1,5 @@
 import AreasOfLaw from "@/components/Areas-of-law/areas-of-law";
+import Feedback from "@/components/feedback";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -126,6 +127,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Feedback />
     </div>
   );
 }
