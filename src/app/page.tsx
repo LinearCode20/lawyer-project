@@ -1,6 +1,13 @@
 import AreasOfLaw from "@/components/Areas-of-law/areas-of-law";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { pricingPlans } from "@/data/home";
 //import { Plus } from "lucide-react";
 import Link from "next/link";
@@ -19,9 +26,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className=" grow ">
       <section>
-        <main className="container mx-auto flex min-h-[80vh] w-full  flex-col items-center justify-between py-20  sm:items-start">
+        <main className="container mx-auto flex min-h-[80vh] w-full  flex-col items-center justify-between py-20  sm:items-start p-4">
           <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
             <div className="p-2 rounded-full text-xs py-1 bg-primary/20">
               Mounthly CPD for solicitors and Law Firms
@@ -55,7 +62,7 @@ export default function Home() {
           </div>
         </main>
       </section>
-      <section className=" py-20 bg-accent">
+      <section className="p-4 py-20 bg-accent">
         <div className="container mx-auto ">
           <h1 className="text-3xl font-semibold mb-4">Features</h1>
           <ul>
@@ -68,59 +75,52 @@ export default function Home() {
         </div>
       </section>
 
-      <section className=" py-20 ">
+      <section className="p-4 py-20 ">
         <div className="container mx-auto " id="area-of-law">
           <h1 className="text-3xl font-semibold mb-4">Areas of Law</h1>
           <AreasOfLaw />
         </div>
       </section>
 
-      <section className="py-20" id="pricing">
+      <section className="p-4 py-20" id="pricing">
         <div className="container mx-auto">
           <h1 className="text-3xl font-semibold mb-4">Pricing Plans</h1>
-          <div className="flex gap-4 w-full overflow-auto">
+          <div className="flex flex-wrap gap-6 w-full justify-center">
             {pricingPlans.map((plan) => (
               <Card
                 key={plan.id}
-                className="relative flex-1 min-w-[200px] flex flex-col border border-gray-300 bg-white"
+                className="flex-1 min-w-70 max-w-sm flex flex-col"
               >
-                {/* Popular Badge */}
-                {/* {plan.badge && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wide bg-gray-100 text-gray-800 border-2 border-red-600 rounded-full">
-                      {plan.badge}
+                <CardHeader>
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-gray-600">
+                        {plan.type}
+                      </p>
+                      <CardTitle className="text-xl font-bold mt-2">
+                        {plan.title}
+                      </CardTitle>
+                      <CardDescription className="mt-1">
+                        {plan.subtitle}
+                      </CardDescription>
+                    </div>
+                    {plan.badge && (
+                      <span className="bg-primary/10 text-primary text-xs font-semibold px-2 py-1 rounded-full">
+                        {plan.badge}
+                      </span>
+                    )}
+                  </div>
+                </CardHeader>
+
+                <CardContent className="flex-1">
+                  <div className="text-3xl font-bold">
+                    {plan.currency}
+                    {plan.price}
+                    <span className="text-base font-normal text-gray-600">
+                      /{plan.period}
                     </span>
                   </div>
-                )} */}
-
-                {/* Card Content */}
-                <div className="flex flex-col flex-1 p-6">
-                  {/* Type Label */}
-                  <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 mb-2">
-                    {plan.type}
-                  </span>
-
-                  {/* Plan Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">
-                    {plan.title}
-                  </h3>
-
-                  {/* Plan Description */}
-                  <p className="text-sm text-gray-600 mb-4">{plan.subtitle}</p>
-
-                  {/* Price */}
-                  <div className="mt-auto">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                      {plan.currency}
-                      {plan.price}/{plan.period}
-                    </h2>
-
-                    {/* CTA Button */}
-                    {/* <Button className="w-full text-white font-semibold py-2 px-4 rounded-md transition-colors">
-                      {plan.buttonText}
-                    </Button> */}
-                  </div>
-                </div>
+                </CardContent>
               </Card>
             ))}
           </div>

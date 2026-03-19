@@ -4,6 +4,7 @@ import Script from "next/dist/client/script";
 import AppHeader from "@/components/common/app-header";
 import AppFooter from "@/components/common/app-footer";
 import { Toaster } from "@/components/ui/sonner";
+import FooterNew from "@/components/common/footer-new";
 
 const TAWK_URL = process.env.NEXT_PUBLIC_TAWK_URL;
 
@@ -26,7 +27,8 @@ export default function RootLayout({
         {/* <main className="flex-1 flex flex-col h-full"> */}
         {children}
         {/* </main> */}
-        <AppFooter />
+        {/* <AppFooter /> */}
+        <FooterNew />
         <Toaster position="top-right" closeButton richColors theme="light" />
 
         {/* Tawk Chat Script */}
