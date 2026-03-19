@@ -64,7 +64,7 @@ export default function Page() {
     <div className="container mx-auto px-4 py-12 grow">
       <section className="mx-auto max-w-2xl">
         <h1 className="text-3xl font-semibold">Contact Us</h1>
-        <p className="mb-4">Have any Question? Send a Quick Messageand we'll reply shortly</p>
+        <p className="mb-4">Have any Question? Send a Quick Message and we'll reply shortly</p>
         <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-2">
           {/* Name Field */}
           <Controller

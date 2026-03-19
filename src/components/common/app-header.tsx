@@ -1,51 +1,53 @@
 "use client";
-import React, { useState } from "react";
 import Link from "next/link";
-import { Search, User } from "lucide-react";
+import { Button } from "../ui/button";
 
 export default function AppHeader() {
-  const [activeItem, setActiveItem] = useState("home");
-
   const navItems = [
     { id: "home", label: "Home", href: "/" },
-    { id: "about", label: "About Us", href: "/about" },
-    { id: "pricing", label: "Pricing", href: "/#pricing" },
+    { id: "areas", label: "Areas of Law", href: "/areas-of-law" },
     { id: "faq", label: "FAQ", href: "/faq" },
-    { id: "contact", label: "Contact us", href: "/contact-us" }    
+    { id: "sample", label: "Free Sample", href: "/free-sample" },
+    { id: "contact", label: "Contact Us", href: "/contact-us" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md border-b ">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between divide-x-2">
           {/* Logo/Brand Section */}
-          <div className="flex items-center">
-            <Link href="/" className="flex flex-col items-start space-x-2">
-              <span className="text-2xl uppercase tracking-widest font-bold  ">
-                Law Edge
+          <div className="flex items-center ">
+            <Link href="/" className="flex flex-col">
+              <span className="text-2xl text-nowrap uppercase tracking-[8px] font-bold text-[#1A365D]">
+                LAW EDGE
               </span>
-              <span className="text-xs ">Professional CPD</span>
+              <span className="text-sm text-nowrap tracking-widest font-semibold text-[#1A365D]">
+                PROFESSIONAL CPD
+              </span>
             </Link>
           </div>
 
           {/* Navigation Menu */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.id}
-                href={item.href}
-                className={`text-sm font-medium transition-colors duration-200 relative py-2 ${
-                  activeItem === item.id ? "" : "text-gray-400 "
-                }`}
-                onClick={() => setActiveItem(item.id)}
-              >
-                {item.label}
-                {activeItem === item.id && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 " />
-                )}
-              </Link>
-            ))}
-          </nav>
+          <div className="flex items-center gap-8">
+            <nav className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  className="text-sm font-medium text-gray-700 hover:text-[#1A365D] transition-colors duration-200"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            {/* CTA Button */}
+            <div className="hidden md:block">
+              <Button variant="default" size="sm">
+                Subscribe for Free
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </header>

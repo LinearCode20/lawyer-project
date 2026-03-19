@@ -21,20 +21,31 @@ export default function Home() {
   return (
     <div className="">
       <section>
-        <main className="container mx-auto flex min-h-[80vh] w-full  flex-col items-center justify-between py-32   sm:items-start">
+        <main className="container mx-auto flex min-h-[80vh] w-full  flex-col items-center justify-between py-20  sm:items-start">
           <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-            <div className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+            <div className="p-2 rounded-full text-xs py-1 bg-primary/20">
+              Mounthly CPD for solicitors and Law Firms
+            </div>
+            <div className=" text-5xl font-semibold  tracking-tight ">
               <p>Stay sharp. </p>
               <p>Bill confidently. </p>
               <p>Learn fast.</p>
             </div>
-            <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-              The original one-hour CPD concise, source-backed updates delivered
-              hassle-free. Read in under 20 minutes, yet designed to provide one
-              full hour of CPD credit, monthly, across all key practice areas.
+            <ul className="text-lg font-medium space-y-2">
+              <li>The original SRA-aligned one-hour monthly CPD.</li>
+              <li>
+                Concise, source-backed updates written by experienced
+                practitioners.
+              </li>
+              <li>Read in 20 minutes. No seminars. No webinars. No admin.</li>
+              <li>Starting from £29 per month.</li>
+            </ul>
+            <p className=" text-sm leading-8 ">
+              Covers and records your SRA continuing professional development
+              requirements across the year.
             </p>
           </div>
-          <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+          <div className="flex flex-col gap-4 text-base font-medium sm:flex-row mt-4">
             <Link href={"/#area-of-law"} rel="noopener noreferrer">
               <Button>Browse Area of Law</Button>
             </Link>
@@ -67,7 +78,7 @@ export default function Home() {
       <section className="py-20" id="pricing">
         <div className="container mx-auto">
           <h1 className="text-3xl font-semibold mb-4">Pricing Plans</h1>
-          <div className="flex gap-4">
+          <div className="flex gap-4 w-full overflow-auto">
             {pricingPlans.map((plan) => (
               <Card
                 key={plan.id}
@@ -115,7 +126,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }
