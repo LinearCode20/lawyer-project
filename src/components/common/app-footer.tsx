@@ -7,11 +7,11 @@ import { Input } from "@/components/ui/input";
 import { Controller, useForm } from "react-hook-form";
 import { Field, FieldError, FieldLabel } from "../ui/field";
 import { NativeSelect, NativeSelectOption } from "../ui/native-select";
-import { areaOfLaw } from "../Areas-of-law/data";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { toast } from "sonner";
+import { areaOfLaw } from "@/app/law-area/[slug]/data";
 
 const formSchema = z.object({
   email: z.email({ message: "Please enter a valid email" }).min(1, {
