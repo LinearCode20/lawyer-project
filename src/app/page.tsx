@@ -30,8 +30,8 @@ export default function Home() {
     <div className=" grow ">
       <section className="bg-white">
         <main className="container mx-auto flex min-h-[80vh] w-full  flex-col items-center justify-between py-20  sm:items-start p-4">
-          <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-            <div className="p-2 rounded-full text-xs py-1 bg-primary/20">
+          <div className="flex flex-col items-center gap-4 text-center sm:items-start sm:text-left">
+            <div className="p-2 rounded-full text-xs py-1 bg-primary/15">
               Mounthly CPD for solicitors and Law Firms
             </div>
             <div className=" text-5xl font-semibold  tracking-tight ">
@@ -39,17 +39,23 @@ export default function Home() {
               <p>Bill confidently. </p>
               <p>Learn fast.</p>
             </div>
-            <ul className=" font-medium ">
-              <li className=" font-bold">The original SRA-aligned one-hour monthly CPD.</li>
+            <ul className=" font-medium space-y-2">
+              <li className=" font-bold">
+                The original SRA-aligned one-hour monthly CPD.
+              </li>
               <li className="font-bold">
                 Concise, source-backed updates written by experienced
                 practitioners.
               </li>
-              <li className="font-bold">Read in 20 minutes. No seminars. No webinars. No admin.</li>
-              <li className="font-bold">Used by sole of and law firm .</li>
+              <li className="font-bold">
+                Read in 20 minutes. No seminars. No webinars. No admin.
+              </li>
+              <li className="font-bold text-xs">
+                Used by sole practitioners and law firm accros the UK.
+              </li>
               <li className="font-bold">Starting from £29 per month.</li>
             </ul>
-            <p className=" text-sm leading-8 ">
+            <p className=" text-sm  ">
               Covers and records your SRA continuing professional development
               requirements across the year.
             </p>

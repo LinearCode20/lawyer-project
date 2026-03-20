@@ -9,16 +9,16 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground [a]:hover:bg-primary/80",
+        default: "bg-primary text-primary-foreground [a]:hover:bg-primary/80 transition-all duration-300 hover:shadow-[0_0_20px_rgba(26,54,93,0.6),0_0_40px_rgba(26,54,93,0.4)] hover:scale-105 hover:brightness-110",
         outline:
-          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50 transition-all duration-300 hover:shadow-[0_0_15px_rgba(148,163,184,0.3),0_0_30px_rgba(148,163,184,0.15)] hover:scale-[1.02]",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground transition-all duration-300 hover:shadow-[0_0_15px_rgba(148,163,184,0.4),0_0_30px_rgba(148,163,184,0.2)] hover:scale-[1.03]",
         ghost:
-          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
+          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50 transition-all duration-300 hover:shadow-[0_0_10px_rgba(148,163,184,0.2),0_0_20px_rgba(148,163,184,0.1)] hover:scale-[1.01]",
         destructive:
-          "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(220,38,38,0.5),0_0_40px_rgba(220,38,38,0.3)] hover:scale-105 hover:brightness-110",
+        link: "text-primary underline-offset-4 hover:underline transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(26,54,93,0.4)]",
       },
       size: {
         default:

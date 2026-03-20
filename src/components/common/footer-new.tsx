@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 
 export default function FooterNew() {
   return (
-    <footer className="border-t border-gray-300 bg-background p-4 py-8 text-sm">
+    <footer className="border-t border-gray-300 bg-white p-4 py-8 text-sm">
       <div className=" mx-auto ">
         <div className="flex flex-col justify-center items-center">
           <div className="mb-6">
