@@ -5,6 +5,7 @@ import AppHeader from "@/components/common/app-header";
 import AppFooter from "@/components/common/app-footer";
 import { Toaster } from "@/components/ui/sonner";
 import FooterNew from "@/components/common/footer-new";
+import { ScrollToTop } from "@/components/common/scroll-to-top";
 
 const TAWK_URL = process.env.NEXT_PUBLIC_TAWK_URL;
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body
         className={`antialiased min-h-screen flex flex-col bg-background text-foreground `}
       >
+        <ScrollToTop />
         <AppHeader />
         {/* <main className="flex-1 flex flex-col h-full"> */}
         {children}

@@ -84,22 +84,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="p-4 py-20 ">
-        <div className="container mx-auto ">
-          <h1 className="text-3xl font-semibold mb-4">Features</h1>
-          <ul>
-            <li>Monthly one-hour CPD per selected areas</li>
-            <li>Crisp case summaries with practice points</li>
-            <li>Linked to official sources and legislation</li>
-            <li> CPD reflection prompts and logging template</li>
-            <li>One clean PDF each month</li>
-          </ul>
-        </div>
-      </section>
-
-
       <Feedback />
-      
     </div>
   );
 }

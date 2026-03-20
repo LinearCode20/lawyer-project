@@ -62,11 +62,11 @@ export default function Feedback() {
     <section className="p-4 py-20 ">
       <div className="container mx-auto">
         <h1 className="text-3xl font-semibold mb-4">What Practitioners say</h1>
-        <div className="flex flex-wrap gap-6 w-full justify-center">
+        <div className="flex flex-wrap gap-6 w-full justify-start">
           {testimonials.map((plan, index) => (
             <Card
               key={index}
-              className="flex-1 min-w-70 max-w-sm flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(26,54,93,0.6),0_0_40px_rgba(26,54,93,0.4)] hover:scale-105 hover:brightness-110 cursor-pointer"
+              className="flex-1 min-w-70 max-w-[23rem] flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(26,54,93,0.6),0_0_40px_rgba(26,54,93,0.4)] hover:scale-105 hover:brightness-110 cursor-pointer"
             >
               <CardContent className="flex-1">
                 <p className="">"{plan.quote}"</p>
