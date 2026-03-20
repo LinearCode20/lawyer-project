@@ -6,6 +6,8 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
+import { Button } from "./ui/button";
+import { Download } from "lucide-react";
 
 const testimonials = [
   {
@@ -57,7 +59,7 @@ const testimonials = [
 
 export default function Feedback() {
   return (
-    <section className="p-4 py-20 bg-accent" id="pricing">
+    <section className="p-4 py-20 ">
       <div className="container mx-auto">
         <h1 className="text-3xl font-semibold mb-4">What Practitioners say</h1>
         <div className="flex flex-wrap gap-6 w-full justify-center">
@@ -72,6 +74,12 @@ export default function Feedback() {
               </CardContent>
             </Card>
           ))}
+        </div>
+        <div className=" mt-4 md:flex justify-evenly gap-2 w-full">
+          <Button className="w-1/2">Subscribe for free </Button>
+          <Button className="grow" variant="secondary">
+            <Download /> Download free sample
+          </Button>
         </div>
       </div>
     </section>

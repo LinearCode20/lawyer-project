@@ -28,7 +28,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className=" grow ">
-      <section>
+      <section className="bg-white">
         <main className="container mx-auto flex min-h-[80vh] w-full  flex-col items-center justify-between py-20  sm:items-start p-4">
           <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
             <div className="p-2 rounded-full text-xs py-1 bg-primary/20">
@@ -39,14 +39,15 @@ export default function Home() {
               <p>Bill confidently. </p>
               <p>Learn fast.</p>
             </div>
-            <ul className="text-lg font-medium space-y-2">
-              <li>The original SRA-aligned one-hour monthly CPD.</li>
-              <li>
+            <ul className=" font-medium ">
+              <li className=" font-bold">The original SRA-aligned one-hour monthly CPD.</li>
+              <li className="font-bold">
                 Concise, source-backed updates written by experienced
                 practitioners.
               </li>
-              <li>Read in 20 minutes. No seminars. No webinars. No admin.</li>
-              <li>Starting from £29 per month.</li>
+              <li className="font-bold">Read in 20 minutes. No seminars. No webinars. No admin.</li>
+              <li className="font-bold">Used by sole of and law firm .</li>
+              <li className="font-bold">Starting from £29 per month.</li>
             </ul>
             <p className=" text-sm leading-8 ">
               Covers and records your SRA continuing professional development
@@ -54,16 +55,30 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col gap-4 text-base font-medium sm:flex-row mt-4">
-            <Link href={"/#area-of-law"} rel="noopener noreferrer">
-              <Button>Browse Area of Law</Button>
+            <Link href={"/#"} rel="noopener noreferrer">
+              <Button variant={"secondary"}>Download free sample</Button>
             </Link>
-            <Link href={"/#pricing"} rel="noopener noreferrer">
-              <Button variant={"outline"}>See Pricing</Button>
+            <Link href="#" rel="noopener noreferrer">
+              <Button>Subscribe for free</Button>
             </Link>
           </div>
         </main>
       </section>
-      <section className="p-4 py-20 bg-accent">
+
+      <section className="p-4 py-20 ">
+        <div className="container mx-auto " id="area-of-law">
+          <h1 className="text-3xl font-semibold ">Areas of Law</h1>
+          <p className="mb-8 text-sm">
+            Explore the partice areas covered by Law Edge. Click each to view a
+            snapshot
+          </p>
+          <Card className="p-0 rounded-4xl">
+            <AreasOfLaw />
+          </Card>
+        </div>
+      </section>
+
+      <section className="p-4 py-20 ">
         <div className="container mx-auto ">
           <h1 className="text-3xl font-semibold mb-4">Features</h1>
           <ul>
@@ -73,58 +88,6 @@ export default function Home() {
             <li> CPD reflection prompts and logging template</li>
             <li>One clean PDF each month</li>
           </ul>
-        </div>
-      </section>
-
-      <section className="p-4 py-20 ">
-        <div className="container mx-auto " id="area-of-law">
-          <h1 className="text-3xl font-semibold mb-4">Areas of Law</h1>
-          <AreasOfLaw />
-        </div>
-      </section>
-
-      <section className="p-4 py-20" id="pricing">
-        <div className="container mx-auto">
-          <h1 className="text-3xl font-semibold mb-4">Pricing Plans</h1>
-          <div className="flex flex-wrap gap-6 w-full justify-center">
-            {pricingPlans.map((plan) => (
-              <Card
-                key={plan.id}
-                className="flex-1 min-w-70 max-w-sm flex flex-col"
-              >
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-gray-600">
-                        {plan.type}
-                      </p>
-                      <CardTitle className="text-xl font-bold mt-2">
-                        {plan.title}
-                      </CardTitle>
-                      <CardDescription className="mt-1">
-                        {plan.subtitle}
-                      </CardDescription>
-                    </div>
-                    {plan.badge && (
-                      <span className="bg-primary/10 text-primary text-xs font-semibold px-2 py-1 rounded-full">
-                        {plan.badge}
-                      </span>
-                    )}
-                  </div>
-                </CardHeader>
-
-                <CardContent className="flex-1">
-                  <div className="text-3xl font-bold">
-                    {plan.currency}
-                    {plan.price}
-                    <span className="text-base font-normal text-gray-600">
-                      /{plan.period}
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
