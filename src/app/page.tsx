@@ -97,7 +97,9 @@ export default function Home() {
         </div>
       </section>
 
+
       <Feedback />
+      
     </div>
   );
 }

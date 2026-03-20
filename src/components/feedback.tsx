@@ -66,7 +66,7 @@ export default function Feedback() {
           {testimonials.map((plan, index) => (
             <Card
               key={index}
-              className="flex-1 min-w-70 max-w-sm flex flex-col "
+              className="flex-1 min-w-70 max-w-sm flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(26,54,93,0.6),0_0_40px_rgba(26,54,93,0.4)] hover:scale-105 hover:brightness-110 cursor-pointer"
             >
               <CardContent className="flex-1">
                 <p className="">"{plan.quote}"</p>
