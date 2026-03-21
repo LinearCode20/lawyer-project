@@ -161,7 +161,7 @@ export default function SubscribeFree() {
                 <FieldLabel className="font-bold">
                   Choose up to three areas
                 </FieldLabel>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid md:grid-cols-2 gap-2">
                   {areaOfLaw.map((area) => (
                     <FieldLabel
                       key={area}
