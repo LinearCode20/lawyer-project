@@ -1,4 +1,5 @@
 import AreasOfLaw from "@/components/Areas-of-law/areas-of-law";
+import DownloadFreeSample from "@/components/download-free-sample";
 import Feedback from "@/components/feedback";
 import { Button } from "@/components/ui/button";
 import {
@@ -85,6 +86,10 @@ export default function Home() {
       </section>
 
       <Feedback />
+
+      <section className="p-4 py-20 ">
+        <DownloadFreeSample />
+      </section>
     </div>
   );
 }
