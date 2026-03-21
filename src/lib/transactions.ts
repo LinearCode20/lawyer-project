@@ -20,3 +20,45 @@ export async function CaptureEmailData(data: CaptureEmail) {
   }
 }
 
+/**
+ * Save data for free sample user info
+ */
+type FreeSample = {
+  full_name: string;
+  email: string;
+  created_at: string;
+};
+
+export async function FreeSampleData(data: FreeSample) {
+  const { error } = await supabase
+    .from("free_sample_request")
+    .insert([data]);
+
+  if (error) {
+    console.error("Supabase insert error:", error);
+    throw new Error("Failed to save information.");
+  }
+}
+
+
+/**
+ * Save data for free sample user info
+ */
+type SubscribeFree = {
+  full_name: string;
+  email: string;
+  firm_name: string;
+  selected_areas: string;
+  created_at: string;
+};
+
+export async function SubscribeFree(data: SubscribeFree) {
+  const { error } = await supabase
+    .from("free_subscribe_request")
+    .insert([data]);
+
+  if (error) {
+    console.error("Supabase insert error:", error);
+    throw new Error("Failed to save information.");
+  }
+}
