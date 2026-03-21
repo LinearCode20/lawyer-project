@@ -1,5 +1,7 @@
 import AreasOfLaw from "@/components/Areas-of-law/areas-of-law";
+import DownloadFreeSample from "@/components/download-free-sample";
 import Feedback from "@/components/feedback";
+import SubscribeFree from "@/components/subscribe-free";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -85,6 +87,11 @@ export default function Home() {
       </section>
 
       <Feedback />
+
+      <section className="p-4 py-20 grid md:grid-cols-2 gap-4 ">
+        <SubscribeFree />
+        <DownloadFreeSample />
+      </section>
     </div>
   );
 }
