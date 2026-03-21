@@ -5,17 +5,17 @@ import { cn } from "@/lib/utils";
 
 export default function AppHeader() {
   const navItems = [
-    { id: "home", label: "Home", href: "/" },
+    { id: "home", label: "Home", href: "/#home" },
     { id: "areas", label: "Areas of Law", href: "/#area-of-law" },
     { id: "faq", label: "FAQ", href: "/faq" },
     {
       id: "sample",
       label: "Downlaod Free Sample",
-      href: "/#free-sample",
+      href: "/subscribe",
       className:
         "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground cursor-pointer inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(148,163,184,0.4),0_0_30px_rgba(148,163,184,0.2)] hover:scale-[1.03]",
     },
-    { id: "contact", label: "Contact Us", href: "/contact-us" },
+    { id: "contact", label: "Contact Us", href: "/#contact-us" },
   ];
 
   return (
@@ -53,13 +53,15 @@ export default function AppHeader() {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Button
-                variant="default"
-                size="sm"
-                className="transition-all duration-300 hover:shadow-[0_0_20px_rgba(26,54,93,0.6),0_0_40px_rgba(26,54,93,0.4)] hover:scale-105 hover:brightness-110"
-              >
-                Subscribe for Free
-              </Button>
+              <Link href="/subscribe">
+                <Button
+                  variant="default"
+                  size="sm"
+                  className="transition-all duration-300 hover:shadow-[0_0_20px_rgba(26,54,93,0.6),0_0_40px_rgba(26,54,93,0.4)] hover:scale-105 hover:brightness-110"
+                >
+                  Subscribe for Free
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

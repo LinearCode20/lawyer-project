@@ -1,4 +1,5 @@
 import AreasOfLaw from "@/components/Areas-of-law/areas-of-law";
+import ContactForm from "@/components/contact-form";
 import DownloadFreeSample from "@/components/download-free-sample";
 import Feedback from "@/components/feedback";
 import SubscribeFree from "@/components/subscribe-free";
@@ -30,7 +31,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className=" grow ">
-      <section className="bg-white">
+      <section className="bg-white" id="home">
         <main className="container mx-auto flex min-h-[80vh] w-full  flex-col items-center justify-between py-20  sm:items-start p-4">
           <div className="flex flex-col items-center gap-4 text-center sm:items-start sm:text-left">
             <div className="p-2 rounded-full text-xs py-1 bg-primary/15">
@@ -67,7 +68,7 @@ export default function Home() {
               <Button variant={"secondary"}>Download free sample</Button>
             </Link>
             <Link href="#" rel="noopener noreferrer">
-              <Button>Subscribe for free</Button>
+              <Button className="w-full">Subscribe for free</Button>
             </Link>
           </div>
         </main>
@@ -88,9 +89,14 @@ export default function Home() {
 
       <Feedback />
 
-      <section className="p-4 py-20 grid md:grid-cols-2 gap-4 ">
-        <SubscribeFree />
-        <DownloadFreeSample />
+      <section className="p-4 py-20 bg-white" id="contact-us">
+        <div className="container mx-auto" >
+          <h1 className="text-3xl font-semibold">Contact Us</h1>
+          <p className="mb-4">Have Question? Send us a Quick Message.</p>
+          <div className="max-w-2xl">
+            <ContactForm />
+          </div>
+        </div>
       </section>
     </div>
   );
