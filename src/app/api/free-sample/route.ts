@@ -1,11 +1,13 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { FreeSampleData } from "@/lib/transactions";
+import { SubscribeFree } from "@/lib/transactions";
 
 const contactSchema = z.object({
   full_name: z.string().min(2, "full name is required"),
-  email: z.string().email("Invalid email")
+  email: z.string().email("Invalid email"),
+  firm_name: z.string().min(1, "firm name is required"),
+  selected_areas: z.string().min(1, "selected areas is required"),
 });
 
 export async function POST(request: NextRequest) {
@@ -25,13 +27,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { full_name, email } = result.data;
+    const { full_name, email, firm_name, selected_areas } = result.data;
 
     // FREE CHAPTER EMAIL
     const sampleFile = `${process.env.BASE_URL}/pdfs/Private Client Update September 2025 Legal Edge CPD Ltd.pdf`;
     // Save data
-    await FreeSampleData({
-      full_name, email,
+    await SubscribeFree({
+      full_name, email, firm_name, selected_areas,
       created_at: new Date().toISOString(),
     });
 

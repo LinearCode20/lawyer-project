@@ -59,11 +59,13 @@ export default function DownloadFreeSample() {
     // Reset success message after 3 seconds
   };
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Download Free Sample</CardTitle>
+    <Card className="h-fit">
+      <CardHeader className="border-b">
+        <CardTitle className="text-3xl font-semibold ">
+          Download Free Sample
+        </CardTitle>
         <CardDescription>
-          Get a free sample of our legal writing services
+          Enter your details to receive a sample issue
         </CardDescription>
       </CardHeader>
       <CardContent>
