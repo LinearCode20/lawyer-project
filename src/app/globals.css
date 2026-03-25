@@ -17,8 +17,8 @@
     --popover-foreground: oklch(0.145 0 0);
     --primary: hsl(221, 47%, 22%);
     --primary-foreground: oklch(0.985 0 0);
-    --secondary: hsl(212, 48%, 58%);
-    --secondary-foreground: oklch(100% 0 0);
+    --secondary: rgb(196, 162, 109);
+    --secondary-foreground: hsl(221, 47%, 22%);
     --muted: oklch(0.97 0 0);
     --muted-foreground: oklch(0.556 0 0);
     --accent: oklch(0.97 0 0);
