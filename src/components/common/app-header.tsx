@@ -6,10 +6,10 @@ import { cn } from "@/lib/utils";
 export default function AppHeader() {
   const navItems = [
     { id: "home", label: "Testimonials", href: "/#home" },
-    { id: "areas", label: "Contact Us", href: "/#area-of-law" },
+    { id: "contact", label: "Contact Us", href: "/#area-of-law" },
     { id: "areas", label: "Areas", href: "/#area-of-law" },
-    { id: "areas", label: "How It Works", href: "/#area-of-law" },
-    { id: "faq", label: "FAQ", href: "/faq" },
+    { id: "how-it-works", label: "How It Works", href: "/#area-of-law" },
+    { id: "faq", label: "FAQ", href: "/#faq" },
   ];
 
   return (

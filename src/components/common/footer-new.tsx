@@ -11,40 +11,23 @@ export default function FooterNew() {
       <div className="container mx-auto">
         <div className="flex flex-col">
           {/* Copyright Notice */}
-          <div className="mb-3">
-            <p className="text-gray-900">
-              © 2026 Law Edge Professional CPD. All rights reserved.
-            </p>
-          </div>
-
-          {/* Company Info */}
-          <div className="mb-3">
-            <p className="text-gray-600">
-              Law Edge CPD is a trading style name for Estates and Wills
-              Advisory Group Limited (company number 13958194).
-            </p>
-          </div>
-
-          {/* Disclaimer */}
-          <div className="mb-4">
-            <p className="text-gray-600">
-              This service provides general CPD learning material only. It is
-              not legal advice and should not be relied upon as such. Always
-              exercise your own professional judgment and verify sources where
-              necessary.
-            </p>
+          <div className="mb-3 text-2xl font-semibold">
+            Law Edge - Practical CPD for modern solicitors
           </div>
 
           {/* Policy Links */}
           <div className="flex flex-wrap gap-4">
-            <Link href="/privacy-policy" className=" hover:underline">
-              Privacy Policy
+            <Link href="/#contact-us" className=" hover:underline">
+Contact
             </Link>
             <Link href="/terms" className="hover:underline">
-              Website Terms
+              Terms
+            </Link>
+            <Link href="/privacy-policy" className=" hover:underline">
+              Privacy
             </Link>
             <Link href="/cookie-policy" className="hover:underline">
-              Cookies Policy
+              Cookies
             </Link>
           </div>
         </div>

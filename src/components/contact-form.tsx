@@ -120,7 +120,7 @@ export default function ContactForm() {
             variant="default"
             disabled={isSubmitting}
             className="w-full"
-            size={"sm"}
+            size={"lg"}
           >
             <Mail />
             {isSubmitting ? "Sending..." : "Send Message"}

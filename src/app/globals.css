@@ -10,18 +10,18 @@
 :root {
   --font-poppins: "Poppins", sans-serif;
     --background: hsl(210, 40%, 98%);
-    --foreground: hsl(221, 47%, 22%);
+    --foreground: #0c2034;
     --card: oklch(1 0 0);
-    --card-foreground: hsl(221, 47%, 22%);
+    --card-foreground: #0c2034;
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
-    --primary: hsl(221, 47%, 22%);
+    --primary: #0c2034;
     --primary-foreground: oklch(0.985 0 0);
     --secondary: rgb(196, 162, 109);
-    --secondary-foreground: hsl(221, 47%, 22%);
+    --secondary-foreground: #0c2034;
     --muted: oklch(0.97 0 0);
     --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
+    --accent: rgb(246, 244, 240);
     --accent-foreground: oklch(0.205 0 0);
     --destructive: oklch(0.577 0.245 27.325);
     --border: oklch(0.922 0 0);
@@ -48,7 +48,7 @@
     --background: hsl(210, 40%, 98%);
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.205 0 0);
-    --card-foreground: hsl(221, 47%, 22%);
+    --card-foreground: #0c2034;
     --popover: oklch(0.205 0 0);
     --popover-foreground: oklch(0.985 0 0);
     --primary: oklch(0.922 0 0);
