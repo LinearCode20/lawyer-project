@@ -12,15 +12,15 @@ export default function AreasOfLaw() {
   };
 
   return (
-    <ul>
+    <ul className="bg-white">
       {areaOfLaw.map((area, index) => (
-        <li key={index} className="p-3 border-b border-gray-300">
+        <li key={index} className=" relative border-b border-gray-300">
           <div
-            className="flex justify-between items-center cursor-pointer"
+            className="flex z-10 justify-between p-6 py-8 items-center cursor-pointer hover:bg-gray-100"
             onClick={() => toggleItem(index)}
           >
             <span className="font-semibold">{area.title}</span>
-            <span>
+            <span className="text-secondary">
               {" "}
               {openIndex === index ? (
                 <Minus size={16} />
@@ -31,10 +31,10 @@ export default function AreasOfLaw() {
           </div>
 
           <div
-            className={`overflow-hidden transition-all duration-300 ${
+            className={`overflow-hidden transition-all  duration-300 ${
               openIndex === index
-                ? "max-h-40 opacity-100 mt-2"
-                : "max-h-0 opacity-0"
+                ? "h-auto opacity-100 mt-2 p-6"
+                : "h-0 opacity-0"
             }`}
           >
             <p className="text-gray-600">
