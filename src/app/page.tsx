@@ -19,6 +19,7 @@ import { pricingPlans } from "@/data/home";
 //import { Plus } from "lucide-react";
 import Link from "next/link";
 import FAQ from "@/components/faq";
+import Pricing from "@/components/pricing";
 
 // const areaOfLaw = [
 //   "Commercial & Corporate",
@@ -41,7 +42,7 @@ export default function Home() {
         hours searching.
       </div>
       <WhyChooseUs />
-
+      <Pricing />
       <Feedback />
       <FAQ />
       <BottomBanner />
