@@ -44,7 +44,7 @@ export default function Home() {
       </div>
       <WhyChooseUs />
       <Pricing />
-      <section className="p-4 py-20 bg-white">
+      <section className="p-4 py-20">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <SubscribeFree />
           <DownloadFreeSample />
