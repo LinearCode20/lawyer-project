@@ -22,6 +22,8 @@ import { Input } from "./ui/input";
 import axios from "axios";
 import { toast } from "sonner";
 import { Checkbox } from "./ui/checkbox";
+import { NativeSelect } from "./ui/native-select";
+import { pricingCards } from "./pricing";
 
 const areaOfLaw = [
   "Commercial & Corporate",
@@ -39,6 +41,7 @@ const formSchema = z.object({
   email: z.email({ message: "Please enter a valid email" }).min(1, {
     message: "Please enter an email",
   }),
+  plan_type: z.string().min(1, { message: "Please select a plan type" }),
   full_name: z.string().min(1, { message: "Please enter a name" }),
   firm_name: z.string().min(1, { message: "Please enter a firm name" }),
   selected_areas: z
@@ -62,6 +65,7 @@ export default function SubscribeFree() {
       full_name: "",
       email: "",
       firm_name: "",
+      plan_type: "",
       selected_areas: [],
     },
   });
@@ -82,9 +86,8 @@ export default function SubscribeFree() {
     // Reset success message after 3 seconds
   };
   return (
-    <Card>
-      <CardHeader className="border-b">
-        <span className="bg-secondary/30 rounded-3xl text-primary p-1 px-2 inline-block w-fit text-xs">First month free</span>
+    <Card className="py-6">
+      <CardHeader className="border-b px-6">
         <CardTitle className="text-3xl font-semibold ">
           Subscribe for Free{" "}
         </CardTitle>
@@ -93,11 +96,62 @@ export default function SubscribeFree() {
           changed later
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="px-6">
+        <p>No searching. No admin. Just structured CPD delivered monthly.</p>
+        <p className="text-muted mt-4">Step 1 of 2</p>
+        <p className="text-muted-foreground" />
+        <p className="my-4">
+          Join solicitors completing CPD consistently each month
+        </p>
+
+        <p className="font-semibold ">Your plan</p>
+        <p className="text-muted">You can change this anytime</p>
         <form
           onSubmit={form.handleSubmit(handleSubmit)}
           className="grid gap-4 "
         >
+          <Controller
+            name="plan_type"
+            control={form.control}
+            render={({ field, fieldState }) => (
+              <Field data-invalid={fieldState.invalid}>
+                <NativeSelect
+                  {...field}
+                  id={field.name}
+                  aria-invalid={fieldState.invalid}
+                >
+                  <option value="">Select</option>
+                  {pricingCards.map((area) => (
+                    <option key={area.title} value={area.title}>
+                      {`${area.title} (${area.price})`}
+                    </option>
+                  ))}
+                </NativeSelect>
+
+                {fieldState.invalid && (
+                  <FieldError errors={[fieldState.error]} />
+                )}
+              </Field>
+            )}
+          />
+          <Controller
+            name="email"
+            control={form.control}
+            render={({ field, fieldState }) => (
+              <Field data-invalid={fieldState.invalid}>
+                <Input
+                  {...field}
+                  id={field.name}
+                  type="email"
+                  aria-invalid={fieldState.invalid}
+                  placeholder="Work Email"
+                />
+                {fieldState.invalid && (
+                  <FieldError errors={[fieldState.error]} />
+                )}
+              </Field>
+            )}
+          />
           <Controller
             name="full_name"
             control={form.control}
@@ -116,24 +170,7 @@ export default function SubscribeFree() {
               </Field>
             )}
           />
-          <Controller
-            name="email"
-            control={form.control}
-            render={({ field, fieldState }) => (
-              <Field data-invalid={fieldState.invalid}>
-                <Input
-                  {...field}
-                  id={field.name}
-                  type="email"
-                  aria-invalid={fieldState.invalid}
-                  placeholder="Email"
-                />
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
-                )}
-              </Field>
-            )}
-          />
+
           <Controller
             name="firm_name"
             control={form.control}
@@ -283,7 +320,11 @@ export default function SubscribeFree() {
             />
           </div>
 
-          <Button type="submit" disabled={form.formState.isSubmitting}>
+          <Button
+            type="submit"
+            variant="secondary"
+            disabled={form.formState.isSubmitting}
+          >
             {form.formState.isSubmitting ? "Submitting..." : "Subscribe"}
           </Button>
         </form>
