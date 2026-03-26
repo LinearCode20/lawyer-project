@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
@@ -22,6 +22,9 @@ import { Input } from "./ui/input";
 import axios from "axios";
 import { toast } from "sonner";
 import { Checkbox } from "./ui/checkbox";
+import { NativeSelect } from "./ui/native-select";
+import { pricingCards } from "./pricing";
+import { ArrowLeft, MoveLeft } from "lucide-react";
 
 const areaOfLaw = [
   "Commercial & Corporate",
@@ -39,6 +42,7 @@ const formSchema = z.object({
   email: z.email({ message: "Please enter a valid email" }).min(1, {
     message: "Please enter an email",
   }),
+  plan_type: z.string().min(1, { message: "Please select a plan type" }),
   full_name: z.string().min(1, { message: "Please enter a name" }),
   firm_name: z.string().min(1, { message: "Please enter a firm name" }),
   selected_areas: z
@@ -55,6 +59,8 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>;
 
 export default function SubscribeFree() {
+  const [currentStep, setCurrentStep] = useState<1 | 2>(1);
+
   const form = useForm({
     resolver: zodResolver(formSchema),
 
@@ -62,9 +68,21 @@ export default function SubscribeFree() {
       full_name: "",
       email: "",
       firm_name: "",
+      plan_type: "",
       selected_areas: [],
     },
   });
+
+  const handleNext = async () => {
+    const isValid = await form.trigger(["plan_type", "email", "full_name"]);
+    if (isValid) {
+      setCurrentStep(2);
+    }
+  };
+
+  const handleBack = () => {
+    setCurrentStep(1);
+  };
 
   const handleSubmit = async (data: FormSchema) => {
     // Demo: Just log the email
@@ -82,9 +100,8 @@ export default function SubscribeFree() {
     // Reset success message after 3 seconds
   };
   return (
-    <Card>
-      <CardHeader className="border-b">
-        <span className="bg-secondary/30 rounded-3xl text-primary p-1 px-2 inline-block w-fit text-xs">First month free</span>
+    <Card className="py-6">
+      <CardHeader className="border-b px-6">
         <CardTitle className="text-3xl font-semibold ">
           Subscribe for Free{" "}
         </CardTitle>
@@ -93,200 +110,297 @@ export default function SubscribeFree() {
           changed later
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="p-6">
+        <p>No searching. No admin. Just structured CPD delivered monthly.</p>
+        <p className="text-muted mt-4">Step {currentStep} of 2</p>
+        <div className="w-full bg-gray-200 rounded-full h-1.5 ">
+          <div
+            className="bg-secondary h-1.5 rounded-full transition-all duration-300"
+            style={{ width: currentStep === 1 ? "50%" : "100%" }}
+          />
+        </div>
+
+        {currentStep === 2 && (
+          <p className="my-4 text-muted cursor-pointer" onClick={handleBack}>
+            <MoveLeft className="inline-block h-4" /> Edit Details
+          </p>
+        )}
+        {currentStep === 1 ? (
+          <div className="mt-4">
+            <p className="mb-4">
+              Join solicitors completing CPD consistently each month
+            </p>
+            <p className="font-semibold ">Your plan</p>
+            <p className="text-muted">You can change this anytime</p>
+          </div>
+        ) : (
+          <>
+            <p className="font-semibold  ">You're almost done</p>
+            <p className="text-muted my-4">
+              Setting up CPD for your account (your email)
+            </p>
+
+            <div className="border-primary bg-gray-100 p-4 rounded">
+              <p className="font-semibold">{form.getValues("plan_type")} </p>
+              <p className="text-muted">First month free. No charge today</p>
+            </div>
+          </>
+        )}
         <form
           onSubmit={form.handleSubmit(handleSubmit)}
-          className="grid gap-4 "
+          className="grid gap-4 mt-4"
         >
-          <Controller
-            name="full_name"
-            control={form.control}
-            render={({ field, fieldState }) => (
-              <Field data-invalid={fieldState.invalid}>
-                <Input
-                  {...field}
-                  id={field.name}
-                  type="text"
-                  placeholder="Full Name"
-                  aria-invalid={fieldState.invalid}
-                />
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
-                )}
-              </Field>
-            )}
-          />
-          <Controller
-            name="email"
-            control={form.control}
-            render={({ field, fieldState }) => (
-              <Field data-invalid={fieldState.invalid}>
-                <Input
-                  {...field}
-                  id={field.name}
-                  type="email"
-                  aria-invalid={fieldState.invalid}
-                  placeholder="Email"
-                />
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
-                )}
-              </Field>
-            )}
-          />
-          <Controller
-            name="firm_name"
-            control={form.control}
-            render={({ field, fieldState }) => (
-              <Field data-invalid={fieldState.invalid}>
-                <Input
-                  {...field}
-                  id={field.name}
-                  type="text"
-                  aria-invalid={fieldState.invalid}
-                  placeholder="Firm Name"
-                />
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
-                )}
-              </Field>
-            )}
-          />
-
-          <Controller
-            name="selected_areas"
-            control={form.control}
-            render={({ field, fieldState }) => (
-              <Field data-invalid={fieldState.invalid}>
-                <FieldLabel className="font-bold">
-                  Choose up to three areas
-                </FieldLabel>
-                <div className="grid md:grid-cols-2 gap-2">
-                  {areaOfLaw.map((area) => (
-                    <FieldLabel
-                      key={area}
-                      htmlFor={`area-${area}`}
-                      className="cursor-pointer"
+          {currentStep === 1 && (
+            <>
+              <Controller
+                name="plan_type"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <NativeSelect
+                      {...field}
+                      id={field.name}
+                      aria-invalid={fieldState.invalid}
                     >
-                      <Field
-                        orientation="horizontal"
-                        data-invalid={fieldState.invalid}
-                      >
-                        <Checkbox
-                          id={`area-${area}`}
-                          checked={field.value.includes(area)}
-                          onCheckedChange={(checked) => {
-                            if (checked) {
-                              // Add to array if less than 3 selected
-                              if (field.value.length < 3) {
-                                field.onChange([...field.value, area]);
-                              }
-                            } else {
-                              // Remove from array
-                              field.onChange(
-                                field.value.filter((v: string) => v !== area),
-                              );
-                            }
-                          }}
-                        />
-                        <FieldContent>
-                          <FieldTitle>{area}</FieldTitle>
-                        </FieldContent>
-                      </Field>
-                    </FieldLabel>
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground mt-2">
-                  {field.value.length}/3 selected
-                </p>
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
-                )}
-              </Field>
-            )}
-          />
-          <p className="text-sm text-gray-400">
-            Select any three to start. You can update your chosen areas later
-          </p>
-          <Controller
-            name="card_holder_name"
-            control={form.control}
-            render={({ field, fieldState }) => (
-              <Field data-invalid={fieldState.invalid}>
-                <Input
-                  {...field}
-                  id={field.name}
-                  type="text"
-                  aria-invalid={fieldState.invalid}
-                  placeholder="Card Holder Name"
-                />
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
-                )}
-              </Field>
-            )}
-          />
-          <Controller
-            name="card_no"
-            control={form.control}
-            render={({ field, fieldState }) => (
-              <Field data-invalid={fieldState.invalid}>
-                <Input
-                  {...field}
-                  id={field.name}
-                  type="text"
-                  aria-invalid={fieldState.invalid}
-                  placeholder="Card Number"
-                />
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
-                )}
-              </Field>
-            )}
-          />
-          <div className=" grid md:grid-cols-2 gap-4">
-            <Controller
-              name="card_expiry_date"
-              control={form.control}
-              render={({ field, fieldState }) => (
-                <Field data-invalid={fieldState.invalid}>
-                  <Input
-                    {...field}
-                    id={field.name}
-                    type="text"
-                    aria-invalid={fieldState.invalid}
-                    placeholder="Expiry Date"
-                  />
-                  {fieldState.invalid && (
-                    <FieldError errors={[fieldState.error]} />
-                  )}
-                </Field>
-              )}
-            />
-            <Controller
-              name="card_cvv"
-              control={form.control}
-              render={({ field, fieldState }) => (
-                <Field data-invalid={fieldState.invalid}>
-                  <Input
-                    {...field}
-                    id={field.name}
-                    type="text"
-                    aria-invalid={fieldState.invalid}
-                    placeholder="CVC"
-                  />
-                  {fieldState.invalid && (
-                    <FieldError errors={[fieldState.error]} />
-                  )}
-                </Field>
-              )}
-            />
-          </div>
+                      <option value="">Select</option>
+                      {pricingCards.map((area) => (
+                        <option
+                          key={area.title}
+                          value={`${area.title} (${area.price})`}
+                        >
+                          {`${area.title} (${area.price})`}
+                        </option>
+                      ))}
+                    </NativeSelect>
 
-          <Button type="submit" disabled={form.formState.isSubmitting}>
-            {form.formState.isSubmitting ? "Submitting..." : "Subscribe"}
-          </Button>
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+              <Controller
+                name="email"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <Input
+                      {...field}
+                      id={field.name}
+                      type="email"
+                      aria-invalid={fieldState.invalid}
+                      placeholder="Work Email"
+                    />
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+              <Controller
+                name="full_name"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <Input
+                      {...field}
+                      id={field.name}
+                      type="text"
+                      placeholder="Full Name"
+                      aria-invalid={fieldState.invalid}
+                    />
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+            </>
+          )}
+
+          {currentStep === 2 && (
+            <>
+              <Controller
+                name="selected_areas"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field
+                    data-invalid={fieldState.invalid}
+                    className="border-b pb-8"
+                  >
+                    <FieldLabel className="font-bold">Choose areas</FieldLabel>
+                    <p className="text-muted">
+                      Select areas relevant to your work
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-2">
+                      {areaOfLaw.map((area) => (
+                        <FieldLabel
+                          key={area}
+                          htmlFor={`area-${area}`}
+                          className="cursor-pointer"
+                        >
+                          <Field
+                            orientation="horizontal"
+                            data-invalid={fieldState.invalid}
+                          >
+                            <Checkbox
+                              id={`area-${area}`}
+                              checked={field.value.includes(area)}
+                              onCheckedChange={(checked) => {
+                                if (checked) {
+                                  // Add to array if less than 3 selected
+                                  if (field.value.length < 3) {
+                                    field.onChange([...field.value, area]);
+                                  }
+                                } else {
+                                  // Remove from array
+                                  field.onChange(
+                                    field.value.filter(
+                                      (v: string) => v !== area,
+                                    ),
+                                  );
+                                }
+                              }}
+                            />
+                            <FieldContent>
+                              <FieldTitle>{area}</FieldTitle>
+                            </FieldContent>
+                          </Field>
+                        </FieldLabel>
+                      ))}
+                    </div>
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+              <div className="mt-4">
+                <p className="font-semibold">Secure Payment setup</p>
+                <p className="text-sm text-gray-400">
+                  Required to activate your free month. You won't be charged
+                  today
+                </p>
+              </div>
+              <Controller
+                name="card_holder_name"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <Input
+                      {...field}
+                      id={field.name}
+                      type="text"
+                      aria-invalid={fieldState.invalid}
+                      placeholder="Card Holder Name"
+                    />
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+              <Controller
+                name="card_no"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <Input
+                      {...field}
+                      id={field.name}
+                      type="text"
+                      aria-invalid={fieldState.invalid}
+                      placeholder="Card Number"
+                    />
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+              <div className=" grid md:grid-cols-2 gap-4">
+                <Controller
+                  name="card_expiry_date"
+                  control={form.control}
+                  render={({ field, fieldState }) => (
+                    <Field data-invalid={fieldState.invalid}>
+                      <Input
+                        {...field}
+                        id={field.name}
+                        type="text"
+                        aria-invalid={fieldState.invalid}
+                        placeholder="Expiry Date"
+                      />
+                      {fieldState.invalid && (
+                        <FieldError errors={[fieldState.error]} />
+                      )}
+                    </Field>
+                  )}
+                />
+                <Controller
+                  name="card_cvv"
+                  control={form.control}
+                  render={({ field, fieldState }) => (
+                    <Field data-invalid={fieldState.invalid}>
+                      <Input
+                        {...field}
+                        id={field.name}
+                        type="text"
+                        aria-invalid={fieldState.invalid}
+                        placeholder="CVC"
+                      />
+                      {fieldState.invalid && (
+                        <FieldError errors={[fieldState.error]} />
+                      )}
+                    </Field>
+                  )}
+                />
+              </div>
+
+              <div className="flex gap-2">
+                <Checkbox />
+                <p className="text-muted">
+                  I agree the Terms and Privacy Policy
+                </p>
+              </div>
+
+              <div className="flex gap-2">
+                <Checkbox />
+                <p className="text-muted">I agree the Cookies Policy</p>
+              </div>
+            </>
+          )}
+
+          {currentStep === 1 && (
+            <div className="flex justify-end">
+              <Button
+                type="button"
+                variant="secondary"
+                onClick={handleNext}
+                disabled={form.formState.isSubmitting}
+                className="w-full"
+              >
+                Continue
+              </Button>
+            </div>
+          )}
+
+          {currentStep === 2 && (
+            <Button
+              type="submit"
+              variant="secondary"
+              disabled={form.formState.isSubmitting}
+              className="w-full"
+            >
+              {form.formState.isSubmitting ? "Submitting..." : "Subscribe"}
+            </Button>
+          )}
         </form>
+        <p className="mt-8 text-center text-muted">
+          {currentStep === 1
+            ? "Takes under 2 minutes. No obligations"
+            : "No Charge Today. Cancel Anytime. Instant access after signup"}
+        </p>
       </CardContent>
     </Card>
   );

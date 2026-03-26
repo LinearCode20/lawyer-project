@@ -19,6 +19,8 @@ import { pricingPlans } from "@/data/home";
 //import { Plus } from "lucide-react";
 import Link from "next/link";
 import FAQ from "@/components/faq";
+import Pricing from "@/components/pricing";
+import { CircleCheck } from "lucide-react";
 
 // const areaOfLaw = [
 //   "Commercial & Corporate",
@@ -41,7 +43,34 @@ export default function Home() {
         hours searching.
       </div>
       <WhyChooseUs />
+      <Pricing />
+      <section className="p-4 py-20 bg-white">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+          <SubscribeFree />
+          <DownloadFreeSample />
+        </div>
+      </section>
+      <section className="p-4 py-20 bg-white">
+        <div className="container mx-auto flex flex-col md:flex-row gap-4 justify-around">
+          <div className="flex-1 flex items-start gap-2">
+            <CircleCheck className="shrink-0 inline-block text-secondary h-4" />
+            <p>
+              Used by solicitors across the UK, from sole practitioners to Legal
+              500 firms and multi-office practices
+            </p>
+          </div>
 
+          <div className="flex-1 flex items-start gap-2">
+            <CircleCheck className="shrink-0 inline-block text-secondary h-4" />
+            <p>Written by practising lawyers with practical focus</p>
+          </div>
+
+          <div className="flex-1 flex items-start gap-2">
+            <CircleCheck className="shrink-0 inline-block text-secondary h-4" />
+            <p>Structured for reflection, recording, and compliance</p>
+          </div>
+        </div>
+      </section>
       <Feedback />
       <FAQ />
       <BottomBanner />
