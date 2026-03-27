@@ -9,75 +9,164 @@ import privateClientCPD from "@/components/Areas-of-law/pages/private-client-cpd
 import propertyLawCPD from "@/components/Areas-of-law/pages/property-law-cpd";
 import regulatoryComplianceCPD from "@/components/Areas-of-law/pages/regulatory-compliance-cpd";
 
-type AreaOfLaw = {
+export type AreaOfLaw = {
   title: string;
   answer: string;
   link?: string;
   component?: React.FC;
+  tags?: string[];
+  discriptions?: string;
 };
 
 export const areaOfLaw: AreaOfLaw[] = [
   {
-    title: "Commercial & Corporate CPD",
+    title: "Commercial & Corporate",
     answer:
-      "Monthly legal CPD updates for lawyers in Commercial & Corporate law.  Law Edge Professional CPD provides concise, structured monthly updates designed specifically for solicitors and legal professionals working in commercial and corporate practice.",
+      "Monthly legal CPD updates for lawyers in Commercial & Corporate law.",
     link: "/law-area/commercial-corporate-cpd",
-    component:commercialCorporateCPD
+    component: commercialCorporateCPD,
+    tags: [
+      "Company law developments and statutory changes",
+      "Corporate governance",
+      "Shareholder disputes and minority protection",
+      "Transactional structures and commercial risks",
+      "Directors' duties",
+      "Compliance and regulatory developments",
+    ],
+    discriptions:
+      "Concise monthly CPD updates focused on the most relevant developments in commercial and corporate law. Covers company law, governance, shareholder issues, transactions, and directors' duties, with clear explanation of practical impact. Designed to be read in under 20 minutes while delivering one hour of CPD and supporting SRA competence and record keeping.",
   },
   {
-    title: "Litigation & Dispute Resolution CPD",
+    title: "Litigation & Dispute Resolution",
     answer:
-      "Monthly legal CPD updates for solicitors in litigation and dispute resolution. Stay current with concise, practical monthly updates covering civil procedure, case law developments, litigation strategy, costs, and dispute resolution techniques. Each issue is designed to highlight what has changed, why it matters, and how it impacts day-to-day contentious work.",
-      link: "/law-area/litigation-dispute-resolution-cpd",
-      component:litigationDisputeResolutionCPD
+      "Monthly legal CPD updates for solicitors in litigation and dispute resolution.",
+    link: "/law-area/litigation-dispute-resolution-cpd",
+    component: litigationDisputeResolutionCPD,
+    tags: [
+      "Recent case law anecung migation strategy",
+      "CIVIL Proceture Rules",
+      "Disclosure and evidence",
+      "Costs and funding",
+      "Mediation and ADR",
+      "Court practice changes",
+    ],
+    discriptions:
+      "Monthly CPD updates covering civil procedure, case law, litigation strategy, costs, and dispute resolution. Focused on practical impact, including how developments affect live cases, risk, and client advice. Structured for quick reading with one hour of CPD and easy recording for SRA requirements.",
   },
   {
-    title: "Employment Law CPD",
-    answer:
-      "Monthly legal CPD updates for solicitors in employment law. Stay current with concise, practical monthly updates covering tribunal decisions, legislative developments, workplace rights, discrimination law, and employer obligations. Each issue focuses on what has changed, why it matters, and how it affects day-to-day advisory and contentious employment work.",
+    title: "Employment Law",
+    answer: "Monthly legal CPD updates for solicitors in employment law.",
     link: "/law-area/employment-law-cpd",
-    component: employmentLawCPD
+    component: employmentLawCPD,
+    tags: [
+      "Tribunal decisions",
+      "Legislative reforms",
+      "Discrimination and equality",
+      "Dismissals and contracts",
+      "Workplace rights",
+      "Employer obligations",
+    ],
+    discriptions:
+      "Monthly updates covering tribunal decisions, legislation, discrimination law, and workplace obligations. Focused on practical application for advisory and contentious work, including contracts, dismissals, and policies. Designed for fast reading with one hour of CPD and structured reflection support.",
   },
   {
-    title: "Property Law (Residential & Commercial) CPD",
+    title: "Property Law",
     answer:
-      "Stay current with concise, practical monthly updates covering residential and commercial property transactions, landlord and tenant law, planning developments, and key case law affecting property practice. Each issue focuses on what has changed, why it matters, and how it impacts day-to-day transactional and advisory work.",
+      "Monthly CPD updates covering residential and commercial property law.",
     link: "/law-area/property-law-cpd",
-    component: propertyLawCPD 
+    component: propertyLawCPD,
+    tags: [
+      "Residential conveyancing",
+      "Commercial property",
+      "Landlord and tenant",
+      "Planning and development",
+      "Transaction risk",
+      "Title and compliance",
+    ],
+    discriptions:
+      "Monthly CPD updates covering residential and commercial property transactions, landlord and tenant issues, planning developments, and property risk. Focused on practical application for conveyancing and commercial property work, including drafting, due diligence, title, and compliance. Designed for quick reading with one hour of CPD and easy recording for SRA requirements.",
   },
   {
     title: "Family Law CPD",
-    answer:
-      "Stay current with concise, practical monthly updates covering divorce, financial remedies, children law, and procedural developments in the family courts. Each issue focuses on what has changed, why it matters, and how it impacts day-to-day advisory and contentious family work.",
+    answer: "Monthly legal CPD updates for solicitors in family law.",
     link: "/law-area/family-law-cpd",
-    component: familyLawCPD
+    component: familyLawCPD,
+    tags: [
+      "Financial remedies",
+      "Children law",
+      "Divorce and separation",
+      "Family procedure",
+      "Dispute resolution",
+      "Relevant case law",
+    ],
+    discriptions:
+      "Monthly updates covering divorce, financial remedies, children law, and family court procedure. Focused on practical impact for advisory and contentious work, including client strategy, negotiation, and case management. Designed to be read in under 20 minutes while providing one hour of CPD and structured reflection support.",
   },
   {
-    title: "Immigration Law CPD",
+    title: "Immigration",
     answer:
-      "Stay current with concise, practical monthly updates covering changes to the Immigration Rules, Home Office policy, tribunal decisions, and developments affecting visa routes, asylum claims, and compliance obligations. Each issue is designed to explain what has changed, why it matters, and how it impacts real client work.",
+      "Monthly legal CPD updates for solicitors and advisers in immigration law.",
     link: "/law-area/immigration-law-cpd",
-    component: immigrationLawCPD
+    component: immigrationLawCPD,
+    tags: [
+      "Immigration Rules and policy",
+      "Visa routes",
+      "Asylum and protection",
+      "Appeals and judicial review",
+      "Sponsorship and compliance",
+      "Tribunal decisions",
+    ],
+    discriptions:
+      "Monthly immigration law updates covering rule changes, Home Office policy, tribunal decisions, visa routes, and compliance obligations. Focused on practical use in applications, appeals, and sponsor compliance, with clear explanation of risk and next steps. Structured for quick reading with one hour of CPD and support for SRA competence records.",
   },
   {
-    title: "Regulatory & Compliance CPD",
+    title: "Regulatory & Compliance",
     answer:
-      "Stay current with concise, practical monthly updates covering regulatory developments, enforcement trends, governance obligations, and compliance frameworks across regulated sectors. Each issue focuses on what has changed, why it matters, and how it impacts advisory work, internal compliance, and risk management.",
+      "Monthly legal CPD updates for regulatory and compliance practitioners.",
     link: "/law-area/regulatory-compliance-cpd",
-    component: regulatoryComplianceCPD
+    component: regulatoryComplianceCPD,
+    tags: [
+      "Regulatory developments",
+      "Enforcement and investigations",
+      "Governance and risk",
+      "Compliance systems",
+      "Professional regulation",
+      "Conduct and ethics",
+    ],
+    discriptions:
+      "Monthly updates on regulatory developments, enforcement trends, governance obligations, and compliance frameworks. Focused on practical impact for advisory work, internal controls, and risk management, with clear guidance on what changes in practice. Designed for efficient reading with one hour of CPD and structured record keeping support.",
   },
   {
-    title: "Private Client CPD",
+    title: "Private",
     answer:
-      "Stay current with concise, practical monthly updates covering wills, trusts, estates, tax developments, and key case law affecting succession planning and probate. Each issue focuses on what has changed, why it matters, and how it impacts day-to-day private client work.",
+      "Monthly legal CPD updates for private client solicitors and advisers.",
     link: "/law-area/private-client-cpd",
-    component: privateClientCPD
+    component: privateClientCPD,
+    tags: [
+      "Wills and estate planning",
+      "Trusts and fiduciary duties",
+      "Probate and estate administration",
+      "Tax and succession planning",
+      "Court decisions",
+      "Private client risk issues",
+    ],
+    discriptions:
+      "Monthly private client updates covering wills, trusts, probate, estates, tax developments, and succession planning. Focused on practical application for drafting, estate administration, fiduciary decision-making, and tax-aware advice. Designed to be read quickly while delivering one hour of CPD and supporting SRA competence and record keeping.",
   },
   {
-    title: "Crime Law CPD",
-    answer:
-      "Stay current with concise, practical monthly updates covering developments in criminal law, sentencing guidance, procedural changes, and key appellate decisions. Each issue focuses on what has changed, why it matters, and how it impacts day-to-day criminal practice.",
+    title: "Crime",
+    answer: "Monthly legal CPD updates for criminal law practitioners.",
     link: "/law-area/crime-law-cpd",
-    component: crimeLawCPD
+    component: crimeLawCPD,
+    tags: [
+      "Criminal case law",
+      "Sentencing",
+      "Procedure",
+      "Evidence and disclosure",
+      "Advocacy and strategy",
+      "Court practice updates",
+    ],
+    discriptions:
+      "Monthly criminal law updates covering appellate decisions, sentencing, procedure, evidence, disclosure, and advocacy strategy. Focused on practical impact for defence and prosecution work, including case preparation, risk, and courtroom decision-making. Designed for concise reading with one hour of CPD and straightforward recording for SRA requirements.",
   },
 ];
