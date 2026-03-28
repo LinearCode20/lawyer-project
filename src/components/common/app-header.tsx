@@ -20,12 +20,7 @@ export default function AppHeader() {
             {/* Logo/Brand Section */}
             <div className="flex items-center ">
               <Link href="/" className="flex flex-col">
-                <span className="text-2xl text-nowrap uppercase tracking-[8px] font-bold text-[#1A365D]">
-                  LAW EDGE
-                </span>
-                <span className="text-xs text-nowrap tracking-widest font-light text-secondary">
-                  PROFESSIONAL CPD
-                </span>
+                <img src="/logo.png" alt="Logo" className="h-16 w-auto" />
               </Link>
             </div>
 
