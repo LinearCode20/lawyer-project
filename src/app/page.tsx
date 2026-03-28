@@ -48,13 +48,13 @@ export default function Home() {
       <WhyChooseUs />
       <Pricing />
       <section className="p-4 py-20" id="subscribe">
-        <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <SubscribeFree />
           <DownloadFreeSample />
         </div>
       </section>
       <section className="p-4 py-20 bg-white">
-        <div className=" mx-auto flex flex-col md:flex-row gap-4 justify-around">
+        <div className="md:max-w-6xl mx-auto flex flex-col md:flex-row gap-20 justify-evenly">
           <div className="flex-1 flex items-start gap-2">
             <CircleCheck className="shrink-0 inline-block text-secondary h-4" />
             <p>

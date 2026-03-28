@@ -10,10 +10,10 @@ export default function Hero() {
 
   return (
     <section className="bg-white" id="home">
-      <main className=" mx-auto min-h-[80vh] w-full  grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-between py-20  sm:items-start p-4">
+      <main className="md:max-w-6xl mx-auto min-h-[80vh] w-full  grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-between py-20  sm:items-start p-4">
         <div>
           <div className="flex flex-col items-center gap-4 text-center sm:items-start sm:text-left">
-            <div className="text-primary text-5xl font-semibold font-serif space-y-4 pr-4 pt-8 tracking-tight ">
+            <div className="text-primary text-5xl  font-serif space-y-4 pr-4 pt-8 tracking-tight ">
               <p>CPD you'll actually complete.</p>
               <p>Delivered monthly. </p>
               <p>No effort required.</p>

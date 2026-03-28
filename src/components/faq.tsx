@@ -14,7 +14,7 @@ export default function FAQ() {
 
   return (
     <section className="py-20 p-4" id="faq">
-      <div className=" mx-auto">
+      <div className="md:max-w-6xl mx-auto">
         <h1 className="text-3xl font-semibold mb-8 text-primary font-serif ">
           Common Questions before subscribing
         </h1>

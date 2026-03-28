@@ -3,9 +3,9 @@ import React from "react";
 export default function CPTSteps() {
   return (
     <section className="p-4 py-20 bg-white" id="how-it-works">
-      <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="p-4">
-          <h2 className="text-4xl font-semibold text-primary font-serif  ">
+          <h2 className="text-4xl  text-primary font-serif  ">
             CPD shouldn&apos;t take hours of your time
           </h2>
           <p className="my-8">
@@ -36,13 +36,13 @@ export default function CPTSteps() {
                 <div className="text-secondary text-xs font-semibold tracking-wider">
                   <span className="text-secondary/80"> CPD RECORD </span>
                   (AUDIT READY)
-                  <h3 className="text-primary font-serif mt-4 text-lg font-bold">
+                  <h3 className="text-primary font-serif mt-2 text-base font-bold">
                     Continuing Competence Record
                   </h3>
                 </div>
 
-                <div className="text-right aspect-video h-20">
-                  <img src={"/sub_logo.png"} alt="LAW EDGE" />
+                <div className="text-right -mt-4 ">
+                  <img src={"/sub_logo.png"} className="aspect-video h-20 object-cover " alt="LAW EDGE" />
                 </div>
               </div>
             </div>

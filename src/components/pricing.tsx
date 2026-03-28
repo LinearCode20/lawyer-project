@@ -47,13 +47,13 @@ export const pricingCards = [
 export default function Pricing() {
   return (
     <section className="p-4 py-20">
-      <div className="container mx-auto">
-        <h1 className="text-3xl font-semibold text-primary font-serif mb-4">Simple, transparent pricing</h1>
-        <p className="mb-4">
+      <div className="md:max-w-6xl mx-auto">
+        <h1 className="text-3xl  text-primary font-serif mb-4">Simple, transparent pricing</h1>
+        <p className="mb-4 mr-20">
           Choose the level of coverage that fits your practice. Clear monthly
           pricing. No hidden extras. First month free.
         </p>
-        <div className="flex flex-col md:flex-row  justify-around  mt-12">
+        <div className="flex flex-col md:flex-row  justify-between  mt-12">
           {pricingCards.map((card, index) => (
             <div
               key={index}

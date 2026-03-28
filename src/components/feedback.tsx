@@ -51,11 +51,11 @@ const testimonials = [
 export default function Feedback() {
   return (
     <section className="p-4 py-20 bg-white" id="testimonials">
-      <div className="">
-        <h1 className="text-3xl text-primary font-serif font-semibold mb-8">
+      <div className="md:max-w-6xl mx-auto">
+        <h1 className="text-3xl text-primary font-serif  mb-4">
           What Practitioners say
         </h1>
-        <p>
+        <p className="md:w-[60%]">
           Used by solicitors, department heads, and firms that want practical
           monthly CPD their teams will actually read and complete.
         </p>
