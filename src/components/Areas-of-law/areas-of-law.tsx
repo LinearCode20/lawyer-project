@@ -16,12 +16,15 @@ export default function AreasOfLaw() {
   return (
     <ul className="bg-white">
       {areaOfLaw.map((area, index) => (
-        <li key={index} className=" relative border-b border-gray-300">
+        <li
+          key={index}
+          className=" relative border border-gray-300 hover:bg-[#fbfbfb]"
+        >
           <div
-            className="flex z-10 justify-between p-6 py-8 items-center cursor-pointer hover:bg-gray-100"
+            className="flex z-10 justify-between p-6 py-8 items-center cursor-pointer "
             onClick={() => toggleItem(index)}
           >
-            <span className="font-semibold">{area.title}</span>
+            <span className="font-semibold text-primary">{area.title}</span>
             <span className="text-secondary">
               {" "}
               {openIndex === index ? (
@@ -55,13 +58,13 @@ export default function AreasOfLaw() {
 const ItemData = ({ area }: { area: AreaOfLaw }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className={"m-6 p-8 bg-gray-100 rounded-lg border border-primary/20"}>
-      <p className="text-gray-600">{area.answer}</p>
+    <div className={"m-6 p-4 bg-[#fbfbfe] rounded-lg border "}>
+      <p className="text-gray-600 mb-4">{area.answer}</p>
       <div className="flex flex-wrap gap-3">
         {area.tags?.map((tag, index) => (
           <p
             key={index}
-            className="text-slate-500 bg-slate-100 text-xs rounded-full px-2 py-1 border"
+            className="text-slate-500 bg-[#f3f5f7] text-xs rounded-full px-2 py-1"
           >
             {tag}
           </p>
@@ -82,26 +85,25 @@ const ItemData = ({ area }: { area: AreaOfLaw }) => {
             <div className="bg-accent rounded-lg border p-6 space-y-4 mt-4">
               <div className="flex justify-between items-start">
                 <p className="text-secondary">AREA SNAPSHOT</p>
-                <div>
-                  <div className="  font-semibold  tracking-widest">
-                    LAW EDGE
-                  </div>
-                  <div className="text-slate-500 text-[9px]">
-                    PROFESSIONAL CPD
-                  </div>
+                <div className="-mt-4">
+                  <img
+                    src="/sub_logo.png"
+                    alt="LAW EDGE"
+                    className="h-16 aspect-video object-cover rounded-md"
+                  />
                 </div>
               </div>
-              <h1 className="text-2xl font-semibold">{area.title}</h1>
+              <h1 className="text-2xl font-semibold text-primary font-serif">{area.title}</h1>
               <p className="text-slate-500">{area.discriptions}</p>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
       <span
-        className="ml-2 inline-flex items-center gap-1 text-primary font-medium  hover:gap-2 transition-all duration-300 relative group cursor-pointer"
+        className="mt-4 text-sm font-semibold inline-flex items-center gap-1 text-primary font-medium  hover:gap-2 transition-all duration-300 relative group cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
-        {isOpen ? "Read More" : "Read Less"}
+        {!isOpen ? "Read More" : "Read Less"}
         <MoveRight
           className={cn("duration-300 ease-in-out ", isOpen && "rotate-90")}
           size={16}

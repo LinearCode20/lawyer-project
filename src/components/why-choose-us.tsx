@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
     <section className="py-20 ">
       <div className=" px-4 grid grid-cols-1 md:grid-cols-2 ">
         <div className="p-4">
-          <h2 className="text-4xl font-semibold  ">
+          <h2 className="text-4xl font-semibold  font-serif text-primary  ">
             What you'll receive each month
           </h2>
           <p className="mt-8">
@@ -44,11 +44,11 @@ export default function WhyChooseUs() {
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card key={index} className="  rounded-xs">
+                <Card key={index} className="  rounded-xs bg-muted">
                   <CardContent className="flex  gap-4">
                     <Icon className="shrink-0 h-3 w-3 text-secondary" />
-                    <div>
-                      <p className="text-sm font-semibold">{feature.title}</p>
+                    <div className="flex-1 pr-3">
+                      <p className="font-semibold">{feature.title}</p>
                       <p className="text-muted-foreground">
                         {feature.description}
                       </p>
@@ -60,7 +60,9 @@ export default function WhyChooseUs() {
           </div>
         </div>
         <div className="p-4">
-          <h2 className="text-4xl font-semibold  ">Areas of Law covered</h2>
+          <h2 className="text-4xl font-semibold font-serif text-primary ">
+            Areas of Law covered
+          </h2>
           <p className="mt-8">
             Choose the practice areas relevant to your work. Each monthly issue
             is written to be concise, practical, and directly usable in

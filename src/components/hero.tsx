@@ -13,22 +13,22 @@ export default function Hero() {
       <main className=" mx-auto min-h-[80vh] w-full  grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-between py-20  sm:items-start p-4">
         <div>
           <div className="flex flex-col items-center gap-4 text-center sm:items-start sm:text-left">
-            <div className=" text-5xl font-semibold font-poppins space-y-4 tracking-tight ">
+            <div className="text-primary text-5xl font-semibold font-serif space-y-4 pr-4 pt-8 tracking-tight ">
               <p>CPD you'll actually complete.</p>
               <p>Delivered monthly. </p>
               <p>No effort required.</p>
             </div>
             <p>
-              <span className="bg-secondary/20">
-                {""} Get 13 hours of SRA-aligned CPD each year,{" "}
-              </span>
+              <span className="bg-[#f6f0e8] px-2 pt-1">
+                Get 13 hours of SRA-aligned CPD each year,
+              </span>{" "}
               broken into simple monthly updates. No searching. No overwhelm.
               Just clear, practical legal updates you can use immediately.
             </p>
-            <p className=" font-semibold ">
+            <p className=" font-[550] text-primary">
               Written by practising lawyers. Designed for fast, practical CPD.
             </p>
-            <p className="text-gray-400">
+            <p className="text-gray-400 mb-4">
               Used by solicitors across the UK, from sole practitioners to
               multi-office firms.
             </p>
@@ -38,7 +38,7 @@ export default function Hero() {
               <li>Ready for CPD records and audits</li>
             </ul>
           </div>
-          <div className="flex flex-col gap-4 text-base font-medium sm:flex-row mt-4">
+          <div className="flex flex-col gap-4 text-base font-medium sm:flex-row mt-4 mr-16">
             <Link href={"/#"} rel="noopener noreferrer" className="w-full">
               <Button variant={"secondary"} size="lg" className="w-full">
                 {" "}
@@ -86,7 +86,7 @@ export default function Hero() {
           {/* Bottom blur overlay */}
           {/* <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none z-20  transition-all duration-300 bg-gradient-to-t from-[#FAFAF5] via-[#FAFAF5]/90 to-transparent"></div> */}
 
-  <div className="absolute inset-0 z-20 bg-gradient-to-b from-[#FAFAF5] via-transparent to-[#FAFAF5] transition-opacity duration-300 group-hover:opacity-0" />
+          <div className="absolute inset-0 z-20 bg-gradient-to-b from-[#FAFAF5] via-transparent to-[#FAFAF5] transition-opacity duration-300 group-hover:opacity-0" />
 
           <div
             className="relative z-10 

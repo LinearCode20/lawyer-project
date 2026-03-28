@@ -14,7 +14,7 @@ export default function AppHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-white border-b-2 border-gray-200">
+      <header className="sticky top-0 z-50 w-full bg-white border-b-2 border-gray-200 text-primary">
         <div className=" px-6 py-4">
           <div className="flex items-center justify-between ">
             {/* Logo/Brand Section */}

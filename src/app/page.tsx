@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <div className=" grow ">
       <Hero />
-      <div className="bg-[#eff1f5] font-semibold text-center py-4">
+      <div className="bg-[#eff1f5] font-semibold text-center text-primary py-4">
         Build for Busy solicitors who want CPD done Properly without wasting
         hours searching.
       </div>
