@@ -8,10 +8,10 @@ import { Input } from "@/components/ui/input";
 export default function FooterNew() {
   return (
     <footer className="bg-white px-4 py-8 text-sm">
-      <div className="container mx-auto">
+      <div className=" mx-auto">
         <div className="flex flex-col">
           {/* Copyright Notice */}
-          <div className="mb-3 text-2xl font-semibold">
+          <div className="mb-3 text-2xl font-serif text-primary ">
             Law Edge - Practical CPD for modern solicitors
           </div>
 

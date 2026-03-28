@@ -5,7 +5,8 @@ export default function BottomBanner() {
   return (
     <section className="py-20 bg-primary text-white">
       <div className="container mx-auto px-4 text-center">
-        <h1 className="text-4xl font-semibold mb-6">
+        <span  className="inline-block text-center bg-secondary w-20 h-px mb-4"/>
+        <h1 className="text-4xl font-semibold mb-6 font-serif">
           Complete your CPD each month without searching, stress, or wasted time
         </h1>
         <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">

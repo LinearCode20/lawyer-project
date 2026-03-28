@@ -5,27 +5,22 @@ import { cn } from "@/lib/utils";
 
 export default function AppHeader() {
   const navItems = [
-    { id: "home", label: "Testimonials", href: "/#home" },
-    { id: "contact", label: "Contact Us", href: "/#area-of-law" },
+    { id: "home", label: "Testimonials", href: "/#testimonials" },
+    { id: "contact", label: "Contact Us", href: "/#contact-us" },
     { id: "areas", label: "Areas", href: "/#area-of-law" },
-    { id: "how-it-works", label: "How It Works", href: "/#area-of-law" },
+    { id: "how-it-works", label: "How It Works", href: "/#how-it-works" },
     { id: "faq", label: "FAQ", href: "/#faq" },
   ];
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-white border-b-2 border-gray-200">
+      <header className="sticky top-0 z-50 w-full bg-white border-b-2 border-gray-200 text-primary">
         <div className=" px-6 py-4">
           <div className="flex items-center justify-between ">
             {/* Logo/Brand Section */}
             <div className="flex items-center ">
               <Link href="/" className="flex flex-col">
-                <span className="text-2xl text-nowrap uppercase tracking-[8px] font-bold text-[#1A365D]">
-                  LAW EDGE
-                </span>
-                <span className="text-xs text-nowrap tracking-widest font-light text-secondary">
-                  PROFESSIONAL CPD
-                </span>
+                <img src="/logo.png" alt="Logo" className="h-16 w-auto" />
               </Link>
             </div>
 
@@ -41,10 +36,10 @@ export default function AppHeader() {
                     {item.label}
                   </Link>
                 ))}
-                <Link href="/subscribe">
+                <Link href="/#subscribe">
                   <Button variant="outline">Download Free Sample</Button>
                 </Link>
-                <Link href="/subscribe">
+                <Link href="/#subscribe">
                   <Button variant="secondary">Start free month</Button>
                 </Link>
               </nav>

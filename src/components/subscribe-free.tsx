@@ -100,19 +100,19 @@ export default function SubscribeFree() {
     // Reset success message after 3 seconds
   };
   return (
-    <Card className="py-6">
+    <Card className="py-6 text-foreground">
       <CardHeader className="border-b px-6">
-        <CardTitle className="text-3xl font-semibold ">
+        <CardTitle className="text-3xl font-semibold">
           Subscribe for Free{" "}
         </CardTitle>
         <CardDescription>
-          Payment Detail taken now. No charge for first month. Area can be
-          changed later
+          First month free. Payment details required to activate your
+          Subscription.
         </CardDescription>
       </CardHeader>
       <CardContent className="p-6">
-        <p>No searching. No admin. Just structured CPD delivered monthly.</p>
-        <p className="text-muted mt-4">Step {currentStep} of 2</p>
+        <p className="text-primary">No searching. No admin. Just structured CPD delivered monthly.</p>
+        <p className=" mt-4">Step {currentStep} of 2</p>
         <div className="w-full bg-gray-200 rounded-full h-1.5 ">
           <div
             className="bg-secondary h-1.5 rounded-full transition-all duration-300"
@@ -127,11 +127,11 @@ export default function SubscribeFree() {
         )}
         {currentStep === 1 ? (
           <div className="mt-4">
-            <p className="mb-4">
+            <p className="mb-4 text-primary">
               Join solicitors completing CPD consistently each month
             </p>
-            <p className="font-semibold ">Your plan</p>
-            <p className="text-muted">You can change this anytime</p>
+            <p className="font-semibold text-primary">Your plan</p>
+            <p className="">You can change this anytime</p>
           </div>
         ) : (
           <>
@@ -379,6 +379,8 @@ export default function SubscribeFree() {
                 onClick={handleNext}
                 disabled={form.formState.isSubmitting}
                 className="w-full"
+                size={"lg"}
+              
               >
                 Continue
               </Button>
@@ -391,12 +393,13 @@ export default function SubscribeFree() {
               variant="secondary"
               disabled={form.formState.isSubmitting}
               className="w-full"
+              size={"lg"}
             >
               {form.formState.isSubmitting ? "Submitting..." : "Subscribe"}
             </Button>
           )}
         </form>
-        <p className="mt-8 text-center text-muted">
+        <p className="mt-8 text-center">
           {currentStep === 1
             ? "Takes under 2 minutes. No obligations"
             : "No Charge Today. Cancel Anytime. Instant access after signup"}

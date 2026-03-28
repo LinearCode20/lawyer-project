@@ -13,20 +13,20 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-20 p-4">
-      <div className="container mx-auto">
-        <h1 className="text-3xl font-semibold mb-8 ">
+    <section className="py-20 p-4" id="faq">
+      <div className=" mx-auto">
+        <h1 className="text-3xl font-semibold mb-8 text-primary font-serif ">
           Common Questions before subscribing
         </h1>
         <Card className="p-0 rounded-sm">
           <ul>
             {faq.map((area, index) => (
-              <li key={index} className=" border-b border-gray-300 relative">
+              <li key={index} className=" border relative hover:bg-gray-100">
                 <div
-                  className="flex justify-between z-10 items-center cursor-pointer p-4 py-8 hover:bg-gray-100"
+                  className="flex justify-between z-10 items-center cursor-pointer p-4 py-8 "
                   onClick={() => toggleItem(index)}
                 >
-                  <span className="font-semibold">{area.title}</span>
+                  <span className="font-semibold text-base">{area.title}</span>
                   <span className="text-secondary">
                     {openIndex === index ? (
                       <Minus size={16} />

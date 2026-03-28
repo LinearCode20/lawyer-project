@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award, Clock, FileText, Layers, MoveRight, Users } from "lucide-react";
+import { ArrowDownToLine, Award, Clock, FileText, Layers, MoveRight, Users } from "lucide-react";
 import AreasOfLaw from "./Areas-of-law/areas-of-law";
+import Link from "next/link";
+import { Button } from "./ui/button";
 
 export default function WhyChooseUs() {
   const features = [
@@ -30,10 +32,10 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-20 ">
+    <section className="py-20 " id="area-of-law">
       <div className=" px-4 grid grid-cols-1 md:grid-cols-2 ">
         <div className="p-4">
-          <h2 className="text-4xl font-semibold  ">
+          <h2 className="text-4xl font-semibold  font-serif text-primary  ">
             What you'll receive each month
           </h2>
           <p className="mt-8">
@@ -44,11 +46,11 @@ export default function WhyChooseUs() {
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card key={index} className="  rounded-xs">
+                <Card key={index} className="  rounded-xs bg-muted">
                   <CardContent className="flex  gap-4">
                     <Icon className="shrink-0 h-3 w-3 text-secondary" />
-                    <div>
-                      <p className="text-sm font-semibold">{feature.title}</p>
+                    <div className="flex-1 pr-3">
+                      <p className="font-semibold">{feature.title}</p>
                       <p className="text-muted-foreground">
                         {feature.description}
                       </p>
@@ -58,9 +60,34 @@ export default function WhyChooseUs() {
               );
             })}
           </div>
+          <div className="flex flex-col  gap-4 text-base font-medium sm:flex-row mt-8 mr-16">
+            <Link
+              href="/#subscribe"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
+              <Button variant={"secondary"} size="lg" className="w-full">
+                {" "}
+                Start Free Month
+              </Button>
+            </Link>
+            <Link
+              href="/#subscribe"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
+              <Button className="w-full" size="lg">
+                <ArrowDownToLine />
+                Download Free Sample
+              </Button>
+            </Link>
+          </div>
+          <p className="mt-8 text-sm text-center ">No Spam. Just the Sample</p>
         </div>
         <div className="p-4">
-          <h2 className="text-4xl font-semibold  ">Areas of Law covered</h2>
+          <h2 className="text-4xl font-semibold font-serif text-primary ">
+            Areas of Law covered
+          </h2>
           <p className="mt-8">
             Choose the practice areas relevant to your work. Each monthly issue
             is written to be concise, practical, and directly usable in

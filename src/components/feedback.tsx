@@ -50,9 +50,11 @@ const testimonials = [
 
 export default function Feedback() {
   return (
-    <section className="p-4 py-20 bg-white">
+    <section className="p-4 py-20 bg-white" id="testimonials">
       <div className="">
-        <h1 className="text-3xl font-semibold mb-8">What Practitioners say</h1>
+        <h1 className="text-3xl text-primary font-serif font-semibold mb-8">
+          What Practitioners say
+        </h1>
         <p>
           Used by solicitors, department heads, and firms that want practical
           monthly CPD their teams will actually read and complete.
@@ -61,12 +63,12 @@ export default function Feedback() {
           {testimonials.map((plan, index) => (
             <Card
               key={index}
-              className="flex-1 min-w-70 max-w-[23rem] flex flex-col rounded-sm "
+              className="flex-1 min-w-70 max-w-[23rem] text-foreground flex flex-col rounded-sm "
             >
               <CardContent className="flex-1">
                 <p className="">"{plan.quote}"</p>
-                <p className="mt-4 font-bold">{plan.role}</p>
-                <p className="text-muted-foreground">{plan.firm_type}</p>
+                <p className="mt-4 font-bold text-primary">{plan.role}</p>
+                <p>{plan.firm_type}</p>
               </CardContent>
             </Card>
           ))}

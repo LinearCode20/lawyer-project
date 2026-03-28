@@ -51,8 +51,8 @@ export default function ContactForm() {
 
   const isSubmitting = form.formState.isSubmitting;
   return (
-    <Card className="rounded-2xl shadow-2xl">
-      <CardContent>
+    <Card className="rounded-2xl shadow-2xl py-6">
+      <CardContent className="px-6">
         <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-2">
           {/* Name Field */}
           <Controller
