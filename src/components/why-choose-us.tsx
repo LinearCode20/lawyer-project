@@ -33,12 +33,12 @@ export default function WhyChooseUs() {
 
   return (
     <section className="py-20 " id="area-of-law">
-      <div className=" px-4 grid grid-cols-1 md:grid-cols-2 ">
+      <div className="md:max-w-6xl mx-auto px-4 grid grid-cols-1 gap-16 md:grid-cols-2 ">
         <div className="p-4">
-          <h2 className="text-4xl font-semibold  font-serif text-primary  ">
+          <h2 className="text-4xl   font-serif text-primary  ">
             What you'll receive each month
           </h2>
-          <p className="mt-8">
+          <p className="mt-8 ">
             Every issue is built to save time, reduce searching, and make
             monthly CPD easier to complete and record.
           </p>
@@ -49,8 +49,8 @@ export default function WhyChooseUs() {
                 <Card key={index} className="  rounded-xs bg-muted">
                   <CardContent className="flex  gap-4">
                     <Icon className="shrink-0 h-3 w-3 text-secondary" />
-                    <div className="flex-1 pr-3">
-                      <p className="font-semibold">{feature.title}</p>
+                    <div className="flex-1 pr-4">
+                      <p className="text-base">{feature.title}</p>
                       <p className="text-muted-foreground">
                         {feature.description}
                       </p>
@@ -85,7 +85,7 @@ export default function WhyChooseUs() {
           <p className="mt-8 text-sm text-center ">No Spam. Just the Sample</p>
         </div>
         <div className="p-4">
-          <h2 className="text-4xl font-semibold font-serif text-primary ">
+          <h2 className="text-4xl  font-serif text-primary ">
             Areas of Law covered
           </h2>
           <p className="mt-8">

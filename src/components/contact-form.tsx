@@ -104,7 +104,7 @@ export default function ContactForm() {
                   {...field}
                   id={field.name}
                   aria-invalid={fieldState.invalid}
-                  placeholder="How can we help you?"
+                  placeholder="Your message"
                   rows={6}
                 />
                 {fieldState.invalid && (
