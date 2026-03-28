@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CPTSteps() {
   return (
-    <section className="p-4 py-20 bg-white">
+    <section className="p-4 py-20 bg-white" id="how-it-works">
       <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="p-4">
           <h2 className="text-4xl font-semibold text-primary font-serif  ">

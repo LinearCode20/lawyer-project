@@ -46,9 +46,9 @@ export const pricingCards = [
 
 export default function Pricing() {
   return (
-    <section className="p-4 py-20 bg-white">
+    <section className="p-4 py-20">
       <div className="container mx-auto">
-        <h1 className="text-3xl font-semibold">Simple, transparent pricing</h1>
+        <h1 className="text-3xl font-semibold text-primary font-serif mb-4">Simple, transparent pricing</h1>
         <p className="mb-4">
           Choose the level of coverage that fits your practice. Clear monthly
           pricing. No hidden extras. First month free.
@@ -57,19 +57,23 @@ export default function Pricing() {
           {pricingCards.map((card, index) => (
             <div
               key={index}
-              className={`bg-white  min-w-72 rounded-lg shadow-sm ${
-                card.isHighlighted
-                  ? "border-t-4 border-[#D4AF37] shadow-md"
-                  : "border border-t-4 border-[#E5E7EB]"
-              }`}
+              className={`bg-white  min-w-72 rounded-xl shadow-sm`}
             >
+              <div
+                className={cn(
+                  "",
+                  card.isHighlighted
+                    ? "border-t-4 border-[#D4AF37] shadow-md"
+                    : "border border-t-4 border-[#E5E7EB]",
+                )}
+              />
               {/* Badge */}
               <div className="border-b p-6">
                 <div className="">
                   <span
                     className={cn(
-                      " uppercase tracking-wide",
-                      card.isHighlighted ? "text-secondary" : "text-[#6B7280]",
+                      " uppercase tracking-wide  mb-2 inline-block",
+                      card.isHighlighted && "text-secondary",
                     )}
                   >
                     {card.badge}
@@ -77,7 +81,7 @@ export default function Pricing() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-[#1F2937] mb-2">
+                <h3 className="text-2xl font-serif font-semibold text-primary mb-2">
                   {card.title}
                 </h3>
 

@@ -5,10 +5,10 @@ import { cn } from "@/lib/utils";
 
 export default function AppHeader() {
   const navItems = [
-    { id: "home", label: "Testimonials", href: "/#home" },
-    { id: "contact", label: "Contact Us", href: "/#area-of-law" },
+    { id: "home", label: "Testimonials", href: "/#testimonials" },
+    { id: "contact", label: "Contact Us", href: "/#contact-us" },
     { id: "areas", label: "Areas", href: "/#area-of-law" },
-    { id: "how-it-works", label: "How It Works", href: "/#area-of-law" },
+    { id: "how-it-works", label: "How It Works", href: "/#how-it-works" },
     { id: "faq", label: "FAQ", href: "/#faq" },
   ];
 
@@ -41,10 +41,10 @@ export default function AppHeader() {
                     {item.label}
                   </Link>
                 ))}
-                <Link href="/subscribe">
+                <Link href="/#subscribe">
                   <Button variant="outline">Download Free Sample</Button>
                 </Link>
-                <Link href="/subscribe">
+                <Link href="/#subscribe">
                   <Button variant="secondary">Start free month</Button>
                 </Link>
               </nav>

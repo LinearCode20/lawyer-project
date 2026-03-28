@@ -44,17 +44,17 @@ export default function Home() {
         hours searching.
       </div>
 
-      <CPTSteps/>
+      <CPTSteps />
       <WhyChooseUs />
       <Pricing />
-      <section className="p-4 py-20">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="p-4 py-20" id="subscribe">
+        <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <SubscribeFree />
           <DownloadFreeSample />
         </div>
       </section>
       <section className="p-4 py-20 bg-white">
-        <div className="container mx-auto flex flex-col md:flex-row gap-4 justify-around">
+        <div className=" mx-auto flex flex-col md:flex-row gap-4 justify-around">
           <div className="flex-1 flex items-start gap-2">
             <CircleCheck className="shrink-0 inline-block text-secondary h-4" />
             <p>
@@ -79,8 +79,8 @@ export default function Home() {
       <BottomBanner />
 
       <section className="p-4 py-20 " id="contact-us">
-        <div className="container mx-auto">
-          <h1 className="text-3xl font-semibold">Contact Us</h1>
+        <div className=" mx-auto">
+          <h1 className="text-3xl  font-serif text-primary">Contact</h1>
           <p className="mb-4">Have Question? Send us a Quick Message.</p>
           <div className="max-w-2xl">
             <ContactForm />

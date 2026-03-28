@@ -64,7 +64,7 @@ export default function DownloadFreeSample() {
     // Reset success message after 3 seconds
   };
   return (
-    <Card className="h-fit py-6">
+    <Card className="h-fit py-6 text-foreground">
       <CardHeader className="border-b px-6">
         <CardTitle className="text-3xl font-semibold ">
           Download Free Sample
@@ -78,7 +78,7 @@ export default function DownloadFreeSample() {
           onSubmit={form.handleSubmit(handleSubmit)}
           className="grid gap-6 "
         >
-          <p>Preview how your monthly CPD will look delivered</p>
+          <p className="text-sm text-primary ">Preview how your monthly CPD will look delivered</p>
           <Controller
             name="full_name"
             control={form.control}

@@ -39,13 +39,13 @@ export default function Hero() {
             </ul>
           </div>
           <div className="flex flex-col gap-4 text-base font-medium sm:flex-row mt-4 mr-16">
-            <Link href={"/#"} rel="noopener noreferrer" className="w-full">
+            <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
               <Button variant={"secondary"} size="lg" className="w-full">
                 {" "}
                 Start Free Month
               </Button>
             </Link>
-            <Link href="#" rel="noopener noreferrer" className="w-full">
+            <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
               <Button className="w-full" size="lg">
                 <ArrowDownToLine />
                 Download Free Sample
