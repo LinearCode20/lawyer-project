@@ -21,6 +21,7 @@ import Link from "next/link";
 import FAQ from "@/components/faq";
 import Pricing from "@/components/pricing";
 import { CircleCheck } from "lucide-react";
+import CPTSteps from "@/components/cpt-steps";
 
 // const areaOfLaw = [
 //   "Commercial & Corporate",
@@ -42,9 +43,11 @@ export default function Home() {
         Build for Busy solicitors who want CPD done Properly without wasting
         hours searching.
       </div>
+
+      <CPTSteps/>
       <WhyChooseUs />
       <Pricing />
-      <section className="p-4 py-20 bg-white">
+      <section className="p-4 py-20">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <SubscribeFree />
           <DownloadFreeSample />
