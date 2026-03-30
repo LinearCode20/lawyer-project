@@ -39,13 +39,21 @@ export default function Hero() {
             </ul>
           </div>
           <div className=" flex flex-col gap-4 text-base font-medium sm:flex-row mt-8 mr-16">
-            <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
+            <Link
+              href="/#subscribe"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
               <Button variant={"secondary"} size="lg" className="w-full">
                 {" "}
                 Start Free Month
               </Button>
             </Link>
-            <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
+            <Link
+              href="/#subscribe"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
               <Button className="w-full" size="lg">
                 <ArrowDownToLine />
                 Download Sample Issue
@@ -110,10 +118,11 @@ export default function Hero() {
                 Monthly CPD sample
               </p>
               <div className="text-right">
-                <div className="  font-semibold  tracking-widest">LAW EDGE</div>
-                <div className="text-slate-500 text-[9px]">
-                  PROFESSIONAL CPD
-                </div>
+                <img
+                  src={"/logo.png"}
+                  className="aspect-video -mt-6 h-20 object-contain "
+                  alt="LAW EDGE"
+                />
               </div>
             </div>
 
@@ -143,7 +152,7 @@ export default function Hero() {
               </p>
             </div>
 
-            <div className="py-4">
+            <div className="py-4 text-center">
               <div>
                 <div className="text-secondary text-sm font-semibold">
                   CASE LAW UPDATE
