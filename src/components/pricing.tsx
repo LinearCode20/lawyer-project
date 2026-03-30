@@ -5,12 +5,12 @@ import { cn } from "@/lib/utils";
 export const pricingCards = [
   {
     badge: "FOR INDIVIDUALS",
-    title: "Essential",
-    price: "£49/month",
+    title: "Starter",
+    price: "£195/month",
     features: [
-      "One practice area",
-      "Monthly CPD updates",
-      "Structured record keeping",
+      "For smaller private client teams ",
+      "Suitable for firms wanting straightforward, structured updates",
+      "Includes: Monthly CPD update, key developments, case summaries, estimated CPD time ",
     ],
     buttonText: "Start Free Month",
     footer: "Best for one solicitor or one focused area",
@@ -19,12 +19,9 @@ export const pricingCards = [
   {
     badge: "MOST POPULAR",
     title: "Professional",
-    price: "£99/month",
-    features: [
-      "Five practice areas",
-      "Ideal for growing teams",
-      "Broader monthly coverage",
-    ],
+    price: "£295/month",
+    features:
+      "For firms wanting practical guidance and structure Includes everything in Starter plus practical commentary, client impact insights, action points, CPD log support Designed to reduce time and help fee earners identify what matters and what action to take",
     buttonText: "Start Free Month",
     footer: "Balanced coverage and value for most firms",
     isHighlighted: true,
@@ -32,12 +29,10 @@ export const pricingCards = [
   {
     badge: "FOR FULL COVERAGE",
     title: "Complete",
-    price: "£149/month",
-    features: [
-      "All practice areas",
-      "Full firm coverage",
-      "Maximum ongoing value",
-    ],
+    price: "£395/month",
+    features:
+      "For firms requiring a structured and compliance-focused approach Includes everything in Professional plus compliance updates, risk alerts, tools and priority support ",
+
     buttonText: "Start Free Month",
     footer: "Best for firms wanting complete monthly coverage",
     isHighlighted: false,
@@ -48,7 +43,9 @@ export default function Pricing() {
   return (
     <section className="p-4 py-20">
       <div className="md:max-w-6xl mx-auto">
-        <h1 className="text-3xl  text-primary font-serif mb-4">Simple, transparent pricing</h1>
+        <h1 className="text-3xl  text-primary font-serif mb-4">
+          Simple, transparent pricing
+        </h1>
         <p className="mb-4 mr-20">
           Choose the level of coverage that fits your practice. Clear monthly
           pricing. No hidden extras. First month free.
@@ -57,7 +54,7 @@ export default function Pricing() {
           {pricingCards.map((card, index) => (
             <div
               key={index}
-              className={`bg-white  min-w-72 rounded-xl shadow-sm`}
+              className={`bg-white  max-w-72 rounded-xl shadow-sm flex flex-col`}
             >
               <div
                 className={cn(
@@ -88,27 +85,34 @@ export default function Pricing() {
                 {/* Price */}
                 <p className="text-3xl text-[#1F2937] ">{card.price}</p>
               </div>
-              <div className=" p-6">
+              <div className=" p-6 flex flex-col flex-1 ">
                 {/* Features List */}
-                <ul className="space-y-3 mb-6">
-                  {card.features.map((feature, featureIndex) => (
-                    <li
-                      key={featureIndex}
-                      className="text-sm text-[#6B7280] flex items-start"
-                    >
-                      <span className="mr-2">•</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
+                {Array.isArray(card.features) ? (
+                  <ul className="grow space-y-3 mb-6">
+                    {card.features.map((feature, featureIndex) => (
+                      <li
+                        key={featureIndex}
+                        className="text-sm text-[#6B7280] flex items-start"
+                      >
+                        <span className="mr-2">•</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-sm flex-1 text-[#6B7280] mb-6">
+                    {card.features}
+                  </p>
+                )}
                 {/* Button */}
-                <Button variant={"secondary"}>{card.buttonText}</Button>
+                <div>
+                  <Button variant={"secondary"}>{card.buttonText}</Button>
 
-                {/* Footer */}
-                <p className="text-xs italic text-[#6B7280] mt-4 text-center">
-                  {card.footer}
-                </p>
+                  {/* Footer */}
+                  <p className="text-xs italic text-[#6B7280] mt-4 text-center">
+                    {card.footer}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

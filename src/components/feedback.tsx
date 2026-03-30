@@ -63,12 +63,16 @@ export default function Feedback() {
           {testimonials.map((plan, index) => (
             <Card
               key={index}
-              className="flex-1 min-w-70 max-w-[23rem] text-foreground flex flex-col rounded-sm "
+              className="flex-1 min-w-70 max-w-[23rem] text-foreground flex flex-col rounded-sm shadow-md hover:shadow-xl duration-200 cursor-pointer transition-all  "
             >
-              <CardContent className="flex-1">
+              <CardContent className="flex-1 flex flex-col justify-between">
                 <p className="">"{plan.quote}"</p>
-                <p className="mt-4 font-bold text-primary">{plan.role}</p>
-                <p>{plan.firm_type}</p>
+                <div>
+                  <p className="mt-4 text-sm  font-bold text-primary">{plan.role}</p>
+                  <p className="text-secondary text-base font-bold ">
+                    {plan.firm_type}
+                  </p>
+                </div>
               </CardContent>
             </Card>
           ))}

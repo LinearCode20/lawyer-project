@@ -119,14 +119,14 @@ export default function ContactForm() {
             type="submit"
             variant="default"
             disabled={isSubmitting}
-            className="w-full"
+            className="w-full mt-4"
             size={"lg"}
           >
             <Mail />
             {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
         </form>
-        <p className="mb-4">By submitting this form, you agree to our Terms, Privacy Policy and Cookies Policy.</p>
+        <p className="mt-4">By submitting this form, you agree to our Terms, Privacy Policy and Cookies Policy.</p>
           
       </CardContent>
     </Card>

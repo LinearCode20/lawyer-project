@@ -25,6 +25,7 @@ import { Checkbox } from "./ui/checkbox";
 import { NativeSelect } from "./ui/native-select";
 import { pricingCards } from "./pricing";
 import { ArrowLeft, MoveLeft } from "lucide-react";
+import Link from "next/link";
 
 const areaOfLaw = [
   "Commercial & Corporate",
@@ -235,9 +236,7 @@ export default function SubscribeFree() {
                     className="border-b pb-8"
                   >
                     <FieldLabel className="font-bold">Choose areas</FieldLabel>
-                    <p className="">
-                      Select areas relevant to your work
-                    </p>
+                    <p className="text-primary">Select areas relevant to your work</p>
                     <div className="grid md:grid-cols-2 gap-2">
                       {areaOfLaw.map((area) => (
                         <FieldLabel
@@ -269,7 +268,7 @@ export default function SubscribeFree() {
                               }}
                             />
                             <FieldContent>
-                              <FieldTitle>{area}</FieldTitle>
+                              <FieldTitle className="text-primary">{area}</FieldTitle>
                             </FieldContent>
                           </Field>
                         </FieldLabel>
@@ -352,7 +351,6 @@ export default function SubscribeFree() {
                         {...field}
                         id={field.name}
                         type="text"
-                        aria-invalid={fieldState.invalid}
                         placeholder="CVC"
                       />
                       {fieldState.invalid && (
@@ -363,14 +361,41 @@ export default function SubscribeFree() {
                 />
               </div>
 
-              <div className="flex gap-2">
+              {/* <div className="flex gap-2">
                 <Checkbox />
                 <p>I agree the Terms and Privacy Policy</p>
-              </div>
+              </div> */}
 
               <div className="flex gap-2">
                 <Checkbox />
-                <p>I agree the Cookies Policy</p>
+                <p>
+                  By submitting this form, you agree to our{" "}
+                  <Link
+                    href="/terms"
+                    target="_blank"
+                    className=" hover:underline text-primary"
+                  >
+                    Terms
+                  </Link>
+                  ,
+                  <Link
+                    href="/privacy-policy"
+                    target="_blank"
+                    className=" hover:underline text-primary"
+                  >
+                    {" "}
+                    Privacy Policy
+                  </Link>{" "}
+                  and
+                  <Link
+                    href="/cookies-policy"
+                    target="_blank"
+                    className=" hover:underline text-primary"
+                  >
+                    {" "}
+                    Cookies Policy
+                  </Link>
+                </p>
               </div>
             </>
           )}
