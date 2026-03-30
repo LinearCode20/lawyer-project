@@ -71,7 +71,7 @@ export default function CPDDocumentModal({
               }}
             ></div>
 
-            <div className="relative z-10">
+            <div className="relative z-10 ">
               <div className="text-center mb-4">
                 <p className="text-xs text-gray-500 mb-2 group-hover:text-amber-600 transition-colors">
                   CLICK TO EXPAND
@@ -88,13 +88,12 @@ export default function CPDDocumentModal({
                 <p className="text-amber-600 text-sm font-medium">
                   Monthly CPD sample
                 </p>
-                <div className="text-right">
-                  <div className="  font-semibold  tracking-widest">
-                    LAW EDGE
-                  </div>
-                  <div className="text-slate-500 text-[9px]">
-                    PROFESSIONAL CPD
-                  </div>
+                <div className="text-center">
+                  <img
+                    src="/logo.png"
+                    alt="CPD Sample Logo"
+                    className="h-10 w-auto object-contain"
+                  />
                 </div>
               </div>
 
@@ -124,11 +123,11 @@ export default function CPDDocumentModal({
                 </p>
               </div>
 
-              <div className="py-4">
+              <div className="py-4 text-center">
                 <div className="text-secondary text-sm font-semibold">
                   CASE LAW UPDATE
                 </div>
-                <div className="text-slate-600 text-2xl font-semibold mt-1">
+                <div className="text-slate-600 text-2xl  font-semibold mt-1">
                   Smith v Jones Ltd [2024] EWCA Civ 123
                 </div>
               </div>
@@ -162,7 +161,7 @@ export default function CPDDocumentModal({
                 </div>
               </div>
 
-              <div className="py-4">
+              <div className="py-4 text-center">
                 <div className="text-secondary text-sm font-semibold">
                   LEGISLATION UPDATE{" "}
                 </div>

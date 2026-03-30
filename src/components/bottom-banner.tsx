@@ -20,7 +20,7 @@ export default function BottomBanner() {
           </Button>
           <Button size="lg"  className=" px-8 bg-primary">
             <ArrowDownToLine className="mr-2" />
-            Download Free Sample
+            Download Sample Issue
           </Button>
         </div>
 

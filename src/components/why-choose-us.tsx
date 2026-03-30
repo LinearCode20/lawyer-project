@@ -47,10 +47,10 @@ export default function WhyChooseUs() {
               const Icon = feature.icon;
               return (
                 <Card key={index} className="  rounded-xs bg-muted">
-                  <CardContent className="flex  gap-4">
-                    <Icon className="shrink-0 h-3 w-3 text-secondary" />
-                    <div className="flex-1 pr-4">
-                      <p className="text-base">{feature.title}</p>
+                  <CardContent className="flex  gap-4 items-start justify-start">
+                    <Icon className="shrink-0 mt-1 h-6 w-6 text-secondary" />
+                    <div className="flex-1">
+                      <p className="text-base mb-4 font-semibold">{feature.title}</p>
                       <p className="text-muted-foreground">
                         {feature.description}
                       </p>
@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
               );
             })}
           </div>
-          <div className="flex flex-col  gap-4 text-base font-medium sm:flex-row mt-8 mr-16">
+          <div className="flex flex-col  gap-4 text-base font-medium sm:flex-row mt-8 ">
             <Link
               href="/#subscribe"
               rel="noopener noreferrer"
@@ -78,7 +78,7 @@ export default function WhyChooseUs() {
             >
               <Button className="w-full" size="lg">
                 <ArrowDownToLine />
-                Download Free Sample
+                Download Sample Issue
               </Button>
             </Link>
           </div>
