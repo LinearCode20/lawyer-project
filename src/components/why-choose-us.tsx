@@ -78,7 +78,7 @@ export default function WhyChooseUs() {
             >
               <Button className="w-full" size="lg">
                 <ArrowDownToLine />
-                Download Free Sample
+                Download Sample Issue
               </Button>
             </Link>
           </div>

@@ -65,7 +65,7 @@ export default function ContactForm() {
                   id={field.name}
                   type="text"
                   aria-invalid={fieldState.invalid}
-                  placeholder="Your full name"
+                  placeholder="Your name"
                 />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -85,7 +85,7 @@ export default function ContactForm() {
                   id={field.name}
                   type="email"
                   aria-invalid={fieldState.invalid}
-                  placeholder="your.email@example.com"
+                  placeholder="Email"
                 />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -126,6 +126,8 @@ export default function ContactForm() {
             {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
         </form>
+        <p className="mb-4">By submitting this form, you agree to our Terms, Privacy Policy and Cookies Policy.</p>
+          
       </CardContent>
     </Card>
   );

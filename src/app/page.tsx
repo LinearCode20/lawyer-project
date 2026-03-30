@@ -81,10 +81,10 @@ export default function Home() {
       <section className="p-4 py-20 " id="contact-us">
         <div className=" mx-auto">
           <h1 className="text-3xl  font-serif text-primary">Contact</h1>
-          <p className="mb-4">Have Question? Send us a Quick Message.</p>
+          <p className="mb-4">Have Question? Send us a quick Message.</p>
           <div className="max-w-2xl">
             <ContactForm />
-          </div>
+          </div>          
         </div>
       </section>
     </div>

@@ -48,7 +48,7 @@ export default function Hero() {
             <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
               <Button className="w-full" size="lg">
                 <ArrowDownToLine />
-                Download Free Sample
+                Download Sample Issue
               </Button>
             </Link>
           </div>

@@ -37,7 +37,7 @@ export default function AppHeader() {
                   </Link>
                 ))}
                 <Link href="/#subscribe">
-                  <Button variant="outline">Download Free Sample</Button>
+                  <Button variant="outline">Download Sample Issue</Button>
                 </Link>
                 <Link href="/#subscribe">
                   <Button variant="secondary">Start free month</Button>
