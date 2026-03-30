@@ -50,10 +50,14 @@ const formSchema = z.object({
     .min(1, { message: "Please select at least one area" })
     .max(3, { message: "You can select up to 3 areas" }),
 
-  card_no: z.string().optional(),
-  card_holder_name: z.string().optional(),
-  card_expiry_date: z.string().optional(),
-  card_cvv: z.string().optional(),
+  card_no: z.string().min(1, { message: "Please enter a card number" }),
+  card_holder_name: z
+    .string()
+    .min(1, { message: "Please enter the card holder's name" }),
+  card_expiry_date: z
+    .string()
+    .min(1, { message: "Please enter the card expiry date" }),
+  card_cvv: z.string().min(1, { message: "Please enter the card CVV" }),
 });
 
 type FormSchema = z.infer<typeof formSchema>;
@@ -111,7 +115,9 @@ export default function SubscribeFree() {
         </CardDescription>
       </CardHeader>
       <CardContent className="p-6">
-        <p className="text-primary">No searching. No admin. Just structured CPD delivered monthly.</p>
+        <p className="text-primary">
+          No searching. No admin. Just structured CPD delivered monthly.
+        </p>
         <p className=" mt-4">Step {currentStep} of 2</p>
         <div className="w-full bg-gray-200 rounded-full h-1.5 ">
           <div
@@ -121,7 +127,7 @@ export default function SubscribeFree() {
         </div>
 
         {currentStep === 2 && (
-          <p className="my-4 text-muted cursor-pointer" onClick={handleBack}>
+          <p className="my-4  cursor-pointer" onClick={handleBack}>
             <MoveLeft className="inline-block h-4" /> Edit Details
           </p>
         )}
@@ -136,13 +142,13 @@ export default function SubscribeFree() {
         ) : (
           <>
             <p className="font-semibold  ">You're almost done</p>
-            <p className="text-muted my-4">
+            <p className=" my-4">
               Setting up CPD for your account (your email)
             </p>
 
-            <div className="border-primary bg-gray-100 p-4 rounded">
+            <div className="border-primary bg-primary/10 border p-4 rounded">
               <p className="font-semibold">{form.getValues("plan_type")} </p>
-              <p className="text-muted">First month free. No charge today</p>
+              <p className="">First month free. No charge today</p>
             </div>
           </>
         )}
@@ -229,7 +235,7 @@ export default function SubscribeFree() {
                     className="border-b pb-8"
                   >
                     <FieldLabel className="font-bold">Choose areas</FieldLabel>
-                    <p className="text-muted">
+                    <p className="">
                       Select areas relevant to your work
                     </p>
                     <div className="grid md:grid-cols-2 gap-2">
@@ -359,14 +365,12 @@ export default function SubscribeFree() {
 
               <div className="flex gap-2">
                 <Checkbox />
-                <p className="text-muted">
-                  I agree the Terms and Privacy Policy
-                </p>
+                <p>I agree the Terms and Privacy Policy</p>
               </div>
 
               <div className="flex gap-2">
                 <Checkbox />
-                <p className="text-muted">I agree the Cookies Policy</p>
+                <p>I agree the Cookies Policy</p>
               </div>
             </>
           )}
@@ -380,7 +384,6 @@ export default function SubscribeFree() {
                 disabled={form.formState.isSubmitting}
                 className="w-full"
                 size={"lg"}
-              
               >
                 Continue
               </Button>
