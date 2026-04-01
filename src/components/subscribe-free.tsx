@@ -328,6 +328,8 @@ export default function SubscribeFree() {
                 <label className="block">
                   <span className="text-sm font-medium">Card Details</span>
                   <div className="mt-1 p-3 border rounded-md">
+
+
                     <CardElement
                       options={{
                         style: {
@@ -344,6 +346,8 @@ export default function SubscribeFree() {
                         },
                       }}
                     />
+
+                    
                   </div>
                 </label>
               </div>
