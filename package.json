@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@stripe/react-stripe-js": "^6.0.0",
+    "@stripe/stripe-js": "^9.0.0",
     "@supabase/supabase-js": "^2.99.2",
     "axios": "^1.13.6",
     "class-variance-authority": "^0.7.1",

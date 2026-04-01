@@ -26,7 +26,7 @@ import { NativeSelect } from "./ui/native-select";
 import { pricingCards } from "./pricing";
 import { ArrowLeft, MoveLeft } from "lucide-react";
 import Link from "next/link";
-
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 const areaOfLaw = [
   "Commercial & Corporate",
   "Litigation & Dispute Resolution",
@@ -40,7 +40,7 @@ const areaOfLaw = [
 ];
 
 const formSchema = z.object({
-  email: z.email({ message: "Please enter a valid email" }).min(1, {
+  email: z.string().email({ message: "Please enter a valid email" }).min(1, {
     message: "Please enter an email",
   }),
   plan_type: z.string().min(1, { message: "Please select a plan type" }),
@@ -50,21 +50,15 @@ const formSchema = z.object({
     .array(z.string())
     .min(1, { message: "Please select at least one area" })
     .max(3, { message: "You can select up to 3 areas" }),
-
-  card_no: z.string().min(1, { message: "Please enter a card number" }),
-  card_holder_name: z
-    .string()
-    .min(1, { message: "Please enter the card holder's name" }),
-  card_expiry_date: z
-    .string()
-    .min(1, { message: "Please enter the card expiry date" }),
-  card_cvv: z.string().min(1, { message: "Please enter the card CVV" }),
 });
 
 type FormSchema = z.infer<typeof formSchema>;
 
+
 export default function SubscribeFree() {
   const [currentStep, setCurrentStep] = useState<1 | 2>(1);
+  const stripe = useStripe();
+  const elements = useElements();
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -90,19 +84,57 @@ export default function SubscribeFree() {
   };
 
   const handleSubmit = async (data: FormSchema) => {
-    // Demo: Just log the email
     try {
+      console.log("Submitting form with data:", data);
+      if (!stripe || !elements) {
+        toast.error("Stripe has not loaded yet. Please try again in a moment.");
+        return;
+      }
+
+      // Step 1: Fetch client secret from backend
+      const setupIntentResponse = await axios.post("/api/create-setup-intent", {
+        email: data.email,
+      });
+
+      const { clientSecret } = setupIntentResponse.data;
+
+      if (!clientSecret) {
+        toast.error("Failed to initialize payment. Please try again.");
+        return;
+      }
+
+      // Step 2: Confirm card setup with Stripe
+      const { setupIntent, error } = await stripe.confirmCardSetup(
+        clientSecret,
+        {
+          payment_method: {
+            card: elements.getElement(CardElement)!,
+            billing_details: {
+              name: data.full_name,
+              email: data.email,
+            },
+          },
+        }
+      );
+
+      if (error) {
+        toast.error(error.message || "Payment setup failed");
+        return;
+      }
+
+      console.log("setupIntent", setupIntent);
+
+      // Step 3: Submit subscription data to backend
       const response = await axios.post("/api/free-subscribe", {
         ...data,
         selected_areas: data.selected_areas.join(", "),
+        payment_method_id: setupIntent.payment_method,
       });
       toast.success(response?.data?.message || "Thanks for subscribing!");
     } catch (e: any) {
       console.log(e);
       toast.error(e?.response?.data?.message || "Something went wrong");
     }
-
-    // Reset success message after 3 seconds
   };
   return (
     <Card className="py-6 text-foreground">
@@ -236,7 +268,9 @@ export default function SubscribeFree() {
                     className="border-b pb-8"
                   >
                     <FieldLabel className="font-bold">Choose areas</FieldLabel>
-                    <p className="text-primary">Select areas relevant to your work</p>
+                    <p className="text-primary">
+                      Select areas relevant to your work
+                    </p>
                     <div className="grid md:grid-cols-2 gap-2">
                       {areaOfLaw.map((area) => (
                         <FieldLabel
@@ -268,7 +302,9 @@ export default function SubscribeFree() {
                               }}
                             />
                             <FieldContent>
-                              <FieldTitle className="text-primary">{area}</FieldTitle>
+                              <FieldTitle className="text-primary">
+                                {area}
+                              </FieldTitle>
                             </FieldContent>
                           </Field>
                         </FieldLabel>
@@ -287,84 +323,34 @@ export default function SubscribeFree() {
                   today
                 </p>
               </div>
-              <Controller
-                name="card_holder_name"
-                control={form.control}
-                render={({ field, fieldState }) => (
-                  <Field data-invalid={fieldState.invalid}>
-                    <Input
-                      {...field}
-                      id={field.name}
-                      type="text"
-                      aria-invalid={fieldState.invalid}
-                      placeholder="Card Holder Name"
-                    />
-                    {fieldState.invalid && (
-                      <FieldError errors={[fieldState.error]} />
-                    )}
-                  </Field>
-                )}
-              />
-              <Controller
-                name="card_no"
-                control={form.control}
-                render={({ field, fieldState }) => (
-                  <Field data-invalid={fieldState.invalid}>
-                    <Input
-                      {...field}
-                      id={field.name}
-                      type="text"
-                      aria-invalid={fieldState.invalid}
-                      placeholder="Card Number"
-                    />
-                    {fieldState.invalid && (
-                      <FieldError errors={[fieldState.error]} />
-                    )}
-                  </Field>
-                )}
-              />
-              <div className=" grid md:grid-cols-2 gap-4">
-                <Controller
-                  name="card_expiry_date"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <Input
-                        {...field}
-                        id={field.name}
-                        type="text"
-                        aria-invalid={fieldState.invalid}
-                        placeholder="Expiry Date"
-                      />
-                      {fieldState.invalid && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
-                />
-                <Controller
-                  name="card_cvv"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <Input
-                        {...field}
-                        id={field.name}
-                        type="text"
-                        placeholder="CVC"
-                      />
-                      {fieldState.invalid && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
-                />
-              </div>
 
-              {/* <div className="flex gap-2">
-                <Checkbox />
-                <p>I agree the Terms and Privacy Policy</p>
-              </div> */}
+              <div className="space-y-4">
+                <label className="block">
+                  <span className="text-sm font-medium">Card Details</span>
+                  <div className="mt-1 p-3 border rounded-md">
+
+
+                    <CardElement
+                      options={{
+                        style: {
+                          base: {
+                            fontSize: "16px",
+                            color: "#424770",
+                            "::placeholder": {
+                              color: "#aab7c4",
+                            },
+                          },
+                          invalid: {
+                            color: "#9e2146",
+                          },
+                        },
+                      }}
+                    />
+
+                    
+                  </div>
+                </label>
+              </div>
 
               <div className="flex gap-2">
                 <Checkbox />
