@@ -59,11 +59,11 @@ export default function Pricing() {
           Choose the level of coverage that fits your practice. Clear monthly
           pricing. No hidden extras. First month free.
         </p>
-        <div className="flex flex-col md:flex-row items-center gap-4  justify-between  mt-12">
+        <div className="flex flex-col md:flex-row items-center md:items-stretch gap-4  justify-between  mt-12">
           {pricingCards.map((card, index) => (
             <div
               key={index}
-              className={`bg-white  max-w-72 rounded-xl shadow-sm flex flex-col`}
+              className={`bg-white  max-w-72 rounded-xl shadow-sm flex flex-col justify-between`}
             >
               <div
                 className={cn(
