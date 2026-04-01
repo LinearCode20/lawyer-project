@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { text } from "node:stream/consumers";
 
 export const pricingCards = [
   {
@@ -8,22 +9,30 @@ export const pricingCards = [
     title: "Starter",
     price: "£195/month",
     features: [
-      "For smaller private client teams ",
-      "Suitable for firms wanting straightforward, structured updates",
-      "Includes: Monthly CPD update, key developments, case summaries, estimated CPD time ",
+      "Monthly CPD update",
+      "Key developments",
+      "Case summaries",
+      "Estimated CPD time",
     ],
+    text: "Suitable for firms wanting straightforward, structured updates",
     buttonText: "Start Free Month",
-    footer: "Best for one solicitor or one focused area",
+    footer: "Request More Details",
     isHighlighted: false,
   },
   {
     badge: "MOST POPULAR",
     title: "Professional",
     price: "£295/month",
-    features:
-      "For firms wanting practical guidance and structure Includes everything in Starter plus practical commentary, client impact insights, action points, CPD log support Designed to reduce time and help fee earners identify what matters and what action to take",
+    features: [
+      "Includes everything in Starter",
+      "Practical commentary",
+      "Client impact insights",
+      "Action points",
+      "CPD log support",
+    ],
+    text: "For firms wanting practical guidance and structure. Designed to reduce time and help fee earners identify what matters and what action to take",
     buttonText: "Start Free Month",
-    footer: "Balanced coverage and value for most firms",
+    footer: "Request More Details",
     isHighlighted: true,
   },
   {
@@ -31,10 +40,10 @@ export const pricingCards = [
     title: "Complete",
     price: "£395/month",
     features:
-      "For firms requiring a structured and compliance-focused approach Includes everything in Professional plus compliance updates, risk alerts, tools and priority support ",
+      "Includes everything in Professional plus compliance updates, risk alerts, tools and priority support",
 
     buttonText: "Start Free Month",
-    footer: "Best for firms wanting complete monthly coverage",
+    footer: "Reguirst More Details",
     isHighlighted: false,
   },
 ];
@@ -50,7 +59,7 @@ export default function Pricing() {
           Choose the level of coverage that fits your practice. Clear monthly
           pricing. No hidden extras. First month free.
         </p>
-        <div className="flex flex-col md:flex-row  justify-between  mt-12">
+        <div className="flex flex-col md:flex-row items-center gap-4  justify-between  mt-12">
           {pricingCards.map((card, index) => (
             <div
               key={index}
@@ -87,36 +96,48 @@ export default function Pricing() {
               </div>
               <div className=" p-6 flex flex-col flex-1 ">
                 {/* Features List */}
-                {Array.isArray(card.features) ? (
-                  <ul className="grow space-y-3 mb-6">
-                    {card.features.map((feature, featureIndex) => (
-                      <li
-                        key={featureIndex}
-                        className="text-sm text-[#6B7280] flex items-start"
-                      >
-                        <span className="mr-2">•</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-sm flex-1 text-[#6B7280] mb-6">
-                    {card.features}
+                <div className="flex-1">
+                  <p className="text-xs italic text-[#6B7280] mb-4  ">
+                    {card.text}
                   </p>
-                )}
+                  {Array.isArray(card.features) ? (
+                    <ul className="grow space-y-3 mb-6">
+                      {card.features.map((feature, featureIndex) => (
+                        <li
+                          key={featureIndex}
+                          className="text-sm text-[#6B7280] flex items-start"
+                        >
+                          <span className="mr-2">•</span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm flex-1 text-[#6B7280] mb-6">
+                      {card.features}
+                    </p>
+                  )}
+                </div>
                 {/* Button */}
                 <div>
-                  <Button variant={"secondary"}>{card.buttonText}</Button>
-
-                  {/* Footer */}
-                  <p className="text-xs italic text-[#6B7280] mt-4 text-center">
+                  <p className="text-xs italic text-[#6B7280] mb-4 text-center">
                     {card.footer}
                   </p>
+                  <Button variant={"secondary"} className="w-full">
+                    {card.buttonText}
+                  </Button>
+
+                  {/* Footer */}
                 </div>
               </div>
             </div>
           ))}
         </div>
+        <p className="text-center text-sm mt-4">
+          Pricing aligned with firm size. No long-term contracts. Cancel
+          anytime.
+        </p>
+        <p className="text-center text-sm">Written by qualified and experienced legal professional</p>
       </div>
     </section>
   );

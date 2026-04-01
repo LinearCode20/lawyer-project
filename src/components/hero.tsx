@@ -88,13 +88,7 @@ export default function Hero() {
             }}
           ></div>
 
-          {/* Top blur overlay */}
-          {/* <div className="absolute top-0 left-0 right-0 h-24 pointer-events-none z-20 backdrop-blur-md group-hover:backdrop-blur-none transition-all duration-300 bg-gradient-to-b from-[#FAFAF5] via-[#FAFAF5]/90 to-transparent"></div> */}
-
-          {/* Bottom blur overlay */}
-          {/* <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none z-20  transition-all duration-300 bg-gradient-to-t from-[#FAFAF5] via-[#FAFAF5]/90 to-transparent"></div> */}
-
-          <div className="absolute inset-0 z-20 bg-gradient-to-b from-[#FAFAF5] via-transparent to-[#FAFAF5] transition-opacity duration-300 group-hover:opacity-0" />
+          {/* <div className="absolute inset-0 z-20 bg-gradient-to-b from-[#FAFAF5] via-transparent to-[#FAFAF5] transition-opacity duration-300 group-hover:opacity-0" /> */}
 
           <div
             className="relative z-10 

@@ -18,7 +18,7 @@ export default function BottomBanner() {
           <Button size="lg" variant="secondary" className=" px-8">
             Start Free Month
           </Button>
-          <Button size="lg"  className=" px-8 bg-primary">
+          <Button size="lg" variant={"outline"} className=" px-8 bg-primary">
             <ArrowDownToLine className="mr-2" />
             Download Sample Issue
           </Button>
