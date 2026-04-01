@@ -63,6 +63,7 @@ export async function CaptureEmailData(data: CaptureEmail) {
 type FreeSample = {
   full_name: string;
   email: string;
+  selected_areas: string;
   created_at: string;
 };
 
