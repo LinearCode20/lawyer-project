@@ -15,14 +15,14 @@ export default function BottomBanner() {
           stay compliant, and remove the admin burden.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 md:w-[70%] mx-auto">
           <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
-            <Button size="lg" variant="secondary" className=" px-8">
+            <Button size="lg" variant="secondary" className=" px-8 w-full">
               Start Free Month
             </Button>
           </Link>
           <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
-            <Button size="lg" variant={"outline"} className=" px-8 bg-primary">
+            <Button size="lg" variant={"outline"} className=" px-8 bg-primary w-full">
               <ArrowDownToLine className="mr-2" />
               Download Sample Issue
             </Button>

@@ -21,7 +21,7 @@ export default function AreasOfLaw() {
           className=" relative border border-gray-300 hover:bg-[#fbfbfb]"
         >
           <div
-            className="flex z-10 justify-between p-6 py-8 items-center cursor-pointer "
+            className="flex z-10 justify-between p-6 md:py-8 items-center cursor-pointer "
             onClick={() => toggleItem(index)}
           >
             <span className="font-semibold text-primary">{area.title}</span>

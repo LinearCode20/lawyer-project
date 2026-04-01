@@ -47,7 +47,7 @@ export default function Home() {
       <CPTSteps />
       <WhyChooseUs />
       <Pricing />
-      <section className="p-4 py-20" id="subscribe">
+      <section className="p-4 md:py-20" id="subscribe">
         <div className="md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <SubscribeFree />
           <DownloadFreeSample />
@@ -78,7 +78,7 @@ export default function Home() {
       <FAQ />
       <BottomBanner />
 
-      <section className="p-4 py-20 " id="contact-us">
+      <section className="p-4 py-10 md:py-20 " id="contact-us">
         <div className="md:max-w-6xl mx-auto">
           <h1 className="text-3xl  font-serif text-primary">Contact</h1>
           <p className="mb-4">Have Question? Send us a quick Message.</p>

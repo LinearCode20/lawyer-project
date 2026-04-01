@@ -1,5 +1,11 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowDownToLine, Award, Clock, FileText, Layers, MoveRight, Users } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  ArrowDownToLine,
+  Clock,
+  FileText,
+  Layers,
+  MoveRight,
+} from "lucide-react";
 import AreasOfLaw from "./Areas-of-law/areas-of-law";
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -32,17 +38,17 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-20 " id="area-of-law">
-      <div className="md:max-w-6xl mx-auto px-4 grid grid-cols-1 gap-16 md:grid-cols-2 ">
-        <div className="p-4">
+    <section className="p-4 py-10 md:py-20 " id="area-of-law">
+      <div className="md:max-w-6xl mx-auto  grid grid-cols-1 gap-8 md:gap-16 md:grid-cols-2 ">
+        <div>
           <h2 className="text-4xl   font-serif text-primary  ">
             What you'll receive each month
           </h2>
-          <p className="mt-8 ">
+          <p className="mt-4 ">
             Every issue is built to save time, reduce searching, and make
             monthly CPD easier to complete and record.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 md:mt-12">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
@@ -50,7 +56,9 @@ export default function WhyChooseUs() {
                   <CardContent className="flex  gap-4 items-start justify-start">
                     <Icon className="shrink-0 mt-1 h-6 w-6 text-secondary" />
                     <div className="flex-1">
-                      <p className="text-base mb-4 font-semibold">{feature.title}</p>
+                      <p className="text-base mb-4 font-semibold">
+                        {feature.title}
+                      </p>
                       <p className="text-muted-foreground">
                         {feature.description}
                       </p>
@@ -82,9 +90,9 @@ export default function WhyChooseUs() {
               </Button>
             </Link>
           </div>
-          <p className="mt-8 text-sm text-center ">No Spam. Just the Sample</p>
+          <p className="mt-4 text-sm text-center ">No Spam. Just the Sample</p>
         </div>
-        <div className="p-4">
+        <div>
           <h2 className="text-4xl  font-serif text-primary ">
             Areas of Law covered
           </h2>

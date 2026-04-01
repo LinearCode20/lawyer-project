@@ -44,14 +44,14 @@ export const pricingCards = [
       "Includes everything in Professional plus compliance updates, risk alerts, tools and priority support",
 
     buttonText: "Start Free Month",
-    footer: "Reguirst More Details",
+    footer: "Request More Details",
     isHighlighted: false,
   },
 ];
 
 export default function Pricing() {
   return (
-    <section className="p-4 py-20">
+    <section className="p-4 md:py-20">
       <div className="md:max-w-6xl mx-auto">
         <h1 className="text-3xl  text-primary font-serif mb-4">
           Simple, transparent pricing
