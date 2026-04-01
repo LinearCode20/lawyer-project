@@ -442,7 +442,7 @@ export default function SubscribeFree() {
         </CardContent>
       </Card>
 
-      <Dialog open={!isSuccessDialogOpen} onOpenChange={setIsSuccessDialogOpen}>
+      <Dialog open={isSuccessDialogOpen} onOpenChange={setIsSuccessDialogOpen}>
         <DialogContent className="sm:max-w-md" showCloseButton={true}>
           <div className="flex flex-col items-center text-center space-y-2">
             {/* Checkmark Icon */}
