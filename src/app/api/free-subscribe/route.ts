@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
       email,
       limit: 1,
     });
-    let customer: string = '';
+    let customer: any = '';
     if (existingCustomers.data.length > 0) {
       customer = existingCustomers.data[0];
     } else {
