@@ -2,9 +2,9 @@ import React from "react";
 
 export default function CPTSteps() {
   return (
-    <section className="p-4 py-20 bg-white" id="how-it-works">
+    <section className="p-4 py-10 md:py-20 bg-white" id="how-it-works">
       <div className="md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className="p-4">
+        <div >
           <h2 className="text-4xl  text-primary font-serif  ">
             CPD shouldn&apos;t take hours of your time
           </h2>
@@ -28,7 +28,7 @@ export default function CPTSteps() {
             EXAMPLE
             <span className="text-foreground"> CPD RECORD </span>
           </p>
-          <div className="m-4 rounded-lg shadow-lg overflow-hidden">
+          <div className="mt-4 rounded-lg shadow-lg overflow-hidden">
             {/* Header Section */}
             <div className="bg-accent px-6 py-4">
               <div className="flex justify-between items-start">
@@ -137,7 +137,7 @@ export default function CPTSteps() {
               <div className="border-t border-slate-200 py-4 flex justify-between gap-4 text-sm">
                 <p>Structured for SRA continuing competence requirements</p>
                 <p className="text-secondary text-xs font-semibold px-2">
-                  Record complote
+                  Record complete
                 </p>
               </div>
               <div className="pb-4">

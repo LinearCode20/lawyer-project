@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface CPDDocumentModalProps {
   isOpen: boolean;
@@ -71,7 +72,7 @@ export default function CPDDocumentModal({
               }}
             ></div>
 
-            <div className="relative z-10 ">
+            <div className="relative z-10 text-justify">
               <div className="text-center mb-4">
                 <p className="text-xs text-gray-500 mb-2 group-hover:text-amber-600 transition-colors">
                   CLICK TO EXPAND
@@ -117,7 +118,7 @@ export default function CPDDocumentModal({
                   legislative changes, and practical implications for solicitors
                   advising clients and managing transactions...
                 </p>
-                <p className="italic text-gray-400">
+                <p className="italic text-gray-400 ">
                   Key point: drafting clarity remains critical where agreements
                   are intended to survive structural changes...
                 </p>
@@ -219,6 +220,10 @@ export default function CPDDocumentModal({
                 </p>
               </div>
             </div>
+
+            {[...Array(5)].map((_, i) => (
+              <div key={i} className={cn("relative z-0 ")} />
+            ))}
           </div>
         </div>
       </div>

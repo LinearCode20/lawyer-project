@@ -50,7 +50,7 @@ const testimonials = [
 
 export default function Feedback() {
   return (
-    <section className="p-4 py-20 bg-white" id="testimonials">
+    <section className="p-4 py-10 md:py-20 " id="testimonials">
       <div className="md:max-w-6xl mx-auto">
         <h1 className="text-3xl text-primary font-serif  mb-4">
           What Practitioners say

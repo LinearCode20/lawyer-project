@@ -23,7 +23,7 @@ export default function FAQ() {
             {faq.map((area, index) => (
               <li key={index} className=" border relative hover:bg-gray-100">
                 <div
-                  className="flex justify-between z-10 items-center cursor-pointer p-4 py-8 "
+                  className="flex justify-between z-10 items-center cursor-pointer p-4 md:py-8 "
                   onClick={() => toggleItem(index)}
                 >
                   <span className="font-semibold text-base">{area.title}</span>
@@ -37,9 +37,9 @@ export default function FAQ() {
                 </div>
 
                 <div
-                  className={`overflow-hiddentransition-all duration-300 ${
+                  className={`overflow-hidden transition-all duration-300 ${
                     openIndex === index
-                      ? "h-auto opacity-100 mt-2   p-6 "
+                      ? "h-auto opacity-100 mt-2   p-4 pt-0 "
                       : "h-0 opacity-0"
                   }`}
                 >
