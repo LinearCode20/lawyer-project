@@ -6,6 +6,7 @@ import AppFooter from "@/components/common/app-footer";
 import { Toaster } from "@/components/ui/sonner";
 import FooterNew from "@/components/common/footer-new";
 import { ScrollToTop } from "@/components/common/scroll-to-top";
+import StripeProvider from "@/components/providers/stripe-provider";
 
 const TAWK_URL = process.env.NEXT_PUBLIC_TAWK_URL;
 
@@ -27,7 +28,7 @@ export default function RootLayout({
         <ScrollToTop />
         <AppHeader />
         {/* <main className="flex-1 flex flex-col h-full"> */}
-        {children}
+        <StripeProvider>{children}</StripeProvider>
         {/* </main> */}
         {/* <AppFooter /> */}
         <FooterNew />

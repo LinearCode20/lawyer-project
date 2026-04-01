@@ -42,7 +42,7 @@ export default function CPTSteps() {
                 </div>
 
                 <div className="text-right -mt-4 ">
-                  <img src={"/sub_logo.png"} className="aspect-video h-20 object-cover " alt="LAW EDGE" />
+                  <img src={"/logo.png"} className="aspect-video h-20 object-contain " alt="LAW EDGE" />
                 </div>
               </div>
             </div>

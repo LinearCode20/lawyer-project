@@ -8,6 +8,7 @@ const contactSchema = z.object({
   email: z.string().email("Invalid email"),
   firm_name: z.string().min(2).max(500),
   selected_areas: z.string(),
+  payment_method_id: z.string().optional(),
 });
 
 
