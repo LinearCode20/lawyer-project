@@ -151,7 +151,7 @@ export default function ContactForm() {
             </div>
 
             {/* Heading */}
-            <h2 className="text-2xl font-bold text-primary">
+            <h2 className="text-2xl font-bold text-primary font-serif">
               Message received
             </h2>
 

@@ -187,7 +187,7 @@ export default function DownloadFreeSample() {
             </div>
 
             {/* Heading */}
-            <h2 className="text-2xl font-bold text-primary">
+            <h2 className="text-2xl font-bold text-primary font-serif">
               Sample Downloaded
             </h2>
 
@@ -216,7 +216,7 @@ export default function DownloadFreeSample() {
 
             {/* Footer */}
             <p className="text-xs text-muted-foreground pt-2">
-              First month free and no commitments.
+              First month free and no commitment.
             </p>
           </div>
         </DialogContent>
