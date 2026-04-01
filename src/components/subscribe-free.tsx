@@ -45,7 +45,7 @@ const formSchema = z.object({
   }),
   plan_type: z.string().min(1, { message: "Please select a plan type" }),
   full_name: z.string().min(1, { message: "Please enter a name" }),
-  firm_name: z.string().min(1, { message: "Please enter a firm name" }),
+  //firm_name: z.string().min(1, { message: "Please enter a firm name" }),
   selected_areas: z
     .array(z.string())
     .min(1, { message: "Please select at least one area" })
@@ -66,7 +66,7 @@ export default function SubscribeFree() {
     defaultValues: {
       full_name: "",
       email: "",
-      firm_name: "",
+     // firm_name: "",
       plan_type: "",
       selected_areas: [],
     },
@@ -85,54 +85,62 @@ export default function SubscribeFree() {
 
   const handleSubmit = async (data: FormSchema) => {
     try {
-      console.log("Submitting form with data:", data);
+      //console.log("Submitting form with data:", data);
       if (!stripe || !elements) {
         toast.error("Stripe has not loaded yet. Please try again in a moment.");
         return;
       }
-
-      // Step 1: Fetch client secret from backend
-      const setupIntentResponse = await axios.post("/api/create-setup-intent", {
-        email: data.email,
-      });
-
-      const { clientSecret } = setupIntentResponse.data;
-
-      if (!clientSecret) {
-        toast.error("Failed to initialize payment. Please try again.");
+      // Create a PaymentMethod on the client using the CardElement
+      const cardElement = elements.getElement(CardElement);
+      if (!cardElement) {
+        toast.error("Card input not found. Please refresh and try again.");
         return;
       }
 
-      // Step 2: Confirm card setup with Stripe
-      const { setupIntent, error } = await stripe.confirmCardSetup(
-        clientSecret,
-        {
-          payment_method: {
-            card: elements.getElement(CardElement)!,
-            billing_details: {
-              name: data.full_name,
-              email: data.email,
-            },
+      // Create PaymentMethod with better error handling and logging
+      let paymentMethodId: string | undefined;
+      try {
+       // console.info("Creating PaymentMethod for", data.email);
+        toast("Creating payment method...");
+
+        const pmResult = await stripe.createPaymentMethod({
+          type: "card",
+          card: cardElement as any,
+          billing_details: {
+            name: data.full_name,
+            email: data.email,
           },
-        }
-      );
+        });
 
-      if (error) {
-        toast.error(error.message || "Payment setup failed");
+        if (pmResult.error) {
+          //.error("createPaymentMethod error:", pmResult.error);
+          toast.error(pmResult.error.message || "Failed to create payment method");
+          return;
+        }
+
+        if (!pmResult.paymentMethod || !pmResult.paymentMethod.id) {
+         // console.error("createPaymentMethod returned no paymentMethod:", pmResult);
+          toast.error("Failed to create a payment method. Please try another card or refresh the page.");
+          return;
+        }
+
+        paymentMethodId = pmResult.paymentMethod.id;
+        //console.log("Created paymentMethod id:", paymentMethodId);
+      } catch (err) {
+        console.error("Unexpected error creating payment method:", err);
+        toast.error("Unexpected error creating payment method. Check console for details.");
         return;
       }
 
-      console.log("setupIntent", setupIntent);
-
-      // Step 3: Submit subscription data to backend
+      // Submit subscription data to backend, sending the payment_method id
       const response = await axios.post("/api/free-subscribe", {
         ...data,
         selected_areas: data.selected_areas.join(", "),
-        payment_method_id: setupIntent.payment_method,
+        payment_method_id: paymentMethodId,
       });
       toast.success(response?.data?.message || "Thanks for subscribing!");
     } catch (e: any) {
-      console.log(e);
+     // console.log(e);
       toast.error(e?.response?.data?.message || "Something went wrong");
     }
   };
@@ -174,7 +182,7 @@ export default function SubscribeFree() {
           </div>
         ) : (
           <>
-            <p className="font-semibold  ">You're almost done</p>
+            <p className="font-semibold  ">You&apos;re almost done</p>
             <p className=" my-4">
               Setting up CPD for your account (your email)
             </p>
@@ -186,7 +194,11 @@ export default function SubscribeFree() {
           </>
         )}
         <form
-          onSubmit={form.handleSubmit(handleSubmit)}
+          onSubmit={(e) => {
+           // console.log("form onSubmit event", e);
+            // delegate to react-hook-form
+            form.handleSubmit(handleSubmit)(e as any);
+          }}
           className="grid gap-4 mt-4"
         >
           {currentStep === 1 && (
@@ -319,7 +331,7 @@ export default function SubscribeFree() {
               <div className="mt-4">
                 <p className="font-semibold">Secure Payment setup</p>
                 <p className="text-sm text-gray-400">
-                  Required to activate your free month. You won't be charged
+                  Required to activate your free month. You won&apos;t be charged
                   today
                 </p>
               </div>
@@ -408,6 +420,7 @@ export default function SubscribeFree() {
               disabled={form.formState.isSubmitting}
               className="w-full"
               size={"lg"}
+              onClick={() => console.log("submit button clicked")}
             >
               {form.formState.isSubmitting ? "Submitting..." : "Subscribe"}
             </Button>
