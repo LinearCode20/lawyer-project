@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDownToLine } from "lucide-react";
+import Link from "next/link";
 
 export default function BottomBanner() {
   return (
     <section className="py-20 bg-primary text-white">
       <div className="md:max-w-3xl mx-auto px-4 text-center">
-        <span  className="inline-block text-center bg-secondary w-20 h-px mb-4"/>
+        <span className="inline-block text-center bg-secondary w-20 h-px mb-4" />
         <h1 className="text-4xl  mb-6 font-serif">
           Complete your CPD each month without searching, stress, or wasted time
         </h1>
@@ -15,13 +16,17 @@ export default function BottomBanner() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          <Button size="lg" variant="secondary" className=" px-8">
-            Start Free Month
-          </Button>
-          <Button size="lg" variant={"outline"} className=" px-8 bg-primary">
-            <ArrowDownToLine className="mr-2" />
-            Download Sample Issue
-          </Button>
+          <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
+            <Button size="lg" variant="secondary" className=" px-8">
+              Start Free Month
+            </Button>
+          </Link>
+          <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
+            <Button size="lg" variant={"outline"} className=" px-8 bg-primary">
+              <ArrowDownToLine className="mr-2" />
+              Download Sample Issue
+            </Button>
+          </Link>
         </div>
 
         <p className=" text-gray-400  mb-2">

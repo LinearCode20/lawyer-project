@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { text } from "node:stream/consumers";
+import Link from "next/link";
 
 export const pricingCards = [
   {
@@ -123,10 +124,15 @@ export default function Pricing() {
                   <p className="text-xs italic text-[#6B7280] mb-4 text-center">
                     {card.footer}
                   </p>
-                  <Button variant={"secondary"} className="w-full">
-                    {card.buttonText}
-                  </Button>
-
+                  <Link
+                    href="/#subscribe"
+                    rel="noopener noreferrer"
+                    className="w-full"
+                  >
+                    <Button variant={"secondary"} className="w-full">
+                      {card.buttonText}
+                    </Button>
+                  </Link>
                   {/* Footer */}
                 </div>
               </div>
@@ -137,7 +143,9 @@ export default function Pricing() {
           Pricing aligned with firm size. No long-term contracts. Cancel
           anytime.
         </p>
-        <p className="text-center text-sm">Written by qualified and experienced legal professional</p>
+        <p className="text-center text-sm">
+          Written by qualified and experienced legal professional
+        </p>
       </div>
     </section>
   );
