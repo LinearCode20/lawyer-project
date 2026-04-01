@@ -1,14 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import React from "react";
 
 export default function FooterNew() {
   return (
     <footer className="bg-white px-4 py-8 text-sm">
-      <div className=" mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="flex flex-col">
           {/* Copyright Notice */}
           <div className="mb-3 text-2xl font-serif text-primary ">
@@ -18,7 +16,7 @@ export default function FooterNew() {
           {/* Policy Links */}
           <div className="flex flex-wrap gap-4">
             <Link href="/#contact-us" className=" hover:underline">
-Contact
+              Contact
             </Link>
             <Link href="/terms" className="hover:underline">
               Terms

@@ -85,11 +85,11 @@ const ItemData = ({ area }: { area: AreaOfLaw }) => {
             <div className="bg-accent rounded-lg border p-6 space-y-4 mt-4">
               <div className="flex justify-between items-start">
                 <p className="text-secondary">AREA SNAPSHOT</p>
-                <div className="-mt-4">
+                <div className="-mt-8">
                   <img
-                    src="/sub_logo.png"
+                    src="/logo.png"
                     alt="LAW EDGE"
-                    className="h-16 aspect-video object-cover rounded-md"
+                    className="h-24 aspect-video object-contain rounded-md"
                   />
                 </div>
               </div>

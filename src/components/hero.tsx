@@ -13,7 +13,7 @@ export default function Hero() {
       <main className="md:max-w-6xl mx-auto min-h-[80vh] w-full  grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-between py-20  sm:items-start p-4">
         <div>
           <div className="flex flex-col items-center gap-4 text-center sm:items-start sm:text-left">
-            <div className="text-primary text-5xl  font-serif space-y-4 pr-4 pt-8 tracking-tight ">
+            <div className="text-primary text-5xl mb-4  font-serif space-y-4 pr-4 pt-8 tracking-tight ">
               <p>CPD you'll actually complete.</p>
               <p>Delivered monthly. </p>
               <p>No effort required.</p>
@@ -38,7 +38,7 @@ export default function Hero() {
               <li>Ready for CPD records and audits</li>
             </ul>
           </div>
-          <div className="flex flex-col gap-4 text-base font-medium sm:flex-row mt-4 mr-16">
+          <div className=" flex flex-col gap-4 text-base font-medium sm:flex-row mt-8 mr-16">
             <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
               <Button variant={"secondary"} size="lg" className="w-full">
                 {" "}
@@ -53,7 +53,7 @@ export default function Hero() {
             </Link>
           </div>
           <p className="mt-4 text-sm text-center text-gray-400">
-            Take Less than 2 minutes to get started.
+            Takes Less than 2 minutes to get started.
           </p>
         </div>
 

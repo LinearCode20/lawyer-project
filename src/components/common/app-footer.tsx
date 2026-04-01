@@ -52,7 +52,7 @@ export default function AppFooter() {
   });
   return (
     <footer className="border-t border-gray-300 bg-background py-6 text-sm">
-      <div className="container mx-auto px-4">
+      <div className="md:max-w-6xl mx-auto px-4">
         {/* Main Content: Left-Right Layout */}
         <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Left Section: Company Info & Links */}

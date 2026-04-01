@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
 
 export default function AppHeader() {
   const navItems = [
-    { id: "home", label: "Testimonials", href: "/#testimonials" },
+    { id: "home", label: "Home", href: "/#home" },
+    // { id: "home", label: "Testimonials", href: "/#testimonials" },
     { id: "contact", label: "Contact Us", href: "/#contact-us" },
     { id: "areas", label: "Areas", href: "/#area-of-law" },
     { id: "how-it-works", label: "How It Works", href: "/#how-it-works" },
@@ -31,9 +32,12 @@ export default function AppHeader() {
                   <Link
                     key={item.id}
                     href={item.href}
-                    className={cn("text-sm font-semibold ")}
+                    className={cn(
+                      "text-sm font-semibold hover:text-primary relative group hover:scale-105 transition-all duration-200",
+                    )}
                   >
                     {item.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                   </Link>
                 ))}
                 <Link href="/#subscribe">

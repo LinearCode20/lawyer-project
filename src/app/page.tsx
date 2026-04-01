@@ -40,7 +40,7 @@ export default function Home() {
     <div className=" grow ">
       <Hero />
       <div className="bg-[#eff1f5] font-semibold text-center text-primary py-4">
-        Build for Busy solicitors who want CPD done Properly without wasting
+        Built for busy solicitors who want CPD done properly without wasting
         hours searching.
       </div>
 
@@ -79,12 +79,12 @@ export default function Home() {
       <BottomBanner />
 
       <section className="p-4 py-20 " id="contact-us">
-        <div className=" mx-auto">
+        <div className="md:max-w-6xl mx-auto">
           <h1 className="text-3xl  font-serif text-primary">Contact</h1>
           <p className="mb-4">Have Question? Send us a quick Message.</p>
           <div className="max-w-2xl">
             <ContactForm />
-          </div>          
+          </div>
         </div>
       </section>
     </div>
