@@ -38,7 +38,7 @@ export default function Hero() {
               <li>Ready for CPD records and audits</li>
             </ul>
           </div>
-          <div className=" flex flex-col gap-4 text-base font-medium sm:flex-row mt-8 mr-16">
+          <div className=" flex flex-col gap-4 text-base font-medium sm:flex-row mt-8 ">
             <Link
               href="/#subscribe"
               rel="noopener noreferrer"
