@@ -26,7 +26,7 @@ const formSchema = z.object({
     message: "Please enter an email",
   }),
   full_name: z.string().min(1, { message: "Please enter a name" }),
-  areaOfLaw: z.string().min(1, { message: "Please select an area" }),
+  selected_areas: z.string().min(1, { message: "Please select an area" }),
 });
 
 type FormSchema = z.infer<typeof formSchema>;
@@ -40,7 +40,7 @@ export default function DownloadFreeSample() {
     defaultValues: {
       full_name: "",
       email: "",
-      areaOfLaw: "",
+      selected_areas: "",
     },
   });
 
@@ -125,7 +125,7 @@ export default function DownloadFreeSample() {
             />
 
             <Controller
-              name="areaOfLaw"
+              name="selected_areas"
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
