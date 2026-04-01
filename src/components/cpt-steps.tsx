@@ -27,7 +27,6 @@ export default function CPTSteps() {
           <p className="text-xs text-primary/65 font-semibold">
             EXAMPLE
             <span className="text-foreground"> CPD RECORD </span>
-            (INCLUDE EACH MONTH)
           </p>
           <div className="m-4 rounded-lg shadow-lg overflow-hidden">
             {/* Header Section */}
@@ -42,7 +41,11 @@ export default function CPTSteps() {
                 </div>
 
                 <div className="text-right -mt-4 ">
-                  <img src={"/logo.png"} className="aspect-video h-20 object-contain " alt="LAW EDGE" />
+                  <img
+                    src={"/logo.png"}
+                    className="aspect-video h-20 object-contain "
+                    alt="LAW EDGE"
+                  />
                 </div>
               </div>
             </div>
@@ -133,7 +136,9 @@ export default function CPTSteps() {
 
               <div className="border-t border-slate-200 py-4 flex justify-between gap-4 text-sm">
                 <p>Structured for SRA continuing competence requirements</p>
-                <p className="text-secondary text-xs font-semibold px-2">Record complote</p>
+                <p className="text-secondary text-xs font-semibold px-2">
+                  Record complote
+                </p>
               </div>
               <div className="pb-4">
                 <div>
