@@ -1,5 +1,11 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowDownToLine, Award, Clock, FileText, Layers, MoveRight, Users } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  ArrowDownToLine,
+  Clock,
+  FileText,
+  Layers,
+  MoveRight,
+} from "lucide-react";
 import AreasOfLaw from "./Areas-of-law/areas-of-law";
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -8,49 +14,52 @@ export default function WhyChooseUs() {
   const features = [
     {
       icon: FileText,
-      title: "Case law without the reading",
+      title: "Key legal updates",
       description:
-        "Understand what matters without going through full judgments",
+        "Clear summaries of important legal and regulatory developments across your selected practice areas.",
     },
     {
       icon: Clock,
-      title: "No searching for updates",
+      title: "Practical application",
       description:
-        "Relevant legislative changes already identified and explained",
+        "A focused explanation of why each update matters and what your team should take from it.",
     },
     {
       icon: MoveRight,
-      title: "Know exactly what to do",
-      description: "Clear practical impact on advice, drafting, and risk",
+      title: "Built-in CPD record",
+      description:
+        "Structured documentation to help maintain a clear and consistent record of monthly training activity.",
     },
     {
       icon: Layers,
-      title: "CPD done and recorded",
+      title: "Ready-to-use format",
       description:
-        "Structured reflection and ready-made records with no extra admin",
+        "Prepared in a simple format that can be shared across the firm without extra internal preparation.",
     },
   ];
 
   return (
-    <section className="py-20 " id="area-of-law">
-      <div className="md:max-w-6xl mx-auto px-4 grid grid-cols-1 gap-16 md:grid-cols-2 ">
-        <div className="p-4">
+    <section className="p-4 py-10 md:py-20 " id="area-of-law">
+      <div className="md:max-w-6xl mx-auto  grid grid-cols-1 gap-8 md:gap-16  ">
+        <div>
           <h2 className="text-4xl   font-serif text-primary  ">
-            What you'll receive each month
+            What you receive each month
           </h2>
-          <p className="mt-8 ">
-            Every issue is built to save time, reduce searching, and make
-            monthly CPD easier to complete and record.
+          <p className="mt-4 ">
+            Structured monthly CPD updates designed to keep your team informed,
+            consistent, and easy to manage.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 md:mt-12">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card key={index} className="  rounded-xs bg-muted">
+                <Card key={index} className="  rounded-xs bg-white border shadow-xl">
                   <CardContent className="flex  gap-4 items-start justify-start">
                     <Icon className="shrink-0 mt-1 h-6 w-6 text-secondary" />
                     <div className="flex-1">
-                      <p className="text-base mb-4 font-semibold">{feature.title}</p>
+                      <p className="text-base mb-4 font-semibold">
+                        {feature.title}
+                      </p>
                       <p className="text-muted-foreground">
                         {feature.description}
                       </p>
@@ -60,6 +69,12 @@ export default function WhyChooseUs() {
               );
             })}
           </div>
+          <p className="text-center text-sm mt-4">
+            Designed to reduce internal effort while supporting a consistent approach to ongoing competence.
+          </p>
+          <p className="text-center text-sm">
+            No need to source updates, prepare internal notes, or manage separate records manually.
+          </p>
           <div className="flex flex-col  gap-4 text-base font-medium sm:flex-row mt-8 ">
             <Link
               href="/#subscribe"
@@ -68,7 +83,7 @@ export default function WhyChooseUs() {
             >
               <Button variant={"secondary"} size="lg" className="w-full">
                 {" "}
-                Start Free Month
+                Start your free trial
               </Button>
             </Link>
             <Link
@@ -82,20 +97,22 @@ export default function WhyChooseUs() {
               </Button>
             </Link>
           </div>
-          <p className="mt-8 text-sm text-center ">No Spam. Just the Sample</p>
+          <p className="mt-4 text-sm text-center ">No Spam. Just the Sample</p>
         </div>
-        <div className="p-4">
+        <div>
           <h2 className="text-4xl  font-serif text-primary ">
-            Areas of Law covered
+            CPD across key practice areas
           </h2>
           <p className="mt-8">
-            Choose the practice areas relevant to your work. Each monthly issue
-            is written to be concise, practical, and directly usable in
-            practice.
+            Structured monthly updates tailored to each area of practice, focused on what matters in day-to-day legal work.
           </p>
           <div className="mt-12">
             <AreasOfLaw />
           </div>
+
+          <p className="mt-8 text-center text-sm">
+            Each area follows a consistent structure, making it easy to use across different teams.
+          </p>
         </div>
       </div>
     </section>

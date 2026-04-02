@@ -27,7 +27,7 @@ import { pricingCards } from "./pricing";
 import { ArrowLeft, Check, MoveLeft } from "lucide-react";
 import Link from "next/link";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { Dialog,  DialogContent } from "./ui/dialog";
+import { Dialog, DialogContent } from "./ui/dialog";
 const areaOfLaw = [
   "Commercial & Corporate",
   "Litigation & Dispute Resolution",
@@ -51,6 +51,9 @@ const formSchema = z.object({
     .array(z.string())
     .min(1, { message: "Please select at least one area" })
     .max(3, { message: "You can select up to 3 areas" }),
+  policy_agreement: z.boolean().refine((val) => val === true, {
+    message: "You must agree to the policies to continue",
+  }),
 });
 
 type FormSchema = z.infer<typeof formSchema>;
@@ -71,6 +74,7 @@ export default function SubscribeFree() {
       // firm_name: "",
       plan_type: "",
       selected_areas: [],
+      policy_agreement: false,
     },
   });
 
@@ -158,7 +162,7 @@ export default function SubscribeFree() {
       <Card className="py-6 text-foreground">
         <CardHeader className="border-b px-6">
           <CardTitle className="text-3xl font-semibold">
-            Start Free Month
+            Start your free trial
           </CardTitle>
           <CardDescription>
             First month free. Payment details required to activate your
@@ -372,37 +376,54 @@ export default function SubscribeFree() {
                   </label>
                 </div>
 
-                <div className="flex gap-2">
-                  <Checkbox />
-                  <p>
-                    By submitting this form, you agree to our{" "}
-                    <Link
-                      href="/terms"
-                      target="_blank"
-                      className=" hover:underline text-primary"
+                <Controller
+                  name="policy_agreement"
+                  control={form.control}
+                  render={({ field, fieldState }) => (
+                    <div
+                      data-invalid={fieldState.invalid}
+                      className="flex  gap-2 items-start"
                     >
-                      Terms
-                    </Link>
-                    ,
-                    <Link
-                      href="/privacy-policy"
-                      target="_blank"
-                      className=" hover:underline text-primary"
-                    >
-                      {" "}
-                      Privacy Policy
-                    </Link>{" "}
-                    and
-                    <Link
-                      href="/cookies-policy"
-                      target="_blank"
-                      className=" hover:underline text-primary"
-                    >
-                      {" "}
-                      Cookies Policy
-                    </Link>
-                  </p>
-                </div>
+                      <Checkbox
+                        id="policy_agreement"
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                        className="mt-1 w-4 h-4"
+                      />
+                      <div className="flex-1">
+                        <p className="text-sm">
+                          By submitting this form, you agree to our{" "}
+                          <Link
+                            href="/terms"
+                            target="_blank"
+                            className="hover:underline text-primary"
+                          >
+                            Terms
+                          </Link>
+                          ,{" "}
+                          <Link
+                            href="/privacy-policy"
+                            target="_blank"
+                            className="hover:underline text-primary"
+                          >
+                            Privacy Policy
+                          </Link>{" "}
+                          and{" "}
+                          <Link
+                            href="/cookies-policy"
+                            target="_blank"
+                            className="hover:underline text-primary"
+                          >
+                            Cookies Policy
+                          </Link>
+                        </p>
+                        {fieldState.invalid && (
+                          <FieldError errors={[fieldState.error]} />
+                        )}
+                      </div>
+                    </div>
+                  )}
+                />
               </>
             )}
 

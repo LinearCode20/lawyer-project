@@ -82,7 +82,7 @@ export default function DownloadFreeSample() {
         <CardContent className="p-6">
           <form
             onSubmit={form.handleSubmit(handleSubmit)}
-            className="grid gap-6 "
+            className="grid gap-4 "
           >
             <p className="text-sm text-primary ">
               Preview how your monthly CPD will look delivered
@@ -208,7 +208,7 @@ export default function DownloadFreeSample() {
                   className="w-full"
                 >
                   <Button variant="secondary" className="flex-1">
-                    Start Free Month
+                    Start your free trial
                   </Button>
                 </Link>
               </DialogClose>

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { ArrowDownToLine, Download, Search } from "lucide-react";
+import { ArrowDownToLine } from "lucide-react";
 import CPDDocumentModal from "./cpd-document-modal";
 
 export default function Hero() {
@@ -10,20 +10,16 @@ export default function Hero() {
 
   return (
     <section className="bg-white" id="home">
-      <main className="md:max-w-6xl mx-auto min-h-[80vh] w-full  grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-between py-20  sm:items-start p-4">
+      <main className="md:max-w-6xl mx-auto min-h-[80vh] w-full  grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-4 items-center justify-between md:py-20  sm:items-start p-4">
         <div>
           <div className="flex flex-col items-center gap-4 text-center sm:items-start sm:text-left">
             <div className="text-primary text-5xl mb-4  font-serif space-y-4 pr-4 pt-8 tracking-tight ">
-              <p>CPD you'll actually complete.</p>
-              <p>Delivered monthly. </p>
-              <p>No effort required.</p>
+              <p>Structured CPD for Law Firms</p>
             </div>
             <p>
-              <span className="bg-[#f6f0e8] px-2 pt-1">
-                Get 13 hours of SRA-aligned CPD each year,
-              </span>{" "}
-              broken into simple monthly updates. No searching. No overwhelm.
-              Just clear, practical legal updates you can use immediately.
+              Monthly updates across key practice areas, written by
+              practitioners with built-in record keeping. No research, no admin,
+              and aligned with SRA expectations.
             </p>
             <p className=" font-[550] text-primary">
               Written by practising lawyers. Designed for fast, practical CPD.
@@ -46,7 +42,7 @@ export default function Hero() {
             >
               <Button variant={"secondary"} size="lg" className="w-full">
                 {" "}
-                Start Free Month
+                Start your free trial
               </Button>
             </Link>
             <Link
@@ -95,7 +91,7 @@ export default function Hero() {
           "
           >
             {/* Top row with expand indicator */}
-            <div className="text-center mb-4">
+            <div className="text-center my-4">
               <p className="text-xs text-gray-500 mb-2 group-hover:text-amber-600 transition-colors">
                 CLICK TO EXPAND
               </p>

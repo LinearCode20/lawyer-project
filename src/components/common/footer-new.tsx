@@ -5,9 +5,9 @@ import React from "react";
 
 export default function FooterNew() {
   return (
-    <footer className="bg-white px-4 py-8 text-sm">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col">
+    <footer className="bg-white  text-sm">
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="flex flex-col ">
           {/* Copyright Notice */}
           <div className="mb-3 text-2xl font-serif text-primary ">
             Law Edge - Practical CPD for modern solicitors
@@ -29,6 +29,13 @@ export default function FooterNew() {
             </Link>
           </div>
         </div>
+      </div>
+      <div className=" border-t">
+        <p className="text-center max-w-6xl mx-auto  px-4 py-8">
+          Prepared by experienced solicitors with specialist qualifications,
+          including STEP practitioners, Resolution members, and Law Society
+          accredited specialists.
+        </p>
       </div>
     </footer>
   );
