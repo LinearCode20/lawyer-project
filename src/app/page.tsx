@@ -47,7 +47,7 @@ export default function Home() {
       </div>
 
       <CPTSteps />
-      <HowItWillWorks />
+      {/* <HowItWillWorks /> */}
       <WhyChooseUs />
       <Pricing />
       <AboutLawEdge />
