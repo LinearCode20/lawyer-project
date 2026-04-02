@@ -18,7 +18,7 @@ export default function BottomBanner() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 md:w-[70%] mx-auto">
           <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
             <Button size="lg" variant="secondary" className=" px-8 w-full">
-              Start Free Month
+              Start your free trial
             </Button>
           </Link>
           <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">

@@ -208,7 +208,7 @@ export default function DownloadFreeSample() {
                   className="w-full"
                 >
                   <Button variant="secondary" className="flex-1">
-                    Start Free Month
+                    Start your free trial
                   </Button>
                 </Link>
               </DialogClose>

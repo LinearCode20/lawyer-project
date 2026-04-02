@@ -20,26 +20,26 @@ export type AreaOfLaw = {
 
 export const areaOfLaw: AreaOfLaw[] = [
   {
-    title: "Commercial & Corporate",
+    title: "Private Client",
     answer:
-      "Monthly legal CPD updates for lawyers in Commercial & Corporate law.",
-    link: "/law-area/commercial-corporate-cpd",
-    component: commercialCorporateCPD,
+      "Wills, probate, trusts, and estate planning updates with practical application.",
+    link: "/law-area/private-client-cpd",
+    component: privateClientCPD,
     tags: [
-      "Company law developments and statutory changes",
-      "Corporate governance",
-      "Shareholder disputes and minority protection",
-      "Transactional structures and commercial risks",
-      "Directors' duties",
-      "Compliance and regulatory developments",
+      "Wills and estate planning",
+      "Trusts and fiduciary duties",
+      "Probate and estate administration",
+      "Tax and succession planning",
+      "Court decisions",
+      "Private client risk issues",
     ],
     discriptions:
-      "Concise monthly CPD updates focused on the most relevant developments in commercial and corporate law. Covers company law, governance, shareholder issues, transactions, and directors' duties, with clear explanation of practical impact. Designed to be read in under 20 minutes while delivering one hour of CPD and supporting SRA competence and record keeping.",
+      "Monthly private client updates covering wills, trusts, probate, estates, tax developments, and succession planning. Focused on practical application for drafting, estate administration, fiduciary decision-making, and tax-aware advice. Designed to be read quickly while delivering one hour of CPD and supporting SRA competence and record keeping.",
   },
   {
     title: "Litigation & Dispute Resolution",
     answer:
-      "Monthly legal CPD updates for solicitors in litigation and dispute resolution.",
+      "Key procedural and case law developments relevant to contentious work.",
     link: "/law-area/litigation-dispute-resolution-cpd",
     component: litigationDisputeResolutionCPD,
     tags: [
@@ -54,8 +54,26 @@ export const areaOfLaw: AreaOfLaw[] = [
       "Monthly CPD updates covering civil procedure, case law, litigation strategy, costs, and dispute resolution. Focused on practical impact, including how developments affect live cases, risk, and client advice. Structured for quick reading with one hour of CPD and easy recording for SRA requirements.",
   },
   {
+    title: "Commercial & Corporate",
+    answer:
+      "Developments in company, contract, and commercial advisory work.",
+    link: "/law-area/commercial-corporate-cpd",
+    component: commercialCorporateCPD,
+    tags: [
+      "Company law developments and statutory changes",
+      "Corporate governance",
+      "Shareholder disputes and minority protection",
+      "Transactional structures and commercial risks",
+      "Directors' duties",
+      "Compliance and regulatory developments",
+    ],
+    discriptions:
+      "Concise monthly CPD updates focused on the most relevant developments in commercial and corporate law. Covers company law, governance, shareholder issues, transactions, and directors' duties, with clear explanation of practical impact. Designed to be read in under 20 minutes while delivering one hour of CPD and supporting SRA competence and record keeping.",
+  },
+
+  {
     title: "Employment Law",
-    answer: "Monthly legal CPD updates for solicitors in employment law.",
+    answer: "Workplace law updates, including tribunal decisions, policy issues, and compliance developments.",
     link: "/law-area/employment-law-cpd",
     component: employmentLawCPD,
     tags: [
@@ -72,7 +90,7 @@ export const areaOfLaw: AreaOfLaw[] = [
   {
     title: "Property Law",
     answer:
-      "Monthly CPD updates covering residential and commercial property law.",
+      "Residential and commercial property updates affecting transactions and risk.",
     link: "/law-area/property-law-cpd",
     component: propertyLawCPD,
     tags: [
@@ -87,8 +105,8 @@ export const areaOfLaw: AreaOfLaw[] = [
       "Monthly CPD updates covering residential and commercial property transactions, landlord and tenant issues, planning developments, and property risk. Focused on practical application for conveyancing and commercial property work, including drafting, due diligence, title, and compliance. Designed for quick reading with one hour of CPD and easy recording for SRA requirements.",
   },
   {
-    title: "Family Law CPD",
-    answer: "Monthly legal CPD updates for solicitors in family law.",
+    title: "Family Law",
+    answer: "Updates on financial remedies, children matters, and evolving case law.",
     link: "/law-area/family-law-cpd",
     component: familyLawCPD,
     tags: [
@@ -105,7 +123,7 @@ export const areaOfLaw: AreaOfLaw[] = [
   {
     title: "Immigration",
     answer:
-      "Monthly legal CPD updates for solicitors and advisers in immigration law.",
+      "Developments in visa routes, sponsorship, and Home Office policy, with practical application.",
     link: "/law-area/immigration-law-cpd",
     component: immigrationLawCPD,
     tags: [
@@ -122,7 +140,7 @@ export const areaOfLaw: AreaOfLaw[] = [
   {
     title: "Regulatory & Compliance",
     answer:
-      "Monthly legal CPD updates for regulatory and compliance practitioners.",
+      "Regulatory developments affecting firms and clients, with a focus on compliance and risk.",
     link: "/law-area/regulatory-compliance-cpd",
     component: regulatoryComplianceCPD,
     tags: [
@@ -136,26 +154,10 @@ export const areaOfLaw: AreaOfLaw[] = [
     discriptions:
       "Monthly updates on regulatory developments, enforcement trends, governance obligations, and compliance frameworks. Focused on practical impact for advisory work, internal controls, and risk management, with clear guidance on what changes in practice. Designed for efficient reading with one hour of CPD and structured record keeping support.",
   },
-  {
-    title: "Private",
-    answer:
-      "Monthly legal CPD updates for private client solicitors and advisers.",
-    link: "/law-area/private-client-cpd",
-    component: privateClientCPD,
-    tags: [
-      "Wills and estate planning",
-      "Trusts and fiduciary duties",
-      "Probate and estate administration",
-      "Tax and succession planning",
-      "Court decisions",
-      "Private client risk issues",
-    ],
-    discriptions:
-      "Monthly private client updates covering wills, trusts, probate, estates, tax developments, and succession planning. Focused on practical application for drafting, estate administration, fiduciary decision-making, and tax-aware advice. Designed to be read quickly while delivering one hour of CPD and supporting SRA competence and record keeping.",
-  },
+
   {
     title: "Crime",
-    answer: "Monthly legal CPD updates for criminal law practitioners.",
+    answer: "Developments in criminal law and procedure, with practical impact on case strategy.",
     link: "/law-area/crime-law-cpd",
     component: crimeLawCPD,
     tags: [

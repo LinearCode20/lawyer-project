@@ -6,44 +6,47 @@ import Link from "next/link";
 
 export const pricingCards = [
   {
-    badge: "FOR INDIVIDUALS",
-    title: "Starter",
+    badge: "FOR INDIVIDUAL",
+    title: "Single Practice Area",
     price: "£195/month",
     features: [
-      "Monthly CPD update",
-      "Key developments",
-      "Case summaries",
-      "Estimated CPD time",
+      "1 practice area",
+      "Monthly CPD updates",
+      "Built-in CPD record",
+      "Firm-wide use",
     ],
-    text: "Suitable for firms wanting straightforward, structured updates",
-    buttonText: "Start Free Month",
+    text: "Ideal for firms starting with one department",
+    buttonText: "Start your free trial",
     footer: "Request More Details",
     isHighlighted: false,
   },
   {
     badge: "MOST POPULAR",
-    title: "Professional",
+    title: "Multi-Area Access",
     price: "£295/month",
     features: [
-      "Includes everything in Starter",
-      "Practical commentary",
-      "Client impact insights",
-      "Action points",
-      "CPD log support",
+      "Up to 3 practice areas ",
+      "Monthly updates across selected areas ",
+      "Built-in CPD records",
+      "Consistent structure across teams",
     ],
-    text: "For firms wanting practical guidance and structure. Designed to reduce time and help fee earners identify what matters and what action to take",
-    buttonText: "Start Free Month",
+    text: "For firms covering multiple practice areas",
+    buttonText: "Start your free trial",
     footer: "Request More Details",
     isHighlighted: true,
   },
   {
     badge: "FOR FULL COVERAGE",
-    title: "Complete",
+    title: "Full Access",
     price: "£395/month",
-    features:
-      "Includes everything in Professional plus compliance updates, risk alerts, tools and priority support",
-
-    buttonText: "Start Free Month",
+    features: [
+      "All practice areas",
+      "Monthly updates across all areas",
+      "Centralised CPD structure",
+      "Scalable across the firm",
+    ],
+    text: "For firms wanting full coverage across departments",
+    buttonText: "Start your free trial",
     footer: "Request More Details",
     isHighlighted: false,
   },
@@ -54,28 +57,37 @@ export default function Pricing() {
     <section className="p-4 md:py-20">
       <div className="md:max-w-6xl mx-auto">
         <h1 className="text-3xl  text-primary font-serif mb-4">
-          Simple, transparent pricing
+          Simple, flexible pricing
         </h1>
         <p className="mb-4 mr-20">
-          Choose the level of coverage that fits your practice. Clear monthly
-          pricing. No hidden extras. First month free.
+          Choose the practice areas you need, with a structure that scales
+          across your firm.
         </p>
         <div className="flex flex-col md:flex-row items-center md:items-stretch gap-4  justify-between  mt-12">
           {pricingCards.map((card, index) => (
             <div
               key={index}
-              className={`bg-white  max-w-72 rounded-xl shadow-sm flex flex-col justify-between`}
+              className={cn(
+                `bg-white  max-w-72 rounded-xl shadow-sm flex flex-col justify-between border-2 border-t-6`,
+                card.isHighlighted &&
+                  "border-2 border-t-6 border-[#D4AF37] shadow-md",
+              )}
             >
-              <div
+              {/* <div
                 className={cn(
                   "",
                   card.isHighlighted
                     ? "border-t-4 border-[#D4AF37] shadow-md"
                     : "border border-t-4 border-[#E5E7EB]",
                 )}
-              />
+              /> */}
               {/* Badge */}
-              <div className="border-b p-6">
+              <div
+                className={cn(
+                  "border-b p-6",
+                  card.isHighlighted && "border-b-[#D4AF37]",
+                )}
+              >
                 <div className="">
                   <span
                     className={cn(
@@ -121,30 +133,30 @@ export default function Pricing() {
                 </div>
                 {/* Button */}
                 <div>
-                  <p className="text-xs italic text-[#6B7280] mb-4 text-center">
-                    {card.footer}
-                  </p>
                   <Link
                     href="/#subscribe"
                     rel="noopener noreferrer"
                     className="w-full"
                   >
                     <Button variant={"secondary"} className="w-full">
-                      {card.buttonText}
+                      Start your free trial
                     </Button>
                   </Link>
                   {/* Footer */}
                 </div>
+                <p className="text-xs italic text-[#6B7280] mt-4 text-center">
+                  You can add or change practice areas at any time
+                </p>
               </div>
             </div>
           ))}
         </div>
         <p className="text-center text-sm mt-4">
-          Pricing aligned with firm size. No long-term contracts. Cancel
-          anytime.
+          Most firms use Law Edge to replace the time spent sourcing updates and
+          maintaining internal CPD records.
         </p>
         <p className="text-center text-sm">
-          Written by qualified and experienced legal professional
+          A simple, predictable way to manage CPD across multiple teams.{" "}
         </p>
       </div>
     </section>

@@ -22,6 +22,8 @@ import FAQ from "@/components/faq";
 import Pricing from "@/components/pricing";
 import { CircleCheck } from "lucide-react";
 import CPTSteps from "@/components/cpt-steps";
+import HowItWillWorks from "@/components/how-it-will-works";
+import AboutLawEdge from "@/components/AboutLawEdge";
 
 // const areaOfLaw = [
 //   "Commercial & Corporate",
@@ -45,8 +47,10 @@ export default function Home() {
       </div>
 
       <CPTSteps />
+      {/* <HowItWillWorks /> */}
       <WhyChooseUs />
       <Pricing />
+      <AboutLawEdge />
       <section className="p-4 md:py-20" id="subscribe">
         <div className="md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <SubscribeFree />
