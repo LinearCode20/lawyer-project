@@ -14,16 +14,12 @@ export default function Hero() {
         <div>
           <div className="flex flex-col items-center gap-4 text-center sm:items-start sm:text-left">
             <div className="text-primary text-5xl mb-4  font-serif space-y-4 pr-4 pt-8 tracking-tight ">
-              <p>CPD you'll actually complete.</p>
-              <p>Delivered monthly. </p>
-              <p>No effort required.</p>
+              <p>Structured CPD for Law Firms</p>
             </div>
             <p>
-              <span className="bg-[#f6f0e8] px-2 pt-1">
-                Get 13 hours of SRA-aligned CPD each year,
-              </span>{" "}
-              broken into simple monthly updates. No searching. No overwhelm.
-              Just clear, practical legal updates you can use immediately.
+              Monthly updates across key practice areas, written by
+              practitioners with built-in record keeping. No research, no admin,
+              and aligned with SRA expectations.
             </p>
             <p className=" font-[550] text-primary">
               Written by practising lawyers. Designed for fast, practical CPD.
@@ -46,7 +42,7 @@ export default function Hero() {
             >
               <Button variant={"secondary"} size="lg" className="w-full">
                 {" "}
-                Start Free Month
+                Start your free trial
               </Button>
             </Link>
             <Link

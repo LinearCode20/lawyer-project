@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AreaOfLaw, areaOfLaw } from "@/app/law-area/[slug]/data";
 import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import { Card, CardContent } from "../ui/card";
 
 export default function AreasOfLaw() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -14,52 +15,29 @@ export default function AreasOfLaw() {
   };
 
   return (
-    <ul className="bg-white">
+    <div className=" grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 rounded-lg">
       {areaOfLaw.map((area, index) => (
-        <li
+        <Card
           key={index}
           className=" relative border border-gray-300 hover:bg-[#fbfbfb]"
         >
-          <div
-            className="flex z-10 justify-between p-6 md:py-8 items-center cursor-pointer "
-            onClick={() => toggleItem(index)}
-          >
-            <span className="font-semibold text-primary">{area.title}</span>
-            <span className="text-secondary">
-              {" "}
-              {openIndex === index ? (
-                <Minus size={16} />
-              ) : (
-                <Plus size={16} />
-              )}{" "}
-            </span>
-          </div>
-          <AnimatePresence>
-            {openIndex === index && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{
-                  height: { duration: 0.4, ease: "easeInOut" },
-                  opacity: { duration: 0.25, ease: "easeOut" },
-                }}
-              >
-                <ItemData area={area} />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </li>
+          <CardContent>
+            <span className="font-semibold text-lg  text-primary">
+              {area.title}
+            </span>{" "}
+            <p className="text-gray-600 mt-4">{area.answer}</p>
+            <ItemData area={area} />
+          </CardContent>
+        </Card>
       ))}
-    </ul>
+    </div>
   );
 }
 
 const ItemData = ({ area }: { area: AreaOfLaw }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className={"m-6 p-4 bg-[#fbfbfe] rounded-lg border "}>
-      <p className="text-gray-600 mb-4">{area.answer}</p>
+    <div className={" mt-4 p-4 bg-[#fbfbfe] rounded-lg border "}>
       <div className="flex flex-wrap gap-3">
         {area.tags?.map((tag, index) => (
           <p
@@ -93,7 +71,9 @@ const ItemData = ({ area }: { area: AreaOfLaw }) => {
                   />
                 </div>
               </div>
-              <h1 className="text-2xl font-semibold text-primary font-serif">{area.title}</h1>
+              {/* <h1 className="text-lg font-semibold text-primary font-serif">
+                {area.title}
+              </h1> */}
               <p className="text-slate-500">{area.discriptions}</p>
             </div>
           </motion.div>
