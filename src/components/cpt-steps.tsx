@@ -27,7 +27,7 @@ const steps = [
 export default function CPTSteps() {
   return (
     <section className="p-4 py-16 md:py-24 bg-white" id="how-it-works">
-      <div className="md:max-w-6xl mx-auto px-4">
+      <div className="md:max-w-6xl mx-auto ">
         <h2 className="text-4xl  text-primary font-serif  mb-12">
           Why firms use Law Edge
         </h2>
