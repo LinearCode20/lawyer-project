@@ -15,7 +15,7 @@
     --background: #f8fafc;
     --foreground: rgb(114, 137, 148);
     --card: oklch(1 0 0);
-    --card-foreground: #0c2034;
+    --card-foreground: rgb(114, 137, 148);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
     --primary: #0c2034;

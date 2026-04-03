@@ -13,20 +13,19 @@ export default function Hero() {
       <main className="md:max-w-6xl mx-auto min-h-[80vh] w-full  grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-4 items-center justify-between md:py-20  sm:items-start p-4">
         <div>
           <div className="flex flex-col items-center gap-4 text-center sm:items-start sm:text-left">
-            <div className="text-primary text-5xl mb-4  font-serif space-y-4 pr-4 pt-8 tracking-tight ">
+            <div className="text-primary text-5xl mb-8 font-serif space-y-4 pr-4 pt-12 tracking-tight">
               <p>Structured CPD for Law Firms</p>
             </div>
-            <p>
+            <p className="text-primary  leading-relaxed">
               Monthly updates across key practice areas, written by
               practitioners with built-in record keeping. No research, no admin,
               and aligned with SRA expectations.
             </p>
-            <p className=" font-[550] text-primary">
-              Written by practising lawyers. Designed for fast, practical CPD.
+            <p className="text-sm  mt-4">
+              Prepared by experienced solicitors with specialist qualifications, including STEP practitioners, Resolution members, and Law Society accredited specialists.
             </p>
-            <p className="text-gray-400 mb-4">
-              Used by solicitors across the UK, from sole practitioners to
-              multi-office firms.
+            <p className="text-primary font-medium mt-4">
+              Reduce time spent on CPD, maintain clear records, and keep your team consistently up to date without internal effort.
             </p>
             <ul className="space-y-4 pl-4 list-disc">
               <li>Covers key updates in your practice area</li>
