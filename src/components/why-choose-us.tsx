@@ -39,10 +39,10 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="p-4 py-10 md:py-20 " id="area-of-law">
-      <div className="md:max-w-6xl mx-auto  grid grid-cols-1 gap-8 md:gap-16  ">
+    <section className="p-4 bg-white  py-20  " id="area-of-law">
+      <div className="md:max-w-6xl mx-auto  grid grid-cols-1 gap-20 md:gap-16  ">
         <div>
-          <h2 className="text-4xl   font-serif text-primary  ">
+          <h2 className="heading text-center ">
             What you receive each month
           </h2>
           <p className="mt-4 ">
@@ -53,11 +53,11 @@ export default function WhyChooseUs() {
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card key={index} className="  rounded-xs bg-white border shadow-xl">
+                <Card key={index} className="  rounded-xs bg-white border shadow">
                   <CardContent className="flex  gap-4 items-start justify-start">
-                    <Icon className="shrink-0 mt-1 h-6 w-6 text-secondary" />
+                    <Icon className="shrink-0 mt-1 h-4 w-4 text-secondary" />
                     <div className="flex-1">
-                      <p className="text-base mb-4 font-semibold">
+                      <p className="text-primary text-lg font-serif mb-4 font-semibold">
                         {feature.title}
                       </p>
                       <p className="text-muted-foreground">
@@ -69,7 +69,7 @@ export default function WhyChooseUs() {
               );
             })}
           </div>
-          <p className="text-center text-sm mt-4">
+          <p className="text-center text-sm my-8">
             Designed to reduce internal effort while supporting a consistent approach to ongoing competence.
           </p>
           <p className="text-center text-sm">
@@ -91,7 +91,7 @@ export default function WhyChooseUs() {
               rel="noopener noreferrer"
               className="w-full"
             >
-              <Button className="w-full" size="lg">
+              <Button className="w-full" size="lg" variant={"outline-secondary"}>
                 <ArrowDownToLine />
                 Download Sample Issue
               </Button>
@@ -100,7 +100,7 @@ export default function WhyChooseUs() {
           <p className="mt-4 text-sm text-center ">No Spam. Just the Sample</p>
         </div>
         <div>
-          <h2 className="text-4xl  font-serif text-primary ">
+          <h2 className="heading text-center">
             CPD across key practice areas
           </h2>
           <p className="mt-8">
@@ -110,7 +110,7 @@ export default function WhyChooseUs() {
             <AreasOfLaw />
           </div>
 
-          <p className="mt-8 text-center text-sm">
+          <p className="mt-8 text-center ">
             Each area follows a consistent structure, making it easy to use across different teams.
           </p>
         </div>

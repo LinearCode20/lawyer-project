@@ -26,9 +26,9 @@ const steps = [
 
 export default function CPTSteps() {
   return (
-    <section className="p-4 py-16 md:py-24 bg-white" id="how-it-works">
+    <section className="p-4 py-24 bg-white" id="how-it-works">
       <div className="md:max-w-6xl mx-auto ">
-        <h2 className="text-4xl  text-primary font-serif  mb-12">
+        <h2 className="heading text-center">
           Why firms use Law Edge
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -37,18 +37,18 @@ export default function CPTSteps() {
               key={index}
               className="border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-md"
             >
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold font-serif text-primary mb-2">
+              <CardContent className="p-4">
+                <h3 className="text-lg font-semibold font-serif text-primary mb-4">
                   {step.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className=" text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
               </CardContent>
             </Card>
           ))}
         </div>
-        <p className="text-sm text-muted-foreground text-center">
+        <p className="text-muted-foreground text-center">
           Used by firms as a simple alternative to managing CPD internally.
         </p>
       </div>

@@ -1,0 +1,23 @@
+<svg width="600" height="160" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
+
+  <text
+    x="0"
+    y="100"
+    text-anchor="start"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="72"
+    font-weight="700"
+    letter-spacing="5"
+    fill="#0c2034"
+  >LAW EDGE</text>
+  <text
+    x="0"
+    y="132"
+    text-anchor="start"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="24"
+    font-weight="500"
+    letter-spacing="9"
+    fill="#c4a26d"
+  >PROFESSIONAL CPD</text>
+</svg>
