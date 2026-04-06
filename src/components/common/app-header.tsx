@@ -25,7 +25,7 @@ export default function AppHeader() {
             {/* Logo/Brand Section */}
             <div className="flex items-center ">
               <Link href="/" className="flex flex-col">
-                <img src="/logo.png" alt="Logo" className="h-16 w-auto" />
+                <img src="/law_edge_logo.svg" alt="Logo" className="h-16 w-auto" />
               </Link>
             </div>
 

@@ -10,29 +10,34 @@ export default function Hero() {
 
   return (
     <section className="bg-white" id="home">
-      <main className="md:max-w-6xl mx-auto min-h-[80vh] w-full  grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-4 items-center justify-between md:py-20  sm:items-start p-4">
+      <main className="md:max-w-6xl mx-auto min-h-[80vh] w-full  grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-10 items-center justify-between md:py-20  sm:items-start p-4">
         <div>
-          <div className="flex flex-col items-center gap-4 text-center sm:items-start sm:text-left">
-            <div className="text-primary text-5xl mb-8 font-serif space-y-4 pr-4 pt-12 tracking-tight">
-              <p>Structured CPD for Law Firms</p>
-            </div>
-            <p className="text-primary  leading-relaxed">
+          <div className="">
+            <h1
+              className="text-primary text-[36px] mb-5 font-bold font-serif space-y-4  pt-16 
+ leading-[1.2] md:text-[48px] "
+            >
+              Structured CPD for
+              <br /> <span className="text-secondary">Law Firms</span>
+            </h1>
+            <p className="text-primary">
               Monthly updates across key practice areas, written by
-              practitioners with built-in record keeping. No research, no admin,
-              and aligned with SRA expectations.
+              practitioners with built-in record keeping.
             </p>
-            <p className="text-sm  mt-4">
-              Prepared by experienced solicitors with specialist qualifications, including STEP practitioners, Resolution members, and Law Society accredited specialists.
+            <p className="mt-6 text-primary" >
+              No research, no admin, and aligned with SRA expectations.
             </p>
-            <p className="text-primary font-medium mt-4">
-              Reduce time spent on CPD, maintain clear records, and keep your team consistently up to date without internal effort.
+            <p className=" text-sm mt-4">
+              Prepared by experienced solicitors with specialist qualifications,
+              including STEP practitioners, Resolution members, and Law Society
+              accredited specialists.
             </p>
-            <ul className="space-y-4 pl-4 list-disc">
-              <li>Covers key updates in your practice area</li>
-              <li>Structured for quick reading and reflection</li>
-              <li>Ready for CPD records and audits</li>
-            </ul>
+            <p className=" mt-6 text-primary">
+              Reduce time spent on CPD, maintain clear records, and keep your
+              team consistently up to date.
+            </p>
           </div>
+
           <div className=" flex flex-col gap-4 text-base font-medium sm:flex-row mt-8 ">
             <Link
               href="/#subscribe"
@@ -49,7 +54,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="w-full"
             >
-              <Button className="w-full" size="lg">
+              <Button className="w-full " size="lg" variant={"outline-secondary"}>
                 <ArrowDownToLine />
                 Download Sample Issue
               </Button>

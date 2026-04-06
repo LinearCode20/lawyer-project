@@ -15,18 +15,19 @@ export default function AreasOfLaw() {
   };
 
   return (
-    <div className=" grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 rounded-lg">
+    <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 rounded-lg">
       {areaOfLaw.map((area, index) => (
         <Card
           key={index}
-          className=" relative border border-gray-300 hover:bg-[#fbfbfb]"
+          className=" relative rounded border bg-background border-gray-300 hover:bg-[#fbfbfb]"
         >
-          <CardContent>
-            <span className="font-semibold text-lg  text-primary">
+          <CardContent className="p-4">
+            <span className="inline-block w-8 bg-secondary h-0.5 mb-1" />
+            <p className="sub_heading">
               {area.title}
-            </span>{" "}
-            <p className="text-gray-600 mt-4">{area.answer}</p>
-            <ItemData area={area} />
+            </p>
+            <p className="text-card-foreground mt-4">{area.answer}</p>
+            {/* <ItemData area={area} /> */}
           </CardContent>
         </Card>
       ))}
