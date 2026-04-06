@@ -75,7 +75,7 @@ export default function HowItWillWorks() {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
+          <Link href="/#subscribe" rel="noopener noreferrer" className="w-full md:w-auto">
             <Button size="lg" className="flex w-full items-center gap-2 " variant={"secondary"}>
               <ArrowDownToLine />
               Download Sample Issue
