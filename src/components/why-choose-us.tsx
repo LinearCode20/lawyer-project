@@ -42,10 +42,10 @@ export default function WhyChooseUs() {
     <section className="p-4 bg-white  py-20  " id="area-of-law">
       <div className="md:max-w-6xl mx-auto  grid grid-cols-1 gap-20 md:gap-16  ">
         <div>
-          <h2 className="heading text-center ">
+          <h2 className="heading text-center mb-4!">
             What you receive each month
           </h2>
-          <p className="mt-4 ">
+          <p className="mt-4 text-center">
             Structured monthly CPD updates designed to keep your team informed,
             consistent, and easy to manage.
           </p>
@@ -100,10 +100,10 @@ export default function WhyChooseUs() {
           <p className="mt-4 text-sm text-center ">No Spam. Just the Sample</p>
         </div>
         <div>
-          <h2 className="heading text-center">
+          <h2 className="heading text-center mb-4!">
             CPD across key practice areas
           </h2>
-          <p className="mt-8">
+          <p className=" text-center ">
             Structured monthly updates tailored to each area of practice, focused on what matters in day-to-day legal work.
           </p>
           <div className="mt-12">
