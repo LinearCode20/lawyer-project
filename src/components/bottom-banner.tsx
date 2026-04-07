@@ -24,7 +24,7 @@ export default function BottomBanner() {
           <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
             <Button
               size="lg"
-              variant={"outline"}
+              variant={"outline-secondary"}
               className=" px-8 bg-primary w-full"
             >
               <ArrowDownToLine className="mr-2" />
