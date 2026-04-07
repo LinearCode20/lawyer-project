@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function BottomBanner() {
   return (
-    <section className="py-20 bg-primary text-white">
+    <section className="py-32 bg-primary text-white">
       <div className="md:max-w-3xl mx-auto px-4 text-center">
         <span className="inline-block text-center bg-secondary w-20 h-px mb-4" />
         <h1 className="text-4xl  mb-6 font-serif">
@@ -22,7 +22,11 @@ export default function BottomBanner() {
             </Button>
           </Link>
           <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
-            <Button size="lg" variant={"outline"} className=" px-8 bg-primary w-full">
+            <Button
+              size="lg"
+              variant={"outline-secondary"}
+              className=" px-8 bg-primary w-full"
+            >
               <ArrowDownToLine className="mr-2" />
               Download Sample Issue
             </Button>
@@ -30,7 +34,7 @@ export default function BottomBanner() {
         </div>
 
         <p className=" text-gray-400  mb-2">
-          No searching. No stress. 13 structured hours each year.
+          First month free. No obligations to continue.
         </p>
         <p className=" mb-2 font-semibold">
           Start with the free month and see the difference in your first issue.

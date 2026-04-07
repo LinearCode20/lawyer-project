@@ -73,7 +73,7 @@ export const areaOfLaw: AreaOfLaw[] = [
 
   {
     title: "Employment Law",
-    answer: "Workplace law updates, including tribunal decisions, policy issues, and compliance developments.",
+    answer: "Workplace law updates, including tribunal decisions, policy issues, and compliance.",
     link: "/law-area/employment-law-cpd",
     component: employmentLawCPD,
     tags: [

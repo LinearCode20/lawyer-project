@@ -46,7 +46,7 @@ export default function AppHeader() {
                   </Link>
                 ))}
                 <Link href="/#subscribe">
-                  <Button variant="outline">Download Sample Issue</Button>
+                  <Button variant="outline-secondary">Download Sample Issue</Button>
                 </Link>
                 <Link href="/#subscribe">
                   <Button variant="secondary">Start your free trial</Button>
@@ -99,8 +99,8 @@ export default function AppHeader() {
           </div>
         )}
 
-        <div className="bg-primary text-white text-center py-4">
-          13 hours CPD per year. Delivered monthly. No need to look elsewhere.
+        <div className="bg-primary text-white text-center py-2">
+          No research. No admin. Just CPD that runs itself.
         </div>
       </header>
     </>

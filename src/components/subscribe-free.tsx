@@ -167,6 +167,7 @@ export default function SubscribeFree() {
           <CardDescription>
             First month free. Payment details required to activate your
             Subscription.
+            <p className="mt-2">Set up takes less than 60 seconds.</p>
           </CardDescription>
         </CardHeader>
         <CardContent className="p-6">
@@ -457,7 +458,7 @@ export default function SubscribeFree() {
           </form>
           <p className="mt-8 text-center">
             {currentStep === 1
-              ? "Takes under 2 minutes. No obligations"
+              ? "First month free. No obligations to continue."
               : "No Charge Today. Cancel Anytime. Instant access after signup"}
           </p>
         </CardContent>

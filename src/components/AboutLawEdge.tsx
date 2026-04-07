@@ -2,9 +2,9 @@ import React from "react";
 
 export default function AboutLawEdge() {
   return (
-    <section className="bg-white p-4 py:py-10 md:py-20" id="home">
+    <section className=" p-4 py-32" id="home">
       <main className="md:max-w-6xl mx-auto ">
-        <h1 className="text-primary text-5xl mb-4  font-serif">
+        <h1 className="heading text-center mb-4!">
           About Law Edge
         </h1>
         <p>
@@ -13,7 +13,8 @@ export default function AboutLawEdge() {
           qualified legal practitioners, with a focus on practical application
           and ongoing competence.
         </p>
-        <p className="mt-4 text-primary">Founded by Ramani Kaur, Solicitor, BA (Hons), LLM, TEP.</p>
+        <p className="mt-4 text-primary">Founded by</p>
+        <p> Ramani Kaur, Solicitor, BA (Hons), LLM, TEP.</p>
       </main>
     </section>
   );

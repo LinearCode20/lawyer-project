@@ -61,7 +61,7 @@ export default function Hero() {
             </Link>
           </div>
           <p className="mt-4 text-sm text-center text-gray-400">
-            Takes Less than 2 minutes to get started.
+            First month free. No obligation to continue.
           </p>
         </div>
 

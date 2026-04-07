@@ -7,6 +7,27 @@ import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from "../ui/card";
 
+// Helper function to wrap & in span with font-sans
+const processTitle = (title: string) => {
+  if (title.includes("&")) {
+    const parts = title.split(/(&)/);
+    return (
+      <>
+        {parts.map((part, index) =>
+          part === "&" ? (
+            <span key={index} className="font-sans">
+              {part}
+            </span>
+          ) : (
+            <span key={index}>{part}</span>
+          )
+        )}
+      </>
+    );
+  }
+  return title;
+};
+
 export default function AreasOfLaw() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -23,8 +44,8 @@ export default function AreasOfLaw() {
         >
           <CardContent className="p-4">
             <span className="inline-block w-8 bg-secondary h-0.5 mb-1" />
-            <p className="sub_heading">
-              {area.title}
+            <p className="sub_heading font-sans">
+              {processTitle(area.title)}
             </p>
             <p className="text-card-foreground mt-4">{area.answer}</p>
             {/* <ItemData area={area} /> */}
