@@ -39,82 +39,103 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="p-4 bg-white  py-20  " id="area-of-law">
-      <div className="md:max-w-6xl mx-auto  grid grid-cols-1 gap-20 md:gap-16  ">
-        <div>
-          <h2 className="heading text-center mb-4!">
-            What you receive each month
-          </h2>
-          <p className="mt-4 text-center">
-            Structured monthly CPD updates designed to keep your team informed,
-            consistent, and easy to manage.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 md:mt-12">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <Card key={index} className="  rounded-xs bg-white border shadow">
-                  <CardContent className="flex  gap-4 items-start justify-start">
-                    <Icon className="shrink-0 mt-1 h-4 w-4 text-secondary" />
-                    <div className="flex-1">
-                      <p className="text-primary text-lg font-serif mb-4 font-semibold">
-                        {feature.title}
-                      </p>
-                      <p className="text-muted-foreground">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
+    <>
+      <section className="p-4 bg-white  py-32  ">
+        <div className="md:max-w-6xl mx-auto   ">
+          <div>
+            <h2 className="heading text-center mb-4!">
+              What you receive each month
+            </h2>
+            <p className="mt-4 text-center">
+              Structured monthly CPD updates designed to keep your team
+              informed, consistent, and easy to manage.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 mt-4 md:mt-12">
+              {features.map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <Card
+                    key={index}
+                    className="flex flex-col rounded-xs bg-white border shadow h-full"
+                  >
+                    <CardContent className="flex flex-col gap-4 flex-1">
+                      <div className="flex gap-4 items-start">
+                        <Icon className="shrink-0 mt-1 h-4 w-4 text-secondary" />
+                        <div className="flex-1">
+                          <p className="text-primary text-lg font-serif mb-4 font-semibold">
+                            {feature.title}
+                          </p>
+                          <p className="text-muted-foreground">
+                            {feature.description}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+            <p className="text-center text-sm my-8">
+              Designed to reduce internal effort while supporting a consistent
+              approach to ongoing competence.
+            </p>
+            <p className="text-center text-sm">
+              No need to source updates, prepare internal notes, or manage
+              separate records manually.
+            </p>
+            {/* <div className="flex flex-col  gap-4 text-base font-medium sm:flex-row mt-8 ">
+              <Link
+                href="/#subscribe"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <Button variant={"secondary"} size="lg" className="w-full">
+                  {" "}
+                  Start your free trial
+                </Button>
+              </Link>
+              <Link
+                href="/#subscribe"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <Button
+                  className="w-full"
+                  size="lg"
+                  variant={"outline-secondary"}
+                >
+                  <ArrowDownToLine />
+                  Download Sample Issue
+                </Button>
+              </Link>
+            </div> */}
+            {/* <p className="mt-4 text-sm text-center ">
+              No Spam. Just the Sample
+            </p> */}
           </div>
-          <p className="text-center text-sm my-8">
-            Designed to reduce internal effort while supporting a consistent approach to ongoing competence.
-          </p>
-          <p className="text-center text-sm">
-            No need to source updates, prepare internal notes, or manage separate records manually.
-          </p>
-          <div className="flex flex-col  gap-4 text-base font-medium sm:flex-row mt-8 ">
-            <Link
-              href="/#subscribe"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              <Button variant={"secondary"} size="lg" className="w-full">
-                {" "}
-                Start your free trial
-              </Button>
-            </Link>
-            <Link
-              href="/#subscribe"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              <Button className="w-full" size="lg" variant={"outline-secondary"}>
-                <ArrowDownToLine />
-                Download Sample Issue
-              </Button>
-            </Link>
-          </div>
-          <p className="mt-4 text-sm text-center ">No Spam. Just the Sample</p>
         </div>
-        <div>
-          <h2 className="heading text-center mb-4!">
-            CPD across key practice areas
-          </h2>
-          <p className=" text-center ">
-            Structured monthly updates tailored to each area of practice, focused on what matters in day-to-day legal work.
-          </p>
-          <div className="mt-12">
-            <AreasOfLaw />
-          </div>
+      </section>
+      <section className="p-4   py-32  " id="area-of-law">
+        <div className="md:max-w-6xl mx-auto    ">
+          <div>
+            <h2 className="heading text-center mb-4!">
+              CPD across key practice areas
+            </h2>
+            <p className=" text-center ">
+              Structured monthly updates tailored to each area of practice,
+              focused on what matters in day-to-day legal work.
+            </p>
+            <div className="mt-12">
+              <AreasOfLaw />
+            </div>
 
-          <p className="mt-8 text-center ">
-            Each area follows a consistent structure, making it easy to use across different teams.
-          </p>
+            <p className="mt-8 text-center ">
+              Each area follows a consistent structure, making it easy to use
+              across different teams.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

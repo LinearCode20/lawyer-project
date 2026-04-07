@@ -27,11 +27,9 @@ const steps = [
 
 export default function HowItWillWorks() {
   return (
-    <section className="p-4 py-20 " id="how-it-works">
+    <section className="p-4 py-32 " id="how-it-works">
       <div className="md:max-w-6xl mx-auto ">
-        <h2 className="heading text-center">
-          How it works
-        </h2>
+        <h2 className="heading text-center">How it works</h2>
 
         {/* Three-step horizontal flow */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -69,19 +67,30 @@ export default function HowItWillWorks() {
 
         {/* Credibility line */}
         <p className="text-center mb-8">
-          Each update is written by practitioners working in the relevant practice
-          area.
+          Each update is written by practitioners working in the relevant
+          practice area.
         </p>
 
         {/* CTA Button */}
-        <div className="flex justify-center">
-          <Link href="/#subscribe" rel="noopener noreferrer" className="w-full md:w-auto">
-            <Button size="lg" className="flex w-full items-center gap-2 " variant={"secondary"}>
+        <div className="flex justify-center mb-8">
+          <Link
+            href="/#subscribe"
+            rel="noopener noreferrer"
+            className="w-full md:w-auto"
+          >
+            <Button
+              size="lg"
+              className="flex w-full items-center gap-2 "
+              variant={"secondary"}
+            >
               <ArrowDownToLine />
               Download Sample Issue
             </Button>
           </Link>
         </div>
+        <p className="text-center ">
+          First month free. No obligation to continue.
+        </p>
       </div>
     </section>
   );

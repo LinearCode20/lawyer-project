@@ -99,8 +99,8 @@ export default function AppHeader() {
           </div>
         )}
 
-        <div className="bg-primary text-white text-center py-4">
-          13 hours CPD per year. Delivered monthly. No need to look elsewhere.
+        <div className="bg-primary text-white text-center py-2">
+          No research. No admin. Just CPD that runs itself.
         </div>
       </header>
     </>

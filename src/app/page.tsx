@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className=" grow ">
       <Hero />
-      <div className="bg-[#eff1f5] font-semibold text-center text-lg p-4 text-primary py-4">
+      <div className="bg-[#eff1f5] text-center text-lg p-4 text-primary py-2">
         Built for busy solicitors who want CPD done properly without wasting
         hours searching.
       </div>
@@ -29,7 +29,7 @@ export default function Home() {
       <WhyChooseUs />
       <Pricing />
       <AboutLawEdge />
-      <section className="p-4 md:py-20" id="subscribe">
+      <section className="p-4 py-32" id="subscribe">
         <div className="md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <SubscribeFree />
           <DownloadFreeSample />
