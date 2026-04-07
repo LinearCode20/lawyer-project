@@ -15,7 +15,7 @@ export default function FAQ() {
   return (
     <section className="py-20 p-4" id="faq">
       <div className="md:max-w-6xl mx-auto">
-        <h1 className="text-3xl font-semibold mb-8 text-primary font-serif ">
+        <h1 className="heading  text-center">
           Frequently asked questions
         </h1>
         <Card className="p-0 rounded-sm">

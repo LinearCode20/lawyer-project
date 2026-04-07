@@ -5,37 +5,36 @@ import React from "react";
 
 export default function FooterNew() {
   return (
-    <footer className="bg-white  text-sm">
+    <footer className="bg-primary  text-sm">
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex flex-col ">
           {/* Copyright Notice */}
-          <div className="mb-3 text-2xl font-serif text-primary ">
-            Law Edge - Practical CPD for modern solicitors
-          </div>
+          <div className="mb-3 text-2xl font-serif text-white ">Law Edge</div>
+          <p className="text-foreground">
+            Stractured CPD For law firmx.
+          </p>
+          <p className="my-4">
+            Prepared by experienced solicitors with specialist qualifications,
+            including STEP practitioners, Resolution members, and Law Society
+            accredited specialists.
+          </p>
 
           {/* Policy Links */}
-          <div className="flex flex-wrap gap-4">
-            <Link href="/#contact-us" className=" hover:underline">
+          <div className="flex flex-wrap gap-4 ">
+            <Link href="/#contact-us" className=" hover:text-white underline">
               Contact
             </Link>
-            <Link href="/terms" className="hover:underline">
+            <Link href="/terms" className="hover:text-white underline">
               Terms
             </Link>
-            <Link href="/privacy-policy" className=" hover:underline">
+            <Link href="/privacy-policy" className=" hover:text-white underline">
               Privacy
             </Link>
-            <Link href="/cookie-policy" className="hover:underline">
+            <Link href="/cookie-policy" className="hover:text-white underline">
               Cookies
             </Link>
           </div>
         </div>
-      </div>
-      <div className=" border-t">
-        <p className="text-center max-w-6xl mx-auto  px-4 py-8">
-          Prepared by experienced solicitors with specialist qualifications,
-          including STEP practitioners, Resolution members, and Law Society
-          accredited specialists.
-        </p>
       </div>
     </footer>
   );

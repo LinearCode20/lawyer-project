@@ -15,7 +15,7 @@ export const pricingCards = [
       "Built-in CPD record",
       "Firm-wide use",
     ],
-    text: "Ideal for firms starting with one department",
+    text: "Best for firms starting with one department",
     buttonText: "Start your free trial",
     footer: "Request More Details",
     isHighlighted: false,
@@ -30,7 +30,7 @@ export const pricingCards = [
       "Built-in CPD records",
       "Consistent structure across teams",
     ],
-    text: "For firms covering multiple practice areas",
+    text: "ideal for firms covering multiple practice areas",
     buttonText: "Start your free trial",
     footer: "Request More Details",
     isHighlighted: true,
@@ -54,21 +54,19 @@ export const pricingCards = [
 
 export default function Pricing() {
   return (
-    <section className="p-4 py-20">
+    <section className="bg-white p-4 py-32">
       <div className="md:max-w-6xl mx-auto">
-        <h1 className="text-3xl  text-primary font-serif mb-4">
-          Simple, flexible pricing
-        </h1>
-        <p className="mb-4 mr-20">
+        <h1 className="heading text-center mb-4!">Simple, flexible pricing</h1>
+        <p className="mb-4  text-center">
           Choose the practice areas you need, with a structure that scales
           across your firm.
         </p>
-        <div className="flex flex-col md:flex-row items-center md:items-stretch gap-4  justify-between  mt-12">
+        <div className="flex flex-col flex-nowrap sm:flex-row sm:items-stretch gap-6 sm:gap-8 justify-center mt-12">
           {pricingCards.map((card, index) => (
             <div
               key={index}
               className={cn(
-                `bg-white  max-w-72 rounded-xl shadow-sm flex flex-col justify-between border-2 border-t-6`,
+                `bg-white flex-1 rounded-xl shadow-sm flex flex-col h-full border-2 border-t-6`,
                 card.isHighlighted &&
                   "border-2 border-t-6 border-[#D4AF37] shadow-md",
               )}
@@ -91,7 +89,7 @@ export default function Pricing() {
                 <div className="">
                   <span
                     className={cn(
-                      " uppercase tracking-wide  mb-2 inline-block",
+                      " uppercase tracking-wide text-sm  mb-2 inline-block",
                       card.isHighlighted && "text-secondary",
                     )}
                   >
@@ -103,18 +101,18 @@ export default function Pricing() {
                 <h3 className="text-2xl font-serif font-semibold text-primary mb-2">
                   {card.title}
                 </h3>
+                <p className="text-xs italic text-[#6B7280] mb-4  ">
+                  {card.text}
+                </p>
 
                 {/* Price */}
-                <p className="text-3xl text-[#1F2937] ">{card.price}</p>
+                <p className="text-3xl text-[#1F2937] ">From {card.price}</p>
               </div>
               <div className=" p-6 flex flex-col flex-1 ">
                 {/* Features List */}
                 <div className="flex-1">
-                  <p className="text-xs italic text-[#6B7280] mb-4  ">
-                    {card.text}
-                  </p>
                   {Array.isArray(card.features) ? (
-                    <ul className="grow space-y-3 mb-6">
+                    <ul className="flex-1 space-y-3 mb-6 min-h-40">
                       {card.features.map((feature, featureIndex) => (
                         <li
                           key={featureIndex}
@@ -152,11 +150,14 @@ export default function Pricing() {
           ))}
         </div>
         <p className="text-center text-sm mt-4">
+          You can add or change practice areas at any time.
+        </p>
+        <p className="text-center text-sm mt-4">
           Most firms use Law Edge to replace the time spent sourcing updates and
           maintaining internal CPD records.
         </p>
-        <p className="text-center text-sm">
-          A simple, predictable way to manage CPD across multiple teams.{" "}
+        <p className="text-center text-sm mt-4">
+          A simple, predictable way to manage CPD across multiple teams.
         </p>
       </div>
     </section>

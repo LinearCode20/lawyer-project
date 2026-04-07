@@ -50,26 +50,26 @@ const testimonials = [
 
 export default function Feedback() {
   return (
-    <section className="p-4 py-10 md:py-20 " id="testimonials">
+    <section className="p-4 py-32 " id="testimonials">
       <div className="md:max-w-6xl mx-auto">
-        <h1 className="text-3xl text-primary font-serif  mb-4">
+        <h1 className="heading text-center  mb-4!">
           What Practitioners say
         </h1>
-        <p className="md:w-[60%]">
+        <p className="md:w-[60%] mx-auto text-center">
           Used by solicitors, department heads, and firms that want practical
           monthly CPD their teams will actually read and complete.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full justify-start mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-12">
           {testimonials.map((plan, index) => (
             <Card
               key={index}
-              className="flex-1 min-w-70 max-w-[23rem] text-foreground flex flex-col rounded-sm shadow-md hover:shadow-xl duration-200 cursor-pointer transition-all  "
+              className="h-full text-foreground flex flex-col rounded-sm shadow-md hover:shadow-xl duration-200 cursor-pointer transition-all"
             >
-              <CardContent className="flex-1 flex flex-col justify-between">
-                <p className="">"{plan.quote}"</p>
+              <CardContent className="flex-1 flex flex-col justify-between p-6">
+                <p className="flex-1">&ldquo;{plan.quote}&rdquo;</p>
                 <div>
-                  <p className="mt-4 text-sm  font-bold text-primary">{plan.role}</p>
-                  <p className="text-secondary text-base  ">
+                  <p className="mt-4 text-sm font-bold text-primary">{plan.role}</p>
+                  <p className="text-secondary text-base">
                     {plan.firm_type}
                   </p>
                 </div>

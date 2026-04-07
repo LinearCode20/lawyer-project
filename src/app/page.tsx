@@ -29,14 +29,14 @@ export default function Home() {
       <WhyChooseUs />
       <Pricing />
       <AboutLawEdge />
-      <section className="p-4 py-32" id="subscribe">
+      <section className=" p-4 py-32" id="subscribe">
         <div className="md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <SubscribeFree />
           <DownloadFreeSample />
         </div>
       </section>
-      <section className="p-4 py-20 bg-white">
-        <div className="md:max-w-6xl mx-auto flex flex-col md:flex-row gap-20 justify-evenly">
+      <section className="p-4 py-32 bg-white">
+        <div className="md:max-w-6xl mx-auto flex flex-col md:flex-row gap-10 justify-evenly">
           <div className="flex-1 flex items-start gap-2">
             <CircleCheck className="shrink-0 inline-block text-secondary h-4" />
             <p>
@@ -62,8 +62,8 @@ export default function Home() {
 
       <section className="p-4 py-10 md:py-20 " id="contact-us">
         <div className="md:max-w-6xl mx-auto">
-          <h1 className="text-3xl  font-serif text-primary">Contact</h1>
-          <p className="mb-4">Have Question? Send us a quick Message.</p>
+          <h1 className="text-center heading mb-4!">Contact</h1>
+          <p className="mb-16 text-center">Have Question? Send us a quick Message.</p>
           <div className="max-w-2xl">
             <ContactForm />
           </div>
