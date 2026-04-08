@@ -136,7 +136,7 @@ export default function ContactForm() {
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>
-          <p className="mt-4">
+          <p className="mt-4 text-center">
             By submitting this form, you agree to our Terms, Privacy Policy and
             Cookies Policy.
           </p>
@@ -171,7 +171,7 @@ export default function ContactForm() {
                   rel="noopener noreferrer"
                   className="w-full"
                 >
-                  <Button variant="secondary" className="flex-1">
+                  <Button size="lg" variant="secondary" className="flex-1">
                     Start your free trial
                   </Button>
                 </Link>
@@ -183,6 +183,7 @@ export default function ContactForm() {
                   className="w-full"
                 >
                   <Button
+                    size="lg"
                     variant="default"
                     className="flex-1"
                     onClick={() => router.push("/sample")}

@@ -164,13 +164,13 @@ export default function SubscribeFree() {
           <CardTitle className="text-3xl font-semibold">
             Start your free trial
           </CardTitle>
-          <CardDescription>
+          <CardDescription className="mt-1">
             First month free. Payment details required to activate your
             Subscription.
-            <p className="mt-2">Set up takes less than 60 seconds.</p>
+            <p className="">Set up takes less than 60 seconds.</p>
           </CardDescription>
         </CardHeader>
-        <CardContent className="p-6">
+        <CardContent className="p-6 pt-0">
           <p className="text-primary">
             No searching. No admin. Just structured CPD delivered monthly.
           </p>

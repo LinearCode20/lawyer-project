@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const pricingCards = [
   {
-    badge: "FOR INDIVIDUAL",
+    // badge: "FOR INDIVIDUAL",
     title: "Single Practice Area",
     price: "£195/month",
     features: [
@@ -54,7 +54,7 @@ export const pricingCards = [
 
 export default function Pricing() {
   return (
-    <section className="bg-white p-4 py-32">
+    <section className="bg-white p-4 py-13">
       <div className="md:max-w-6xl mx-auto">
         <h1 className="heading text-center mb-4!">Simple, flexible pricing</h1>
         <p className="mb-4  text-center">
@@ -80,6 +80,7 @@ export default function Pricing() {
                 )}
               /> */}
               {/* Badge */}
+
               <div
                 className={cn(
                   "border-b p-6",
@@ -96,8 +97,8 @@ export default function Pricing() {
                     {card.badge}
                   </span>
                 </div>
-
                 {/* Title */}
+
                 <h3 className="text-2xl font-serif font-semibold text-primary mb-2">
                   {card.title}
                 </h3>
@@ -108,6 +109,7 @@ export default function Pricing() {
                 {/* Price */}
                 <p className="text-3xl text-[#1F2937] ">From {card.price}</p>
               </div>
+
               <div className=" p-6 flex flex-col flex-1 ">
                 {/* Features List */}
                 <div className="flex-1">
@@ -136,7 +138,7 @@ export default function Pricing() {
                     rel="noopener noreferrer"
                     className="w-full"
                   >
-                    <Button variant={"secondary"} className="w-full">
+                    <Button size="lg" variant={"secondary"} className="w-full">
                       Start your free trial
                     </Button>
                   </Link>

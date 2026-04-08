@@ -11,7 +11,7 @@ export default function FooterNew() {
           {/* Copyright Notice */}
           <div className="mb-3 text-2xl font-serif text-white ">Law Edge</div>
           <p className="text-foreground">
-            Stractured CPD For law firmx.
+            Structured CPD For law firm.
           </p>
           <p className="my-4">
             Prepared by experienced solicitors with specialist qualifications,
