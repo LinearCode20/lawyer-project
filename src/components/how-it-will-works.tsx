@@ -55,18 +55,18 @@ export default function HowItWillWorks() {
         </div>
 
         {/* Reassurance line */}
-        <p className="text-center text-primary  mb-6">
+        <p className="text-center text-primary  mb-2">
           No internal preparation, restructuring, or additional admin required.
         </p>
 
         {/* Credibility line */}
-        <p className="text-center mb-8">
+        <p className="text-center mb-2">
           Each update is written by practitioners working in the relevant
           practice area.
         </p>
 
         {/* CTA Button */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-2">
           <Link
             href="/#subscribe"
             rel="noopener noreferrer"

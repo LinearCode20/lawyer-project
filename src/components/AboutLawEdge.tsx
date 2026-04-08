@@ -4,7 +4,7 @@ export default function AboutLawEdge() {
   return (
     <section className=" p-4 py-32" id="home">
       <main className="md:max-w-6xl mx-auto ">
-        <h1 className="heading text-center mb-4!">
+        <h1 className="heading text-center mb-6!">
           About Law Edge
         </h1>
         <p>

@@ -43,14 +43,14 @@ export default function WhyChooseUs() {
       <section className="p-4 bg-white  py-32  ">
         <div className="md:max-w-6xl mx-auto   ">
           <div>
-            <h2 className="heading text-center mb-4!">
+            <h2 className="heading text-center mb-6!">
               What you receive each month
             </h2>
-            <p className="mt-4 text-center">
+            <p className=" text-center">
               Structured monthly CPD updates designed to keep your team
               informed, consistent, and easy to manage.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 mt-4 md:mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 my-4 md:my-12">
               {features.map((feature, index) => {
                 const Icon = feature.icon;
                 return (
@@ -75,7 +75,7 @@ export default function WhyChooseUs() {
                 );
               })}
             </div>
-            <p className="text-center text-sm my-8">
+            <p className="text-center text-sm my-2">
               Designed to reduce internal effort while supporting a consistent
               approach to ongoing competence.
             </p>

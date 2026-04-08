@@ -167,7 +167,7 @@ export default function SubscribeFree() {
           <CardDescription>
             First month free. Payment details required to activate your
             Subscription.
-            <p className="mt-2">Set up takes less than 60 seconds.</p>
+            <p className="">Set up takes less than 60 seconds.</p>
           </CardDescription>
         </CardHeader>
         <CardContent className="p-6">

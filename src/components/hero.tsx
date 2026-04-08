@@ -14,7 +14,7 @@ export default function Hero() {
         <div>
           <div className="">
             <h1
-              className="text-primary text-[36px] mb-5 font-bold font-serif space-y-4  pt-16 
+              className="text-primary text-[36px] mb-6 font-bold font-serif space-y-4  pt-16 
  leading-[1.2] md:text-[48px] "
             >
               Structured CPD for
@@ -22,17 +22,15 @@ export default function Hero() {
             </h1>
             <p className="text-primary">
               Monthly updates across key practice areas, written by
-              practitioners with built-in record keeping.
+              practitioners with built-in record keeping. No research, no admin,
+              and aligned with SRA expectations.
             </p>
-            <p className="mt-6 text-primary" >
-              No research, no admin, and aligned with SRA expectations.
-            </p>
-            <p className=" text-sm mt-4">
+            <p className=" text-sm mt-2">
               Prepared by experienced solicitors with specialist qualifications,
               including STEP practitioners, Resolution members, and Law Society
               accredited specialists.
             </p>
-            <p className=" mt-6 text-primary">
+            <p className=" mt-2 text-primary">
               Reduce time spent on CPD, maintain clear records, and keep your
               team consistently up to date.
             </p>
@@ -54,7 +52,11 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="w-full"
             >
-              <Button className="w-full " size="lg" variant={"outline-secondary"}>
+              <Button
+                className="w-full "
+                size="lg"
+                variant={"outline-secondary"}
+              >
                 <ArrowDownToLine />
                 Download Sample Issue
               </Button>
