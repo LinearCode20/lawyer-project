@@ -14,7 +14,7 @@ export default function Hero() {
         <div>
           <div className="">
             <h1
-              className="text-primary text-[36px] mb-6 font-bold font-serif space-y-4  pt-16 
+              className="text-primary text-[36px] mb-4 font-bold font-serif space-y-4   
  leading-[1.2] md:text-[48px] "
             >
               Structured CPD for
@@ -22,15 +22,17 @@ export default function Hero() {
             </h1>
             <p className="text-primary">
               Monthly updates across key practice areas, written by
-              practitioners with built-in record keeping. No research, no admin,
-              and aligned with SRA expectations.
+              practitioners with built-in record keeping.
             </p>
-            <p className=" text-sm mt-2">
+            <p className="text-primary mt-1">
+              No research, no admin, and aligned with SRA expectations.
+            </p>
+            <p className=" text-sm mt-1">
               Prepared by experienced solicitors with specialist qualifications,
               including STEP practitioners, Resolution members, and Law Society
               accredited specialists.
             </p>
-            <p className=" mt-2 text-primary">
+            <p className=" mt-1 text-primary">
               Reduce time spent on CPD, maintain clear records, and keep your
               team consistently up to date.
             </p>

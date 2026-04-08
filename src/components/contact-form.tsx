@@ -136,7 +136,7 @@ export default function ContactForm() {
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>
-          <p className="mt-4">
+          <p className="mt-4 text-center">
             By submitting this form, you agree to our Terms, Privacy Policy and
             Cookies Policy.
           </p>

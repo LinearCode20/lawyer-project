@@ -26,18 +26,16 @@ const steps = [
 
 export default function CPTSteps() {
   return (
-    <section className="p-4 py-32 bg-white" id="how-it-works">
+    <section className="p-4 py-13 bg-white" id="how-it-works">
       <div className="md:max-w-6xl mx-auto ">
-        <h2 className="heading text-center">
-          Why firms use Law Edge
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <h2 className="heading text-center">Why firms use Law Edge</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-3xl mx-auto">
           {steps.map((step, index) => (
             <Card
               key={index}
-              className="border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1"
+              className="border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-sm hover:transform hover:-translate-y-px max-w-90 md:max-w-auto mx-auto "
             >
-              <CardContent className="p-4">
+              <CardContent className="">
                 <h3 className="text-lg font-semibold font-serif text-primary mb-4">
                   {step.title}
                 </h3>
@@ -49,7 +47,7 @@ export default function CPTSteps() {
           ))}
         </div>
         <p className="text-muted-foreground text-center">
-          Used by firms as a simple alternative to managing CPD internally.
+          Used by firms as a simple alternative to managing CPD internally
         </p>
       </div>
     </section>

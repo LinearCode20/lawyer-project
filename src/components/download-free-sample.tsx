@@ -75,11 +75,11 @@ export default function DownloadFreeSample() {
           <CardTitle className="text-3xl font-semibold ">
             Download Sample Issue
           </CardTitle>
-          <CardDescription>
+          <CardDescription className="mt-1">
             Enter your details to receive a sample issue
           </CardDescription>
         </CardHeader>
-        <CardContent className="p-6">
+        <CardContent className="p-6 pt-0">
           <form
             onSubmit={form.handleSubmit(handleSubmit)}
             className="grid gap-4 "
@@ -153,6 +153,7 @@ export default function DownloadFreeSample() {
               Sample includes case law, legislation, and CPD record
             </p>
             <Button
+            variant={"outline-secondary"}
               type="submit"
               className=""
               disabled={form.formState.isSubmitting}

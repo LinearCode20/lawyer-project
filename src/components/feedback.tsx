@@ -50,7 +50,7 @@ const testimonials = [
 
 export default function Feedback() {
   return (
-    <section className="p-4 py-32 " id="testimonials">
+    <section className="p-4 py-13 " id="testimonials">
       <div className="md:max-w-6xl mx-auto">
         <h1 className="heading text-center  mb-4!">What Practitioners say</h1>
         <p className="md:w-[60%] mx-auto text-center">
@@ -61,7 +61,7 @@ export default function Feedback() {
           {testimonials.map((plan, index) => (
             <Card
               key={index}
-              className="h-full text-foreground flex flex-col  shadow-md   cursor-pointer border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1"
+              className="h-full text-foreground flex flex-col  shadow-md   cursor-pointer border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-sm hover:transform hover:-translate-y-px"
             >
               <CardContent className="flex-1 flex flex-col justify-between p-6">
                 <p className="flex-1">&ldquo;{plan.quote}&rdquo;</p>

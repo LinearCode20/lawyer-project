@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ArrowDownToLine, Download, Menu, X } from "lucide-react";
 
 export default function AppHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -49,18 +49,19 @@ export default function AppHeader() {
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                   </Link>
                 ))}
-                <div className="flex items-center gap-4">
-                  <Link href="/#subscribe" className="grow">
-                    <Button size="lg" variant="outline-secondary">
+                {/* <div className="flex items-center justify-evenly gap-4 "> */}
+                  <Link href="/#subscribe">
+                    <Button size="lg" variant="outline-secondary" className="w-55">
+                      <ArrowDownToLine />
                       Download Sample Issue
                     </Button>
                   </Link>
-                  <Link href="/#subscribe" className="grow">
-                    <Button size="lg" variant="secondary">
+                  <Link href="/#subscribe">
+                    <Button size="lg" variant="secondary" className="w-55">
                       Start your free trial
                     </Button>
                   </Link>
-                </div>
+                {/* </div> */}
               </nav>
 
               {/* Mobile Menu Button */}
@@ -98,7 +99,12 @@ export default function AppHeader() {
                   href="/#subscribe"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <Button size="lg" variant="outline" className="w-full">
+                  <Button
+                    size="lg"
+                    variant="outline-secondary"
+                    className="w-full"
+                  >
+                    <ArrowDownToLine />
                     Download Sample Issue
                   </Button>
                 </Link>
@@ -115,7 +121,7 @@ export default function AppHeader() {
           </div>
         )}
 
-        <div className="bg-primary text-white text-center py-2">
+        <div className="bg-primary text-white text-center py-6">
           No research. No admin. Just CPD that runs itself.
         </div>
       </header>

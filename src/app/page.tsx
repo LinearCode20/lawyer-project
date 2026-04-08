@@ -13,15 +13,13 @@ import CPTSteps from "@/components/cpt-steps";
 import AboutLawEdge from "@/components/AboutLawEdge";
 import HowItWillWorks from "@/components/how-it-will-works";
 
-
-
 export default function Home() {
   return (
     <div className=" grow ">
       <Hero />
-      <div className="bg-[#eff1f5] text-center text-lg p-4 text-primary py-2">
+      <div className="bg-[#eff1f5] text-center text-lg p-4 text-primary py-8">
         Built for busy solicitors who want CPD done properly without wasting
-        hours searching.
+        hours searching
       </div>
 
       <CPTSteps />
@@ -29,15 +27,15 @@ export default function Home() {
       <WhyChooseUs />
       <Pricing />
       <AboutLawEdge />
-      <section className=" p-4 py-32" id="subscribe">
+      <section className=" p-4 py-13" id="subscribe">
         <div className="md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <SubscribeFree />
           <DownloadFreeSample />
         </div>
       </section>
-      <section className="p-4 py-32 bg-white">
-        <div className="md:max-w-6xl mx-auto flex flex-col md:flex-row gap-10 justify-evenly">
-          <div className="flex-1 flex items-start gap-2">
+      <section className="p-4 py-18 bg-white">
+        <div className="md:max-w-6xl mx-auto flex flex-col md:flex-row gap-10 justify-evenly text-lg">
+          <div className="flex-1 flex items-start gap-2 ">
             <CircleCheck className="shrink-0 inline-block text-secondary h-4" />
             <p>
               Used by solicitors across the UK, from sole practitioners to Legal
@@ -63,8 +61,10 @@ export default function Home() {
       <section className="p-4 py-10 md:py-20 " id="contact-us">
         <div className="md:max-w-6xl mx-auto">
           <h1 className="text-center heading mb-4!">Contact</h1>
-          <p className="mb-16 text-center">Have Question? Send us a quick Message.</p>
-          <div className="max-w-2xl">
+          <p className="mb-16 text-center">
+            Have Question? Send us a quick Message.
+          </p>
+          <div className="max-w-2xl mx-auto">
             <ContactForm />
           </div>
         </div>

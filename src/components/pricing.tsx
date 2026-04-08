@@ -54,7 +54,7 @@ export const pricingCards = [
 
 export default function Pricing() {
   return (
-    <section className="bg-white p-4 py-32">
+    <section className="bg-white p-4 py-13">
       <div className="md:max-w-6xl mx-auto">
         <h1 className="heading text-center mb-4!">Simple, flexible pricing</h1>
         <p className="mb-4  text-center">
@@ -87,18 +87,16 @@ export default function Pricing() {
                   card.isHighlighted && "border-b-[#D4AF37]",
                 )}
               >
-                {card.badge && (
-                  <div className="">
-                    <span
-                      className={cn(
-                        " uppercase tracking-wide text-sm  mb-2 inline-block",
-                        card.isHighlighted && "text-secondary",
-                      )}
-                    >
-                      {card.badge}
-                    </span>
-                  </div>
-                )}
+                <div className="">
+                  <span
+                    className={cn(
+                      " uppercase tracking-wide text-sm  mb-2 inline-block",
+                      card.isHighlighted && "text-secondary",
+                    )}
+                  >
+                    {card.badge}
+                  </span>
+                </div>
                 {/* Title */}
 
                 <h3 className="text-2xl font-serif font-semibold text-primary mb-2">

@@ -13,7 +13,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-20 p-4" id="faq">
+    <section className="py-13 p-4" id="faq">
       <div className="md:max-w-6xl mx-auto">
         <h1 className="heading  text-center">
           Frequently asked questions

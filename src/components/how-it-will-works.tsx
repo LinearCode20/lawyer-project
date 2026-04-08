@@ -27,18 +27,18 @@ const steps = [
 
 export default function HowItWillWorks() {
   return (
-    <section className="p-4 py-32 " id="how-it-works">
+    <section className="p-4 py-13 " id="how-it-works">
       <div className="md:max-w-6xl mx-auto ">
         <h2 className="heading text-center">How it works</h2>
 
         {/* Three-step horizontal flow */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 max-w-4xl mx-auto ">
           {steps.map((step, index) => (
             <Card
               key={index}
-              className="border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1"
+              className="border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-sm hover:transform hover:-translate-y-px max-w-90 md:max-w-auto mx-auto"
             >
-              <CardContent className="p-6 flex flex-col items-center text-center">
+              <CardContent className=" flex flex-col items-center text-center">
                 {/* Numbered circle */}
                 <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center text-xl font-bold mb-4">
                   {step.number}
@@ -75,7 +75,7 @@ export default function HowItWillWorks() {
             <Button
               size="lg"
               className="flex w-full items-center gap-2 "
-              variant={"secondary"}
+              variant={"outline-secondary"}
             >
               <ArrowDownToLine />
               Download Sample Issue

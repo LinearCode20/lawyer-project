@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
 
   return (
     <>
-      <section className="p-4 bg-white  py-32  ">
+      <section className="p-4 bg-white  py-13  ">
         <div className="md:max-w-6xl mx-auto   ">
           <div>
             <h2 className="heading text-center mb-6!">
@@ -50,13 +50,14 @@ export default function WhyChooseUs() {
               Structured monthly CPD updates designed to keep your team
               informed, consistent, and easy to manage.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 my-4 md:my-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 my-4 md:my-12
+            ">
               {features.map((feature, index) => {
                 const Icon = feature.icon;
                 return (
                   <Card
                     key={index}
-                    className="flex flex-col  bg-white  h-full border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1"
+                    className="flex flex-col  bg-white  h-full border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-sm hover:transform hover:-translate-y-px "
                   >
                     <CardContent className="flex flex-col gap-4 flex-1">
                       <div className="flex gap-4 items-start">
@@ -115,7 +116,7 @@ export default function WhyChooseUs() {
           </div>
         </div>
       </section>
-      <section className="p-4   py-32  " id="area-of-law">
+      <section className="p-4   py-13  " id="area-of-law">
         <div className="md:max-w-6xl mx-auto    ">
           <div>
             <h2 className="heading text-center mb-4!">
