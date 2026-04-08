@@ -136,7 +136,7 @@ export default function Pricing() {
                     rel="noopener noreferrer"
                     className="w-full"
                   >
-                    <Button variant={"secondary"} className="w-full">
+                    <Button size="lg" variant={"secondary"} className="w-full">
                       Start your free trial
                     </Button>
                   </Link>

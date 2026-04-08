@@ -34,29 +34,23 @@ export default function HowItWillWorks() {
         {/* Three-step horizontal flow */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {steps.map((step, index) => (
-            <React.Fragment key={index}>
-              <Card className="border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-md">
-                <CardContent className="p-6 flex flex-col items-center text-center">
-                  {/* Numbered circle */}
-                  <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center text-xl font-bold mb-4">
-                    {step.number}
-                  </div>
-                  <h3 className="text-lg font-semibold font-serif text-primary mb-4">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Arrow indicator between steps (desktop only) */}
-              {/* {index < steps.length - 1 && (
-                <div className="hidden md:flex items-center justify-center">
-                  <ChevronRight className="w-6 h-6 text-secondary" />
+            <Card
+              key={index}
+              className="border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1"
+            >
+              <CardContent className="p-6 flex flex-col items-center text-center">
+                {/* Numbered circle */}
+                <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center text-xl font-bold mb-4">
+                  {step.number}
                 </div>
-              )} */}
-            </React.Fragment>
+                <h3 className="text-lg font-semibold font-serif text-primary mb-4">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
+              </CardContent>
+            </Card>
           ))}
         </div>
 

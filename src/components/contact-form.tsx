@@ -171,7 +171,7 @@ export default function ContactForm() {
                   rel="noopener noreferrer"
                   className="w-full"
                 >
-                  <Button variant="secondary" className="flex-1">
+                  <Button size="lg" variant="secondary" className="flex-1">
                     Start your free trial
                   </Button>
                 </Link>
@@ -183,6 +183,7 @@ export default function ContactForm() {
                   className="w-full"
                 >
                   <Button
+                    size="lg"
                     variant="default"
                     className="flex-1"
                     onClick={() => router.push("/sample")}

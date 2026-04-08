@@ -20,7 +20,7 @@ const processTitle = (title: string) => {
             </span>
           ) : (
             <span key={index}>{part}</span>
-          )
+          ),
         )}
       </>
     );
@@ -40,13 +40,12 @@ export default function AreasOfLaw() {
       {areaOfLaw.map((area, index) => (
         <Card
           key={index}
-          className=" relative rounded border bg-background border-gray-300 hover:bg-[#fbfbfb]"
+          className=" relative  border bg-background  hover:bg-[#fbfbfb] border-primary/10 hover:border-primary/30 
+          transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1"
         >
           <CardContent className="p-4">
             <span className="inline-block w-8 bg-secondary h-0.5 mb-1" />
-            <p className="sub_heading font-sans">
-              {processTitle(area.title)}
-            </p>
+            <p className="sub_heading font-sans">{processTitle(area.title)}</p>
             <p className="text-card-foreground mt-4">{area.answer}</p>
             {/* <ItemData area={area} /> */}
           </CardContent>

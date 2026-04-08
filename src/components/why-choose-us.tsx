@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
                 return (
                   <Card
                     key={index}
-                    className="flex flex-col rounded-xs bg-white border shadow h-full"
+                    className="flex flex-col  bg-white  h-full border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1"
                   >
                     <CardContent className="flex flex-col gap-4 flex-1">
                       <div className="flex gap-4 items-start">

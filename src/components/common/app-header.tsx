@@ -25,7 +25,11 @@ export default function AppHeader() {
             {/* Logo/Brand Section */}
             <div className="flex items-center ">
               <Link href="/" className="flex flex-col">
-                <img src="/law_edge_logo.svg" alt="Logo" className="h-16 w-auto" />
+                <img
+                  src="/law_edge_logo.svg"
+                  alt="Logo"
+                  className="h-16 w-auto"
+                />
               </Link>
             </div>
 
@@ -45,12 +49,18 @@ export default function AppHeader() {
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                   </Link>
                 ))}
-                <Link href="/#subscribe">
-                  <Button variant="outline-secondary">Download Sample Issue</Button>
-                </Link>
-                <Link href="/#subscribe">
-                  <Button variant="secondary">Start your free trial</Button>
-                </Link>
+                <div className="flex items-center gap-4">
+                  <Link href="/#subscribe" className="grow">
+                    <Button size="lg" variant="outline-secondary">
+                      Download Sample Issue
+                    </Button>
+                  </Link>
+                  <Link href="/#subscribe" className="grow">
+                    <Button size="lg" variant="secondary">
+                      Start your free trial
+                    </Button>
+                  </Link>
+                </div>
               </nav>
 
               {/* Mobile Menu Button */}
@@ -84,13 +94,19 @@ export default function AppHeader() {
                 </Link>
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-gray-200">
-                <Link href="/#subscribe" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button variant="outline" className="w-full">
+                <Link
+                  href="/#subscribe"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Button size="lg" variant="outline" className="w-full">
                     Download Sample Issue
                   </Button>
                 </Link>
-                <Link href="/#subscribe" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button variant="secondary" className="w-full">
+                <Link
+                  href="/#subscribe"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Button size="lg" variant="secondary" className="w-full">
                     Start your free trial
                   </Button>
                 </Link>

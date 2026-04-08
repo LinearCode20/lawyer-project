@@ -148,6 +148,7 @@ export default function AppFooter() {
               />
 
               <Button
+                size="lg"
                 type="submit"
                 variant="default"
                 className=""

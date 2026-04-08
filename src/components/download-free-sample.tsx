@@ -207,7 +207,7 @@ export default function DownloadFreeSample() {
                   rel="noopener noreferrer"
                   className="w-full"
                 >
-                  <Button variant="secondary" className="flex-1">
+                  <Button size="lg" variant="secondary" className="flex-1">
                     Start your free trial
                   </Button>
                 </Link>

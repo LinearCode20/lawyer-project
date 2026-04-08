@@ -35,7 +35,7 @@ export default function CPTSteps() {
           {steps.map((step, index) => (
             <Card
               key={index}
-              className="border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-md"
+              className="border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1"
             >
               <CardContent className="p-4">
                 <h3 className="text-lg font-semibold font-serif text-primary mb-4">
