@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const pricingCards = [
   {
-    badge: "FOR INDIVIDUAL",
+    // badge: "FOR INDIVIDUAL",
     title: "Single Practice Area",
     price: "£195/month",
     features: [
@@ -80,24 +80,27 @@ export default function Pricing() {
                 )}
               /> */}
               {/* Badge */}
+
               <div
                 className={cn(
                   "border-b p-6",
                   card.isHighlighted && "border-b-[#D4AF37]",
                 )}
               >
-                <div className="">
-                  <span
-                    className={cn(
-                      " uppercase tracking-wide text-sm  mb-2 inline-block",
-                      card.isHighlighted && "text-secondary",
-                    )}
-                  >
-                    {card.badge}
-                  </span>
-                </div>
-
+                {card.badge && (
+                  <div className="">
+                    <span
+                      className={cn(
+                        " uppercase tracking-wide text-sm  mb-2 inline-block",
+                        card.isHighlighted && "text-secondary",
+                      )}
+                    >
+                      {card.badge}
+                    </span>
+                  </div>
+                )}
                 {/* Title */}
+
                 <h3 className="text-2xl font-serif font-semibold text-primary mb-2">
                   {card.title}
                 </h3>
@@ -108,6 +111,7 @@ export default function Pricing() {
                 {/* Price */}
                 <p className="text-3xl text-[#1F2937] ">From {card.price}</p>
               </div>
+
               <div className=" p-6 flex flex-col flex-1 ">
                 {/* Features List */}
                 <div className="flex-1">
