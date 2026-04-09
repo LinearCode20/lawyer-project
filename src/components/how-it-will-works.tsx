@@ -36,7 +36,7 @@ export default function HowItWillWorks() {
           {steps.map((step, index) => (
             <Card
               key={index}
-              className="border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-sm hover:transform hover:-translate-y-px max-w-90 md:max-w-auto mx-auto"
+              className="border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-2xs hover:transform hover:-translate-y-[0.5px] max-w-90 md:max-w-auto mx-auto"
             >
               <CardContent className=" flex flex-col items-center text-center">
                 {/* Numbered circle */}

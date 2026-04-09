@@ -15,7 +15,7 @@
     --font-sans: 'Inter', sans-serif;
     --font-serif: "Playfair Display", Georgia, serif;
     --background: #f8fafc;
-    --foreground: rgb(114, 137, 148);
+    --foreground: rgb(74, 88, 95);
     --card: oklch(1 0 0);
     --card-foreground: rgb(114, 137, 148);
     --popover: oklch(1 0 0);

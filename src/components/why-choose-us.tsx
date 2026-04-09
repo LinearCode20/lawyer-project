@@ -50,14 +50,17 @@ export default function WhyChooseUs() {
               Structured monthly CPD updates designed to keep your team
               informed, consistent, and easy to manage.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 my-4 md:my-12
-            ">
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 my-4 md:my-12
+              max-w-3xl mx-auto
+            "
+            >
               {features.map((feature, index) => {
                 const Icon = feature.icon;
                 return (
                   <Card
                     key={index}
-                    className="flex flex-col  bg-white  h-full border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-sm hover:transform hover:-translate-y-px "
+                    className="flex flex-col  bg-white  h-full border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-2xs hover:transform hover:-translate-y-[0.5px] max-w-90 md:max-w-auto mx-auto"
                   >
                     <CardContent className="flex flex-col gap-4 flex-1">
                       <div className="flex gap-4 items-start">
