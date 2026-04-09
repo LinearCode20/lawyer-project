@@ -14,8 +14,8 @@ export default function Hero() {
         <div>
           <div className="">
             <h1
-              className="text-primary text-[36px] mb-4 font-bold font-serif space-y-4   
- leading-[1.2] md:text-[48px] "
+              className="text-primary text-[36px] mb-2 font-bold font-serif   
+ leading-[1.1] md:text-[48px] "
             >
               Structured CPD for
               <br /> <span className="text-secondary">Law Firms</span>
@@ -38,7 +38,7 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className=" flex flex-col gap-4 text-base font-medium sm:flex-row mt-8 ">
+          <div className=" flex flex-col gap-4 text-base font-medium sm:flex-row mt-4 ">
             <Link
               href="/#subscribe"
               rel="noopener noreferrer"
