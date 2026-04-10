@@ -40,8 +40,8 @@ export default function AreasOfLaw() {
       {areaOfLaw.map((area, index) => (
         <Card
           key={index}
-          className=" relative  border bg-background  hover:bg-[#fbfbfb] border-primary/10 hover:border-primary/30 
-          transition-all duration-300 hover:shadow-sm hover:transform hover:-translate-y-px "
+          className=" relative  border bg-background   border-primary/10 hover:border-primary/30 
+          transition-all duration-300 hover:shadow-sm "
         >
           <CardContent className="p-4">
             <span className="inline-block w-8 bg-secondary h-0.5 mb-1" />

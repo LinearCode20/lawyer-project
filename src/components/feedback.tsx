@@ -61,7 +61,7 @@ export default function Feedback() {
           {testimonials.map((plan, index) => (
             <Card
               key={index}
-              className="h-full text-foreground flex flex-col  shadow-md   cursor-pointer border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-2xs hover:transform hover:-translate-y-[0.5px]"
+              className="h-full text-foreground flex flex-col     cursor-pointer border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-sm"
             >
               <CardContent className="flex-1 flex flex-col justify-between p-6">
                 <p className="flex-1">&ldquo;{plan.quote}&rdquo;</p>
