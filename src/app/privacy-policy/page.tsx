@@ -1,11 +1,12 @@
-
 "use client";
+
+import Link from "next/link";
+
 export default function Page() {
   return (
     <div className="">
       <section className="py-20">
         <div className="container mx-auto">
-          
           <h1 className="text-3xl font-semibold mb-2">
             Privacy Policy – Law Edge
           </h1>
@@ -14,10 +15,11 @@ export default function Page() {
           </p> */}
 
           <ol className="list-decimal pl-6 space-y-10">
-
             <li>
               <h2 className="text-xl font-semibold mb-3">Introduction</h2>
-              <p>Law Edge is committed to protecting and respecting your privacy.</p>
+              <p>
+                Law Edge is committed to protecting and respecting your privacy.
+              </p>
               <p className="mt-2">
                 This Privacy Policy explains how Law Edge collects, uses, stores
                 and protects personal information when you use the Law Edge
@@ -46,8 +48,8 @@ export default function Page() {
                 data is handled, please contact:
               </p>
               <p className="mt-2">
-                Law Edge – Email: [insert contact email] – Website:
-                [insert website address]
+                Law Edge – Email: [insert contact email] – Website: [insert
+                website address]
               </p>
             </li>
 
@@ -181,9 +183,7 @@ export default function Page() {
             </li>
 
             <li>
-              <h2 className="text-xl font-semibold mb-3">
-                Third-Party Links
-              </h2>
+              <h2 className="text-xl font-semibold mb-3">Third-Party Links</h2>
               <p>
                 The website may contain links to third-party websites. Law Edge
                 is not responsible for their privacy practices.
@@ -207,13 +207,16 @@ export default function Page() {
                 exercise your rights, please contact:
               </p>
               <p className="mt-2">
-                Law Edge – Email: [insert contact email] – Website:
-                [insert website address]
+                Law Edge – Email:{" "}
+                <Link
+                  href="mailto:contact@lawedge.co.uk"
+                  className="underline "
+                >
+                  contact@lawedge.co.uk
+                </Link>
               </p>
             </li>
-
           </ol>
-
         </div>
       </section>
     </div>

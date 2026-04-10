@@ -1,12 +1,12 @@
-
 "use client";
+
+import Link from "next/link";
+
 export default function Page() {
   return (
-
     <div className="">
       <section className="py-20">
         <div className="container mx-auto">
-          
           <h1 className="text-3xl font-semibold mb-2">
             Cookie Policy – Law Edge
           </h1>
@@ -15,16 +15,16 @@ export default function Page() {
           </p> */}
 
           <ol className="list-decimal pl-6 space-y-10">
-
             <li>
               <h2 className="text-xl font-semibold mb-3">Introduction</h2>
               <p className="mb-2">
-                This Cookie Policy explains how Law Edge uses cookies and similar
-                technologies when you visit the Law Edge website.
+                This Cookie Policy explains how Law Edge uses cookies and
+                similar technologies when you visit the Law Edge website.
               </p>
               <p className="mb-2">
                 Cookies help us improve the performance and functionality of the
-                website and allow us to understand how visitors use our services.
+                website and allow us to understand how visitors use our
+                services.
               </p>
               <p>
                 By continuing to browse the website, you agree to the use of
@@ -55,15 +55,14 @@ export default function Page() {
               </p>
 
               <div className="space-y-6">
-
                 <div>
                   <h3 className="font-semibold mb-1">
                     Strictly Necessary Cookies
                   </h3>
                   <p className="mb-1">
-                    These cookies are essential for the operation of the website.
-                    Without these cookies certain parts of the website may not
-                    function properly.
+                    These cookies are essential for the operation of the
+                    website. Without these cookies certain parts of the website
+                    may not function properly.
                   </p>
                   <p>
                     Examples include cookies that allow users to navigate the
@@ -87,12 +86,10 @@ export default function Page() {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold mb-1">
-                    Functionality Cookies
-                  </h3>
+                  <h3 className="font-semibold mb-1">Functionality Cookies</h3>
                   <p>
-                    These cookies allow the website to remember choices you make,
-                    such as preferences or settings, to provide a more
+                    These cookies allow the website to remember choices you
+                    make, such as preferences or settings, to provide a more
                     personalised experience.
                   </p>
                 </div>
@@ -107,12 +104,13 @@ export default function Page() {
                     understand how users interact with our content and services.
                   </p>
                 </div>
-
               </div>
             </li>
 
             <li>
-              <h2 className="text-xl font-semibold mb-3">Third-Party Cookies</h2>
+              <h2 className="text-xl font-semibold mb-3">
+                Third-Party Cookies
+              </h2>
               <p className="mb-2">
                 Law Edge may use third-party services that place cookies on your
                 device. These services help us analyse website traffic,
@@ -136,8 +134,8 @@ export default function Page() {
               </p>
               <p className="mb-2">
                 You can choose to block or delete cookies through your browser
-                settings. However, disabling cookies may affect the functionality
-                of certain parts of the website.
+                settings. However, disabling cookies may affect the
+                functionality of certain parts of the website.
               </p>
               <p>
                 Instructions for managing cookies can usually be found in the
@@ -159,17 +157,20 @@ export default function Page() {
             <li>
               <h2 className="text-xl font-semibold mb-3">Contact</h2>
               <p className="mb-2">
-                If you have any questions about this Cookie Policy or how cookies
-                are used on the Law Edge website, please contact:
+                If you have any questions about this Cookie Policy or how
+                cookies are used on the Law Edge website, please contact:
               </p>
               <p>
-                Law Edge – Email: [insert contact email] – Website:
-                [insert website address]
+                Law Edge – Email:{" "}
+                <Link
+                  href="mailto:contact@lawedge.co.uk"
+                  className="underline "
+                >
+                  contact@lawedge.co.uk
+                </Link>
               </p>
             </li>
-
           </ol>
-
         </div>
       </section>
     </div>
