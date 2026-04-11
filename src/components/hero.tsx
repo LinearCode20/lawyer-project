@@ -27,7 +27,7 @@ export default function Hero() {
             <p className="text-primary mt-1">
               No research, no admin, and aligned with SRA expectations.
             </p>
-            <p className=" text-primary mt-1">
+            <p className=" text-gray-400 mt-1">
               Prepared by experienced solicitors with specialist qualifications,
               including STEP practitioners, Resolution members, and Law Society
               accredited specialists.
@@ -64,7 +64,7 @@ export default function Hero() {
               </Button>
             </Link>
           </div>
-          <p className="mt-3 text-sm text-center text-gray-400">
+          <p className="mt-3 text-primary text-sm text-center text-gray-400">
             First month free. No obligation to continue.
           </p>
         </div>
