@@ -8,6 +8,7 @@ export const pricingCards = [
   {
     // badge: "FOR INDIVIDUAL",
     title: "Single Practice Area",
+    maxAreas: 1,
     price: "£195/month",
     features: [
       "1 practice area",
@@ -22,6 +23,7 @@ export const pricingCards = [
   },
   {
     badge: "MOST POPULAR",
+    maxAreas: 3,
     title: "Multi-Area Access",
     price: "£295/month",
     features: [
@@ -39,6 +41,7 @@ export const pricingCards = [
     badge: "FOR FULL COVERAGE",
     title: "Full Access",
     price: "£395/month",
+    maxAreas: Infinity,
     features: [
       "All practice areas",
       "Monthly updates across all areas",

@@ -40,11 +40,18 @@ export default function AreasOfLaw() {
       {areaOfLaw.map((area, index) => (
         <Card
           key={index}
-          className=" relative  border bg-background   border-primary/10  
+          className=" relative  border bg-background   border-primary/10
           transition-all duration-300 hover:shadow-sm "
         >
-          <CardContent className="p-4">
+          <CardContent className="p-4 relative">
             <span className="inline-block w-8 bg-secondary h-0.5 mb-1" />
+            {area?.forFeature && (
+              <div className="absolute top-4 right-4">
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-secondary/10 text-secondary border border-secondary/20">
+                  Coming Soon
+                </span>
+              </div>
+            )}
             <p className="sub_heading font-sans">{processTitle(area.title)}</p>
             <p className="text-card-foreground mt-4">{area.answer}</p>
             {/* <ItemData area={area} /> */}
