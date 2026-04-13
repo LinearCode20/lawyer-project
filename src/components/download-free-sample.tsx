@@ -135,11 +135,13 @@ export default function DownloadFreeSample() {
                     aria-invalid={fieldState.invalid}
                   >
                     <option value="">Select</option>
-                    {areaOfLaw.map((area) => (
-                      <option key={area.title} value={area.title}>
-                        {area.title}
-                      </option>
-                    ))}
+                    {areaOfLaw
+                      .filter((area) => !area.forFeature)
+                      .map((area) => (
+                        <option key={area.title} value={area.title}>
+                          {area.title}
+                        </option>
+                      ))}
                   </NativeSelect>
 
                   {fieldState.invalid && (
@@ -153,7 +155,7 @@ export default function DownloadFreeSample() {
               Sample includes case law, legislation, and CPD record
             </p>
             <Button
-            variant={"outline-secondary"}
+              variant={"outline-secondary"}
               type="submit"
               className=""
               disabled={form.formState.isSubmitting}

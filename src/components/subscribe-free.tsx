@@ -34,11 +34,23 @@ const areaOfLaw = [
   "Employment Law",
   "Property Law (Residential & Commercial)",
   "Family",
-  "Immigration",
   "Regulatory & Compliance",
   "Private Client",
-  "Crime",
 ];
+
+const getMaxAreasForPlan = (planType: string): number => {
+  if (!planType) return 3; // default fallback
+
+  // Extract plan title from "Single Practice Area (£195/month)" format
+  const planTitle = planType.split(" (")[0];
+
+  // Find matching pricing card
+  const matchedPlan = pricingCards.find(
+    (card) => card.title === planTitle
+  );
+
+  return matchedPlan?.maxAreas ?? 3; // default to 3 if not found
+};
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email" }).min(1, {
@@ -50,7 +62,7 @@ const formSchema = z.object({
   selected_areas: z
     .array(z.string())
     .min(1, { message: "Please select at least one area" })
-    .max(3, { message: "You can select up to 3 areas" }),
+    .max(10, { message: "You can select up to 10 areas" }),
   policy_agreement: z.boolean().refine((val) => val === true, {
     message: "You must agree to the policies to continue",
   }),
@@ -204,6 +216,7 @@ export default function SubscribeFree() {
 
               <div className="border-primary bg-primary/10 border p-4 rounded">
                 <p className="font-semibold">{form.getValues("plan_type")} </p>
+                <p className="">Max areas: {getMaxAreasForPlan(form.getValues("plan_type"))}</p>
                 <p className="">First month free. No charge today</p>
               </div>
             </>
@@ -299,6 +312,14 @@ export default function SubscribeFree() {
                       </FieldLabel>
                       <p className="text-primary">
                         Select areas relevant to your work
+                        {(() => {
+                          const planType = form.getValues("plan_type");
+                          const maxAreas = getMaxAreasForPlan(planType);
+                          const selectedCount = field.value.length;
+                          return maxAreas === Infinity
+                            ? ""
+                            : ` (${selectedCount}/${maxAreas} selected)`;
+                        })()}
                       </p>
                       <div className="grid md:grid-cols-2 gap-2">
                         {areaOfLaw.map((area) => (
@@ -316,9 +337,19 @@ export default function SubscribeFree() {
                                 checked={field.value.includes(area)}
                                 onCheckedChange={(checked) => {
                                   if (checked) {
-                                    // Add to array if less than 3 selected
-                                    if (field.value.length < 3) {
+                                    // Get max areas for selected plan
+                                    const planType = form.getValues("plan_type");
+                                    const maxAreas = getMaxAreasForPlan(planType);
+
+                                    // Add to array if within limit
+                                    if (field.value.length < maxAreas) {
                                       field.onChange([...field.value, area]);
+                                    } else {
+                                      toast.error(
+                                        maxAreas === Infinity
+                                          ? "You can select all areas"
+                                          : `You can select up to ${maxAreas} area${maxAreas > 1 ? 's' : ''}`
+                                      );
                                     }
                                   } else {
                                     // Remove from array

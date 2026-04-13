@@ -16,6 +16,7 @@ export type AreaOfLaw = {
   component?: React.FC;
   tags?: string[];
   discriptions?: string;
+  forFeature?: boolean;
 };
 
 export const areaOfLaw: AreaOfLaw[] = [
@@ -55,8 +56,7 @@ export const areaOfLaw: AreaOfLaw[] = [
   },
   {
     title: "Commercial & Corporate",
-    answer:
-      "Developments in company, contract, and commercial advisory work.",
+    answer: "Developments in company, contract, and commercial advisory work.",
     link: "/law-area/commercial-corporate-cpd",
     component: commercialCorporateCPD,
     tags: [
@@ -73,7 +73,8 @@ export const areaOfLaw: AreaOfLaw[] = [
 
   {
     title: "Employment Law",
-    answer: "Workplace law updates, including tribunal decisions, policy issues, and compliance.",
+    answer:
+      "Workplace law updates, including tribunal decisions, policy issues, and compliance.",
     link: "/law-area/employment-law-cpd",
     component: employmentLawCPD,
     tags: [
@@ -106,7 +107,8 @@ export const areaOfLaw: AreaOfLaw[] = [
   },
   {
     title: "Family Law",
-    answer: "Updates on financial remedies, children matters, and evolving case law.",
+    answer:
+      "Updates on financial remedies, children matters, and evolving case law.",
     link: "/law-area/family-law-cpd",
     component: familyLawCPD,
     tags: [
@@ -122,6 +124,7 @@ export const areaOfLaw: AreaOfLaw[] = [
   },
   {
     title: "Immigration",
+    forFeature: true,
     answer:
       "Developments in visa routes, sponsorship, and Home Office policy, with practical application.",
     link: "/law-area/immigration-law-cpd",
@@ -157,7 +160,9 @@ export const areaOfLaw: AreaOfLaw[] = [
 
   {
     title: "Crime",
-    answer: "Developments in criminal law and procedure, with practical impact on case strategy.",
+    forFeature: true,
+    answer:
+      "Developments in criminal law and procedure, with practical impact on case strategy.",
     link: "/law-area/crime-law-cpd",
     component: crimeLawCPD,
     tags: [
