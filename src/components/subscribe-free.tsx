@@ -45,9 +45,7 @@ const getMaxAreasForPlan = (planType: string): number => {
   const planTitle = planType.split(" (")[0];
 
   // Find matching pricing card
-  const matchedPlan = pricingCards.find(
-    (card) => card.title === planTitle
-  );
+  const matchedPlan = pricingCards.find((card) => card.title === planTitle);
 
   return matchedPlan?.maxAreas ?? 3; // default to 3 if not found
 };
@@ -58,7 +56,7 @@ const formSchema = z.object({
   }),
   plan_type: z.string().min(1, { message: "Please select a plan type" }),
   full_name: z.string().min(1, { message: "Please enter a name" }),
-  //firm_name: z.string().min(1, { message: "Please enter a firm name" }),
+  plan_id: z.string().nullable().optional(),
   selected_areas: z
     .array(z.string())
     .min(1, { message: "Please select at least one area" })
@@ -83,7 +81,7 @@ export default function SubscribeFree() {
     defaultValues: {
       full_name: "",
       email: "",
-      // firm_name: "",
+      plan_id: "",
       plan_type: "",
       selected_areas: [],
       policy_agreement: false,
@@ -216,7 +214,9 @@ export default function SubscribeFree() {
 
               <div className="border-primary bg-primary/10 border p-4 rounded">
                 <p className="font-semibold">{form.getValues("plan_type")} </p>
-                <p className="">Max areas: {getMaxAreasForPlan(form.getValues("plan_type"))}</p>
+                <p className="">
+                  Max areas: {getMaxAreasForPlan(form.getValues("plan_type"))}
+                </p>
                 <p className="">First month free. No charge today</p>
               </div>
             </>
@@ -239,6 +239,14 @@ export default function SubscribeFree() {
                       <NativeSelect
                         {...field}
                         id={field.name}
+                        onChange={(e) => {
+                          const plan_id =
+                            e.target.selectedOptions[0].getAttribute(
+                              "data-plan-id",
+                            );
+                          field.onChange(e);
+                          form.setValue("plan_id", plan_id); // reset selected areas when plan changes
+                        }}
                         aria-invalid={fieldState.invalid}
                       >
                         <option value="">Select</option>
@@ -246,6 +254,7 @@ export default function SubscribeFree() {
                           <option
                             key={area.title}
                             value={`${area.title} (${area.price})`}
+                            data-plan-id={area.id}
                           >
                             {`${area.title} (${area.price})`}
                           </option>
@@ -338,8 +347,10 @@ export default function SubscribeFree() {
                                 onCheckedChange={(checked) => {
                                   if (checked) {
                                     // Get max areas for selected plan
-                                    const planType = form.getValues("plan_type");
-                                    const maxAreas = getMaxAreasForPlan(planType);
+                                    const planType =
+                                      form.getValues("plan_type");
+                                    const maxAreas =
+                                      getMaxAreasForPlan(planType);
 
                                     // Add to array if within limit
                                     if (field.value.length < maxAreas) {
@@ -348,7 +359,7 @@ export default function SubscribeFree() {
                                       toast.error(
                                         maxAreas === Infinity
                                           ? "You can select all areas"
-                                          : `You can select up to ${maxAreas} area${maxAreas > 1 ? 's' : ''}`
+                                          : `You can select up to ${maxAreas} area${maxAreas > 1 ? "s" : ""}`,
                                       );
                                     }
                                   } else {
