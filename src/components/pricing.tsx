@@ -6,6 +6,7 @@ import Link from "next/link";
 
 export const pricingCards = [
   {
+    id:1,
     // badge: "FOR INDIVIDUAL",
     title: "Single Practice Area",
     maxAreas: 1,
@@ -22,6 +23,7 @@ export const pricingCards = [
     isHighlighted: false,
   },
   {
+    id:2,
     badge: "MOST POPULAR",
     maxAreas: 3,
     title: "Multi-Area Access",
@@ -38,6 +40,7 @@ export const pricingCards = [
     isHighlighted: true,
   },
   {
+    id:3,
     badge: "FOR FULL COVERAGE",
     title: "Full Access",
     price: "£395/month",
