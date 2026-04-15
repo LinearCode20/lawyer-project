@@ -18,7 +18,7 @@ export const pricingCards = [
       "Firm-wide use",
     ],
     text: "Best for firms starting with one department",
-    buttonText: "Start your free trial",
+    buttonText: "Start Firm Trial",
     footer: "Request More Details",
     isHighlighted: false,
   },
@@ -35,7 +35,7 @@ export const pricingCards = [
       "Consistent structure across teams",
     ],
     text: "ideal for firms covering multiple practice areas",
-    buttonText: "Start your free trial",
+    buttonText: "Start Firm Trial",
     footer: "Request More Details",
     isHighlighted: true,
   },
@@ -52,7 +52,7 @@ export const pricingCards = [
       "Scalable across the firm",
     ],
     text: "For firms wanting full coverage across departments",
-    buttonText: "Start your free trial",
+    buttonText: "Start Firm Trial",
     footer: "Request More Details",
     isHighlighted: false,
   },
@@ -145,7 +145,7 @@ export default function Pricing() {
                     className="w-full"
                   >
                     <Button size="lg" variant={"secondary"} className="w-full">
-                      Start your free trial
+                      Start Firm Trial
                     </Button>
                   </Link>
                   {/* Footer */}

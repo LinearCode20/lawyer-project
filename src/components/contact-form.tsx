@@ -172,7 +172,7 @@ export default function ContactForm() {
                   className="w-full"
                 >
                   <Button size="lg" variant="secondary" className="flex-1">
-                    Start your free trial
+                    Start Firm Trial
                   </Button>
                 </Link>
               </DialogClose>
