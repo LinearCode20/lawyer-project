@@ -53,12 +53,12 @@ export default function AppHeader() {
                   <Link href="/#subscribe">
                     <Button size="lg" variant="outline-secondary" className="w-55">
                       <ArrowDownToLine />
-                      Download Sample Issue
+                      Get Sample Issue
                     </Button>
                   </Link>
                   <Link href="/#subscribe">
                     <Button size="lg" variant="secondary" className="w-55">
-                      Start your free trial
+                      Start Firm Trial
                     </Button>
                   </Link>
                 {/* </div> */}
@@ -105,7 +105,7 @@ export default function AppHeader() {
                     className="w-full"
                   >
                     <ArrowDownToLine />
-                    Download Sample Issue
+                    Get Sample Issue
                   </Button>
                 </Link>
                 <Link
@@ -113,7 +113,7 @@ export default function AppHeader() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <Button size="lg" variant="secondary" className="w-full">
-                    Start your free trial
+                    Start Firm Trial
                   </Button>
                 </Link>
               </div>

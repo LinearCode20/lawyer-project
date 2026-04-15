@@ -28,7 +28,15 @@ export default function CPTSteps() {
   return (
     <section className="p-4 py-13 bg-white" id="how-it-works">
       <div className="md:max-w-6xl mx-auto ">
-        <h2 className="heading text-center">Why firms use Law Edge</h2>
+        <h2 className="heading text-center !mb-4">Why firms use Law Edge</h2>
+        <h6 className="text-xl  text-center">
+          A simple system your firm can use immediately, without changing how
+          your team works
+        </h6>
+        <p className=" text-center mb-16 text-muted-foreground">
+          No new processes. No internal setup. Used within your team’s existing
+          workflow.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-3xl mx-auto">
           {steps.map((step, index) => (
             <Card
