@@ -211,7 +211,7 @@ export default function DownloadFreeSample() {
                   className="w-full"
                 >
                   <Button size="lg" variant="secondary" className="flex-1">
-                    Start Firm Trial
+                    Start Free Trial
                   </Button>
                 </Link>
               </DialogClose>

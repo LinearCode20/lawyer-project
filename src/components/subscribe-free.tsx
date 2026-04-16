@@ -172,7 +172,7 @@ export default function SubscribeFree() {
       <Card className="py-6 text-foreground">
         <CardHeader className="border-b px-6">
           <CardTitle className="text-3xl font-semibold">
-            Start Firm Trial
+            Start Free Trial
           </CardTitle>
           <CardDescription className="mt-1">
             First month free. Payment details required to activate your

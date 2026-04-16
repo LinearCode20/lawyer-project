@@ -8,17 +8,17 @@ export default function BottomBanner() {
       <div className="md:max-w-3xl mx-auto px-4 text-center">
         <span className="inline-block text-center bg-secondary w-20 h-px mb-4" />
         <h1 className="text-4xl  mb-6 font-serif">
-          Complete your CPD each month without searching, stress, or wasted time
+          See how this would work on your current files
         </h1>
         <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
-          Structured monthly updates with built-in CPD recording. Stay current,
-          stay compliant, and remove the admin burden.
+          Review a sample issue and see how your team can apply, record, and
+          evidence CPD as part of day-to-day work.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 md:w-[70%] mx-auto">
           <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
             <Button size="lg" variant="secondary" className=" px-8 w-full">
-              Start Firm Trial
+              Start Free Trial
             </Button>
           </Link>
           <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">

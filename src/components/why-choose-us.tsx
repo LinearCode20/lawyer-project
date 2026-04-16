@@ -95,7 +95,7 @@ export default function WhyChooseUs() {
               >
                 <Button variant={"secondary"} size="lg" className="w-full">
                   {" "}
-                  Start Firm Trial
+                  Start Free Trial
                 </Button>
               </Link>
               <Link
