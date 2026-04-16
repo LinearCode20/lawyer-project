@@ -136,7 +136,7 @@ export default function ContactForm() {
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>
-          <p className="mt-4 text-center">
+          <p className="mt-4 text-center text-gray-400">
             By submitting this form, you agree to our Terms, Privacy Policy and
             Cookies Policy.
           </p>
@@ -172,7 +172,7 @@ export default function ContactForm() {
                   className="w-full"
                 >
                   <Button size="lg" variant="secondary" className="flex-1">
-                    Start your free trial
+                    Start Free Trial
                   </Button>
                 </Link>
               </DialogClose>

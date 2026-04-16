@@ -7,21 +7,19 @@ import Link from "next/link";
 const steps = [
   {
     number: 1,
-    title: "Receive your monthly update",
+    title: "Monthly CPD Issues",
     description:
-      "Structured CPD updates delivered across your selected practice areas.",
+      "Each issue is built to be used directly on live matters, across your selected practice areas",
   },
   {
     number: 2,
-    title: "Share with your team",
-    description:
-      "Simple format designed for easy distribution across departments or fee earners.",
+    title: "Apply on File",
+    description:"Used by your team on active files as part of day-to-day work.",
   },
   {
     number: 3,
-    title: "Maintain your CPD record",
-    description:
-      "Supports consistent and clear documentation of training across your firm.",
+    title: "Record",
+    description:"CPD is recorded as part of the work as it is completed, without separate tracking, systems, or additional admin.",
   },
 ];
 
@@ -29,7 +27,10 @@ export default function HowItWillWorks() {
   return (
     <section className="p-4 py-13 " id="how-it-works">
       <div className="md:max-w-6xl mx-auto ">
-        <h2 className="heading text-center">How it works</h2>
+        <h2 className="heading text-center mb-2!">How it works</h2>
+        <p className="md:w-[60%] mx-auto text-center mb-16">
+          Simple to introduce. Used within your team’s existing workflow.
+        </p>
 
         {/* Three-step horizontal flow */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 max-w-4xl mx-auto ">
@@ -78,7 +79,7 @@ export default function HowItWillWorks() {
               variant={"outline-secondary"}
             >
               <ArrowDownToLine />
-              Download Sample Issue
+              Get Sample Issue
             </Button>
           </Link>
         </div>

@@ -73,7 +73,7 @@ export default function DownloadFreeSample() {
       <Card className="h-fit py-6 text-foreground">
         <CardHeader className="border-b px-6">
           <CardTitle className="text-3xl font-semibold ">
-            Download Sample Issue
+            Get Sample Issue
           </CardTitle>
           <CardDescription className="mt-1">
             Enter your details to receive a sample issue
@@ -166,7 +166,7 @@ export default function DownloadFreeSample() {
               ) : (
                 <>
                   <ArrowDownToLine />
-                  Download Sample Issue
+                  Get Sample Issue
                 </>
               )}
             </Button>
@@ -211,7 +211,7 @@ export default function DownloadFreeSample() {
                   className="w-full"
                 >
                   <Button size="lg" variant="secondary" className="flex-1">
-                    Start your free trial
+                    Start Free Trial
                   </Button>
                 </Link>
               </DialogClose>

@@ -18,8 +18,7 @@ export default function Home() {
     <div className=" grow ">
       <Hero />
       <div className="bg-[#eff1f5] text-center text-lg p-4 text-primary py-8">
-        Built for busy solicitors who want CPD done properly without wasting
-        hours searching
+        Most firms complete CPD. Few can evidence it properly.
       </div>
 
       <CPTSteps />

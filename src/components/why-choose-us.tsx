@@ -95,7 +95,7 @@ export default function WhyChooseUs() {
               >
                 <Button variant={"secondary"} size="lg" className="w-full">
                   {" "}
-                  Start your free trial
+                  Start Free Trial
                 </Button>
               </Link>
               <Link
@@ -109,7 +109,7 @@ export default function WhyChooseUs() {
                   variant={"outline-secondary"}
                 >
                   <ArrowDownToLine />
-                  Download Sample Issue
+                  Get Sample Issue
                 </Button>
               </Link>
             </div> */}

@@ -17,25 +17,24 @@ export default function Hero() {
               className="text-primary text-[36px] mb-2 font-bold font-serif   
  leading-[1.1] md:text-[48px] "
             >
-              Structured CPD for
-              <br /> <span className="text-secondary">Law Firms</span>
+              CPD Your Firm Can Apply, Record and Stand Behind
             </h1>
             <p className="text-primary">
-              Monthly updates across key practice areas, written by
-              practitioners with built-in record keeping.
+              Structured monthly CPD your team can use on live matters, with
+              clear records to support supervision and SRA compliance across
+              your firm.
             </p>
-            <p className="text-primary mt-1">
-              No research, no admin, and aligned with SRA expectations.
-            </p>
-            <p className=" text-gray-400 mt-1">
-              Prepared by experienced solicitors with specialist qualifications,
-              including STEP practitioners, Resolution members, and Law Society
-              accredited specialists.
-            </p>
-            <p className=" mt-1 text-primary">
-              Reduce time spent on CPD, maintain clear records, and keep your
-              team consistently up to date.
-            </p>
+            <ul className="text-primary mt-1 space-y-2 list-disc pl-4">
+              <li>Firm-wide coverage across key practice areas </li>
+              <li>
+                Clear CPD records for supervision, audit and firm-wide
+                consistency
+              </li>
+              <li>
+                Practical guidance applied consistently across your firm’s live
+                matters
+              </li>
+            </ul>
           </div>
 
           <div className=" flex flex-col gap-4 text-base font-medium sm:flex-row mt-2 ">
@@ -44,9 +43,8 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="w-full"
             >
-              <Button variant={"secondary"} size="lg" className="w-full">
-                {" "}
-                Start your free trial
+              <Button className="w-full " size="lg" variant={"secondary"}>
+                Start Free Trial
               </Button>
             </Link>
             <Link
@@ -55,17 +53,17 @@ export default function Hero() {
               className="w-full"
             >
               <Button
-                className="w-full "
-                size="lg"
                 variant={"outline-secondary"}
+                size="lg"
+                className="w-full"
               >
                 <ArrowDownToLine />
-                Download Sample Issue
+                Get Sample Issue
               </Button>
             </Link>
           </div>
           <p className="mt-3 text-primary text-sm text-center text-gray-400">
-            First month free. No obligation to continue.
+            First month free. No obligation to continue
           </p>
         </div>
 
