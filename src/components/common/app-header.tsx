@@ -58,7 +58,7 @@ export default function AppHeader() {
                   </Link>
                   <Link href="/#subscribe">
                     <Button size="lg" variant="secondary" className="w-55">
-                      Start Firm Trial
+                      Start Free Trial
                     </Button>
                   </Link>
                 {/* </div> */}
@@ -113,7 +113,7 @@ export default function AppHeader() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <Button size="lg" variant="secondary" className="w-full">
-                    Start Firm Trial
+                    Start Free Trial
                   </Button>
                 </Link>
               </div>

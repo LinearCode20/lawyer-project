@@ -17,8 +17,7 @@ export default function Hero() {
               className="text-primary text-[36px] mb-2 font-bold font-serif   
  leading-[1.1] md:text-[48px] "
             >
-              <span className="text-secondary">CPD Your Firm </span>
-              Can Apply, Record and Stand Behind
+              CPD Your Firm Can Apply, Record and Stand Behind
             </h1>
             <p className="text-primary">
               Structured monthly CPD your team can use on live matters, with
@@ -44,12 +43,8 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="w-full"
             >
-              <Button
-                className="w-full "
-                size="lg"
-                variant={"secondary"}
-              >
-                Start Firm Trial
+              <Button className="w-full " size="lg" variant={"secondary"}>
+                Start Free Trial
               </Button>
             </Link>
             <Link
@@ -57,7 +52,11 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="w-full"
             >
-              <Button variant={"outline-secondary"} size="lg" className="w-full">
+              <Button
+                variant={"outline-secondary"}
+                size="lg"
+                className="w-full"
+              >
                 <ArrowDownToLine />
                 Get Sample Issue
               </Button>
