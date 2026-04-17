@@ -1,12 +1,22 @@
 import nodemailer from "nodemailer";
 
+const smtpUser = process.env.SMTP_USER;
+const smtpPass = process.env.SMTP_PASS;
+const smtpFrom = process.env.SMTP_FROM || smtpUser;
+
+if (!smtpUser || !smtpPass) {
+  console.warn(
+    "SMTP_USER or SMTP_PASS not set. Email sending will fail until these are configured."
+  );
+}
+
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: Number(process.env.SMTP_PORT) === 465, // SSL if 465
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false, // true if 465
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
+    user: smtpUser,
+    pass: smtpPass,
   },
 });
 
@@ -23,7 +33,7 @@ export async function sendEmail({
 }) {
   try {
     const info = await transporter.sendMail({
-      from: process.env.SMTP_FROM,
+      from: smtpFrom ?? "My App",
       to,
       subject,
       html,
@@ -34,7 +44,6 @@ export async function sendEmail({
       success: true,
       messageId: info.messageId,
     };
-
   } catch (error: any) {
     console.error("Email send error:", error);
 

@@ -28,7 +28,18 @@ export async function POST(request: NextRequest) {
 
     const { full_name, email, selected_areas } = result.data;
     // FREE CHAPTER EMAIL
-    const sampleFile = `${process.env.BASE_URL}/pdfs/Private Client Update September 2025 Legal Edge CPD Ltd.pdf`;
+    let sampleFile = '';    
+    if(selected_areas==="Private Client") {
+      sampleFile = `${process.env.BASE_URL}/pdf/private client sample 16 april 2026 version 2.pdf`;    
+    } else {
+      return NextResponse.json(
+        {
+          message: `${selected_areas} is comming soon.`,
+        },
+        { status: 500 }
+      );
+    }
+
     // Save data
     await FreeSampleData({
       full_name, email, selected_areas,

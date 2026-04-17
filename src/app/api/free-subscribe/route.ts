@@ -136,8 +136,10 @@ export async function POST(request: NextRequest) {
       $priceId = process.env.STRIPE_PRICE_ID_C || "";
     }
     console.log('Selected Price ID:', $priceId);
-    //add subscription on stript every month payment
-    if($priceId!=="") {
+    // Create subscription on Stripe so payments recur monthly.
+    // Trial period set to 30 days (first month free). Adjust as needed.
+    let stripeSubscriptionId: string | null = null;
+    if ($priceId !== "") {
       const subscription = await stripe.subscriptions.create({
         customer: customer.id,
         items: [
@@ -145,8 +147,12 @@ export async function POST(request: NextRequest) {
             price: $priceId,
           },
         ],
-        trial_period_days: 1, //  1 month free
+        // 30-day free trial
+        trial_period_days: 30,
+        expand: ["latest_invoice.payment_intent"],
       });
+
+      stripeSubscriptionId = subscription.id;
     }
 
     const firm_name = "";
@@ -158,6 +164,7 @@ export async function POST(request: NextRequest) {
       plan_type,
       selected_areas,
       stripe_customer_id: customer.id,
+      stripe_subscription_id: stripeSubscriptionId,
       created_at: new Date().toISOString(),
     });
 
