@@ -33,7 +33,7 @@ export async function sendEmail({
 }) {
   try {
     const info = await transporter.sendMail({
-      from: smtpFrom ?? "My App",
+      from: smtpFrom ?? "LawEdge",
       to,
       subject,
       html,

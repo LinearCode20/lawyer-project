@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     } else {
       return NextResponse.json(
         {
-          message: `${selected_areas} is comming soon.`,
+          message: `${selected_areas} is coming soon.`,
         },
         { status: 500 }
       );
