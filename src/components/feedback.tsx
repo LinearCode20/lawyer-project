@@ -12,7 +12,7 @@ import { Download } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "This saves me several hours each month. Our litigation team uses it consistently, it removes the need to search across multiple sources, and completion is materially higher than our previous CPD approach.",
+      "This saves me several hours each month. Our litigation team uses it consistently, and what ends up on the file makes the difference. It is much clearer why decisions were made when matters are reviewed later.",
     role: "Partner, Litigation",
     firm_type: "Legal 500 firm",
   },
@@ -42,7 +42,7 @@ const testimonials = [
   },
   {
     quote:
-      "Previously CPD was inconsistent across the firm. This has created a simple monthly system that people follow without chasing.",
+      "Previously CPD was inconsistent across the firm. This has created a simple monthly system, and it is much clearer on the file what has been considered and why.",
     role: "Managing Partner",
     firm_type: "High street firm",
   },
@@ -52,10 +52,10 @@ export default function Feedback() {
   return (
     <section className="p-4 py-13 " id="testimonials">
       <div className="md:max-w-6xl mx-auto">
-        <h1 className="heading text-center  mb-4!">What Practitioners say</h1>
+        <h1 className="heading text-center  mb-4!">What firms are saying </h1>
         <p className="md:w-[60%] mx-auto text-center">
-          Used by solicitors, department heads, and firms that want practical
-          monthly CPD their teams will actually read and complete.
+          Used by solicitors and firms to keep files clear, consistent and
+          defensible across live matters.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-12">
           {testimonials.map((plan, index) => (

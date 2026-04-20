@@ -12,14 +12,16 @@ import { CircleCheck } from "lucide-react";
 import CPTSteps from "@/components/cpt-steps";
 import AboutLawEdge from "@/components/AboutLawEdge";
 import HowItWillWorks from "@/components/how-it-will-works";
+import Problam from "@/components/problam";
 
 export default function Home() {
   return (
     <div className=" grow ">
       <Hero />
       <div className="bg-[#eff1f5] text-center text-lg p-4 text-primary py-8">
-        Most firms complete CPD. Few can evidence it properly.
+        Most firms complete CPD. Few can show it clearly on the file.
       </div>
+      <Problam />
 
       <CPTSteps />
       <HowItWillWorks />

@@ -11,8 +11,8 @@ export default function BottomBanner() {
           See how this would work on your current files
         </h1>
         <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
-          Review a sample issue and see how your team can apply, record, and
-          evidence CPD as part of day-to-day work.
+          Review a sample issue to see how it’s used on live matters, with key
+          points set out clearly on the file.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 md:w-[70%] mx-auto">
@@ -34,14 +34,13 @@ export default function BottomBanner() {
         </div>
 
         <p className=" text-gray-400  mb-2">
-          First month free. No obligations to continue.
+          Start with the first month free. No obligation to continue.
         </p>
         <p className=" mb-2 font-semibold">
           Start with the free month and see the difference in your first issue.
         </p>
         <p className="text-sm text-gray-400">
-          Used by solicitors and firms across the UK. No charge today, and you
-          can cancel anytime before billing starts.
+          Used by solicitors and firms across the UK to keep files clear and defensible. No charge today. Cancel anytime.
         </p>
       </div>
     </section>

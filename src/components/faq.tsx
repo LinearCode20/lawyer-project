@@ -15,9 +15,7 @@ export default function FAQ() {
   return (
     <section className="py-13 p-4" id="faq">
       <div className="md:max-w-6xl mx-auto">
-        <h1 className="heading  text-center">
-          Frequently asked questions
-        </h1>
+        <h1 className="heading  text-center">Frequently asked questions</h1>
         <Card className="p-0 rounded-sm">
           <ul>
             {faq.map((area, index) => (
@@ -26,7 +24,9 @@ export default function FAQ() {
                   className="flex justify-between z-10 items-center cursor-pointer p-4 md:py-8 "
                   onClick={() => toggleItem(index)}
                 >
-                  <span className="font-semibold text-base">{area.title}</span>
+                  <span className="font-semibold text-base">
+                    {area.question}
+                  </span>
                   <span className="text-secondary">
                     {openIndex === index ? (
                       <Minus size={16} />

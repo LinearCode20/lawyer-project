@@ -50,17 +50,21 @@ export default function AppHeader() {
                   </Link>
                 ))}
                 {/* <div className="flex items-center justify-evenly gap-4 "> */}
-                  <Link href="/#subscribe">
-                    <Button size="lg" variant="outline-secondary" className="w-55">
-                      <ArrowDownToLine />
-                      Get Sample Issue
-                    </Button>
-                  </Link>
-                  <Link href="/#subscribe">
-                    <Button size="lg" variant="secondary" className="w-55">
-                      Start Free Trial
-                    </Button>
-                  </Link>
+                <Link href="/#subscribe">
+                  <Button
+                    size="lg"
+                    variant="outline-secondary"
+                    className="w-55"
+                  >
+                    <ArrowDownToLine />
+                    Get Sample Issue
+                  </Button>
+                </Link>
+                <Link href="/#subscribe">
+                  <Button size="lg" variant="secondary" className="w-55">
+                    Start Free Trial
+                  </Button>
+                </Link>
                 {/* </div> */}
               </nav>
 
@@ -122,7 +126,7 @@ export default function AppHeader() {
         )}
 
         <div className="bg-primary text-white text-center py-6">
-          No research. No admin. Just CPD that runs itself.
+          Used by UK law firms to keep files clear and defensible.{" "}
         </div>
       </header>
     </>

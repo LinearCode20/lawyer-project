@@ -14,12 +14,14 @@ const steps = [
   {
     number: 2,
     title: "Apply on File",
-    description:"Used by your team on active files as part of day-to-day work.",
+    description:
+      "Used by your team on active files as part of day-to-day work.",
   },
   {
     number: 3,
     title: "Record",
-    description:"CPD is recorded as part of the work as it is completed, without separate tracking, systems, or additional admin.",
+    description:
+      "CPD is recorded as part of the work as it is completed, without separate tracking, systems, or additional admin.",
   },
 ];
 
@@ -27,9 +29,18 @@ export default function HowItWillWorks() {
   return (
     <section className="p-4 py-13 " id="how-it-works">
       <div className="md:max-w-6xl mx-auto ">
-        <h2 className="heading text-center mb-2!">How it works</h2>
+        <h2 className="heading text-center mb-2!">
+          How it fits into your work
+        </h2>
+        <p className="md:w-[60%] mx-auto text-center ">
+          Used on live matters as part of day-to-day work.
+        </p>
+        <p className="md:w-[60%] mx-auto text-center ">
+          Each issue focuses on real scenarios, so it’s clear on the file why
+          decisions were made.
+        </p>
         <p className="md:w-[60%] mx-auto text-center mb-16">
-          Simple to introduce. Used within your team’s existing workflow.
+          No separate tracking. No additional systems.
         </p>
 
         {/* Three-step horizontal flow */}
@@ -41,9 +52,9 @@ export default function HowItWillWorks() {
             >
               <CardContent className=" flex flex-col items-center text-center">
                 {/* Numbered circle */}
-                <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center text-xl font-bold mb-4">
+                {/* <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center text-xl font-bold mb-4">
                   {step.number}
-                </div>
+                </div> */}
                 <h3 className="text-lg font-semibold font-serif text-primary mb-4">
                   {step.title}
                 </h3>
