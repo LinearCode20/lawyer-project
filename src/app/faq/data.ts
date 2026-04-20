@@ -1,32 +1,37 @@
-export const faq: { title: string; answer: string }[] = [
+export const faq: { question: string; answer: string }[] = [
   {
-    title: "How is this used within a firm?",
+    question: "How is this used within a firm?",
     answer:
-      "Each monthly update can be shared across your team or relevant departments. It can be reviewed individually or discussed briefly as part of internal training, with no additional preparation required.",
+      "It is used on live matters as part of day-to-day work. Team members pick up the issue and apply it as they go, ensuring key points are reflected on the file without needing separate sessions or preparation.",
   },
   {
-    title: "Does this meet SRA CPD requirements?",
+    question: "Does this meet SRA CPD requirements?",
     answer:
-      "The updates are designed to support ongoing competence, with structured content and clear records that help maintain consistent CPD across your team.",
+      "Yes. It supports ongoing competence and creates a clear record of CPD through the work already being done.",
   },
   {
-    title: "How long does each update take to review?",
+    question: "How long does each issue take?",
     answer:
-      "Most updates can be reviewed in approximately 15–30 minutes, depending on how they are used within the team.",
+      "Usually around 15–30 minutes, depending on how it’s used across the team.",
   },
   {
-    title: "Do we need to manage anything internally?",
+    question: "Do we need to manage anything internally?",
     answer:
-      "No. Updates are prepared in a ready-to-use format, with built-in structure to support CPD recording without additional admin.",
+      "No. Everything is ready to use and fits into how your team already works, without additional administration or tracking.",
   },
   {
-    title: "Can this be used across multiple practice areas?",
+    question: "How does this help if a file is reviewed or challenged?",
     answer:
-      "Yes. You can select one or multiple practice areas, and updates are delivered consistently across each area you choose.",
+      "It helps make it clearer on the file why decisions were made, making it easier to explain what was considered and why if reviewed later.",
   },
   {
-    title: "Can we change or add practice areas later?",
+    question: "Can this be used across multiple practice areas?",
     answer:
-      "Yes. Practice areas can be added or adjusted at any time as your firm’s needs change.",
+      "Yes. You can choose one or more areas, and each one is covered consistently.",
+  },
+  {
+    question: "Can we change or add practice areas later?",
+    answer:
+      "Yes, you can add or adjust areas at any time as your needs change.",
   },
 ];

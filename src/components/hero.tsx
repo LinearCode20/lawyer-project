@@ -17,12 +17,11 @@ export default function Hero() {
               className="text-primary text-[36px] mb-2 font-bold font-serif   
  leading-[1.1] md:text-[48px] "
             >
-              CPD Your Firm Can Apply, Record and Stand Behind
+              If it’s not on the file, it cannot be relied on or defended.
             </h1>
             <p className="text-primary">
-              Structured monthly CPD your team can use on live matters, with
-              clear records to support supervision and SRA compliance across
-              your firm.
+              Used on live matters so it’s clear on the file why decisions were
+              made when it’s reviewed later or questioned.
             </p>
             <ul className="text-primary mt-1 space-y-2 list-disc pl-4">
               <li>Firm-wide coverage across key practice areas </li>
@@ -63,7 +62,7 @@ export default function Hero() {
             </Link>
           </div>
           <p className="mt-3 text-primary text-sm text-center text-gray-400">
-            First month free. No obligation to continue
+            Not just CPD. Built around what actually ends up on the file.
           </p>
         </div>
 

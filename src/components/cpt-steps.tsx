@@ -3,24 +3,22 @@ import { Card, CardContent } from "./ui/card";
 
 const steps = [
   {
-    title: "Save time",
+    title: "Support what ends up on the file",
     description:
-      "No need to source legal updates, prepare internal training, or manage CPD across multiple fee earners.",
+      "Helps ensure key points are reflected clearly on the file if matters are reviewed later.",
   },
   {
-    title: "Reduce internal admin",
+    title: "Reduce internal effort",
     description:
-      "Removes the need to organise sessions, chase attendance, or maintain separate training records.",
+      "Removes the need to source updates, prepare internal training, or manage separate CPD records.",
   },
   {
-    title: "Maintain consistency",
-    description:
-      "Ensures a structured and consistent approach to CPD across teams and practice areas.",
+    title: "Create consistency across teams",
+    description: "Keeps teams aligned without adding extra process.",
   },
   {
-    title: "Support compliance",
-    description:
-      "Provides clear, documented CPD activity to support ongoing competence and regulatory expectations.",
+    title: "Keep things simple",
+    description: "Fits into existing workflows without new systems or setup.",
   },
 ];
 
@@ -28,10 +26,12 @@ export default function CPTSteps() {
   return (
     <section className="p-4 py-13 bg-white" id="how-it-works">
       <div className="md:max-w-6xl mx-auto ">
-        <h2 className="heading text-center !mb-4">Why firms use Law Edge</h2>
+        <h2 className="heading text-center !mb-4">
+          Why firms use it in practice{" "}
+        </h2>
         <h6 className="text-xl  text-center">
-          A simple system your firm can use immediately, without changing how
-          your team works
+          Used on live matters, so it’s clear on the file why decisions were
+          made.
         </h6>
         <p className=" text-center mb-16 text-muted-foreground">
           No new processes. No internal setup. Used within your team’s existing
