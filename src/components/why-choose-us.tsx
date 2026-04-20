@@ -14,27 +14,27 @@ export default function WhyChooseUs() {
   const features = [
     {
       icon: FileText,
-      title: "Key legal updates",
+      title: "Clear, relevant updates",
       description:
-        "Clear summaries of important legal and regulatory developments across your selected practice areas.",
+        "Focused on legal and regulatory developments that affect day-to-day work.",
     },
     {
       icon: Clock,
-      title: "Practical application",
+      title: "Applied in practice",
       description:
-        "A focused explanation of why each update matters and what your team should take from it.",
+        "Shows what matters and what should be reflected on the file.",
     },
     {
       icon: MoveRight,
-      title: "Built-in CPD record",
+      title: "Built-in record",
       description:
-        "Structured documentation to help maintain a clear and consistent record of monthly training activity.",
+        "Creates a clear record of ongoing competence through work already being done.",
     },
     {
       icon: Layers,
-      title: "Ready-to-use format",
+      title: "Ready to use",
       description:
-        "Prepared in a simple format that can be shared across the firm without extra internal preparation.",
+        "Shared across your team without additional preparation or setup.",
     },
   ];
 
@@ -47,8 +47,8 @@ export default function WhyChooseUs() {
               What you receive each month
             </h2>
             <p className=" text-center">
-              Structured monthly CPD updates designed to keep your team
-              informed, consistent, and easy to manage.
+              A structured issue focused on real scenarios, used on live
+              matters.
             </p>
             <div
               className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 my-4 md:my-12
