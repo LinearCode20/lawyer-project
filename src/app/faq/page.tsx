@@ -27,7 +27,7 @@ export default function Page() {
                     className="flex justify-between items-center cursor-pointer"
                     onClick={() => toggleItem(index)}
                   >
-                    <span className="font-semibold">{area.title}</span>
+                    <span className="font-semibold">{area.question}</span>
                     <span>
                       {" "}
                       {openIndex === index ? (
