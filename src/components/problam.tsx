@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Problam() {
   return (
-    <section className="p-4 py-13 bg-white" id="how-it-works">
+    <section className="p-4 py-13 bg-white">
       <div className="md:max-w-6xl mx-auto ">
         <h2 className="heading text-center !mb-4">
           Where things tend to come apart{" "}
