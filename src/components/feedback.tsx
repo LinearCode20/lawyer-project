@@ -12,40 +12,40 @@ import { Download } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "This saves me several hours each month. Our litigation team uses it consistently, and what ends up on the file makes the difference. It is much clearer why decisions were made when matters are reviewed later.",
-    role: "Partner, Litigation",
+      "We started using Law Edge to bring more consistency across the firm.When applied to live files, it became clear that some positions were not properly recorded and would not have been capable of being defended if challenged.",
+    role: "Partner",
     firm_type: "Legal 500 firm",
   },
   {
     quote:
-      "We now use this across the employment team each month. It keeps fee earners aligned, cuts research time, and gives us a clearer record of what has actually been completed.",
-    role: "Head of Employment",
+      "We distribute the monthly issue across all fee earners and use it when reviewing files.It has highlighted where decisions were made but not clearly evidenced on the file, and in some cases would not have been capable of being defended if challenged.",
+    role: "Head of Department",
     firm_type: "Regional multi-office firm",
   },
   {
     quote:
-      "It has reduced internal CPD admin significantly. More people read it, fewer people need to look elsewhere, and completion is much more consistent across the firm.",
+      "We are using Law Edge across private client, property, and litigation.These were areas where we had concerns about file standards.Applying this has shown where the file does not support the position when tested.",
     role: "Practice Manager",
     firm_type: "Multi-office practice",
   },
-  {
-    quote:
-      "We introduced this across our corporate team and immediately reduced time spent sourcing updates. It has standardised how our team approaches CPD each month.",
-    role: "Corporate Partner",
-    firm_type: "City firm",
-  },
-  {
-    quote:
-      "The structure is what makes this work. Fee earners actually complete it, and from a supervision perspective it gives clear evidence of ongoing competence.",
-    role: "Head of Department",
-    firm_type: "Regional firm",
-  },
-  {
-    quote:
-      "Previously CPD was inconsistent across the firm. This has created a simple monthly system, and it is much clearer on the file what has been considered and why.",
-    role: "Managing Partner",
-    firm_type: "High street firm",
-  },
+  // {
+  //   quote:
+  //     "We introduced this across our corporate team and immediately reduced time spent sourcing updates. It has standardised how our team approaches CPD each month.",
+  //   role: "Corporate Partner",
+  //   firm_type: "City firm",
+  // },
+  // {
+  //   quote:
+  //     "The structure is what makes this work. Fee earners actually complete it, and from a supervision perspective it gives clear evidence of ongoing competence.",
+  //   role: "Head of Department",
+  //   firm_type: "Regional firm",
+  // },
+  // {
+  //   quote:
+  //     "Previously CPD was inconsistent across the firm. This has created a simple monthly system, and it is much clearer on the file what has been considered and why.",
+  //   role: "Managing Partner",
+  //   firm_type: "High street firm",
+  // },
 ];
 
 export default function Feedback() {
@@ -57,6 +57,7 @@ export default function Feedback() {
           Used by solicitors and firms to keep files clear, consistent and
           defensible across live matters.
         </p>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-12">
           {testimonials.map((plan, index) => (
             <Card
@@ -75,6 +76,11 @@ export default function Feedback() {
             </Card>
           ))}
         </div>
+
+        <p className="md:w-[60%] mt-4 mx-auto text-center">
+          Most firms only see this when a file is challenged. At that point, it
+          is too late to correct it.
+        </p>
       </div>
     </section>
   );

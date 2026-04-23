@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { Children, useState } from "react";
 import { ArrowDownToLine, Download, Menu, X } from "lucide-react";
 
 export default function AppHeader() {
@@ -11,10 +11,21 @@ export default function AppHeader() {
   const navItems = [
     { id: "home", label: "Home", href: "/#home" },
     // { id: "home", label: "Testimonials", href: "/#testimonials" },
-    { id: "contact", label: "Contact Us", href: "/#contact-us" },
-    { id: "areas", label: "Areas", href: "/#area-of-law" },
     { id: "how-it-works", label: "How It Works", href: "/#how-it-works" },
-    { id: "faq", label: "FAQ", href: "/#faq" },
+    { id: "subscribe", label: "Get Sample Issue", href: "/#subscribe" },
+    // { id: "areas", label: "Areas", href: "/#area-of-law" },
+    {
+      id: "identify-non-defensible-files",
+      label: "Identify Non-Defensible Files",
+      href: "/#subscribe",
+      children: (
+        <Button size="lg" variant="secondary" className="w-55">
+          Identify Non-Defensible Files
+        </Button>
+      ),
+    },
+    { id: "contact", label: "Contact Us", href: "/#contact-us" },
+    // { id: "faq", label: "FAQ", href: "/#faq" },
   ];
 
   return (
@@ -45,12 +56,14 @@ export default function AppHeader() {
                       "text-sm font-semibold hover:text-primary relative group hover:scale-105 transition-all duration-200",
                     )}
                   >
-                    {item.label}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                    {item.children ? item.children : item.label}
+                    {!item.children && (
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                    )}
                   </Link>
                 ))}
                 {/* <div className="flex items-center justify-evenly gap-4 "> */}
-                <Link href="/#subscribe">
+                {/* <Link href="/#subscribe">
                   <Button
                     size="lg"
                     variant="outline-secondary"
@@ -64,7 +77,7 @@ export default function AppHeader() {
                   <Button size="lg" variant="secondary" className="w-55">
                     Start Free Trial
                   </Button>
-                </Link>
+                </Link> */}
                 {/* </div> */}
               </nav>
 
@@ -95,10 +108,10 @@ export default function AppHeader() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-sm font-semibold hover:text-primary transition-all duration-200"
                 >
-                  {item.label}
+                  {item.children ? item.children : item.label}
                 </Link>
               ))}
-              <div className="flex flex-col gap-3 pt-4 border-t border-gray-200">
+              {/* <div className="flex flex-col gap-3 pt-4 border-t border-gray-200">
                 <Link
                   href="/#subscribe"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -120,7 +133,7 @@ export default function AppHeader() {
                     Start Free Trial
                   </Button>
                 </Link>
-              </div>
+              </div> */}
             </nav>
           </div>
         )}
