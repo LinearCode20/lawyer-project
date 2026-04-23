@@ -1,37 +1,41 @@
 export const faq: { question: string; answer: string }[] = [
   {
-    question: "How is this used within a firm?",
+    question: "What is Law Edge?",
     answer:
-      "It is used on live matters as part of day-to-day work. Team members pick up the issue and apply it as they go, ensuring key points are reflected on the file without needing separate sessions or preparation.",
+      "Law Edge is a file risk management system that applies a standard so the position on your files can be clearly followed and defended when tested.",
   },
   {
-    question: "Does this meet SRA CPD requirements?",
+    question: "Is this CPD?",
     answer:
-      "Yes. It supports ongoing competence and creates a clear record of CPD through the work already being done.",
+      "No. This is applied within live work. However, each issue can be recorded as CPD in line with Solicitors Regulation Authority requirements, with each issue equivalent to one hour of CPD per month.",
   },
   {
-    question: "How long does each issue take?",
+    question: "How is this different from our current processes?",
     answer:
-      "Usually around 15–30 minutes, depending on how it’s used across the team.",
+      "Most firms already have processes, but those processes do not ensure that the file clearly shows the position when tested.",
   },
   {
-    question: "Do we need to manage anything internally?",
+    question: "Who prepares the system?",
     answer:
-      "No. Everything is ready to use and fits into how your team already works, without additional administration or tracking.",
+      "The system is prepared by solicitors with experience in file risk, claims, and file review, based on how files are assessed when challenged in practice.",
   },
   {
-    question: "How does this help if a file is reviewed or challenged?",
+    question: "Do we need to change how we work?",
     answer:
-      "It helps make it clearer on the file why decisions were made, making it easier to explain what was considered and why if reviewed later.",
+      "No. The work itself remains the same. What changes is how the position is recorded on the file.",
   },
   {
-    question: "Can this be used across multiple practice areas?",
+    question: "How quickly can this be applied?",
     answer:
-      "Yes. You can choose one or more areas, and each one is covered consistently.",
+      "Immediately. Each issue is applied to current files as part of ongoing work.",
   },
   {
-    question: "Can we change or add practice areas later?",
+    question: "How do we know if our files meet the standard?",
+    answer: "You don’t know without testing them.",
+  },
+  {
+    question: "What happens if we do nothing?",
     answer:
-      "Yes, you can add or adjust areas at any time as your needs change.",
+      "You will continue progressing files that may fail when tested, resulting in lost matters, claims, and financial exposure.",
   },
 ];
