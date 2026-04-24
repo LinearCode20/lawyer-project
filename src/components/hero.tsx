@@ -17,23 +17,33 @@ export default function Hero() {
               className="text-primary text-[36px] mb-2 font-bold font-serif   
  leading-[1.1] md:text-[48px] "
             >
-              If it’s not on the file, it cannot be relied on or defended.
+              Your files are not defensible.
             </h1>
             <p className="text-primary">
-              Used on live matters so it’s clear on the file why decisions were
-              made when it’s reviewed later or questioned.
+              This is already present across your current files.
             </p>
-            <ul className="text-primary mt-1 space-y-2 list-disc pl-4">
-              <li>Firm-wide coverage across key practice areas </li>
-              <li>
-                Clear CPD records for supervision, audit and firm-wide
-                consistency
-              </li>
-              <li>
-                Practical guidance applied consistently across your firm’s live
-                matters
-              </li>
-            </ul>
+
+            <p className="text-primary">
+              This includes files currently progressing within your firm today.
+            </p>
+
+            <p className="text-primary my-3">
+              Firms with strong supervision still fail this when the file is
+              tested.
+            </p>
+            <p className="text-primary mt-2">Most firms do the work.</p>
+            <p className="text-primary">The file does not show it.</p>
+            <p className="text-primary mt-2">
+              When challenged, the file is the only evidence.
+            </p>
+
+            <p className="text-primary mt-2">
+              If it does not show the position, it cannot be defended.
+            </p>
+            <p className="text-primary mt-2">
+              Law Edge is a file risk management system applied across your live
+              matters.
+            </p>
           </div>
 
           <div className=" flex flex-col gap-4 text-base font-medium sm:flex-row mt-2 ">
@@ -43,11 +53,12 @@ export default function Hero() {
               className="w-full"
             >
               <Button className="w-full " size="lg" variant={"secondary"}>
-                Start Free Trial
+                <ArrowDownToLine />
+                Get Sample Issue
               </Button>
             </Link>
             <Link
-              href="/#subscribe"
+              href="/file-review"
               rel="noopener noreferrer"
               className="w-full"
             >
@@ -56,8 +67,7 @@ export default function Hero() {
                 size="lg"
                 className="w-full"
               >
-                <ArrowDownToLine />
-                Get Sample Issue
+                Identify Your Non-Defensible Files
               </Button>
             </Link>
           </div>
