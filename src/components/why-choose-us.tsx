@@ -43,14 +43,23 @@ export default function WhyChooseUs() {
       <section className="p-4 bg-white  py-13  ">
         <div className="md:max-w-6xl mx-auto   ">
           <div>
-            <h2 className="heading text-center mb-6!">
-              What you receive each month
-            </h2>
-            <p className=" text-center">
-              A structured issue focused on real scenarios, used on live
-              matters.
+            <h2 className="heading text-center mb-6!">WHAT THIS IS</h2>
+            <p className=" text-center">A file risk management system</p>
+            <p className=" text-center mt-4">This is not training.</p>
+            <p className=" text-center">This is not guidance.</p>
+            <p className=" text-center mt-4">
+              This is a standard applied across your files.
             </p>
-            <div
+            <div>
+              <p>Each issue</p>
+              <ul>
+                <li>is used on live matters</li>
+                <li>sets how the file should record the position</li>
+                <li>shows what fails and what is defensible</li>
+                <li>is applied consistently across fee earners</li>
+              </ul>
+            </div>
+            {/* <div
               className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 my-4 md:my-12
               max-w-3xl mx-auto
             "
@@ -78,7 +87,7 @@ export default function WhyChooseUs() {
                   </Card>
                 );
               })}
-            </div>
+            </div> */}
             <p className="text-center text-sm my-2">
               Designed to reduce internal effort while supporting a consistent
               approach to ongoing competence.

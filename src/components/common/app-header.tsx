@@ -4,9 +4,11 @@ import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { Children, useState } from "react";
 import { ArrowDownToLine, Download, Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function AppHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
 
   const navItems = [
     { id: "home", label: "Home", href: "/#home" },
@@ -17,7 +19,7 @@ export default function AppHeader() {
     {
       id: "identify-non-defensible-files",
       label: "Identify Non-Defensible Files",
-      href: "/#subscribe",
+      href: "/file-review",
       children: (
         <Button size="lg" variant="secondary" className="w-55">
           Identify Non-Defensible Files
@@ -27,6 +29,21 @@ export default function AppHeader() {
     { id: "contact", label: "Contact Us", href: "/#contact-us" },
     // { id: "faq", label: "FAQ", href: "/#faq" },
   ];
+
+  const handleHashNavigation = (href: string) => {
+    if (href.includes("#")) {
+      const [path, hash] = href.split("#");
+      router.push(path);
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      router.push(href);
+    }
+  };
 
   return (
     <>
@@ -49,18 +66,18 @@ export default function AppHeader() {
               {/* Desktop Navigation */}
               <nav className="hidden md:flex items-center space-x-4">
                 {navItems.map((item) => (
-                  <Link
+                  <div
                     key={item.id}
-                    href={item.href}
+                    onClick={() => handleHashNavigation(item.href)}
                     className={cn(
-                      "text-sm font-semibold hover:text-primary relative group hover:scale-105 transition-all duration-200",
+                      "text-sm font-semibold hover:text-primary relative group hover:scale-105 transition-all duration-200 cursor-pointer",
                     )}
                   >
                     {item.children ? item.children : item.label}
                     {!item.children && (
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                     )}
-                  </Link>
+                  </div>
                 ))}
                 {/* <div className="flex items-center justify-evenly gap-4 "> */}
                 {/* <Link href="/#subscribe">
@@ -102,14 +119,16 @@ export default function AppHeader() {
           <div className="md:hidden bg-white border-b-2 border-gray-200 px-6 py-4">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <Link
+                <div
                   key={item.id}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-sm font-semibold hover:text-primary transition-all duration-200"
+                  onClick={() => {
+                    handleHashNavigation(item.href);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="text-sm font-semibold hover:text-primary transition-all duration-200 cursor-pointer"
                 >
                   {item.children ? item.children : item.label}
-                </Link>
+                </div>
               ))}
               {/* <div className="flex flex-col gap-3 pt-4 border-t border-gray-200">
                 <Link
