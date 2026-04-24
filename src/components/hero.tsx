@@ -58,7 +58,7 @@ export default function Hero() {
               </Button>
             </Link>
             <Link
-              href="/#subscribe"
+              href="/file-review"
               rel="noopener noreferrer"
               className="w-full"
             >

@@ -100,7 +100,7 @@ export default function HowItWillWorks() {
         {/* CTA Button */}
         <div className="flex justify-center mb-2 gap-4">
           <Link
-            href="/#subscribe"
+            href="/file-review"
             rel="noopener noreferrer"
             className="w-full md:w-auto"
           >

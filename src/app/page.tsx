@@ -13,6 +13,8 @@ import CPTSteps from "@/components/cpt-steps";
 import AboutLawEdge from "@/components/AboutLawEdge";
 import HowItWillWorks from "@/components/how-it-will-works";
 import Problam from "@/components/problam";
+import WhatHappened from "@/components/what-happened";
+import Assess from "@/components/assess";
 
 export default function Home() {
   return (
@@ -55,7 +57,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <WhatHappened />
       <Feedback />
+      <Assess />
       <FAQ />
       <BottomBanner />
 
