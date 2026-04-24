@@ -15,6 +15,7 @@ import HowItWillWorks from "@/components/how-it-will-works";
 import Problam from "@/components/problam";
 import WhatHappened from "@/components/what-happened";
 import Assess from "@/components/assess";
+import WhatThisIs from "@/components/what-this-is";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
 
       <CPTSteps />
       <HowItWillWorks />
+      <WhatThisIs />
       <WhyChooseUs />
       <Pricing />
       <AboutLawEdge />
