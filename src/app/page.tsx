@@ -16,13 +16,14 @@ import Problam from "@/components/problam";
 import WhatHappened from "@/components/what-happened";
 import Assess from "@/components/assess";
 import WhatThisIs from "@/components/what-this-is";
+import FileReviewForm from "@/components/file-review-form";
 
 export default function Home() {
   return (
     <div className=" grow ">
       <Hero />
       <div className="bg-[#eff1f5] text-center text-lg p-4 text-primary py-8">
-        Most firms complete CPD. Few can show it clearly on the file.
+        Non-defensible files are already progressing within your firm.
       </div>
       <Problam />
 
@@ -34,11 +35,11 @@ export default function Home() {
       <AboutLawEdge />
       <section className=" p-4 py-13" id="subscribe">
         <div className="md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          <SubscribeFree />
+          <FileReviewForm />
           <DownloadFreeSample />
         </div>
       </section>
-      <section className="p-4 py-18 bg-white">
+      {/* <section className="p-4 py-18 bg-white">
         <div className="md:max-w-6xl mx-auto flex flex-col md:flex-row gap-10 justify-evenly text-lg">
           <div className="flex-1 flex items-start gap-2 ">
             <CircleCheck className="shrink-0 inline-block text-secondary h-4" />
@@ -58,7 +59,7 @@ export default function Home() {
             <p>Structured for reflection, recording, and compliance</p>
           </div>
         </div>
-      </section>
+      </section> */}
       <WhatHappened />
       <Feedback />
       <Assess />

@@ -17,66 +17,71 @@ import axios from "axios";
 import { toast } from "sonner";
 import { NativeSelect } from "./ui/native-select";
 import { areaOfLaw } from "@/app/law-area/[slug]/data";
-import { ArrowDownToLine, Check, CircleCheck } from "lucide-react";
-import { Dialog, DialogClose, DialogContent } from "./ui/dialog";
-import Link from "next/link";
+import { Check, CircleCheck } from "lucide-react";
+import { Dialog, DialogContent } from "./ui/dialog";
 
 const formSchema = z.object({
   email: z.email({ message: "Please enter a valid email" }).min(1, {
     message: "Please enter an email",
   }),
   full_name: z.string().min(1, { message: "Please enter a name" }),
+  firm_name: z.string().min(1, { message: "Please enter a firm name" }),
+  Phone: z.string().min(1, { message: "Please enter a phone number" }),
+  no_of_files: z.string().min(1, { message: "Please enter a number of files" }),
   selected_areas: z.string().min(1, { message: "Please select an area" }),
 });
 
 type FormSchema = z.infer<typeof formSchema>;
 
-export default function DownloadFreeSample() {
+export default function FileReviewForm() {
   const [isSuccessDialogOpen, setIsSuccessDialogOpen] = useState(false);
 
   const form = useForm({
     resolver: zodResolver(formSchema),
 
     defaultValues: {
+      firm_name: "",
       full_name: "",
       email: "",
+      Phone: "",
       selected_areas: "",
+      no_of_files: "",
     },
   });
 
   const handleSubmit = async (data: FormSchema) => {
-    // Demo: Just log the email
     try {
-      const response = await axios.post("/api/free-sample", {
-        ...data,
-      });
-      toast.success(response?.data?.message || "Thanks for subscribing!");
-      const file_link = response?.data?.data;
+      // Show loading state is handled by form.formState.isSubmitting
 
-      const link = document.createElement("a");
-      link.href = file_link;
-      link.download = "sample_file.pdf";
-      document.body.appendChild(link);
-      link.click();
-      form.reset();
-      document.body.removeChild(link);
+      // TODO: Replace with actual API call
+      // await axios.post('/api/file-review', data);
+
+      // For now, simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
+      // Show success dialog
       setIsSuccessDialogOpen(true);
-    } catch (e: any) {
-      console.log(e);
-      toast.error(e?.response?.data?.message || "Something went wrong");
-    }
 
-    // Reset success message after 3 seconds
+      // Clear form after delay
+      setTimeout(() => {
+        form.reset();
+        setIsSuccessDialogOpen(false);
+      }, 3000); // 3 second delay
+
+      toast.success("Form submitted successfully!");
+    } catch {
+      toast.error("Failed to submit form. Please try again.");
+    }
   };
   return (
     <>
       <Card className="h-fit py-6 text-foreground">
         <CardHeader className="border-b px-6">
           <CardTitle className="text-3xl font-semibold ">
-            Download Monthly Sample Issue
+            Test Your Current File Position
           </CardTitle>
           <CardDescription className="mt-1">
-            Enter your details to receive a sample issue
+            Submit details for a file review request.
           </CardDescription>
         </CardHeader>
         <CardContent className="p-6 pt-0">
@@ -85,7 +90,7 @@ export default function DownloadFreeSample() {
             className="grid gap-4 "
           >
             <p className="text-sm text-primary ">
-              Preview how your monthly CPD will look delivered
+              Submit your files for professional review
             </p>
             <Controller
               name="full_name"
@@ -106,6 +111,24 @@ export default function DownloadFreeSample() {
               )}
             />
             <Controller
+              name="firm_name"
+              control={form.control}
+              render={({ field, fieldState }) => (
+                <Field data-invalid={fieldState.invalid}>
+                  <Input
+                    {...field}
+                    id={field.name}
+                    type="text"
+                    placeholder="Firm Name"
+                    aria-invalid={fieldState.invalid}
+                  />
+                  {fieldState.invalid && (
+                    <FieldError errors={[fieldState.error]} />
+                  )}
+                </Field>
+              )}
+            />
+            <Controller
               name="email"
               control={form.control}
               render={({ field, fieldState }) => (
@@ -116,6 +139,24 @@ export default function DownloadFreeSample() {
                     type="email"
                     aria-invalid={fieldState.invalid}
                     placeholder="Email"
+                  />
+                  {fieldState.invalid && (
+                    <FieldError errors={[fieldState.error]} />
+                  )}
+                </Field>
+              )}
+            />
+            <Controller
+              name="Phone"
+              control={form.control}
+              render={({ field, fieldState }) => (
+                <Field data-invalid={fieldState.invalid}>
+                  <Input
+                    {...field}
+                    id={field.name}
+                    type="tel"
+                    placeholder="Phone"
+                    aria-invalid={fieldState.invalid}
                   />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
@@ -150,6 +191,24 @@ export default function DownloadFreeSample() {
                 </Field>
               )}
             />
+            <Controller
+              name="no_of_files"
+              control={form.control}
+              render={({ field, fieldState }) => (
+                <Field data-invalid={fieldState.invalid}>
+                  <Input
+                    {...field}
+                    id={field.name}
+                    type="number"
+                    placeholder="Number of Files"
+                    aria-invalid={fieldState.invalid}
+                  />
+                  {fieldState.invalid && (
+                    <FieldError errors={[fieldState.error]} />
+                  )}
+                </Field>
+              )}
+            />
             {/* <p className="text-sm text-[#6B7280] ">
               <CircleCheck className="inline-block text-secondary h-4" />
               Sample includes case law, legislation, and CPD record
@@ -165,8 +224,8 @@ export default function DownloadFreeSample() {
                 "Submitting..."
               ) : (
                 <>
-                  <ArrowDownToLine />
-                  Download Sample Issue
+                  <Check />
+                  Submit File Review Request
                 </>
               )}
             </Button>
@@ -191,36 +250,13 @@ export default function DownloadFreeSample() {
 
             {/* Heading */}
             <h2 className="text-2xl font-bold text-primary font-serif">
-              Sample Downloaded
+              Request Submitted
             </h2>
 
             {/* Body Text */}
             <div className="  border-t pt-2 space-y-2 text-muted-foreground">
-              <p>Your sample has been successfully downloaded.</p>
-              <p className="text-sm">
-                You may want to check try the free trial.
-              </p>
+              <p>Your file review request has been submitted successfully.</p>
             </div>
-
-            {/* Buttons */}
-            <div className="border-b py-4 flex w-full gap-3 ">
-              <DialogClose asChild>
-                <Link
-                  href="/#subscribe"
-                  rel="noopener noreferrer"
-                  className="w-full"
-                >
-                  <Button size="lg" variant="secondary" className="flex-1">
-                    Start Free Trial
-                  </Button>
-                </Link>
-              </DialogClose>
-            </div>
-
-            {/* Footer */}
-            <p className="text-xs text-muted-foreground pt-2">
-              First month free and no commitment.
-            </p>
           </div>
         </DialogContent>
       </Dialog>

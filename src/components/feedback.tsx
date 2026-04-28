@@ -52,10 +52,17 @@ export default function Feedback() {
   return (
     <section className="p-4 py-13 " id="testimonials">
       <div className="md:max-w-6xl mx-auto">
-        <h1 className="heading text-center  mb-4!">What firms are saying </h1>
+        <h1 className="heading text-center  mb-4!">
+          What Firms See on Review{" "}
+        </h1>
         <p className="md:w-[60%] mx-auto text-center">
-          Used by solicitors and firms to keep files clear, consistent and
-          defensible across live matters.
+          The file did not support the position when tested.
+        </p>
+        <p className="md:w-[60%] mx-auto text-center">
+          We identified decisions that were made but not clearly evidenced.
+        </p>
+        <p className="md:w-[60%] mx-auto text-center">
+          Several files could not be defended if challenged.{" "}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-12">

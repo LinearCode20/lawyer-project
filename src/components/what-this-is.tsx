@@ -5,14 +5,17 @@ export default function WhatThisIs() {
     <section className="p-4 bg-white  py-13  ">
       <div className="md:max-w-6xl mx-auto   ">
         <div>
-          <h2 className="heading text-center mb-6!">WHAT THIS IS</h2>
-          <p className=" text-center">A file risk management system</p>
-          <p className=" text-center mt-4">This is not training.</p>
-          <p className=" text-center">This is not guidance.</p>
-          <p className=" text-center mt-4">
-            This is a standard applied across your files.
+          <h2 className="heading text-center mb-6!">What Law Edge Is</h2>
+          <p className=" text-center">
+            Law Edge is a file risk management system applied across live
+            matters.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <p className=" text-center mt-4">It is not general CPD.</p>
+          <p className=" text-center">It is not training.</p>
+          <p className=" text-center ">It is not commentary.</p>
+          <p className=" text-center mt-4">It tests whether the file supports the position being advanced.</p>
+
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <div className="flex flex-col justify-center items-center">
               <p className="font-semibold mb-4">Each issue:</p>
               <ul>
@@ -33,7 +36,7 @@ export default function WhatThisIs() {
                 <li>commercial work</li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

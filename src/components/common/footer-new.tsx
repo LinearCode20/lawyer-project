@@ -10,9 +10,7 @@ export default function FooterNew() {
         <div className="flex flex-col ">
           {/* Copyright Notice */}
           <div className="mb-3 text-2xl font-serif text-white ">Law Edge</div>
-          <p className="text-foreground">
-            Structured CPD for law firms.
-          </p>
+          <p className="text-foreground">File risk management system for law firms.</p>
           <p className="my-4">
             Prepared by experienced solicitors with specialist qualifications,
             including STEP practitioners, Resolution members, and Law Society
@@ -27,7 +25,10 @@ export default function FooterNew() {
             <Link href="/terms" className="hover:text-white underline">
               Terms
             </Link>
-            <Link href="/privacy-policy" className=" hover:text-white underline">
+            <Link
+              href="/privacy-policy"
+              className=" hover:text-white underline"
+            >
               Privacy
             </Link>
             <Link href="/cookie-policy" className="hover:text-white underline">

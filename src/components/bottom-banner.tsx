@@ -8,23 +8,20 @@ export default function BottomBanner() {
       <div className="md:max-w-3xl mx-auto px-4 text-center">
         <span className="inline-block text-center bg-secondary w-20 h-px mb-4" />
         <h1 className="text-4xl  mb-6 font-serif">
-          See how this would work on your current files
+          You do not know which of your current files are defensible.
         </h1>
         <p className="text-xl text-gray-400 mb-4 max-w-3xl mx-auto">
-          Your current files are being progressed without a defensible position
+          This must now be tested across your current files.{" "}
         </p>
         <p className=" text-gray-400 mb-4 max-w-3xl mx-auto">
-          If you review five active files today, more than one will fail.
-        </p>
-        <p className=" text-gray-400 mb-8 max-w-3xl mx-auto">
-          That is where your exposure sits.
+          There is no alternative way to establish your position.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 md:w-[70%] mx-auto">
+        <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center mb-8 md:w-[70%] mx-auto">
           <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
             <Button size="lg" variant="secondary" className=" px-8 w-full">
               <ArrowDownToLine className="mr-2" />
-              Get Sample Issue
+              Test Your Current File Position
             </Button>
           </Link>
           <Link
