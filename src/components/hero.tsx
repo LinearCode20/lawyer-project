@@ -15,39 +15,33 @@ export default function Hero() {
           <div className="">
             <h1
               className="text-primary text-[36px] mb-2 font-bold font-serif   
- leading-[1.1] md:text-[48px] "
+ leading-[1.1] md:text-[42px] "
             >
-              Your files are not defensible.
+              Some of your current files cannot be defended.
+              <br />
+              You do not know which ones
             </h1>
-            <p className="text-primary">
-              This is already present across your current files.
+            {/* <p className="text-primary mt-4">You do not know which files.</p> */}
+
+            <p className="text-primary my-4">
+              This is determined by what is recorded on the file, not what was
+              done.
             </p>
 
-            <p className="text-primary">
-              This includes files currently progressing within your firm today.
+            <p className="text-primary mb-4">
+              This position already exists across your current files.
             </p>
 
-            <p className="text-primary my-3">
-              Firms with strong supervision still fail this when the file is
-              tested.
+            <p className="text-primary mt-4">
+              This cannot be identified through internal review.
             </p>
-            <p className="text-primary mt-2">Most firms do the work.</p>
-            <p className="text-primary">The file does not show it.</p>
-            <p className="text-primary mt-2">
-              When challenged, the file is the only evidence.
-            </p>
-
-            <p className="text-primary mt-2">
-              If it does not show the position, it cannot be defended.
-            </p>
-            <p className="text-primary mt-2">
-              Law Edge is a file risk management system applied across your live
-              matters.
+            <p className="text-primary ">
+              Firms that rely on internal review do not identify this position.
             </p>
           </div>
 
-          <div className=" flex flex-col gap-4 text-base font-medium sm:flex-row mt-2 ">
-            <Link
+          <div className=" flex flex-col gap-4 text-base justify- font-medium sm:flex-row mt-4 ">
+            {/* <Link
               href="/#subscribe"
               rel="noopener noreferrer"
               className="w-full"
@@ -56,24 +50,24 @@ export default function Hero() {
                 <ArrowDownToLine />
                 Get Sample Issue
               </Button>
-            </Link>
+            </Link> */}
             <Link
               href="/file-review"
               rel="noopener noreferrer"
-              className="w-full"
+              // className="w-full"
             >
               <Button
                 variant={"outline-secondary"}
                 size="lg"
                 className="w-full"
               >
-                Identify Your Non-Defensible Files
+                Test Your Current File Position
               </Button>
             </Link>
           </div>
-          <p className="mt-3 text-primary text-sm text-center text-gray-400">
+          {/* <p className="mt-3 text-primary text-sm  text-gray-400">
             Not just CPD. Built around what actually ends up on the file.
-          </p>
+          </p> */}
         </div>
 
         {/* CPD Document Preview */}

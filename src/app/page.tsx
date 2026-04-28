@@ -22,7 +22,7 @@ export default function Home() {
     <div className=" grow ">
       <Hero />
       <div className="bg-[#eff1f5] text-center text-lg p-4 text-primary py-8">
-        Most firms complete CPD. Few can show it clearly on the file.
+        Non-defensible files are already progressing within your firm.
       </div>
       <Problam />
 
@@ -38,7 +38,7 @@ export default function Home() {
           <DownloadFreeSample />
         </div>
       </section>
-      <section className="p-4 py-18 bg-white">
+      {/* <section className="p-4 py-18 bg-white">
         <div className="md:max-w-6xl mx-auto flex flex-col md:flex-row gap-10 justify-evenly text-lg">
           <div className="flex-1 flex items-start gap-2 ">
             <CircleCheck className="shrink-0 inline-block text-secondary h-4" />
@@ -58,7 +58,7 @@ export default function Home() {
             <p>Structured for reflection, recording, and compliance</p>
           </div>
         </div>
-      </section>
+      </section> */}
       <WhatHappened />
       <Feedback />
       <Assess />

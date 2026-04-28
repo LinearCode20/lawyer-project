@@ -1,5 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "./ui/card";
+import Link from "next/link";
+import { Button } from "./ui/button";
 const steps = [
   {
     title: "Key issues",
@@ -29,51 +31,43 @@ const steps = [
 
 export default function CPTSteps() {
   return (
-    <section className="p-4 py-13 bg-white" >
+    <section className="p-4 py-13 bg-white">
       <div className="md:max-w-6xl mx-auto ">
-        <h2 className="heading text-center mb-4!">WHAT’S WRONG WITH YOUR FILES</h2>
-        <h6 className="text-xl  text-center">Across your current matters</h6>
-        <p className=" text-center mb-16 text-muted-foreground">
-          Files do not consistently evidence the work undertaken.
+        <h2 className="heading text-center mb-4!">Current File Position</h2>
+        <h6 className="text-xl  text-center">
+          You do not know which of your current files are defensible.
+        </h6>
+        <p className=" text-center mb-4 text-muted-foreground">
+          When tested, the file is the only evidence considered.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-3xl mx-auto">
-          {steps.map((step, index) => (
-            <Card
-              key={index}
-              className="border border-primary/10  transition-all duration-300 hover:shadow-sm  "
+        <p className=" text-center mb-4 text-muted-foreground">
+          If the file does not clearly record the advice, reasoning and
+          decision, the position is not defensible.{" "}
+        </p>
+        <p className=" text-center mb-4 text-muted-foreground">
+          This must now be tested across your current files.
+        </p>
+        <div className=" flex flex-col gap-4 text-base justify-center font-medium sm:flex-row mt-4 ">
+          {/* <Link
+              href="/#subscribe"
+              rel="noopener noreferrer"
+              className="w-full"
             >
-              <CardContent className=" flex flex-col justify-between">
-                <div>
-                  <h3 className="text-xl font-semibold font-serif text-primary mb-4">
-                    {step.title}
-                  </h3>
-                  <ul>
-                    {step.features.map((feature, index) => (
-                      <li
-                        key={index}
-                        className="text-sm text-[#6B7280] flex items-start"
-                      >
-                        <span className="mr-2">•</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className=" text-muted-foreground leading-relaxed mt-4">
-                    {step.info}
-                  </p>
-                  <p className=" text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+              <Button className="w-full " size="lg" variant={"secondary"}>
+                <ArrowDownToLine />
+                Get Sample Issue
+              </Button>
+            </Link> */}
+          <Link
+            href="/file-review"
+            rel="noopener noreferrer"
+            // className="w-full"
+          >
+            <Button variant={"outline-secondary"} size="lg" className="w-full">
+              Test Your Current File Position
+            </Button>
+          </Link>
         </div>
-        <p className="text-muted-foreground text-center">
-          Used by firms as a simple alternative to managing CPD internally
-        </p>
       </div>
     </section>
   );

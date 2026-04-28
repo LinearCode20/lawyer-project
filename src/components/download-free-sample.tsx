@@ -73,7 +73,7 @@ export default function DownloadFreeSample() {
       <Card className="h-fit py-6 text-foreground">
         <CardHeader className="border-b px-6">
           <CardTitle className="text-3xl font-semibold ">
-            Get Sample Issue
+            Download Monthly Sample Issue
           </CardTitle>
           <CardDescription className="mt-1">
             Enter your details to receive a sample issue
@@ -150,10 +150,10 @@ export default function DownloadFreeSample() {
                 </Field>
               )}
             />
-            <p className="text-sm text-[#6B7280] ">
+            {/* <p className="text-sm text-[#6B7280] ">
               <CircleCheck className="inline-block text-secondary h-4" />
               Sample includes case law, legislation, and CPD record
-            </p>
+            </p> */}
             <Button
               variant={"outline-secondary"}
               type="submit"
@@ -166,14 +166,14 @@ export default function DownloadFreeSample() {
               ) : (
                 <>
                   <ArrowDownToLine />
-                  Get Sample Issue
+                  Download Sample Issue
                 </>
               )}
             </Button>
 
-            <p className="text-sm text-center text-[#6B7280] ">
+            {/* <p className="text-sm text-center text-[#6B7280] ">
               No spam. Instant access. Sample only
-            </p>
+            </p> */}
             <p className="text-sm text-center text-[#6B7280] ">
               By submitting this form, you agree to our Terms, Privacy Policy
               and Cookies Policy.

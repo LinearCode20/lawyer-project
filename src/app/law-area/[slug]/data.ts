@@ -122,58 +122,58 @@ export const areaOfLaw: AreaOfLaw[] = [
     discriptions:
       "Monthly updates covering divorce, financial remedies, children law, and family court procedure. Focused on practical impact for advisory and contentious work, including client strategy, negotiation, and case management. Designed to be read in under 20 minutes while providing one hour of CPD and structured reflection support.",
   },
-  {
-    title: "Immigration",
-    forFeature: true,
-    answer:
-      "Developments in visa routes, sponsorship, and Home Office policy, with practical application.",
-    link: "/law-area/immigration-law-cpd",
-    component: immigrationLawCPD,
-    tags: [
-      "Immigration Rules and policy",
-      "Visa routes",
-      "Asylum and protection",
-      "Appeals and judicial review",
-      "Sponsorship and compliance",
-      "Tribunal decisions",
-    ],
-    discriptions:
-      "Monthly immigration law updates covering rule changes, Home Office policy, tribunal decisions, visa routes, and compliance obligations. Focused on practical use in applications, appeals, and sponsor compliance, with clear explanation of risk and next steps. Structured for quick reading with one hour of CPD and support for SRA competence records.",
-  },
-  {
-    title: "Regulatory & Compliance",
-    answer:
-      "Regulatory developments affecting firms and clients, with a focus on compliance and risk.",
-    link: "/law-area/regulatory-compliance-cpd",
-    component: regulatoryComplianceCPD,
-    tags: [
-      "Regulatory developments",
-      "Enforcement and investigations",
-      "Governance and risk",
-      "Compliance systems",
-      "Professional regulation",
-      "Conduct and ethics",
-    ],
-    discriptions:
-      "Monthly updates on regulatory developments, enforcement trends, governance obligations, and compliance frameworks. Focused on practical impact for advisory work, internal controls, and risk management, with clear guidance on what changes in practice. Designed for efficient reading with one hour of CPD and structured record keeping support.",
-  },
+  // {
+  //   title: "Immigration",
+  //   forFeature: true,
+  //   answer:
+  //     "Developments in visa routes, sponsorship, and Home Office policy, with practical application.",
+  //   link: "/law-area/immigration-law-cpd",
+  //   component: immigrationLawCPD,
+  //   tags: [
+  //     "Immigration Rules and policy",
+  //     "Visa routes",
+  //     "Asylum and protection",
+  //     "Appeals and judicial review",
+  //     "Sponsorship and compliance",
+  //     "Tribunal decisions",
+  //   ],
+  //   discriptions:
+  //     "Monthly immigration law updates covering rule changes, Home Office policy, tribunal decisions, visa routes, and compliance obligations. Focused on practical use in applications, appeals, and sponsor compliance, with clear explanation of risk and next steps. Structured for quick reading with one hour of CPD and support for SRA competence records.",
+  // },
+  // {
+  //   title: "Regulatory & Compliance",
+  //   answer:
+  //     "Regulatory developments affecting firms and clients, with a focus on compliance and risk.",
+  //   link: "/law-area/regulatory-compliance-cpd",
+  //   component: regulatoryComplianceCPD,
+  //   tags: [
+  //     "Regulatory developments",
+  //     "Enforcement and investigations",
+  //     "Governance and risk",
+  //     "Compliance systems",
+  //     "Professional regulation",
+  //     "Conduct and ethics",
+  //   ],
+  //   discriptions:
+  //     "Monthly updates on regulatory developments, enforcement trends, governance obligations, and compliance frameworks. Focused on practical impact for advisory work, internal controls, and risk management, with clear guidance on what changes in practice. Designed for efficient reading with one hour of CPD and structured record keeping support.",
+  // },
 
-  {
-    title: "Crime",
-    forFeature: true,
-    answer:
-      "Developments in criminal law and procedure, with practical impact on case strategy.",
-    link: "/law-area/crime-law-cpd",
-    component: crimeLawCPD,
-    tags: [
-      "Criminal case law",
-      "Sentencing",
-      "Procedure",
-      "Evidence and disclosure",
-      "Advocacy and strategy",
-      "Court practice updates",
-    ],
-    discriptions:
-      "Monthly criminal law updates covering appellate decisions, sentencing, procedure, evidence, disclosure, and advocacy strategy. Focused on practical impact for defence and prosecution work, including case preparation, risk, and courtroom decision-making. Designed for concise reading with one hour of CPD and straightforward recording for SRA requirements.",
-  },
+  // {
+  //   title: "Crime",
+  //   forFeature: true,
+  //   answer:
+  //     "Developments in criminal law and procedure, with practical impact on case strategy.",
+  //   link: "/law-area/crime-law-cpd",
+  //   component: crimeLawCPD,
+  //   tags: [
+  //     "Criminal case law",
+  //     "Sentencing",
+  //     "Procedure",
+  //     "Evidence and disclosure",
+  //     "Advocacy and strategy",
+  //     "Court practice updates",
+  //   ],
+  //   discriptions:
+  //     "Monthly criminal law updates covering appellate decisions, sentencing, procedure, evidence, disclosure, and advocacy strategy. Focused on practical impact for defence and prosecution work, including case preparation, risk, and courtroom decision-making. Designed for concise reading with one hour of CPD and straightforward recording for SRA requirements.",
+  // },
 ];

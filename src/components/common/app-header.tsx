@@ -14,11 +14,15 @@ export default function AppHeader() {
     { id: "home", label: "Home", href: "/#home" },
     // { id: "home", label: "Testimonials", href: "/#testimonials" },
     { id: "how-it-works", label: "How It Works", href: "/#how-it-works" },
-    { id: "subscribe", label: "Get Sample Issue", href: "/#subscribe" },
+    {
+      id: "subscribe",
+      label: "Download Monthly Sample Issue",
+      href: "/#subscribe",
+    },
     // { id: "areas", label: "Areas", href: "/#area-of-law" },
     {
       id: "identify-non-defensible-files",
-      label: "Identify Non-Defensible Files",
+      label: "Test Your Current File Position",
       href: "/file-review",
       children: (
         <Button size="lg" variant="secondary" className="w-55">
@@ -158,7 +162,7 @@ export default function AppHeader() {
         )}
 
         <div className="bg-primary text-white text-center py-6">
-          Used by UK law firms to keep files clear and defensible.{" "}
+          You do not know which of your current files are defensible.
         </div>
       </header>
     </>
