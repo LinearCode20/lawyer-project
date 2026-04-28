@@ -16,6 +16,7 @@ import Problam from "@/components/problam";
 import WhatHappened from "@/components/what-happened";
 import Assess from "@/components/assess";
 import WhatThisIs from "@/components/what-this-is";
+import FileReviewForm from "@/components/file-review-form";
 
 export default function Home() {
   return (
@@ -34,7 +35,7 @@ export default function Home() {
       <AboutLawEdge />
       <section className=" p-4 py-13" id="subscribe">
         <div className="md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          <SubscribeFree />
+          <FileReviewForm />
           <DownloadFreeSample />
         </div>
       </section>
