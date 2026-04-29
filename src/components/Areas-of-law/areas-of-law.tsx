@@ -53,7 +53,7 @@ export default function AreasOfLaw() {
               </div>
             )}
             <p className="sub_heading font-sans">{processTitle(area.title)}</p>
-            <p className="text-card-foreground mt-4">{area.answer}</p>
+            {/* <p className="text-card-foreground mt-4">{area.answer}</p> */}
             {/* <ItemData area={area} /> */}
           </CardContent>
         </Card>

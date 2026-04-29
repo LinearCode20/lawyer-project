@@ -13,6 +13,7 @@ import z from "zod";
 import { Button } from "./ui/button";
 import { Field, FieldError } from "./ui/field";
 import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
 import axios from "axios";
 import { toast } from "sonner";
 import { NativeSelect } from "./ui/native-select";
@@ -28,7 +29,7 @@ const formSchema = z.object({
   firm_name: z.string().min(1, { message: "Please enter a firm name" }),
   Phone: z.string().min(1, { message: "Please enter a phone number" }),
   no_of_files: z.string().min(1, { message: "Please enter a number of files" }),
-  selected_areas: z.string().min(1, { message: "Please select an area" }),
+  notes: z.string().optional(),
 });
 
 type FormSchema = z.infer<typeof formSchema>;
@@ -44,8 +45,8 @@ export default function FileReviewForm() {
       full_name: "",
       email: "",
       Phone: "",
-      selected_areas: "",
       no_of_files: "",
+      notes: "",
     },
   });
 
@@ -76,7 +77,7 @@ export default function FileReviewForm() {
   return (
     <>
       <Card className="h-fit py-6 text-foreground">
-        <CardHeader className="border-b px-6">
+        <CardHeader className=" px-6">
           <CardTitle className="text-3xl font-semibold ">
             Test Your Current File Position
           </CardTitle>
@@ -166,32 +167,6 @@ export default function FileReviewForm() {
             />
 
             <Controller
-              name="selected_areas"
-              control={form.control}
-              render={({ field, fieldState }) => (
-                <Field data-invalid={fieldState.invalid}>
-                  <NativeSelect
-                    {...field}
-                    id={field.name}
-                    aria-invalid={fieldState.invalid}
-                  >
-                    <option value="">Select</option>
-                    {areaOfLaw
-                      .filter((area) => !area.forFeature)
-                      .map((area) => (
-                        <option key={area.title} value={area.title}>
-                          {area.title}
-                        </option>
-                      ))}
-                  </NativeSelect>
-
-                  {fieldState.invalid && (
-                    <FieldError errors={[fieldState.error]} />
-                  )}
-                </Field>
-              )}
-            />
-            <Controller
               name="no_of_files"
               control={form.control}
               render={({ field, fieldState }) => (
@@ -202,6 +177,24 @@ export default function FileReviewForm() {
                     type="number"
                     placeholder="Number of Files"
                     aria-invalid={fieldState.invalid}
+                  />
+                  {fieldState.invalid && (
+                    <FieldError errors={[fieldState.error]} />
+                  )}
+                </Field>
+              )}
+            />
+            <Controller
+              name="notes"
+              control={form.control}
+              render={({ field, fieldState }) => (
+                <Field data-invalid={fieldState.invalid}>
+                  <Textarea
+                    {...field}
+                    id={field.name}
+                    placeholder="Additional notes or instructions (optional)"
+                    aria-invalid={fieldState.invalid}
+                    rows={4}
                   />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />

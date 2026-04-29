@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { text } from "node:stream/consumers";
 import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
+import { Check } from "lucide-react";
 
 export const pricingCards = [
   {
-    id:1,
+    id: 1,
     // badge: "FOR INDIVIDUAL",
     title: "1 Area",
     maxAreas: 1,
@@ -23,7 +25,7 @@ export const pricingCards = [
     isHighlighted: false,
   },
   {
-    id:2,
+    id: 2,
     badge: "MOST POPULAR",
     maxAreas: 3,
     title: "3 Areas (Most Used)",
@@ -40,7 +42,7 @@ export const pricingCards = [
     isHighlighted: true,
   },
   {
-    id:3,
+    id: 3,
     badge: "FOR FULL COVERAGE",
     title: "Full Coverage",
     price: "£1,795/month",
@@ -67,105 +69,95 @@ export default function Pricing() {
           Choose the practice areas you need, with a structure that scales
           across your firm.
         </p>
-        <div className="flex flex-col flex-nowrap sm:flex-row sm:items-stretch gap-6 sm:gap-8 justify-center mt-12">
-          {pricingCards.map((card, index) => (
-            <div
-              key={index}
-              className={cn(
-                `bg-white flex-1 rounded-xl shadow-sm flex flex-col h-full border-2 border-t-6`,
-                card.isHighlighted &&
-                  "border-2 border-t-6 border-[#D4AF37] shadow-md",
-              )}
-            >
-              {/* <div
-                className={cn(
-                  "",
-                  card.isHighlighted
-                    ? "border-t-4 border-[#D4AF37] shadow-md"
-                    : "border border-t-4 border-[#E5E7EB]",
-                )}
-              /> */}
-              {/* Badge */}
-
-              <div
-                className={cn(
-                  "border-b p-6",
-                  card.isHighlighted && "border-b-[#D4AF37]",
-                )}
+        <div className="max-w-3xl mx-auto mt-12">
+          <ul className="space-y-0">
+            {pricingCards.map((card, index) => (
+              <li
+                key={index}
+                className={cn("py-8 transition-all duration-200")}
               >
-                <div className="">
-                  <span
-                    className={cn(
-                      " uppercase tracking-wide text-sm  mb-2 inline-block",
-                      card.isHighlighted && "text-secondary",
+                <div className="flex flex-col items-center space-y-5 text-center">
+                  {/* Badge and Title */}
+                  <div>
+                    {card.badge && (
+                      <span
+                        className={cn(
+                          "inline-block px-3 py-1 text-xs font-semibold tracking-wide uppercase rounded-full mb-3",
+                          card.isHighlighted
+                            ? "bg-secondary text-white"
+                            : "bg-gray-100 text-gray-600",
+                        )}
+                      >
+                        {card.badge}
+                      </span>
                     )}
-                  >
-                    {card.badge}
-                  </span>
-                </div>
-                {/* Title */}
+                    <h3 className="text-3xl font-serif font-semibold text-primary mb-2">
+                      {card.title}
+                    </h3>
+                    <p className="text-base text-[#6B7280]">{card.text}</p>
+                  </div>
 
-                <h3 className="text-2xl font-serif font-semibold text-primary mb-2">
-                  {card.title}
-                </h3>
-                <p className="text-xs italic text-[#6B7280] mb-4  ">
-                  {card.text}
-                </p>
+                  {/* Price */}
+                  <div className="flex items-baseline justify-center gap-2">
+                    <span className="text-4xl font-bold text-[#1F2937]">
+                      {card.price}
+                    </span>
+                    <span className="text-sm text-[#6B7280]">per month</span>
+                  </div>
 
-                {/* Price */}
-                <p className="text-3xl text-[#1F2937] ">From {card.price}</p>
-              </div>
-
-              <div className=" p-6 flex flex-col flex-1 ">
-                {/* Features List */}
-                <div className="flex-1">
-                  {Array.isArray(card.features) ? (
-                    <ul className="flex-1 space-y-3 mb-6 min-h-40">
-                      {card.features.map((feature, featureIndex) => (
+                  {/* Features List */}
+                  <ul className="space-y-3 text-left">
+                    {Array.isArray(card.features) ? (
+                      card.features.map((feature, featureIndex) => (
                         <li
                           key={featureIndex}
-                          className="text-sm text-[#6B7280] flex items-start"
+                          className="flex items-start gap-3 text-base text-[#374151]"
                         >
-                          <span className="mr-2">•</span>
+                          <Check
+                            className={cn(
+                              "w-5 h-5 mt-0.5 shrink-0",
+                              card.isHighlighted
+                                ? "text-secondary"
+                                : "text-gray-400",
+                            )}
+                          />
                           <span>{feature}</span>
                         </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-sm flex-1 text-[#6B7280] mb-6">
-                      {card.features}
-                    </p>
-                  )}
+                      ))
+                    ) : (
+                      <li className="text-base text-[#374151] flex items-start gap-3">
+                        <Check className="w-5 h-5 mt-0.5 shrink-0 text-gray-400" />
+                        <span>{card.features}</span>
+                      </li>
+                    )}
+                  </ul>
+
+                  {/* Button */}
+                  <div className="pt-2">
+                    <Link href="/#subscribe" rel="noopener noreferrer">
+                      <Button
+                        size="lg"
+                        variant={"secondary"}
+                        className={cn("px-8")}
+                      >
+                        {card.buttonText}
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
-                {/* Button */}
-                <div>
-                  <Link
-                    href="/#subscribe"
-                    rel="noopener noreferrer"
-                    className="w-full"
-                  >
-                    <Button size="lg" variant={"secondary"} className="w-full">
-                      Start Free Trial
-                    </Button>
-                  </Link>
-                  {/* Footer */}
-                </div>
-                <p className="text-xs italic text-[#6B7280] mt-4 text-center">
-                  You can add or change practice areas at any time
-                </p>
-              </div>
-            </div>
-          ))}
+
+                {/* Add separator except for last item */}
+                {index < pricingCards.length - 1 && (
+                  <Separator className="mt-8" />
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
-        <p className="text-center text-sm mt-4">
-          You can add or change practice areas at any time.
-        </p>
-        <p className="text-center text-sm mt-4">
-          Most firms use Law Edge to replace the time spent sourcing updates and
-          maintaining internal CPD records.
-        </p>
-        <p className="text-center text-sm mt-4">
-          A simple, predictable way to manage CPD across multiple teams.
+        <p className="text-center text-sm mt-8">
+          You can add or change practice areas at any time. Most firms use Law
+          Edge to replace the time spent sourcing updates and maintaining
+          internal CPD records.
         </p>
       </div>
     </section>
