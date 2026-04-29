@@ -5,11 +5,10 @@ export default function AboutLawEdge() {
     <section className=" p-4 py-13" id="home">
       <main className="md:max-w-6xl mx-auto ">
         <h1 className="heading text-center mb-6!">
-          APPLY THE STANDARD ACROSS YOUR FIRM
+          This must now be tested across your current files
         </h1>
         <p className="text-center">
-          Firms apply this across one, multiple, or all practice areas depending
-          on how widely they want the standard enforced.
+          There is no alternative way to establish your position.
         </p>
         {/* <p className="mt-4">
           Content is developed by experienced solicitors, focused on practical

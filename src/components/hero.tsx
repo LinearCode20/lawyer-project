@@ -23,19 +23,19 @@ export default function Hero() {
             </h1>
             {/* <p className="text-primary mt-4">You do not know which files.</p> */}
 
-            <p className="text-primary my-4">
+            <p className="text-primary text-lg font-medium leading-relaxed my-6">
               This is determined by what is recorded on the file, not what was
               done.
             </p>
 
-            <p className="text-primary mb-4">
+            <p className="text-muted-foreground text-base mb-4">
               This position already exists across your current files.
             </p>
 
-            <p className="text-primary mt-4">
+            <p className="text-primary text-lg font-semibold leading-relaxed mb-3">
               This cannot be identified through internal review.
             </p>
-            <p className="text-primary ">
+            <p className="text-muted-foreground text-base">
               Firms that rely on internal review do not identify this position.
             </p>
           </div>
