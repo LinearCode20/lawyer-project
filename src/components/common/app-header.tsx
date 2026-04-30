@@ -16,7 +16,7 @@ export default function AppHeader() {
     { id: "how-it-works", label: "How It Works", href: "/#how-it-works" },
     {
       id: "subscribe",
-      label: "Download Monthly Sample Issue",
+      label: "Get Sample Issue",
       href: "/#subscribe",
     },
     // { id: "areas", label: "Areas", href: "/#area-of-law" },
