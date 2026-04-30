@@ -1,25 +1,20 @@
 "use client";
 import Link from "next/link";
-import { useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect, Suspense } from "react";
 import { Button } from "./ui/button";
 import { Loader2 } from "lucide-react";
-import CPDDocumentModal from "./cpd-document-modal";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/Page/AnnotationLayer.css";
-import "react-pdf/dist/Page/TextLayer.css";
+import dynamic from "next/dynamic";
+
+const CPDDocumentModal = dynamic(() => import("./cpd-document-modal"), {
+  ssr: false,
+});
+
+const PDFDocument = dynamic(() => import("./pdf-document"), {
+  ssr: false,
+});
 
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Configure PDF.js worker for Next.js
-  useLayoutEffect(() => {
-    pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
-  }, []);
-
-  const onDocumentLoadSuccess = () => {
-    setIsLoading(false);
-  };
 
   return (
     <section className="bg-white" id="home">
@@ -110,24 +105,15 @@ export default function Hero() {
               </p>
             </div>
 
-            <Document
-              file="/pdf/Law Edge Sample Issue copy.pdf"
-              onLoadSuccess={onDocumentLoadSuccess}
-              loading={
+            <Suspense
+              fallback={
                 <div className="flex items-center justify-center py-20">
                   <Loader2 className="w-8 h-8 animate-spin text-amber-600" />
                 </div>
               }
-              className="flex justify-center w-full"
             >
-              <Page
-                pageNumber={1}
-                renderTextLayer={true}
-                renderAnnotationLayer={true}
-                width={400}
-                className="shadow-md"
-              />
-            </Document>
+              <PDFDocument />
+            </Suspense>
           </div>
         </div>
       </main>
