@@ -1,9 +1,11 @@
 "use client";
-import React, { useEffect, useState, useLayoutEffect } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { X, Loader2 } from "lucide-react";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/Page/AnnotationLayer.css";
-import "react-pdf/dist/Page/TextLayer.css";
+import dynamic from "next/dynamic";
+
+const PDFViewer = dynamic(() => import("./pdf-viewer"), {
+  ssr: false,
+});
 
 interface CPDDocumentModalProps {
   isOpen: boolean;
@@ -17,11 +19,6 @@ export default function CPDDocumentModal({
   const [numPages, setNumPages] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-
-  // Configure PDF.js worker for Next.js
-  useLayoutEffect(() => {
-    pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
-  }, []);
 
   // Handle escape key to close modal
   useEffect(() => {
@@ -48,15 +45,13 @@ export default function CPDDocumentModal({
     };
   }, [isOpen]);
 
-  const onDocumentLoadSuccess = ({ numPages: nextNumPages }: { numPages: number }) => {
-    setNumPages(nextNumPages);
+  const handleLoad = () => {
     setIsLoading(false);
   };
 
-  const onDocumentLoadError = (err: Error) => {
-    setError("Failed to load PDF document");
+  const handleError = (err: string) => {
+    setError(err);
     setIsLoading(false);
-    console.error("PDF load error:", err);
   };
 
   if (!isOpen) return null;
@@ -95,28 +90,19 @@ export default function CPDDocumentModal({
 
           {!error && (
             <div className="flex flex-col items-center justify-center tw-max-h-full tw-overflow-y-auto gap-6">
-              {/* PDF Document */}
-              <Document
-                file="/pdf/Law Edge Sample Issue copy.pdf"
-                onLoadSuccess={onDocumentLoadSuccess}
-                onLoadError={onDocumentLoadError}
-                loading={
+              <Suspense
+                fallback={
                   <div className="flex items-center justify-center py-20">
                     <Loader2 className="w-8 h-8 animate-spin text-amber-600" />
                   </div>
                 }
               >
-                {Array.from(new Array(numPages), (_, index) => (
-                  <div key={`page_${index + 1}`} className="mb-6 shadow-lg">
-                    <Page
-                      pageNumber={index + 1}
-                      renderTextLayer={true}
-                      renderAnnotationLayer={true}
-                      className="max-w-full"
-                    />
-                  </div>
-                ))}
-              </Document>
+                <PDFViewer
+                  onNumPagesChange={setNumPages}
+                  onLoad={handleLoad}
+                  onError={handleError}
+                />
+              </Suspense>
 
               {/* Page count indicator */}
               {!isLoading && !error && numPages > 0 && (
