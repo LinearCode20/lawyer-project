@@ -14,29 +14,32 @@ export default function Hero() {
         <div>
           <div className="">
             <h1
-              className="text-primary text-[36px] mb-2 font-bold font-serif   
+              className="text-primary text-[36px] mb-2 font-bold font-serif
  leading-[1.1] md:text-[42px] "
             >
-              Some of your current files cannot be defended.
-              <br />
-              You do not know which ones
+              You do not know which of your current files would withstand scrutiny.
             </h1>
             {/* <p className="text-primary mt-4">You do not know which files.</p> */}
 
             <p className="text-primary text-lg font-medium leading-relaxed my-6">
-              This is determined by what is recorded on the file, not what was
-              done.
+              The outcome is determined by what is recorded on the file.
             </p>
 
             <p className="text-muted-foreground text-base mb-4">
-              This position already exists across your current files.
+              Non-defensible files are currently progressing across your firm, resulting in legal exposure and direct financial loss across current matters.
             </p>
 
             <p className="text-primary text-lg font-semibold leading-relaxed mb-3">
-              This cannot be identified through internal review.
+              This is based on what is recorded on the file, not what was done.
+            </p>
+            <p className="text-muted-foreground text-base mb-4">
+              This is not a future risk. This is the current file position.
+            </p>
+            <p className="text-primary text-lg font-semibold leading-relaxed mb-3">
+              You cannot identify which files these are.
             </p>
             <p className="text-muted-foreground text-base">
-              Firms that rely on internal review do not identify this position.
+              This cannot be established through internal review.
             </p>
           </div>
 
@@ -61,7 +64,7 @@ export default function Hero() {
                 size="lg"
                 className="w-full"
               >
-                Test Your Current File Position
+                Test File Position
               </Button>
             </Link>
           </div>

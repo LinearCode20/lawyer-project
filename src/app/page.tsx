@@ -17,6 +17,7 @@ import WhatHappened from "@/components/what-happened";
 import Assess from "@/components/assess";
 import WhatThisIs from "@/components/what-this-is";
 import FileReviewForm from "@/components/file-review-form";
+import ReviewScopeOngoingControl from "@/components/review-scope-ongoing-control";
 
 export default function Home() {
   return (
@@ -31,7 +32,8 @@ export default function Home() {
       <HowItWillWorks />
       <WhatThisIs />
       <WhyChooseUs />
-      <Pricing />
+      {/* <Pricing /> */}
+      <ReviewScopeOngoingControl />
       <AboutLawEdge />
       <section className=" p-4 py-13" id="subscribe">
         <div className="md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">

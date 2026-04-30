@@ -18,34 +18,13 @@ export default function BottomBanner() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center mb-8 md:w-[70%] mx-auto">
-          <Link href="/#subscribe" rel="noopener noreferrer" className="w-full">
+          <Link href="/#subscribe" rel="noopener noreferrer">
             <Button size="lg" variant="secondary" className=" px-8 w-full">
               <ArrowDownToLine className="mr-2" />
               Test Your Current File Position
             </Button>
           </Link>
-          <Link
-            href="/file-review"
-            rel="noopener noreferrer"
-            className="w-full"
-          >
-            <Button
-              size="lg"
-              variant={"outline-secondary"}
-              className=" px-8 bg-primary w-full"
-            >
-              Identify Your Non-Defensible Files
-            </Button>
-          </Link>
         </div>
-
-        <p className=" text-gray-400  text-sm  mb-2">
-          Keep get sample issue form as it is. Remove these two lines from the
-          form. Sample includes case law, legislation, and CPD record.
-        </p>
-        <p className="text-gray-400 text-sm mb-2 ">
-          No spam. Instant access. Sample only.
-        </p>
       </div>
     </section>
   );

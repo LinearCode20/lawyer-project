@@ -90,9 +90,7 @@ export default function FileReviewForm() {
             onSubmit={form.handleSubmit(handleSubmit)}
             className="grid gap-4 "
           >
-            <p className="text-sm text-primary ">
-              Submit your files for professional review
-            </p>
+            
             <Controller
               name="full_name"
               control={form.control}

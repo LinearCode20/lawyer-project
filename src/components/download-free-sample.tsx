@@ -26,7 +26,6 @@ const formSchema = z.object({
     message: "Please enter an email",
   }),
   full_name: z.string().min(1, { message: "Please enter a name" }),
-  selected_areas: z.string().min(1, { message: "Please select an area" }),
 });
 
 type FormSchema = z.infer<typeof formSchema>;
@@ -40,7 +39,6 @@ export default function DownloadFreeSample() {
     defaultValues: {
       full_name: "",
       email: "",
-      selected_areas: "",
     },
   });
 
@@ -73,20 +71,16 @@ export default function DownloadFreeSample() {
       <Card className="h-fit py-6 text-foreground">
         <CardHeader className="border-b px-6">
           <CardTitle className="text-3xl font-semibold ">
-            Download Monthly Sample Issue
+            Get Sample Issue
           </CardTitle>
-          <CardDescription className="mt-1">
-            Enter your details to receive a sample issue
-          </CardDescription>
+          
         </CardHeader>
         <CardContent className="p-6 pt-0">
           <form
             onSubmit={form.handleSubmit(handleSubmit)}
             className="grid gap-4 "
           >
-            <p className="text-sm text-primary ">
-              Preview how your monthly CPD will look delivered
-            </p>
+            
             <Controller
               name="full_name"
               control={form.control}
@@ -124,36 +118,8 @@ export default function DownloadFreeSample() {
               )}
             />
 
-            <Controller
-              name="selected_areas"
-              control={form.control}
-              render={({ field, fieldState }) => (
-                <Field data-invalid={fieldState.invalid}>
-                  <NativeSelect
-                    {...field}
-                    id={field.name}
-                    aria-invalid={fieldState.invalid}
-                  >
-                    <option value="">Select</option>
-                    {areaOfLaw
-                      .filter((area) => !area.forFeature)
-                      .map((area) => (
-                        <option key={area.title} value={area.title}>
-                          {area.title}
-                        </option>
-                      ))}
-                  </NativeSelect>
 
-                  {fieldState.invalid && (
-                    <FieldError errors={[fieldState.error]} />
-                  )}
-                </Field>
-              )}
-            />
-            {/* <p className="text-sm text-[#6B7280] ">
-              <CircleCheck className="inline-block text-secondary h-4" />
-              Sample includes case law, legislation, and CPD record
-            </p> */}
+            
             <Button
               variant={"outline-secondary"}
               type="submit"
@@ -166,7 +132,7 @@ export default function DownloadFreeSample() {
               ) : (
                 <>
                   <ArrowDownToLine />
-                  Download Sample Issue
+                  Get Sample Issue
                 </>
               )}
             </Button>
