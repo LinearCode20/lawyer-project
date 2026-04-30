@@ -44,12 +44,9 @@ export default function WhyChooseUs() {
         <div className="md:max-w-6xl mx-auto    ">
           <div>
             <h2 className="heading text-center mb-4!">
-              CPD across key practice areas
+              practice area’s covered
             </h2>
-            <p className=" text-center ">
-              Structured monthly updates tailored to each area of practice,
-              focused on what matters in day-to-day legal work.
-            </p>
+            
             <div className="mt-12">
               <AreasOfLaw />
             </div>

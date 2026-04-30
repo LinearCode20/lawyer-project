@@ -1,12 +1,25 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import { Button } from "./ui/button";
-import { ArrowDownToLine } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import CPDDocumentModal from "./cpd-document-modal";
+import { Document, Page, pdfjs } from "react-pdf";
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
 
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Configure PDF.js worker for Next.js
+  useLayoutEffect(() => {
+    pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+  }, []);
+
+  const onDocumentLoadSuccess = () => {
+    setIsLoading(false);
+  };
 
   return (
     <section className="bg-white" id="home">
@@ -14,29 +27,32 @@ export default function Hero() {
         <div>
           <div className="">
             <h1
-              className="text-primary text-[36px] mb-2 font-bold font-serif   
+              className="text-primary text-[36px] mb-2 font-bold font-serif
  leading-[1.1] md:text-[42px] "
             >
-              Some of your current files cannot be defended.
-              <br />
-              You do not know which ones
+              You do not know which of your current files would withstand scrutiny.
             </h1>
             {/* <p className="text-primary mt-4">You do not know which files.</p> */}
 
             <p className="text-primary text-lg font-medium leading-relaxed my-6">
-              This is determined by what is recorded on the file, not what was
-              done.
+              The outcome is determined by what is recorded on the file.
             </p>
 
             <p className="text-muted-foreground text-base mb-4">
-              This position already exists across your current files.
+              Non-defensible files are currently progressing across your firm, resulting in legal exposure and direct financial loss across current matters.
             </p>
 
             <p className="text-primary text-lg font-semibold leading-relaxed mb-3">
-              This cannot be identified through internal review.
+              This is based on what is recorded on the file, not what was done.
+            </p>
+            <p className="text-muted-foreground text-base mb-4">
+              This is not a future risk. This is the current file position.
+            </p>
+            <p className="text-primary text-lg font-semibold leading-relaxed mb-3">
+              You cannot identify which files these are.
             </p>
             <p className="text-muted-foreground text-base">
-              Firms that rely on internal review do not identify this position.
+              This cannot be established through internal review.
             </p>
           </div>
 
@@ -61,7 +77,7 @@ export default function Hero() {
                 size="lg"
                 className="w-full"
               >
-                Test Your Current File Position
+                Test File Position
               </Button>
             </Link>
           </div>
@@ -72,7 +88,7 @@ export default function Hero() {
 
         {/* CPD Document Preview */}
         <div
-          className="relative bg-[#FAFAF5] border border-gray-200 rounded-lg p-6 pt-0 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group "
+          className="relative bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group h-full overflow-hidden"
           onClick={() => setIsModalOpen(true)}
           role="button"
           tabIndex={0}
@@ -84,94 +100,34 @@ export default function Hero() {
             }
           }}
         >
-          {/* Lined paper effect */}
-          <div
-            className="absolute inset-0 pointer-events-none rounded-lg overflow-hidden"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(transparent, transparent 27px, #E5E7EB 27px, #E5E7EB 28px)",
-            }}
-          ></div>
+          {/* Click to expand overlay */}
 
-          {/* <div className="absolute inset-0 z-20 bg-gradient-to-b from-[#FAFAF5] via-transparent to-[#FAFAF5] transition-opacity duration-300 group-hover:opacity-0" /> */}
-
-          <div
-            className="relative z-10 
-          "
-          >
-            {/* Top row with expand indicator */}
-            <div className="text-center my-4">
-              <p className="text-xs text-gray-500 mb-2 group-hover:text-amber-600 transition-colors">
+          {/* PDF Preview */}
+          <div className="relative z-10 bg-gray-50">
+            <div className="text-center py-3 ">
+              <p className="text-xs text-gray-500 group-hover:text-amber-600 transition-colors font-medium">
                 CLICK TO EXPAND
               </p>
             </div>
 
-            {/* Page number */}
-            <div className="absolute top-4 right-4 text-xs text-gray-400">
-              Page 1 of 9
-            </div>
-
-            {/* Header */}
-            <div className="flex gap-4 justify-between mb-6">
-              <p className="text-amber-600 text-sm font-medium">
-                Monthly CPD sample
-              </p>
-              <div className="text-right">
-                <img
-                  src={"/logo.png"}
-                  className="aspect-video -mt-6 h-20 object-contain "
-                  alt="LAW EDGE"
-                />
-              </div>
-            </div>
-
-            {/* Two-column metadata */}
-            <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
-              <div className="text-gray-700">
-                <p>Commercial & Corporate |</p>
-                <p>March 2026</p>
-              </div>
-              <div className="text-gray-700">
-                <p>Estimated reading time: 15-20 minutes</p>
-                <p>CPD: 1 hour</p>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="space-y-4 text-gray-700 text-sm leading-relaxed">
-              <p>
-                This monthly update highlights key legal developments in
-                commercial and corporate law, focusing on recent case law,
-                legislative changes, and practical implications for solicitors
-                advising clients and managing transactions...
-              </p>
-              <p className="italic text-gray-400">
-                Key point: drafting clarity remains critical where agreements
-                are intended to survive structural changes...
-              </p>
-            </div>
-
-            <div className="py-4 text-center">
-              <div>
-                <div className="text-secondary text-sm font-semibold">
-                  CASE LAW UPDATE
+            <Document
+              file="/pdf/Law Edge Sample Issue copy.pdf"
+              onLoadSuccess={onDocumentLoadSuccess}
+              loading={
+                <div className="flex items-center justify-center py-20">
+                  <Loader2 className="w-8 h-8 animate-spin text-amber-600" />
                 </div>
-                <div className="text-slate-600 text-2xl font-semibold mt-1">
-                  Smith v Jones Ltd [2024] EWCA Civ 123
-                </div>
-              </div>
-            </div>
-
-            <div className="pb-4">
-              <div>
-                <div className="text-slate-600 text-sm font-semibold">
-                  Issue
-                </div>
-                <div className="text-slate-800 text-sm mt-1">
-                  Shareholder agreement clauses after transfer of shares...
-                </div>
-              </div>
-            </div>
+              }
+              className="flex justify-center w-full"
+            >
+              <Page
+                pageNumber={1}
+                renderTextLayer={true}
+                renderAnnotationLayer={true}
+                width={400}
+                className="shadow-md"
+              />
+            </Document>
           </div>
         </div>
       </main>

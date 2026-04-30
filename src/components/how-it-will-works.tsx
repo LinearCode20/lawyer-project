@@ -42,10 +42,10 @@ export default function HowItWillWorks() {
             >
               <CardContent className=" flex flex-col items-center text-center">
                 {/* Numbered circle */}
-                <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center text-xl font-bold mb-4">
+                {/* <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center text-xl font-bold mb-4">
                   {step.number}
-                </div>
-                <h3 className="text-lg font-semibold font-serif text-primary mb-4">
+                </div> */}
+                <h3 className="text-2xl font-semibold font-serif text-primary mb-4">
                   {step.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">

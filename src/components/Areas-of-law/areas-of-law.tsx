@@ -5,7 +5,6 @@ import Link from "next/link";
 import { AreaOfLaw, areaOfLaw } from "@/app/law-area/[slug]/data";
 import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Card, CardContent } from "../ui/card";
 
 // Helper function to wrap & in span with font-sans
 const processTitle = (title: string) => {
@@ -36,27 +35,14 @@ export default function AreasOfLaw() {
   };
 
   return (
-    <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 rounded-lg">
+    <div className="space-y-4">
       {areaOfLaw.map((area, index) => (
-        <Card
+        <p
           key={index}
-          className=" relative  border bg-background   border-primary/10
-          transition-all duration-300 hover:shadow-sm "
+          className="sub_heading !text-center font-sans text-primary hover:text-secondary transition-colors duration-200"
         >
-          <CardContent className="p-4 relative">
-            <span className="inline-block w-8 bg-secondary h-0.5 mb-1" />
-            {area?.forFeature && (
-              <div className="absolute top-4 right-4">
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-secondary/10 text-secondary border border-secondary/20">
-                  Coming Soon
-                </span>
-              </div>
-            )}
-            <p className="sub_heading font-sans">{processTitle(area.title)}</p>
-            {/* <p className="text-card-foreground mt-4">{area.answer}</p> */}
-            {/* <ItemData area={area} /> */}
-          </CardContent>
-        </Card>
+          {processTitle(area.title)}
+        </p>
       ))}
     </div>
   );
