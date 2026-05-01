@@ -25,7 +25,7 @@ export default function Hero() {
               className="text-primary text-[36px] mb-2 font-bold font-serif
  leading-[1.1] md:text-[42px] "
             >
-              You do not know which of your current files would withstand scrutiny.
+              Which of your files would withstand scrutiny?
             </h1>
             {/* <p className="text-primary mt-4">You do not know which files.</p> */}
 
@@ -34,7 +34,9 @@ export default function Hero() {
             </p>
 
             <p className="text-muted-foreground text-base mb-4">
-              Non-defensible files are currently progressing across your firm, resulting in legal exposure and direct financial loss across current matters.
+              Non-defensible files are currently progressing across your firm,
+              resulting in legal exposure and direct financial loss across
+              current matters.
             </p>
 
             <p className="text-primary text-lg font-semibold leading-relaxed mb-3">
@@ -52,16 +54,6 @@ export default function Hero() {
           </div>
 
           <div className=" flex flex-col gap-4 text-base justify- font-medium sm:flex-row mt-4 ">
-            {/* <Link
-              href="/#subscribe"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              <Button className="w-full " size="lg" variant={"secondary"}>
-                <ArrowDownToLine />
-                Get Sample Issue
-              </Button>
-            </Link> */}
             <Link
               href="/file-review"
               rel="noopener noreferrer"
@@ -70,9 +62,9 @@ export default function Hero() {
               <Button
                 variant={"outline-secondary"}
                 size="lg"
-                className="w-full"
+                className="w-full px-14"
               >
-                Test File Position
+                Test Your Current File Position
               </Button>
             </Link>
           </div>

@@ -103,13 +103,6 @@ export default function CPDDocumentModal({
                   onError={handleError}
                 />
               </Suspense>
-
-              {/* Page count indicator */}
-              {!isLoading && !error && numPages > 0 && (
-                <div className="text-center text-sm text-gray-600 pb-4">
-                  Total pages: {numPages}
-                </div>
-              )}
             </div>
           )}
         </div>

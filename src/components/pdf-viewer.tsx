@@ -13,6 +13,7 @@ interface PDFViewerProps {
 
 export default function PDFViewer({ onNumPagesChange, onLoad, onError }: PDFViewerProps) {
   const [numPages, setNumPages] = useState<number>(0);
+  
 
   useLayoutEffect(() => {
     pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
@@ -40,16 +41,16 @@ export default function PDFViewer({ onNumPagesChange, onLoad, onError }: PDFView
         </div>
       }
     >
-      {Array.from(new Array(numPages), (_, index) => (
-        <div key={`page_${index + 1}`} className="mb-6 shadow-lg">
+      {numPages > 0 && (
+        <div key="page_1" className="mb-6 shadow-lg">
           <Page
-            pageNumber={index + 1}
+            pageNumber={1}
             renderTextLayer={true}
             renderAnnotationLayer={true}
             className="max-w-full"
           />
         </div>
-      ))}
+      )}
     </Document>
   );
 }

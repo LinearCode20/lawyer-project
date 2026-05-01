@@ -33,7 +33,7 @@ export default function CPTSteps() {
   return (
     <section className="p-4 py-13 bg-white">
       <div className="md:max-w-6xl mx-auto ">
-        <h2 className="heading text-center mb-4!">Current File Position</h2>
+        <h2 className="heading text-center mb-4!">Current file position</h2>
         <h6 className="text-xl  text-center">
           You do not know which of your current files are defensible.
         </h6>
@@ -48,22 +48,16 @@ export default function CPTSteps() {
           This must now be tested across your current files.
         </p>
         <div className=" flex flex-col gap-4 text-base justify-center font-medium sm:flex-row mt-4 ">
-          {/* <Link
-              href="/#subscribe"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              <Button className="w-full " size="lg" variant={"secondary"}>
-                <ArrowDownToLine />
-                Get Sample Issue
-              </Button>
-            </Link> */}
           <Link
             href="/file-review"
             rel="noopener noreferrer"
             // className="w-full"
           >
-            <Button variant={"outline-secondary"} size="lg" className="w-full">
+            <Button
+              variant={"outline-secondary"}
+              size="lg"
+              className="w-full px-14"
+            >
               Test Your Current File Position
             </Button>
           </Link>

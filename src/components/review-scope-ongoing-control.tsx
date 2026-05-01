@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { Check } from "lucide-react";
 
 export default function ReviewScopeOngoingControl() {
   return (
@@ -9,12 +8,12 @@ export default function ReviewScopeOngoingControl() {
       <div className="md:max-w-6xl mx-auto">
         {/* Main Heading */}
         <h2 className="heading text-center mb-4!">
-          REVIEW SCOPE
-          <span className="font-sans"> &</span> ONGOING CONTROL
+          Review scope 
+          <span className="font-sans"> &</span> ongoing control
         </h2>
 
         {/* Introduction Section */}
-        <div className="max-w-4xl mx-auto mb-8">
+        <div className="max-w-4xl mx-auto mb-4">
           <p className="text-base text-primary ">
             The File Risk & Revenue Exposure Review establishes the firm's
             current position based on how files are recorded.
@@ -40,8 +39,9 @@ export default function ReviewScopeOngoingControl() {
         </div>
 
         {/* Initial Review Section */}
-        <div className="max-w-4xl mx-auto mb-8">
-          <h3 className="text-2xl font-semibold font-serif text-primary mb-4">
+        <div className="max-w-4xl mx-auto mb-4">
+
+          <h3 className="text-2xl font-bold font-serif text-primary mb-2">
             Initial Review
           </h3>
           <p className="text-base text-primary ">
@@ -57,7 +57,7 @@ export default function ReviewScopeOngoingControl() {
             defended.
           </p>
 
-          <div className=" mb-6">
+          <div className=" mb-4">
             <p className=" text-primary mb-2">
               The review sits within the following range based on file sample
               and scope:
@@ -71,15 +71,12 @@ export default function ReviewScopeOngoingControl() {
           </p>
           <ul className=" ">
             <li className="flex items-start gap-3 text-base text-primary">
-              <Check className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />
               <span>unrecovered time</span>
             </li>
             <li className="flex items-start gap-3 text-base text-primary">
-              <Check className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />
               <span>reduced fees</span>
             </li>
             <li className="flex items-start gap-3 text-base text-primary">
-              <Check className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />
               <span>matters settled below value</span>
             </li>
           </ul>
@@ -89,7 +86,7 @@ export default function ReviewScopeOngoingControl() {
         </div>
 
         {/* Firm-Level Impact Section */}
-        <div className="max-w-4xl mx-auto mb-8">
+        <div className="max-w-4xl mx-auto mb-4">
           <h3 className="text-2xl font-semibold font-serif text-primary mb-4">
             Firm-Level Impact
           </h3>
@@ -116,9 +113,10 @@ export default function ReviewScopeOngoingControl() {
         </div>
 
         {/* Ongoing File Risk & Revenue Control Section */}
-        <div className="max-w-4xl mx-auto mb-8">
+        <div className="max-w-4xl mx-auto mb-4">
           <h3 className="text-2xl font-semibold font-serif text-primary mb-4">
-            Ongoing File Risk <span className="font-sans"> &</span> Revenue Control
+            Ongoing File Risk <span className="font-sans"> &</span> Revenue
+            Control
           </h3>
           <p className="text-base text-primary ">
             This position cannot be corrected retrospectively.
@@ -131,19 +129,15 @@ export default function ReviewScopeOngoingControl() {
           </p>
           <ul className=" ">
             <li className="flex items-start gap-3 text-base text-primary">
-              <Check className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />
               <span>maintain a defensible file position</span>
             </li>
             <li className="flex items-start gap-3 text-base text-primary">
-              <Check className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />
               <span>identify and manage risk as matters develop</span>
             </li>
             <li className="flex items-start gap-3 text-base text-primary">
-              <Check className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />
               <span>reduce ongoing revenue leakage</span>
             </li>
             <li className="flex items-start gap-3 text-base text-primary">
-              <Check className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />
               <span>
                 establish a consistent standard across departments and across
                 the firm
@@ -157,7 +151,7 @@ export default function ReviewScopeOngoingControl() {
         </div>
 
         {/* Monthly Engagement Section */}
-        <div className="max-w-4xl mx-auto mb-8">
+        <div className="max-w-4xl mx-auto mb-4">
           <h3 className="text-2xl font-semibold font-serif text-primary mb-4">
             Monthly Engagement
           </h3>
@@ -187,7 +181,7 @@ export default function ReviewScopeOngoingControl() {
 
         {/* Next Step Section */}
         <div className="max-w-4xl mx-auto mb-12">
-          <h3 className="text-2xl font-semibold font-serif text-primary mb-6">
+          <h3 className="text-2xl font-semibold font-serif text-primary mb-4">
             Next Step
           </h3>
           <p className="text-base text-primary  font-semibold">
@@ -197,15 +191,15 @@ export default function ReviewScopeOngoingControl() {
           <p className="text-base text-primary ">
             This position exists across live matters.
           </p>
-          <p className="text-base text-primary mb-8">
+          <p className="text-base text-primary mb-4">
             This requires immediate application across current files.
           </p>
 
           {/* CTA Button */}
           <div className="flex justify-center">
             <Link href="/#subscribe" rel="noopener noreferrer">
-              <Button size="lg" variant="secondary" className="px-8">
-                Request File Review
+              <Button size="lg" variant="outline-secondary" className="px-14">
+                Test Your Current File Position
               </Button>
             </Link>
           </div>
