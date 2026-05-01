@@ -23,10 +23,10 @@ export default function AppHeader() {
     {
       id: "identify-non-defensible-files",
       label: "Test Your Current File Position",
-      href: "/file-review",
+      href: "/#subscribe",
       children: (
-        <Button size="lg" variant="secondary" className="w-55">
-          Identify Non-Defensible Files
+        <Button size="lg" variant="outline-secondary" className="w-55">
+          Test Your Current File Position
         </Button>
       ),
     },

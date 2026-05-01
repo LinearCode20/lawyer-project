@@ -53,7 +53,7 @@ export default function Feedback() {
     <section className="p-4 py-13 " id="testimonials">
       <div className="md:max-w-6xl mx-auto">
         <h1 className="heading text-center  mb-4!">
-          What Firms See on Review{" "}
+          What firms see on review{" "}
         </h1>
         <p className="md:w-[60%] mx-auto text-center">
           The file did not support the position when tested.

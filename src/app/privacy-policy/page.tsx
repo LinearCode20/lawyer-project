@@ -61,7 +61,7 @@ export default function Page() {
                 We may collect and process the following categories of personal
                 data.
               </p>
-              <ul className="list-disc pl-6 space-y-2">
+              <ul className=" pl-6 space-y-2">
                 <li>
                   Information you provide directly: name, email address,
                   organisation or law firm name, professional role or job title.
@@ -81,7 +81,7 @@ export default function Page() {
               <h2 className="text-xl font-semibold mb-3">
                 How We Use Your Information
               </h2>
-              <ul className="list-disc pl-6 space-y-2">
+              <ul className=" pl-6 space-y-2">
                 <li>
                   Providing services: to deliver CPD insights, newsletters and
                   other requested content.
@@ -109,7 +109,7 @@ export default function Page() {
               <h2 className="text-xl font-semibold mb-3">
                 Legal Basis for Processing
               </h2>
-              <ul className="list-disc pl-6 space-y-2">
+              <ul className=" pl-6 space-y-2">
                 <li>
                   Consent: where you subscribe to newsletters or communications.
                 </li>

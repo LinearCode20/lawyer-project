@@ -19,7 +19,7 @@ export default function BottomBanner() {
 
         <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center mb-8 md:w-[70%] mx-auto">
           <Link href="/#subscribe" rel="noopener noreferrer">
-            <Button size="lg" variant="secondary" className=" px-8 w-full">
+            <Button size="lg" variant="secondary" className=" px-14 w-full">
               <ArrowDownToLine className="mr-2" />
               Test Your Current File Position
             </Button>

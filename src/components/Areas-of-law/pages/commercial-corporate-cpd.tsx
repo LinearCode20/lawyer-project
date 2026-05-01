@@ -25,7 +25,7 @@ export default function commercialCorporateCPD() {
           <p className="mb-2">
             Some examples include:
           </p>
-          <ul className="list-disc pl-6 my-4">            
+          <ul className=" pl-6 my-4">            
             <li>company law developments and statutory changes</li>
             <li>evolving principles in corporate governance</li>
             <li>shareholder disputes and minority protection issues</li>
@@ -36,7 +36,7 @@ export default function commercialCorporateCPD() {
           <p>The updates are written in a clear and accessible format, allowing legal professionals to quickly identify key issues and apply them in practice.</p>
           <p>Designed for busy practitioners</p>
           <p>Each issue is structured to:</p>
-          <ul className="list-disc pl-6 my-4">            
+          <ul className=" pl-6 my-4">            
             <li>be read in approximately 15–20 minutes</li>
             <li>provide one hour of CPD</li>
             <li>support ongoing SRA continuing professional development requirements</li>
@@ -45,7 +45,7 @@ export default function commercialCorporateCPD() {
           <p>This makes it particularly suitable for solicitors who need to maintain competence while managing demanding workloads.</p>
           <p>Who it is for</p>
           <p>The Commercial & Corporate CPD update is suitable for:</p>
-          <ul className="list-disc pl-6 my-4">
+          <ul className=" pl-6 my-4">
             <li>corporate and commercial solicitors</li>
             <li>associates and partners in transactional teams</li>
             <li>in-house legal counsel</li>

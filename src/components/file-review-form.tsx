@@ -233,20 +233,22 @@ export default function FileReviewForm() {
       </Card>
       <Dialog open={isSuccessDialogOpen} onOpenChange={setIsSuccessDialogOpen}>
         <DialogContent className="sm:max-w-md" showCloseButton={true}>
-          <div className="flex flex-col items-center text-center space-y-2">
+          <div className="flex flex-col items-center text-center space-y-4">
             {/* Checkmark Icon */}
             <div className="rounded-full border-secondary border-2 p-3">
               <Check className="h-6 w-6 text-secondary" />
             </div>
 
-            {/* Heading */}
+            {/* Main Message */}
             <h2 className="text-2xl font-bold text-primary font-serif">
-              Request Submitted
+              Thank you for file review request.
             </h2>
 
-            {/* Body Text */}
-            <div className="  border-t pt-2 space-y-2 text-muted-foreground">
-              <p>Your file review request has been submitted successfully.</p>
+            {/* What Happens Next Section */}
+            <div className="border-t pt-4  text-muted-foreground w-full">
+              <p className="font-semibold text-foreground">WHAT HAPPENS NEXT</p>
+              <p>Your submission is reviewed and scope confirmed.</p>
+              <p>You are then contacted to proceed with the file review.</p>
             </div>
           </div>
         </DialogContent>

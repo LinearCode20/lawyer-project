@@ -76,7 +76,7 @@ export default function HowItWillWorks() {
           >
             <Button
               size="lg"
-              className="flex w-full items-center gap-2 "
+              className="flex w-full items-center gap-2 px-14 "
               variant={"outline-secondary"}
             >
               <ArrowDownToLine />
