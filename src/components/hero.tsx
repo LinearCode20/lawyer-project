@@ -20,7 +20,7 @@ export default function Hero() {
     <section className="bg-white" id="home">
       <main className="md:max-w-6xl mx-auto min-h-[80vh] w-full  grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-10 items-center justify-between md:py-20  sm:items-start p-4">
         <div>
-          <div className="">
+          <div className="text-center md:text-left">
             <h1
               className="text-primary text-[36px] mb-2 font-bold font-serif
  leading-[1.1] md:text-[42px] "
@@ -53,7 +53,7 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className=" flex flex-col gap-4 text-base justify- font-medium sm:flex-row mt-4 ">
+          <div className=" flex flex-col gap-4 text-base justify-center md:justify-start font-medium sm:flex-row mt-4 max-w-[80%] md:max-w-full mx-auto">
             <Link
               href="/file-review"
               rel="noopener noreferrer"

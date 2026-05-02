@@ -5,7 +5,7 @@ export default function WhatThisIs() {
     <section className="p-4 bg-white  py-13  ">
       <div className="md:max-w-6xl mx-auto   ">
         <div>
-          <h2 className="heading text-center mb-6!">What Law Edge Is</h2>
+          <h2 className="heading text-center mb-6!">What Law Edge is</h2>
           <p className=" text-center">
             Law Edge is a file risk management system applied across live
             matters.

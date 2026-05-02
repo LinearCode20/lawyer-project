@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ReviewScopeOngoingControl() {
   return (
-    <section className="p-4 py-13 bg-white">
+    <section className="p-4 py-13 bg-white text-center">
       <div className="md:max-w-6xl mx-auto">
         {/* Main Heading */}
         <h2 className="heading text-center mb-4!">
@@ -13,7 +13,7 @@ export default function ReviewScopeOngoingControl() {
         </h2>
 
         {/* Introduction Section */}
-        <div className="max-w-4xl mx-auto mb-4">
+        <div className="max-w-4xl mx-auto mb-8">
           <p className="text-base text-primary ">
             The File Risk & Revenue Exposure Review establishes the firm's
             current position based on how files are recorded.
@@ -39,7 +39,7 @@ export default function ReviewScopeOngoingControl() {
         </div>
 
         {/* Initial Review Section */}
-        <div className="max-w-4xl mx-auto mb-4">
+        <div className="max-w-4xl mx-auto mb-8">
 
           <h3 className="text-2xl font-bold font-serif text-primary mb-2">
             Initial Review
@@ -65,18 +65,18 @@ export default function ReviewScopeOngoingControl() {
             <p className="text-xl font-bold text-primary">£5,000 – £10,000</p>
           </div>
 
-          <p className="text-base text-primary ">
+          <p className="text-base font-semibold text-primary ">
             Where revenue exposure is included, the scope extends to quantifying
             financial impact across those files, including:
           </p>
-          <ul className=" ">
-            <li className="flex items-start gap-3 text-base text-primary">
+          <ul className="text-center mb-4">
+            <li className=" text-base text-primary">
               <span>unrecovered time</span>
             </li>
-            <li className="flex items-start gap-3 text-base text-primary">
+            <li className=" text-base text-primary">
               <span>reduced fees</span>
             </li>
-            <li className="flex items-start gap-3 text-base text-primary">
+            <li className=" text-base text-primary">
               <span>matters settled below value</span>
             </li>
           </ul>
@@ -86,8 +86,8 @@ export default function ReviewScopeOngoingControl() {
         </div>
 
         {/* Firm-Level Impact Section */}
-        <div className="max-w-4xl mx-auto mb-4">
-          <h3 className="text-2xl font-semibold font-serif text-primary mb-4">
+        <div className="max-w-4xl mx-auto mb-8">
+          <h3 className="text-2xl font-semibold font-serif text-primary mb-2">
             Firm-Level Impact
           </h3>
           <p className="text-base text-primary ">
@@ -113,8 +113,8 @@ export default function ReviewScopeOngoingControl() {
         </div>
 
         {/* Ongoing File Risk & Revenue Control Section */}
-        <div className="max-w-4xl mx-auto mb-4">
-          <h3 className="text-2xl font-semibold font-serif text-primary mb-4">
+        <div className="max-w-4xl mx-auto mb-8">
+          <h3 className="text-2xl font-semibold font-serif text-primary mb-2">
             Ongoing File Risk <span className="font-sans"> &</span> Revenue
             Control
           </h3>
@@ -124,20 +124,20 @@ export default function ReviewScopeOngoingControl() {
           <p className="text-base text-primary ">
             It must be managed as files continue to progress.
           </p>
-          <p className="text-base text-primary ">
+          <p className="text-base text-primary font-semibold mt-4 ">
             Ongoing control is required to:
           </p>
-          <ul className=" ">
-            <li className="flex items-start gap-3 text-base text-primary">
+          <ul className="mb-4 ">
+            <li className=" text-base text-primary">
               <span>maintain a defensible file position</span>
             </li>
-            <li className="flex items-start gap-3 text-base text-primary">
+            <li className=" text-base text-primary">
               <span>identify and manage risk as matters develop</span>
             </li>
-            <li className="flex items-start gap-3 text-base text-primary">
+            <li className=" text-base text-primary">
               <span>reduce ongoing revenue leakage</span>
             </li>
-            <li className="flex items-start gap-3 text-base text-primary">
+            <li className=" text-base text-primary">
               <span>
                 establish a consistent standard across departments and across
                 the firm
@@ -151,8 +151,8 @@ export default function ReviewScopeOngoingControl() {
         </div>
 
         {/* Monthly Engagement Section */}
-        <div className="max-w-4xl mx-auto mb-4">
-          <h3 className="text-2xl font-semibold font-serif text-primary mb-4">
+        <div className="max-w-4xl mx-auto mb-8">
+          <h3 className="text-2xl font-semibold font-serif text-primary mb-2">
             Monthly Engagement
           </h3>
           <p className="text-base text-primary ">
@@ -181,7 +181,7 @@ export default function ReviewScopeOngoingControl() {
 
         {/* Next Step Section */}
         <div className="max-w-4xl mx-auto mb-12">
-          <h3 className="text-2xl font-semibold font-serif text-primary mb-4">
+          <h3 className="text-2xl font-semibold font-serif text-primary mb-2">
             Next Step
           </h3>
           <p className="text-base text-primary  font-semibold">
