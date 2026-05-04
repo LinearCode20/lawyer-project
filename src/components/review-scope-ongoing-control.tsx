@@ -49,6 +49,10 @@ export default function ReviewScopeOngoingControl() {
             reported at firm level.
           </p>
           <p className="text-base text-primary ">
+            Files are reviewed on an anonymised basis. We don’t require any client or case handler details.
+
+          </p>
+          <p className="text-base text-primary ">
             This establishes whether advice can be demonstrated, decisions can
             be supported, and risks are identified on the file.
           </p>
@@ -57,7 +61,7 @@ export default function ReviewScopeOngoingControl() {
             defended.
           </p>
 
-          <div className=" mb-4">
+          <div className="">
             <p className=" text-primary mb-2">
               The review sits within the following range based on file sample
               and scope:
@@ -69,7 +73,7 @@ export default function ReviewScopeOngoingControl() {
             Where revenue exposure is included, the scope extends to quantifying
             financial impact across those files, including:
           </p>
-          <ul className="text-center mb-4">
+          <ul className="text-center ">
             <li className=" text-base text-primary">
               <span>unrecovered time</span>
             </li>
@@ -124,10 +128,10 @@ export default function ReviewScopeOngoingControl() {
           <p className="text-base text-primary ">
             It must be managed as files continue to progress.
           </p>
-          <p className="text-base text-primary font-semibold mt-4 ">
+          <p className="text-base text-primary font-semibold ">
             Ongoing control is required to:
           </p>
-          <ul className="mb-4 ">
+          <ul className="">
             <li className=" text-base text-primary">
               <span>maintain a defensible file position</span>
             </li>
@@ -167,7 +171,7 @@ export default function ReviewScopeOngoingControl() {
             The monthly engagement is structured based on file volume and scope
             across the firm and typically sits within:
           </p>
-          <div className="mb-3">
+          <div className="">
             <p className="text-xl font-bold text-primary">
               £395 – £1,800 per month
             </p>
