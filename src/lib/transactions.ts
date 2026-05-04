@@ -148,4 +148,32 @@ export async function RecordInvoicePayment(invoice: any) {
 }
 
 
+/**
+ * Create lead save into the database
+ */
+export async function SaveLead(data: any) {
+  try {
+    const name = data.name ?? "";
+    const email = data.email ?? "";
+    const message = data.message ?? "";
 
+    const { error } = await supabase
+      .from("leads")
+      .insert([
+        {
+          name,
+          email,
+          message,
+        }
+      ]);
+
+    if (error) {
+      console.error("Supabase insert error:", error);
+      throw new Error("Failed to save lead");
+    }
+  } catch (err) {
+    console.error("Error saving lead:", err);
+    throw err;
+  }
+}
+     
