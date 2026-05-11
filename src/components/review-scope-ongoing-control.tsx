@@ -181,9 +181,14 @@ export default function ReviewScopeOngoingControl() {
             are recorded and progressed, managing both legal exposure and
             financial performance across the firm.
           </p>
-        </div>
+        
+          <p className="text-base text-primary">
+            Quarterly operational oversight reviews are available for individual departments, multiple practice areas or firm-wide live matter oversight. Reviews assess whether advice, decisions, supervision and client communication are properly supported on the file, and identify recurring operational weaknesses affecting defensibility, supervision consistency, fee recovery and profitability across live matters. Quarterly executive reporting includes operational findings, recurring trend analysis and areas requiring further supervision or management visibility. Annual review programmes typically range from £10,000 to £150,000+ depending on department scope, number of offices, file volume and reporting requirements.
+            </p>
 
-        {/* Next Step Section */}
+            </div>
+
+
         <div className="max-w-4xl mx-auto mb-12">
           <h3 className="text-2xl font-semibold font-serif text-primary mb-2">
             Next Step
